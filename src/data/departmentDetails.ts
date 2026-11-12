@@ -1,0 +1,237 @@
+import { courseDetails } from './courseDetails';
+import type { DepartmentSlug } from './navigation/departmentsMenuData';
+
+export const departmentReports = {
+  '2020–21': 'https://sjrc.edu.in/wp-content/uploads/2022/01/ANNUAL-REPORT-2020-21.pdf',
+  '2022–23': 'https://sjrc.edu.in/wp-content/uploads/2024/02/SJRC-Annual-Report-2022-23.pdf',
+} as const;
+
+type DepartmentDetails = {
+  area: 'sciences' | 'humanities' | 'business' | 'sports';
+  intro: string;
+  about: string;
+  vision: string;
+  mission: string;
+  topics: string[];
+  learning: string;
+  activity: { report: keyof typeof departmentReports; text: string };
+  pathways: string;
+  syllabi: readonly { label: string; href: string }[];
+  programme?: '/academics/bca' | '/academics/bcom' | '/academics/bba' | '/academics/mcom';
+};
+
+const syllabusBase = 'https://bcu.ac.in/uploads/syllabus';
+const sep = `${syllabusBase}/ug_sep/I_and_II_Sem_SEP_Syllabus`;
+const syllabus = (path: string, label = 'University syllabus (PDF)') => ({ label, href: `${sep}/${path}` });
+
+export const departmentDetails: Record<DepartmentSlug, DepartmentDetails> = {
+  physics: {
+    area: 'sciences',
+    intro: 'Physics uses measurement and mathematical models to explain motion, matter, light and energy.',
+    about: 'From the motion of a rotating object to the behaviour of light and electric circuits, the discipline asks what a model predicts and how closely that prediction matches observation.',
+    vision: 'Develop learners who can test explanations of physical phenomena with rigour and curiosity.',
+    mission: 'Connect mathematical reasoning with experiments and help students communicate results and uncertainty clearly.',
+    topics: ['Mechanics and thermal physics', 'Electricity and magnetism', 'Optics and wave behaviour', 'Modern physics and quantum concepts'],
+    learning: 'Compare predictions with measured values, plot experimental data and explain the effect of measurement uncertainty on a conclusion.',
+    activity: { report: '2020–21', text: 'The college recorded a departmental seminar on Bose–Einstein condensation in January 2021.' },
+    pathways: 'Quantitative reasoning and measurement skills support further study in physics and related disciplines, as well as pathways in instrumentation, testing and technical support.',
+    syllabi: [
+      syllabus('Science%20Faculty/B.Sc.%20Physics%20UG%20Syllabus%20%20SEP.pdf', 'Physics Semesters I–II (PDF)'),
+      { label: 'Physics Semesters III–IV (PDF)', href: `${syllabusBase}/ug_sep/III_and_IV_Sem_SEP_Syllabus/Science%20Faculty/B.Sc.%20Physics%20UG%20SEP%20-%20III%20&%20IV%20Sem.pdf` },
+      { label: 'Physics Semesters V–VI (PDF)', href: `${syllabusBase}/UG_Syllabus/science/B.Sc._Physics_V_&_VI_Sem.pdf` },
+    ],
+  },
+  chemistry: {
+    area: 'sciences',
+    intro: 'Chemistry explains how the structure of matter shapes its properties and how substances change in a reaction.',
+    about: 'The discipline connects molecular models with observable changes in materials. That relationship underpins work in quality testing, manufacturing and environmental analysis.',
+    vision: 'Build a careful, evidence-based understanding of materials and chemical change.',
+    mission: 'Develop skill in chemical reasoning, safe experimental practice and accurate reporting.',
+    topics: ['Atomic structure, bonding and periodicity', 'Organic compounds and their reactions', 'Thermodynamics, kinetics and electrochemistry', 'Analytical chemistry and volumetric analysis'],
+    learning: 'Use reaction equations and quantitative exercises to interpret observations. University practicals include volumetric analysis and the measurement of properties of liquids.',
+    activity: { report: '2022–23', text: 'The annual report records a student seminar on electrochemistry and an invited faculty exchange talk.' },
+    pathways: 'Careful measurement and interpretation of chemical data can support postgraduate study in chemistry and work in analytical testing, materials or quality assurance.',
+    syllabi: [syllabus('Science%20Faculty/B.Sc.%20Chemistry%20UG%20Syllabus%20SEP.pdf')],
+  },
+  mathematics: {
+    area: 'sciences',
+    intro: 'Mathematics turns questions about structure, change and space into problems that can be modelled and solved.',
+    about: 'Working with a proof, equation or graph develops the discipline to state assumptions, follow an argument and recognise when a result applies.',
+    vision: 'Cultivate independent thinkers who can reason precisely and recognise mathematical patterns.',
+    mission: 'Develop fluency in proof, computation and modelling through examples, problem sets and explanation.',
+    topics: ['Algebra and systems of equations', 'Calculus and differential equations', 'Geometry and mathematical modelling', 'Probability and descriptive statistics'],
+    learning: 'Work through a problem algebraically and graphically, then check how the answer changes when assumptions or initial conditions change.',
+    activity: { report: '2020–21', text: 'In February 2021 the department recorded an aptitude quiz and a guest lecture on how mathematics is used in everyday life.' },
+    pathways: 'Proof and modelling skills support higher study in mathematics and related fields, and can be applied in data analysis, computing, quantitative work and education.',
+    syllabi: [
+      syllabus('Science%20Faculty/Mathematics%20UG%20Syllabus%20SEP.pdf', 'Mathematics Semesters I–II (PDF)'),
+      { label: 'Mathematics Semesters V–VI (PDF)', href: `${syllabusBase}/UG_Syllabus/science/B.Sc._Mathematics_V_&_VI_Sem.pdf` },
+    ],
+  },
+  botany: {
+    area: 'sciences',
+    intro: 'Botany studies plants and their relationships with other organisms and the environment.',
+    about: 'Comparing organisms and their structures helps students connect classification with function, from the diversity of algae and fungi to the ways plants grow and respond to their surroundings.',
+    vision: 'Develop scientifically literate learners who value plant diversity and understand its ecological importance.',
+    mission: 'Strengthen observation and classification skills through careful comparison, practical study and ecological reasoning.',
+    topics: ['Algae, fungi and other groups studied in botany', 'Plant diversity and classification', 'Plant form and function', 'Ecology and inheritance'],
+    learning: 'Compare specimens and structures, document visible features and use diagrams or classification keys to explain similarities and differences.',
+    activity: { report: '2022–23', text: 'The college recorded student presentations on ecological instruments and classroom exercises on genetic problems.' },
+    pathways: 'Observation, classification and data recording can support higher study in plant science, ecology and related areas, and pathways in conservation or agricultural research support.',
+    syllabi: [syllabus('Science%20Faculty/B.Sc.%20Botany%20UG%20Syllabus%20SEP.pdf')],
+  },
+  zoology: {
+    area: 'sciences',
+    intro: 'Zoology investigates animal diversity, how animals function and how they interact with their environments.',
+    about: 'Comparative study helps students see how body structures reflect adaptation and how physiology, inheritance and ecology explain patterns across animal groups.',
+    vision: 'Develop an evidence-based understanding of animal life and its place in ecosystems.',
+    mission: 'Build careful observation, comparison and scientific communication through theory and practical study.',
+    topics: ['Animal diversity and classification', 'Comparative structure and physiology', 'Inheritance and variation', 'Ecology and relationships between organisms'],
+    learning: 'Use specimen observations, scientific drawings and comparative tables to connect visible features with biological function.',
+    activity: { report: '2020–21', text: 'The college recorded a national webinar on the principles of dialysis in July 2020.' },
+    pathways: 'Comparative biology and scientific reporting can support postgraduate study in zoology and life sciences or work connected to biodiversity and research support.',
+    syllabi: [syllabus('Science%20Faculty/B.Sc.%20Zoology%20%20UG%20Sylllabus%20SEP.pdf')],
+  },
+  'computer-science': {
+    area: 'sciences',
+    intro: 'Computer Science explores how software is built, how data is organised and how systems communicate.',
+    about: 'The BCA curriculum connects programming and algorithms with databases, operating systems, networks and the design of applications. Students learn to reason about how a system works and why it might fail.',
+    vision: 'Prepare learners to design useful, reliable computing solutions and adapt as technology changes.',
+    mission: 'Pair computing fundamentals with coding, testing, debugging and clear technical communication.',
+    topics: ['Programming and data structures', 'Databases and SQL', 'Operating systems and networks', 'Web development and software engineering'],
+    learning: 'Move from writing small programs to querying data and testing software components. The BCA syllabus includes practical exercises and project work.',
+    activity: { report: '2022–23', text: 'The annual report records guest sessions on artificial intelligence and networking, and a June 2023 industry visit to Jetking in Bengaluru.' },
+    pathways: 'Programming, debugging and data skills are relevant to software and web development, testing and IT support. Further study can include an MCA or another computing programme.',
+    syllabi: courseDetails.bca.syllabi,
+    programme: '/academics/bca',
+  },
+  english: {
+    area: 'humanities',
+    intro: 'English brings together communication, literary study and the practice of writing for different audiences.',
+    about: 'Reading across genres builds awareness of how writers use language, form and point of view. Discussion and revision help students communicate their own arguments more precisely.',
+    vision: 'Develop perceptive readers and confident communicators who can engage with different perspectives.',
+    mission: 'Strengthen language proficiency through close reading, purposeful writing, discussion and presentation.',
+    topics: ['Listening, speaking, reading and writing', 'Prose, poetry and literary devices', 'Critical reading and written argument', 'Presentation and audience awareness'],
+    learning: 'Annotate passages, compare interpretations, revise written responses and present a reading of a text with evidence.',
+    activity: { report: '2022–23', text: 'The college recorded a poster design workshop, a poster exhibition and student seminars in November 2022.' },
+    pathways: 'Reading, editing and presentation skills are relevant to communications, publishing, content work, education and further study in English or related disciplines.',
+    syllabi: [syllabus('Language%20Faculty/B.A%20English%20UG%20Syllabus%20SEP.pdf')],
+  },
+  'kannada-optional-kannada': {
+    area: 'humanities',
+    intro: 'Kannada and Optional Kannada bring together language proficiency, literary interpretation and Karnataka’s cultural heritage.',
+    about: 'Language study develops clarity in speaking and writing. Literary study examines how Kannada authors use form, voice and context to represent experiences across periods and communities.',
+    vision: 'Encourage confident use of Kannada and sustained engagement with its literary and cultural traditions.',
+    mission: 'Build competence in language and interpretation through reading, discussion and writing in Kannada.',
+    topics: ['Kannada usage and grammar', 'Prose and poetry', 'Literary form and interpretation', 'Cultural context and Kannada traditions'],
+    learning: 'Read texts aloud, discuss vocabulary and form, and write responses that connect particular passages with a wider cultural context.',
+    activity: { report: '2020–21', text: 'The annual report records an Optional Kannada seminar on the Kannada syllabus in January 2021.' },
+    pathways: 'Literary and language skills can support translation, editing, Kannada-language media, cultural documentation and higher study in Kannada.',
+    syllabi: [
+      syllabus('Language%20Faculty/Kannada%20Syllabus%20UG%20SEP.pdf', 'Kannada language syllabus (PDF)'),
+      { label: 'B.A. Kannada Semesters V–VI (PDF)', href: `${syllabusBase}/UG_Syllabus/arts/BA_Kannada_V_&_VI_Sem.pdf` },
+    ],
+  },
+  hindi: {
+    area: 'humanities',
+    intro: 'Hindi combines the study of prose and poetry with practical work in grammar, writing and communication.',
+    about: 'The discipline helps students recognise how register and word choice change across literary, everyday and administrative settings.',
+    vision: 'Build confident Hindi communicators who can appreciate literature and use the language in varied contexts.',
+    mission: 'Develop accurate expression and thoughtful interpretation through reading, grammar and structured writing practice.',
+    topics: ['Hindi prose and poetry', 'Grammar and sentence usage', 'Administrative terminology', 'Summary writing and literary interpretation'],
+    learning: 'Read passages closely, practise grammatical forms and condense longer texts into precise summaries.',
+    activity: { report: '2020–21', text: 'The college recorded a departmental seminar on the history of Hindi literature in January 2021.' },
+    pathways: 'Clear written and spoken Hindi is useful in translation, editing, media, communication and higher study in languages.',
+    syllabi: [syllabus('Language%20Faculty/BA%20Hindi%20UG%20Syllabus%20SEP.pdf')],
+  },
+  sanskrit: {
+    area: 'humanities',
+    intro: 'Sanskrit introduces classical texts and the grammatical tools needed to read and interpret them.',
+    about: 'Identifying word forms and sentence relationships allows students to move from literal meaning to the literary and cultural setting of a passage.',
+    vision: 'Make classical Sanskrit accessible to learners and encourage careful engagement with textual traditions.',
+    mission: 'Develop grammar, vocabulary and interpretive skill through guided reading and translation.',
+    topics: ['Classical Sanskrit literature', 'Grammar and word forms', 'Reading and translation', 'Literary context and cultural traditions'],
+    learning: 'Break down sentences, identify grammatical relationships and compare translations before explaining a passage in context.',
+    activity: { report: '2020–21', text: 'The college recorded a Sanskrit departmental webinar on Swasthya Samrakshana in January 2021.' },
+    pathways: 'Textual analysis and translation can support higher study in Sanskrit, linguistics, classical literature, manuscript studies and cultural heritage.',
+    syllabi: [syllabus('Language%20Faculty/BA%20Sanskrit%20UG%20Syllabus%20SEP.pdf')],
+  },
+  history: {
+    area: 'humanities',
+    intro: 'History examines how societies changed over time and how evidence shapes our understanding of those changes.',
+    about: 'Political developments, cultural traditions and material remains provide different ways to study the past. The discipline teaches students to ask who produced a source, why it survives and what it can establish.',
+    vision: 'Develop historically informed learners who can weigh evidence and engage with different accounts of the past.',
+    mission: 'Build skills in chronology, source analysis and historical writing through maps, documents and material evidence.',
+    topics: ['Early Indian societies and historical sources', 'Modern European history', 'South Indian heritage, art and architecture', 'Historical geography and map work'],
+    learning: 'Place events on timelines and maps, compare written and material sources, and build an argument around evidence rather than chronology alone.',
+    activity: { report: '2020–21', text: 'The annual report records a special lecture on the Karnataka–Maharashtra border dispute in 2021.' },
+    pathways: 'Source analysis and research writing can support higher study in history and pathways in archives, museums, heritage interpretation, public service or education.',
+    syllabi: [
+      syllabus('Arts%20Faculty/BA%20History%20UG%20Syllabus%20SEP.pdf', 'History Semesters I–II (PDF)'),
+      { label: 'History Semesters V–VI (PDF)', href: `${syllabusBase}/UG_Syllabus/arts/BA_History_V_&_VI_Sem.pdf` },
+    ],
+  },
+  economics: {
+    area: 'humanities',
+    intro: 'Economics examines how households, businesses and governments make choices when resources are limited.',
+    about: 'The subject links individual decisions about prices and spending to wider questions about employment, growth and public policy, with the Indian economy providing a context for application.',
+    vision: 'Develop learners who can interpret economic evidence and understand the consequences of policy choices.',
+    mission: 'Combine economic models with data interpretation and discussion of real policy questions.',
+    topics: ['Microeconomics and market behaviour', 'Macroeconomics and national income', 'The Indian economy and development', 'Policy reasoning and data interpretation'],
+    learning: 'Use graphs, tables and economic indicators to compare explanations for changes in prices, employment or output.',
+    activity: { report: '2020–21', text: 'The annual report records a departmental session on competitive examinations in February 2021.' },
+    pathways: 'Economic reasoning and data literacy can support higher study in economics or public policy and pathways in research, finance or public service.',
+    syllabi: [syllabus('Arts%20Faculty/BA%20&%20B.Sc.%20Economics%20UG%20Syllabus%20SEP.pdf')],
+  },
+  commerce: {
+    area: 'business',
+    intro: 'Commerce examines how organisations keep accounts, make financial decisions and comply with business rules.',
+    about: 'Accounting and commercial regulation explain how business transactions become reliable records. Finance, taxation and audit show how those records inform decisions and accountability.',
+    vision: 'Build commercially informed graduates who can interpret financial evidence with integrity.',
+    mission: 'Connect accounting principles, financial decisions and statutory concepts with realistic business exercises.',
+    topics: ['Financial, corporate and cost accounting', 'Finance and investment decisions', 'Business regulations and taxation', 'Audit and financial reporting'],
+    learning: 'Work from transaction records to financial statements, calculate and compare costs, and explain how tax or audit requirements affect commercial decisions.',
+    activity: { report: '2022–23', text: 'The college recorded a Commerce seminar on employability skills in August 2022.' },
+    pathways: 'Accounting and financial interpretation skills support entry-level work in accounts, finance operations, audit or tax support. Further study may include M.Com or a professional accountancy pathway.',
+    syllabi: courseDetails.bcom.syllabi,
+    programme: '/academics/bcom',
+  },
+  'business-administration': {
+    area: 'business',
+    intro: 'Business Administration examines how organisations coordinate people, resources and decisions.',
+    about: 'Management, marketing, human resources and entrepreneurship give students different ways to analyse the same business problem, from customer needs to the practical organisation of work.',
+    vision: 'Develop resourceful, responsible learners who can understand and improve organisational decisions.',
+    mission: 'Use cases, group discussion and applied exercises to build planning, communication and decision-making skills.',
+    topics: ['Management principles and organisational behaviour', 'Marketing and market analysis', 'Human resource management', 'Entrepreneurship and business planning'],
+    learning: 'Compare competing responses to a business case, explain trade-offs and present recommendations using evidence.',
+    activity: { report: '2022–23', text: 'The annual report records a Business Administration workshop on international event management in November 2022.' },
+    pathways: 'Team coordination and business analysis are useful in operations, marketing, sales, recruitment and business development. Further study may include an MBA.',
+    syllabi: courseDetails.bba.syllabi,
+    programme: '/academics/bba',
+  },
+  mcom: {
+    area: 'business',
+    intro: 'M.Com develops advanced commerce knowledge and the ability to investigate business questions through research.',
+    about: 'Postgraduate study moves beyond preparing financial information to evaluating what it means for strategy, performance and decisions. Research methods provide a way to test conclusions against evidence.',
+    vision: 'Develop independent postgraduate learners who can evaluate complex commercial issues with evidence.',
+    mission: 'Build advanced analytical and research skills through financial interpretation, case analysis and academic writing.',
+    topics: ['Advanced accounting and corporate reporting', 'Financial management and business strategy', 'Corporate tax planning in relevant university papers', 'Business research design and analysis'],
+    learning: 'Analyse financial cases and design a research question, then choose methods for collecting, interpreting and communicating the evidence.',
+    activity: { report: '2020–21', text: 'The college recorded an M.Com webinar on careers in financial planning and wealth management in April 2021.' },
+    pathways: 'Advanced finance and research skills can support work in financial analysis, accounting, banking and business research, as well as further study or teaching subject to relevant qualifications.',
+    syllabi: courseDetails.mcom.syllabi,
+    programme: '/academics/mcom',
+  },
+  'physical-education': {
+    area: 'sports',
+    intro: 'Physical Education brings together movement, fitness and the social and psychological dimensions of sport.',
+    about: 'Sport provides a setting to understand physical preparation, motivation, cooperation and fair play. Physical education links these ideas with healthy participation and personal development.',
+    vision: 'Encourage lifelong physical activity, sportsmanship and responsible participation.',
+    mission: 'Promote fitness, fair play and teamwork while helping learners understand the factors that influence sporting performance.',
+    topics: ['Physical fitness and wellbeing', 'Sports psychology and motivation', 'Training principles and performance', 'Leadership, teamwork and sportsmanship'],
+    learning: 'Reflect on fitness and practice habits, compare how different training goals shape preparation, and discuss leadership and fair play in team settings.',
+    activity: { report: '2022–23', text: 'The annual report documents student participation in university intercollegiate athletics, chess and judo during 2022–23.' },
+    pathways: 'Fitness literacy, teamwork and leadership are relevant to recreation, coaching and sport administration. Specialist roles can require further study or certification.',
+    syllabi: [{ label: 'University Physical Education syllabus (PDF)', href: `${syllabusBase}/UG_Syllabus/arts/BA_Physical_Education.pdf` }],
+  },
+};

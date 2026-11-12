@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "DM Serif Text";
+  src: url("../assets/hero/dm-serif-text.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.home-display-title {
+  font-family: "DM Serif Text", Georgia, serif;
+}
+
+.home-hero-orange {
+  color: #ff8c00;
+}
+
+.home-hero-photo {
+  opacity: 0;
+  transition: opacity 0s 600ms;
+}
+
+.home-hero-photo[aria-hidden="false"] {
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 600ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-photo,
+  .home-hero-photo[aria-hidden="false"] {
+    transition: none;
+  }
+}
