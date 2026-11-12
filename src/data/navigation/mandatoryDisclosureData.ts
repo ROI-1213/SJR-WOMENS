@@ -1,5 +1,6 @@
 
 export const mandatoryDisclosureMenuData = [
+  { label: 'Right to Information (RTI)', href: '/rti' },
   { label: 'IDP', href: '/mandatory-disclosure/idp' },
   { label: 'MOU', href: '/mandatory-disclosure/mou' },
   { label: 'Academics/Examination Policy', href: '/mandatory-disclosure/academics-policy' },

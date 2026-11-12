@@ -1,73 +1,75 @@
-import React from 'react';
 import { AcademicsLayout } from '../../../components/layout/AcademicsLayout';
 import { Card } from '../../../components/ui/card';
-import { Beaker, Atom, Cpu, Zap, Microscope, CircuitBoard, CheckCircle, GraduationCap, Briefcase, Target, BookOpen, Users } from 'lucide-react';
+import { Beaker, Atom, Cpu, Microscope, CheckCircle, GraduationCap, Briefcase, Target, BookOpen, Users } from 'lucide-react';
+import { courseDetails } from '@/data/courseDetails';
 
-const specializations = [
-  { icon: Beaker, title: 'Chemistry, Botany, Zoology', description: 'Study life sciences and chemistry with focus on biological systems, ecology, and organic chemistry.' },
-  { icon: Atom, title: 'Physics, Chemistry, Mathematics', description: 'Classical science combination covering physical laws, chemical reactions, and mathematical analysis.' },
-  { icon: Zap, title: 'Physics, Mathematics, Electronics', description: 'Blend of core physics, mathematical modeling, and electronic circuit design.' },
-  { icon: Cpu, title: 'Physics, Mathematics, Computer Science', description: 'Combine computational thinking with physics and advanced mathematics.' },
-  { icon: CircuitBoard, title: 'Electronics, Mathematics, Computer Science', description: 'Focus on hardware-software integration, embedded systems, and computational mathematics.' },
-  { icon: Microscope, title: 'Physics, Electronics, Computer Science', description: 'Interdisciplinary approach connecting physics principles with electronics and computing.' },
-];
+const comboIcons = [Cpu, Atom, Microscope, Beaker];
 
 const whyChoose = [
-  { icon: CheckCircle, text: 'Six diverse subject combinations to match your interests' },
-  { icon: BookOpen, text: 'Well-equipped laboratories for hands-on experimentation' },
-  { icon: Target, text: 'Strong foundation for competitive exams and research careers' },
-  { icon: Users, text: 'Experienced faculty with doctoral qualifications' },
-  { icon: GraduationCap, text: 'Pathway to M.Sc, MCA, MBA, and research programs' },
-  { icon: Briefcase, text: 'Industry visits and project-based learning' },
+  { icon: CheckCircle, text: 'Four verified B.Sc subject combinations across physical, life, and computer sciences' },
+  { icon: BookOpen, text: 'Well-equipped Physics, Chemistry, Botany, Biotechnology, Mathematics & Wi-Fi Computer Labs' },
+  { icon: Target, text: 'Research project exposure and open electives under Bengaluru City University' },
+  { icon: Users, text: 'Experienced faculty serving on BCU Boards of Studies (BOS) and Examinations (BOE)' },
+  { icon: GraduationCap, text: 'Strong foundation for M.Sc, MCA, research, and competitive examinations' },
+  { icon: Briefcase, text: 'Industrial & institutional visits (IISc, Lalbagh, Biotechnology Centre, Padmashree Diagnostics)' },
 ];
 
 const careers = [
   'Research Scientist',
-  'Data Analyst',
-  'Lab Technician',
-  'Software Developer',
-  'Electronics Engineer',
+  'Project Assistant',
+  'Quality Control Analyst',
+  'Software & IT Roles',
+  'Pharmaceutical & Biotech Industry',
+  'Microbiological Laboratories',
+  'Electronics & Aerospace',
   'Teaching & Academia',
-  'Environmental Scientist',
-  'Quality Analyst',
 ];
 
 const BScProgram = () => {
+  const bsc = courseDetails.bsc;
+  const combinations = bsc.combinations ?? [];
+
   return (
     <AcademicsLayout pageTitle="Bachelor of Science (B.Sc)" breadcrumbPath="B.Sc" category="Graduate Programs">
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-logo-navy mb-4">Course Overview</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            The B.Sc program at Sri Jagadguru Renukacharya College of Science, Arts & Commerce provides rigorous scientific education across six subject combinations spanning life sciences, physical sciences, and computational disciplines. Students develop strong analytical and research skills through laboratory-intensive, application-oriented learning.
-          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">{bsc.introduction}</p>
+          <p className="mt-3 text-sm text-gray-600">{bsc.durationNote}</p>
         </div>
       </section>
 
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-logo-navy mb-8 text-center">Subject Combinations</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {specializations.map((spec, i) => (
-              <Card key={i} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-logo-blue rounded-full flex items-center justify-center shrink-0">
-                    <spec.icon size={28} className="text-white" />
+          <h2 className="text-3xl font-bold text-logo-navy mb-8 text-center">Official Subject Combinations</h2>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {combinations.map((spec, i) => {
+              const Icon = comboIcons[i % comboIcons.length];
+              return (
+                <Card key={spec.code} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-logo-blue rounded-full flex items-center justify-center shrink-0">
+                      <Icon size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wide text-[#177249]">{spec.code}</span>
+                      <h3 className="text-lg font-bold text-logo-navy">{spec.title}</h3>
+                      <p className="text-gray-600 mt-1 text-sm">{spec.description}</p>
+                      {spec.labs && (
+                        <p className="mt-2 text-xs font-medium text-[#185d40]">Labs: {spec.labs.join(' · ')}</p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-logo-navy">{spec.title}</h3>
-                    <p className="text-gray-600 mt-1 text-sm">{spec.description}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-logo-navy mb-8 text-center">Why Choose B.Sc at Sri Jagadguru Renukacharya College of Science, Arts & Commerce?</h2>
+          <h2 className="text-3xl font-bold text-logo-navy mb-8 text-center">Why Choose B.Sc at SJR College for Women?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyChoose.map((item, i) => (
               <div key={i} className="flex items-start gap-3">

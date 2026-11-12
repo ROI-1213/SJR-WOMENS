@@ -15,28 +15,28 @@ import './Banner.css';
 
 const campusPhotos = [
   {
+    label: 'Campus',
+    caption: 'SJR College for Women, Rajajinagar',
+    alt: 'SJR College for Women campus building in Rajajinagar, Bengaluru',
+    small: '/images/campus/college-view.jpg',
+    large: '/images/campus/college-view.jpg',
+    preview: '/images/campus/college-view.jpg',
+  },
+  {
     label: 'Library',
-    caption: 'In the library reading room',
-    alt: 'Three students reading together at a library table',
-    small: librarySmall,
-    large: libraryLarge,
-    preview: libraryPreview,
+    caption: 'Well-stacked library with e-resources',
+    alt: 'Students reading in the SJR College for Women library',
+    small: '/images/infrastructure/library.jpg',
+    large: '/images/infrastructure/library.jpg',
+    preview: '/images/infrastructure/library.jpg',
   },
   {
     label: 'Computer lab',
-    caption: 'Practical work in the computer lab',
-    alt: 'Students working at desktop computers in the campus lab',
-    small: computerLabSmall,
-    large: computerLabLarge,
-    preview: computerLabPreview,
-  },
-  {
-    label: 'Student life',
-    caption: 'A game of carrom on campus',
-    alt: 'Four students playing carrom together',
-    small: studentLifeSmall,
-    large: studentLifeLarge,
-    preview: studentLifePreview,
+    caption: 'Wi-Fi enabled Computer Science laboratory',
+    alt: 'Students working at computers in the SJR College for Women computer lab',
+    small: '/images/infrastructure/computer-lab.jpg',
+    large: '/images/infrastructure/computer-lab.jpg',
+    preview: '/images/infrastructure/computer-lab.jpg',
   },
 ];
 
@@ -94,7 +94,7 @@ export const Banner = () => {
             <span className="block">&amp; Commerce</span>
           </h1>
           <p className="mt-4 max-w-sm text-base leading-relaxed text-green-50/90 lg:mt-5">
-            Explore undergraduate and postgraduate study at our Anand Rao Circle campus in Bengaluru.
+            Explore undergraduate and postgraduate study at our Rajajinagar campus in Bengaluru.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 lg:mt-8">
             <Link

@@ -1,10 +1,9 @@
-import { naacResources } from './institute';
-
-const uploads = 'https://sjrc.edu.in/wp-content/uploads/';
+const uploads = 'https://www.sjrcw.edu.in/wp-content/uploads/';
 
 export interface IqacDocument {
   title: string;
   href: string;
+  localHref?: string;
   year?: string;
   format: 'PDF' | 'JPG';
 }
@@ -17,105 +16,130 @@ interface IqacDocumentGroup {
   documents: readonly IqacDocument[];
 }
 
-const pdf = (title: string, path: string, year?: string): IqacDocument => ({
+export interface NaacCycleRecord {
+  cycle: string;
+  year: string;
+  grade: string;
+  cgpa: string;
+  validity: string;
+  source: string;
+}
+
+export const naacAccreditationHistory: readonly NaacCycleRecord[] = [
+  {
+    cycle: 'Cycle 1',
+    year: '2003',
+    grade: 'B',
+    cgpa: '—',
+    validity: 'First cycle accreditation',
+    source: 'https://www.sjrcw.edu.in/naac/',
+  },
+  {
+    cycle: 'Cycle 2',
+    year: '2009',
+    grade: 'B',
+    cgpa: '2.62',
+    validity: 'Second cycle accreditation',
+    source: 'https://www.sjrcw.edu.in/naac/',
+  },
+  {
+    cycle: 'Cycle 3',
+    year: '2016',
+    grade: 'A',
+    cgpa: '3.09',
+    validity: 'Jan 2016 – Jan 2021',
+    source: '/documents/RTI-SJRCW.pdf',
+  },
+  {
+    cycle: 'Cycle 4',
+    year: '2023',
+    grade: 'B++',
+    cgpa: '2.95',
+    validity: '10 April 2023 – 09 April 2028',
+    source: '/documents/AQAR-22-23-Report.pdf',
+  },
+];
+
+const pdf = (title: string, path: string, year?: string, localHref?: string): IqacDocument => ({
   title,
   href: `${uploads}${path}`,
+  localHref,
   year,
   format: 'PDF',
 });
 
-const annualDocuments = (title: string, files: readonly (readonly [string, string])[]) =>
-  files.map(([year, path]) => pdf(title, path, year));
+const annualDocuments = (title: string, files: readonly (readonly [string, string, string?])[]) =>
+  files.map(([year, path, localHref]) => pdf(title, path, year, localHref));
 
-export const iqacCertificate: IqacDocument = {
-  title: 'NAAC Cycle IV Accreditation Certificate',
-  href: `${uploads}2026/01/NAAC-IV-Cycle-Certificate-1-scaled.jpg`,
-  format: 'JPG',
-};
-
-// Download copies retain the source filenames and file contents.
-export const iqacDownloadUrl = (document: IqacDocument) =>
-  `${import.meta.env.BASE_URL}iqac/documents/${new URL(document.href).pathname.split('/').pop()}`;
+export const iqacDownloadUrl = (document: IqacDocument) => document.localHref ?? document.href;
 
 export const iqacDocumentGroups: readonly IqacDocumentGroup[] = [
   {
     id: 'aqar',
     label: 'AQAR',
-    heading: 'Annual Quality Assurance Reports',
-    description: 'Yearly reports documenting quality initiatives, institutional performance and progress against academic and administrative plans.',
-    documents: annualDocuments('Annual Quality Assurance Report', [
-      ['2022–23', '2024/12/AQAR-2022-23.pdf'],
-      ['2021–22', '2023/07/AQAR-2021-2022.pdf'],
-      ['2020–21', '2022/03/AQAR-Report-20-21.pdf'],
-      ['2019–20', '2021/08/AQAR-Report-2019-20.pdf'],
-      ['2018–19', '2021/07/AQAR-Report-2018-19.pdf'],
-      ['2017–18', '2021/08/AQAR-Report-2017-18.pdf'],
-      ['2016–17', '2021/08/AQAR-Report-2016-17.pdf'],
-      ['2015–16', '2021/08/AQAR-2015-16-final.pdf'],
-      ['2014–15', '2021/08/AQAR-Report-2014-15.pdf'],
+    heading: 'Annual Quality Assurance Reports (AQAR)',
+    description: 'Yearly NAAC AQAR reports documenting quality initiatives, student support, faculty profile, and institutional performance.',
+    documents: annualDocuments('Annual Quality Assurance Report (AQAR)', [
+      ['2022–23', '2025/01/AQAR-22-23-Report.pdf', '/documents/AQAR-22-23-Report.pdf'],
+      ['2021–22', '2025/01/AQAR-21-22-Report-1.pdf'],
+      ['2020–21', '2022/05/aqar2020-2021.pdf'],
+      ['2019–20', '2021/11/AQAR-19-20.pdf'],
+      ['2018–19', '2020/07/AQAR-18-19-Submitted.pdf'],
+      ['2017–18', '2020/07/AQAR-17-18.pdf'],
+      ['2016–17', '2020/03/AQAR-16-17.pdf'],
     ]),
   },
   {
-    id: 'iqac-policy',
-    label: 'Policy',
-    heading: 'IQAC Policy',
-    description: 'The college’s policy sets out the role of the IQAC and its framework for planning, monitoring and improving institutional quality.',
-    documents: [pdf('IQAC Policy', '2023/04/IQAC-Policy.pdf')],
-  },
-  {
-    id: 'iqac-composition',
-    label: 'Composition',
-    heading: 'Composition of IQAC',
-    description: 'Committee membership and representation by academic year.',
-    documents: annualDocuments('IQAC Composition', [
-      ['2023–24', '2025/01/IQAC-composition-23-24.pdf'],
-      ['2022–23', '2025/01/IQAC-composition-22-23.pdf'],
-      ['2021–22', '2022/12/IQAC-Composition-2021-22.pdf'],
-      ['2020–21', '2022/11/IQAC-composition-2020-21.pdf'],
-      ['2019–20', '2022/11/IQAC-composition-2019-20.pdf'],
-      ['2018–19', '2022/11/IQAC-composition-2018-19.pdf'],
-      ['2017–18', '2022/11/IQAC-composition-2017-18.pdf'],
-      ['2016–17', '2022/11/IQAC-composition-2016-17.pdf'],
-    ]),
-  },
-  {
-    id: 'iqac-meetings',
-    label: 'Meetings & ATR',
-    heading: 'IQAC Meetings & Action Taken Reports',
-    description: 'Meeting records and follow-up reports documenting decisions and action taken.',
-    documents: annualDocuments('Meeting Minutes & Action Taken Report', [
-      ['2023–24', '2025/01/IQAC-2023-2024.pdf'],
-      ['2022–23', '2025/01/IQAC-2022-2023.pdf'],
-      ['2021–22', '2023/01/Meeting-minutes-and-action-taken-report-2021-22.pdf'],
-      ['2020–21', '2022/12/Minutes-of-the-meeting-anf-Action-taken-report-20-21.pdf'],
-      ['2019–20', '2022/12/Meeting-minutes-and-action-taken-report-2019-20.pdf'],
-      ['2018–19', '2022/12/Meeting-minutes-and-action-taken-report-2018-19.pdf'],
-      ['2017–18', '2022/12/Meeting-minutes-and-action-taken-report-2017-18.pdf'],
-      ['2016–17', '2022/12/Meeting-minutes-and-action-taken-report-2016-17.pdf'],
-    ]),
-  },
-  {
-    id: 'institutional-documents',
-    label: 'Accreditation & disclosures',
-    heading: 'Accreditation & Institutional Documents',
-    description: 'Official accreditation, university affiliation, approval and disclosure records.',
+    id: 'annual-reports',
+    label: 'Annual Reports',
+    heading: 'Institutional Annual Reports',
+    description: 'Comprehensive yearly reports covering admissions, results, Disha placement drives, faculty academic work, and co-curricular activities.',
     documents: [
-      iqacCertificate,
-      pdf('Affiliation Copy', '2026/01/Affiliation-copy-2025-26.pdf', '2025–26'),
-      pdf('Mandatory Disclosure', '2026/01/MANDATORY-DISCLOSURES-2025-26.pdf', '2025–26'),
-      pdf('Mandatory Disclosure (Annexure 18)', '2025/01/ANNEXURE-18-MANDATORY-DISCLOSURES.pdf'),
-      pdf('Letter of Approval (LOA)', '2025/01/LOA-Report-2024-25_1-44239170107.pdf', '2024–25'),
-      pdf('Intake / Affiliation Order', '2025/01/BCU-Affiliation-order-2023-24-2_11zon.pdf', '2023–24'),
+      pdf('Annual Report 2023–24', '2025/01/Annual-Report-23-24.pdf', '2023–24', '/documents/Annual-Report-23-24.pdf'),
+      pdf('Annual Report 2020–21', '2022/01/annual-report-2020-21.pdf', '2020–21'),
     ],
   },
   {
-    id: 'academic-records',
-    label: 'Academic records',
-    heading: 'Academic & Assessment Records',
-    description: 'The college’s programme and course outcomes and its institutional self-assessment for NAAC.',
+    id: 'best-practices',
+    label: 'Best Practices & Distinctiveness',
+    heading: 'Best Practices & Institutional Distinctiveness',
+    description: 'NAAC Criterion VII documents on institutional best practices, distinctiveness, and gender sensitization.',
     documents: [
-      pdf('Programme and Course Outcomes', '2025/01/CO-PO.pdf'),
-      { title: 'Self-Study Report (SSR)', href: naacResources[0].href, format: 'PDF' },
+      pdf('Best Practices (2023–24)', '2025/01/Best-Practices-23-24.pdf', '2023–24'),
+      pdf('Institutional Distinctiveness (2023–24)', '2025/01/Institutional-Distinctiveness-23-24.pdf', '2023–24'),
+      pdf('Best Practice 7.2.1', '2022/07/7.2.1-Best-practice.pdf', '2021–22'),
+      pdf('Institutional Distinctiveness 7.3.1', '2022/07/7.3.1-Institutional-distinctiveness.pdf', '2021–22'),
+      pdf('Annual Gender Sensitization Plan', '2021/12/Annual-gender-sensitization-plan.pdf', '2021'),
+      pdf('Facilities Provided for Women', '2021/12/Facilties-provided-for-women.pdf', '2021'),
+    ],
+  },
+  {
+    id: 'governance',
+    label: 'Governance & IQAC',
+    heading: 'Governance, Organogram & IQAC Records',
+    description: 'Code of conduct, organogram, strategic plan, IQAC meeting minutes, and calendar of events.',
+    documents: [
+      pdf('Code of Conduct (2023–24)', '2025/01/Code_of_Conduct-23-24.pdf', '2023–24'),
+      pdf('Organogram (2023–24)', '2025/01/Organogram_23-24.pdf', '2023–24'),
+      pdf('Calendar of Events (2025)', '2025/02/Calendar-of-Events.pdf', '2024–25'),
+      pdf('IQAC Minutes of Meeting (2020–21)', '2022/05/MOM-20-21.pdf', '2020–21'),
+      pdf('Strategy Plan', '2022/07/strategy-plan.pdf'),
+      pdf('Organogram', '2022/07/organogram.pdf'),
+      pdf('Code of Conduct', '2022/07/Code-of-conduct.pdf'),
+    ],
+  },
+  {
+    id: 'iiqa-rti',
+    label: 'IIQA, Affiliation & RTI',
+    heading: 'IIQA, University Affiliation & Statutory Disclosures',
+    description: 'Institutional Information for Quality Assessment (IIQA), affiliation records, Programme/Course Outcomes, and RTI disclosure.',
+    documents: [
+      pdf('RTI Declaration (SJRCW)', '2022/05/RTI-SJRCW.pdf', '2022', '/documents/RTI-SJRCW.pdf'),
+      pdf('Programme & Course Outcomes (CO-PO)', '2025/01/COPO-23-24.pdf', '2023–24'),
+      pdf('Skill Enhancement Initiatives', '2025/01/Skill-Enhancement-Initiatives-23-24.pdf', '2023–24'),
+      pdf('Affiliation Combined Record', '2022/05/affiliation-combined.pdf'),
+      pdf('IIQA Self Declaration', '2022/05/self-decleration.pdf'),
+      pdf('IIQA Undertaking', '2022/05/undertaking.pdf'),
     ],
   },
 ];

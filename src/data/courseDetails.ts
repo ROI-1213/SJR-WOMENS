@@ -1,102 +1,269 @@
 import type { AvailableProgramme } from './institute';
 
-interface CourseDetails {
+export interface CourseCombination {
+  code: string;
+  title: string;
+  description: string;
+  labs?: string[];
+}
+
+export interface CourseDetails {
   level: 'undergraduate' | 'postgraduate';
   summary: string;
+  durationNote: string;
+  eligibility: string;
+  affiliation: string;
   introduction: string;
   overview: string;
+  combinations?: CourseCombination[];
   learning: { title: string; description: string }[];
   skills: string[];
   careers: string;
   benefits: { title: string; description: string }[];
   syllabi: { label: string; href: string }[];
+  sourceUrl: string;
 }
 
-const syllabus = 'https://bcu.ac.in/uploads/syllabus';
+export interface EnrichmentCourse {
+  title: string;
+  category: string;
+  description: string;
+  partner?: string;
+}
+
+export const enrichmentCourses: EnrichmentCourse[] = [
+  {
+    title: 'Tally Prime with GST',
+    category: 'Accounting & Finance',
+    description: 'Practical accounting, inventory, voucher entry, and GST return filing skills for commerce and management students.',
+  },
+  {
+    title: 'Advanced Excel',
+    category: 'Data & Office Productivity',
+    description: 'Spreadsheet modelling, pivot tables, lookup functions, and business data analysis.',
+  },
+  {
+    title: 'Python',
+    category: 'Programming',
+    description: 'Foundational programming, problem-solving, and scripting skills for science, computer applications, and commerce learners.',
+  },
+  {
+    title: 'Employability and Soft Skill Training',
+    category: 'Career Readiness',
+    partner: 'Karnataka Skill Development Corporation (KSDC)',
+    description: 'Structured employability, workplace readiness, and soft-skills training in association with Karnataka Skill Development Corporation.',
+  },
+  {
+    title: 'Workshop on Tips and Tricks to Crack Competitive Exams',
+    category: 'Competitive Examinations',
+    description: 'Aptitude, reasoning, time-management, and examination strategy workshops for government and corporate selection tests.',
+  },
+  {
+    title: 'BFSI Training',
+    category: 'Banking, Financial Services & Insurance',
+    description: 'Domain-oriented training introducing banking operations, financial services, and insurance sector workflows.',
+  },
+  {
+    title: 'Training on Communication Skills',
+    category: 'Communication',
+    description: 'Focused sessions on spoken English, presentation skills, group discussion, and interview communication.',
+  },
+];
 
 export const courseDetails: Record<AvailableProgramme['id'], CourseDetails> = {
+  bsc: {
+    level: 'undergraduate',
+    summary: 'Physical sciences, life sciences, mathematics, biotechnology and computer science combinations.',
+    durationNote: 'Historical official scheme: 4 Years full-time as per NEP 2020 (CBCS / Semester scheme; verify current BCU admission intake structure with the college office).',
+    eligibility: '10+2 / II PUC (Science stream) or equivalent',
+    affiliation: 'Bengaluru City University',
+    introduction:
+      'The Bachelor of Science (B.Sc) programme at SJR College for Women offers four verified triple-subject combinations across physical, mathematical, biological, and computing sciences. The programme aims to build scientific temperament, analytical observation, and research readiness.',
+    overview:
+      'Students combine theoretical foundations with hands-on laboratory work in Physics, Chemistry, Botany, Biotechnology, Zoology, Mathematics, and Wi-Fi enabled Computer Science labs, alongside research projects and interdisciplinary open electives.',
+    combinations: [
+      {
+        code: 'PMCS',
+        title: 'Physics, Mathematics and Computer Science',
+        description:
+          'Integrates fundamental physics, analytical mathematics, and modern computing to prepare students for IT, electronics, aerospace, defence communications, and research.',
+        labs: ['Physics Laboratory', 'Mathematics Lab', 'Wi-Fi Enabled Computer Lab'],
+      },
+      {
+        code: 'PCM',
+        title: 'Physics, Chemistry and Mathematics',
+        description:
+          'Classical physical sciences combination building strong quantitative, experimental, and analytical problem-solving capabilities for industry, teaching, and research.',
+        labs: ['Physics Laboratory', 'Chemistry Laboratory', 'Mathematics Lab'],
+      },
+      {
+        code: 'CBBt',
+        title: 'Chemistry, Botany and Biotechnology',
+        description:
+          'Combines chemical sciences and plant biology with applied biotechnology, including exposure to radiochemistry, nanoscience, environmental & green chemistry, and food biotechnology.',
+        labs: ['Chemistry Laboratory', 'Botany Laboratory', 'Biotechnology Laboratory'],
+      },
+      {
+        code: 'CBZ',
+        title: 'Chemistry, Botany and Zoology',
+        description:
+          'Comprehensive life-sciences combination exploring chemical reactions, plant diversity, and animal biology for careers in research, pharmaceuticals, quality control, and biological sciences.',
+        labs: ['Chemistry Laboratory', 'Botany Laboratory', 'Zoology Laboratory'],
+      },
+    ],
+    learning: [
+      { title: 'Analytical & Experimental Science', description: 'Conduct laboratory experiments using analytical equipment, biological specimens, and computing tools.' },
+      { title: 'Mathematical & Computational Modelling', description: 'Solve mathematical problems manually and verify outputs using Mathematics Lab computing facilities.' },
+      { title: 'Biotechnology & Environmental Sciences', description: 'Explore radiochemistry, nanoscience, green chemistry, microbiology, and plant/animal sciences.' },
+      { title: 'Research Projects & Open Electives', description: 'Undertake research projects and electives such as Plants and Human Welfare, Chemistry in Daily Life, and Physics for All.' },
+    ],
+    skills: [
+      'Observation, analytical reasoning, and scientific problem-solving',
+      'Laboratory experimentation, instrumentation, and safety practices',
+      'Computational analysis and research project documentation',
+    ],
+    careers:
+      'Graduates pursue roles as research scientists, project assistants, quality control analysts, and professionals in IT, electronics, aerospace, defence communications, pharmaceuticals, aquaculture, food & agri-products, herbal and bio-processing units, microbiological labs, and teaching.',
+    benefits: [
+      { title: 'Dedicated Science & Computing Labs', description: 'Well-equipped Physics, Chemistry, Botany, Biotechnology, Mathematics, and Computer Science laboratories.' },
+      { title: 'Research & Academic Mentorship', description: 'Guided research projects, science exhibitions, seminars, and industrial/institutional visits.' },
+    ],
+    syllabi: [
+      { label: 'UG Courses Overview (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/ug-courses/' },
+      { label: 'SJRCW Syllabus Archive', href: 'https://www.sjrcw.edu.in/syllabus/' },
+    ],
+    sourceUrl: 'https://www.sjrcw.edu.in/ug-courses/',
+  },
   bcom: {
     level: 'undergraduate',
-    summary: 'Accounting, taxation and the financial decisions behind a business.',
-    introduction: 'Learn how businesses record transactions, report results and make financial decisions. B.Com provides an undergraduate foundation for students interested in accounting, finance and the rules that govern commercial activity.',
-    overview: 'The programme builds from financial accounting to corporate and cost accounting. Exercises in preparing accounts, calculating tax and reviewing business scenarios help students apply commercial concepts to practical questions.',
+    summary: 'Accounting, taxation, finance, business management and commercial regulation.',
+    durationNote: 'Historical official scheme: 4 Years full-time as per NEP 2020 (CBCS / Semester scheme; verify current BCU admission structure with the college office).',
+    eligibility: '10+2 / II PUC or equivalent',
+    affiliation: 'Bengaluru City University',
+    introduction:
+      'The Bachelor of Commerce (B.Com) programme provides comprehensive managerial, accounting, and organizational skills alongside a strong grounding in business principles, finance, taxation, human resources, marketing, and economics.',
+    overview:
+      'Students develop an understanding of financial concepts, corporate and management accounting, strategic and risk management, and taxation, supported by a functional Business Laboratory and industry-oriented add-on courses such as Tally Prime with GST and Advanced Excel.',
     learning: [
-      { title: 'Financial and corporate accounting', description: 'Record transactions, prepare accounts and interpret financial statements.' },
-      { title: 'Costs and financial management', description: 'Analyse business costs and examine financing and investment decisions.' },
-      { title: 'Taxation and audit', description: 'Work through income tax and GST concepts and examine the purpose of auditing.' },
-      { title: 'Business regulation and economics', description: 'Study commercial rules and use economic concepts to understand business decisions.' },
+      { title: 'Financial & Management Accounting', description: 'Master financial concepts, corporate reporting, and management accounting skills.' },
+      { title: 'Finance & Taxation', description: 'Develop advanced skills in finance, income tax, GST, and auditing.' },
+      { title: 'Strategic & Risk Management', description: 'Understand strategic business decisions, risk management, and commercial regulation.' },
+      { title: 'Business Lab & Add-On Courses', description: 'Apply commerce concepts in the Business Laboratory alongside Tally Prime with GST and BFSI training.' },
     ],
-    skills: ['Preparing and interpreting financial records', 'Analysing costs and financial information', 'Applying tax concepts to business transactions'],
-    careers: 'Explore junior roles in accounts, finance operations, banking, audit support or tax support. Further study may include M.Com or professional routes such as chartered accountancy or cost and management accountancy, each with separate entry and examination requirements.',
+    skills: [
+      'Financial accounting, taxation, and audit preparation',
+      'Strategic, risk, and management accounting analysis',
+      'Business communication and industry-standard spreadsheet tools',
+    ],
+    careers:
+      'Graduates find opportunities in Tax, Audit & Assurance, Practice Management, Business Valuation, Banking & Financial Services, Marketing, Sales, Organizational Advisory, IT Corporate Training, Teaching, and higher studies such as M.Com or CA/CMA.',
     benefits: [
-      { title: 'Understand the figures behind a business', description: 'Trace transactions through to the statements that managers, investors and lenders use.' },
-      { title: 'Build a broad commerce foundation', description: 'Study accounting alongside taxation and regulation before deciding where to deepen your expertise.' },
+      { title: 'Functional Business Laboratory', description: 'Hands-on exposure to commercial documents, banking workflows, and financial analysis.' },
+      { title: 'Career & Add-On Support', description: 'Integrated enrichment programmes including Tally Prime with GST, Advanced Excel, and Disha placement support.' },
     ],
-    syllabi: [{ label: 'B.Com Regular syllabus (PDF)', href: `${syllabus}/UG_Syllabus/commerce/B.Com_Regular_V_&_VI_Sem.pdf` }],
+    syllabi: [
+      { label: 'B.Com Course Page (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/bcom/' },
+      { label: 'UG Courses Overview (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/ug-courses/' },
+    ],
+    sourceUrl: 'https://www.sjrcw.edu.in/ug-courses/',
   },
   bba: {
     level: 'undergraduate',
-    summary: 'Management, marketing, people and entrepreneurship.',
-    introduction: 'BBA examines how organisations plan their work, serve customers and manage teams. It introduces the decisions that managers and entrepreneurs make when they bring people, resources and business goals together.',
-    overview: 'Students study management, marketing, human resources and entrepreneurship alongside accounting and market analysis. Case studies, discussion and applied exercises connect those subjects to decisions about customers, staffing and new ventures.',
+    summary: 'Management, finance, marketing, human resource management and entrepreneurship.',
+    durationNote: 'Historical official scheme: 4 Years full-time as per NEP 2020 (CBCS / Semester scheme; verify current BCU admission structure with the college office).',
+    eligibility: '10+2 / II PUC or equivalent',
+    affiliation: 'Bengaluru City University',
+    introduction:
+      'The Bachelor of Business Administration (BBA) programme is designed to help students relate their skills to real-world business needs and build a strong business outlook across Finance, Marketing, Human Resource Management (HRM), and Entrepreneurship.',
+    overview:
+      'Through classroom instruction, management forum activities ("Enable"), seminars, workshops, and industrial visits, students learn to apply theoretical management concepts to practical business situations while strengthening confidence and interpersonal skills.',
     learning: [
-      { title: 'Management and organisational behaviour', description: 'Examine how managers plan, structure work and lead teams through change.' },
-      { title: 'Marketing and market analysis', description: 'Analyse customer needs and consider how pricing, distribution and promotion shape demand.' },
-      { title: 'Human resource management', description: 'Explore recruitment, training, performance review and compensation.' },
-      { title: 'Entrepreneurship', description: 'Evaluate business ideas and consider the resources and plans needed to start a venture.' },
+      { title: 'Finance & Business Concepts', description: 'Build a solid understanding of financial concepts and core aspects of business operations.' },
+      { title: 'Marketing & Market Strategy', description: 'Examine customer behaviour, market dynamics, and product/brand positioning.' },
+      { title: 'Human Resource Management', description: 'Study people management, organizational behaviour, and workplace leadership.' },
+      { title: 'Entrepreneurship & Practical Activities', description: 'Apply theory to real-life business solutions through seminars, workshops, and forum activities.' },
     ],
-    skills: ['Analysing a business case and presenting a recommendation', 'Planning work and coordinating with a team', 'Evaluating markets and communicating a business idea'],
-    careers: 'Consider entry-level roles in operations, sales, marketing, recruitment or business development. The programme can also support plans for entrepreneurship or further study such as an MBA.',
+    skills: [
+      'Applying theoretical management concepts to real-life business solutions',
+      'Interpersonal communication, leadership, and presentation skills',
+      'Domain readiness in Finance, Marketing, HRM, and Entrepreneurship',
+    ],
+    careers:
+      'Skilled BBA graduates are prepared for roles such as Marketing Executive, General Administrator, Accounts Executive, Sales & Marketing Specialist, Organizational Advisor, IT Corporate Trainer, Entrepreneurship, or postgraduate study (MBA/M.Com).',
     benefits: [
-      { title: 'See how business functions connect', description: 'Understand how staffing, marketing and finance influence the same organisational decision.' },
-      { title: 'Practise making a case', description: 'Use evidence to weigh options and explain a recommendation to others.' },
+      { title: 'Enable Management Forum', description: 'Regular debates, business quizzes, case discussions, and management games build practical acumen.' },
+      { title: 'Industry-Aligned Enrichment', description: 'Supported by add-on courses in Advanced Excel, Soft Skills, and BFSI training.' },
     ],
-    syllabi: [{ label: 'BBA Regular syllabus (PDF)', href: `${syllabus}/UG_Syllabus/commerce/BBA_Regular_V_&_VI_Sem.pdf` }],
+    syllabi: [
+      { label: 'BBA Course Page (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/bba/' },
+      { label: 'UG Courses Overview (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/ug-courses/' },
+    ],
+    sourceUrl: 'https://www.sjrcw.edu.in/ug-courses/',
   },
   bca: {
     level: 'undergraduate',
-    summary: 'Programming, databases, web applications and software development.',
-    introduction: 'BCA is an undergraduate programme for students who want to understand how software is designed and built. It connects programming and data fundamentals to the development of applications people can use.',
-    overview: 'Students study algorithms, operating systems, databases and networks alongside programming and software engineering. The syllabus pairs theory with lab work and includes a project that brings development skills together.',
+    summary: 'Computer applications, programming, analytical skills and software ethics.',
+    durationNote: 'Historical official scheme: 4 Years full-time as per NEP 2020 (CBCS / Semester scheme; verify current BCU admission structure with the college office).',
+    eligibility: '10+2 / II PUC or equivalent',
+    affiliation: 'Bengaluru City University',
+    introduction:
+      'The Bachelor of Computer Applications (BCA) programme empowers women students with the knowledge, technical skills, and professional attitude required to develop competency in computer applications through a structured curriculum and active industry collaboration.',
+    overview:
+      'Combining innovative teaching-learning methods with modern laboratory tools and self-study, the programme strengthens programming, analytical, and logical skills while instilling interdisciplinary technology awareness, professional ethics, and teamwork.',
     learning: [
-      { title: 'Programming and data structures', description: 'Write and debug programs in C, Java and Python, and study how data structures and algorithms solve problems.' },
-      { title: 'Databases and SQL', description: 'Design relational tables, organise data and write queries to retrieve or update it.' },
-      { title: 'Web and software development', description: 'Study web programming, software requirements, design and testing.' },
-      { title: 'Systems and networks', description: 'Examine operating system concepts and how computers communicate across networks.' },
+      { title: 'Computational Knowledge', description: 'Apply computing, mathematical, and domain knowledge to identify and capture requirements of specific problems.' },
+      { title: 'Problem Investigation & Modern Tools', description: 'Conduct computing experiments, analyse and interpret data, and apply modern software tools effectively.' },
+      { title: 'Professional Ethics & Teamwork', description: 'Commit to cyber regulations, professional ethics, and effective individual and team leadership.' },
+      { title: 'Innovation & Continuous Upgradation', description: 'Engage in continuous technical certification (such as Python) and interdisciplinary innovation.' },
     ],
-    skills: ['Writing, testing and debugging code', 'Designing databases and querying structured data', 'Breaking a software problem into requirements and tasks'],
-    careers: 'Explore junior roles in software or web development, software testing, application support and IT operations. Further study can include an MCA or a related computing programme, subject to its admission requirements.',
+    skills: [
+      'Programming, logical reasoning, and analytical problem-solving',
+      'Modern software tool usage and experimental investigation',
+      'Teamwork, cyber ethics, and entrepreneurial technology thinking',
+    ],
+    careers:
+      'Graduates pursue careers in the IT industry (software development, testing, application support), teaching, research, and technology entrepreneurship, or advance to postgraduate programmes such as MCA and M.Sc.',
     benefits: [
-      { title: 'Connect theory with code', description: 'Use lab work to see how an algorithm, database design or web feature behaves in practice.' },
-      { title: 'Understand the full application', description: 'Learn how the interface, application logic and stored data work together.' },
+      { title: 'Wi-Fi Enabled Computer Lab & Techno-Vision Club', description: 'Hands-on coding, debugging competitions, technical seminars, and Industry 4.0 workshops.' },
+      { title: 'Placement Track Record', description: 'Active campus recruitment drives by IT employers and Q-Spiders Campus Connect.' },
     ],
     syllabi: [
-      { label: 'BCA Semesters I–II (PDF)', href: `${syllabus}/ug_sep/I_and_II_Sem_SEP_Syllabus/Science%20Faculty/BCA.pdf` },
-      { label: 'BCA Semesters III–IV (PDF)', href: `${syllabus}/ug_sep/III_and_IV_Sem_SEP_Syllabus/Science%20Faculty/BCA%20UG%20SEP%20-%20III%20&%20IV%20Sem.pdf` },
-      { label: 'BCA Semesters V–VI (PDF)', href: `${syllabus}/UG_Syllabus/bca/BCA-General-V-and-VI-Sem.pdf` },
+      { label: 'UG Courses Overview (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/ug-courses/' },
+      { label: 'Computer Science Department', href: 'https://www.sjrcw.edu.in/computer-science/' },
     ],
+    sourceUrl: 'https://www.sjrcw.edu.in/ug-courses/',
   },
   mcom: {
     level: 'postgraduate',
-    summary: 'Advanced commerce, financial analysis and business research.',
-    introduction: 'M.Com builds on prior study in commerce and related fields. It develops the analytical and research skills needed to examine financial information and evaluate decisions in more complex business settings.',
-    overview: 'Students examine commerce at an advanced level through accounting, finance, business strategy and research methodology. The university curriculum uses case analysis and research work to connect theory with evidence-based decisions.',
+    summary: '4-semester postgraduate commerce programme in Accounting & Taxation and Finance & Banking.',
+    durationNote: '2 Years (4 Semesters) under Choice Based Credit System (CBCS), Bengaluru City University.',
+    eligibility: 'B.Com / BBA or equivalent Commerce/Management undergraduate degree as per BCU norms',
+    affiliation: 'Bengaluru City University',
+    introduction:
+      'Established in 2013–14, the Master of Commerce (M.Com) department educates and trains women graduates in advanced business, accounting, finance, and research to meet national and global industry challenges with high ethical values.',
+    overview:
+      'The 4-semester CBCS programme offers specializations in Accounting & Taxation and Finance & Banking. With an annual intake of 40 students, the department conducts workshops on Research Methodology and Stock Markets, publishes the newsletter "Utkarsha", arranges final-semester industrial trips with industrial report preparation, and maintains a 100% pass record since 2014–15.',
     learning: [
-      { title: 'Advanced accounting and reporting', description: 'Interpret corporate reporting and examine the role of cost information in assessing performance.' },
-      { title: 'Finance and business strategy', description: 'Evaluate financial information in the context of business decisions and strategic priorities.' },
-      { title: 'Corporate taxation', description: 'Explore the principles behind corporate tax planning in the relevant university papers.' },
-      { title: 'Business research methods', description: 'Frame a research question, choose a study design, analyse evidence and report findings.' },
+      { title: 'Accounting and Taxation', description: 'Advanced corporate accounting, direct and indirect tax frameworks, and financial reporting.' },
+      { title: 'Finance and Banking', description: 'Corporate finance, financial markets, banking operations, and investment analysis.' },
+      { title: 'Research Methodology & Industrial Report', description: 'Research methodology workshops, brainstorming sessions, and final-semester industrial visits and reports.' },
+      { title: 'Value-Added Certifications', description: 'Skill certifications including Tally Prime and Python alongside personality development.' },
     ],
-    skills: ['Interpreting financial reports and evaluating business performance', 'Designing a study and analysing its evidence', 'Writing and presenting an evidence-based recommendation'],
-    careers: 'Potential pathways include financial analysis, accounting, banking, tax and business research. Students interested in teaching or academic research can pursue the relevant qualifying examinations or further research degrees.',
+    skills: [
+      'Advanced financial, tax, and banking analysis',
+      'Research methodology and industrial project reporting',
+      'Managerial decision-making and entrepreneurial leadership',
+    ],
+    careers:
+      'Graduates are equipped for careers in corporate accounting, taxation, banking, financial analysis, entrepreneurship, and academic teaching/research.',
     benefits: [
-      { title: 'Go deeper into commerce', description: 'Move from preparing financial information to evaluating what it means for an organisation.' },
-      { title: 'Develop research judgement', description: 'Learn to ask focused questions, select credible evidence and explain the limits of your conclusions.' },
+      { title: 'Consistent Academic Excellence', description: 'Documented 100% pass percentage since 2014–15 with 90%+ students passing with distinction (CGPA).' },
+      { title: 'Utkarsha Newsletter & Rank Honours', description: 'Student-faculty newsletter "Utkarsha" and departmental recognition of university toppers.' },
     ],
     syllabi: [
-      { label: 'M.Com General Semester I (PDF)', href: `${syllabus}/pg_syllabus/Commerce%20and%20Management%20Faculty/M.Com%20%5B%20General%5D%20Syllabus%20-%20I%20Sem.pdf` },
-      { label: 'M.Com General Semester II (PDF)', href: `${syllabus}/pg_syllabus/Commerce%20and%20Management%20Faculty/M.ComGeneralSyllabus%20-II%20Sem.pdf` },
-      { label: 'M.Com General Semesters III–IV (PDF)', href: `${syllabus}/pg_syllabus/V_VI_sem_sep26_27/M.Com_General_III_IV_Sem.pdf` },
+      { label: 'PG Courses Overview (sjrcw.edu.in)', href: 'https://www.sjrcw.edu.in/pg-courses/' },
+      { label: 'Annual Report 2023–24 (PDF)', href: '/documents/Annual-Report-23-24.pdf' },
     ],
+    sourceUrl: 'https://www.sjrcw.edu.in/pg-courses/',
   },
 };

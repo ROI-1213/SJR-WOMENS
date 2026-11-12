@@ -1,37 +1,100 @@
 export const placementSources = {
-  cell: 'https://sjrc.edu.in/placements/',
-  progression: 'https://sjrc.edu.in/wp-content/uploads/2023/06/SSR-2023-24.pdf#page=50',
-  jobFair: 'https://sjrc.edu.in/wp-content/uploads/2023/06/SSR-2023-24.pdf#page=70',
-  reports: 'https://sjrc.edu.in/wp-content/uploads/2024/02/Best-Practice-II-Documents.pdf',
-  disclosure: 'https://sjrc.edu.in/wp-content/uploads/2026/01/MANDATORY-DISCLOSURES-2025-26.pdf#page=10',
-  archive: 'https://sjrc.edu.in/wp-content/uploads/2023/05/Placement-report-2017-18.pdf#page=12',
+  cell: 'https://www.sjrcw.edu.in/placement/',
+  annualReport2324: '/documents/Annual-Report-23-24.pdf',
 } as const;
+
+export interface CampusDriveRecord {
+  date: string;
+  year: string;
+  title: string;
+  partner: string;
+  eligibility: string;
+  outcome?: string;
+  type: 'Campus Drive' | 'Training' | 'Job Fair';
+}
+
+export const dishaCampusDrives: readonly CampusDriveRecord[] = [
+  {
+    date: '3 August 2023',
+    year: '2023–24',
+    title: 'Placement Drive in Association with Magic Bus India Foundation',
+    partner: 'Tech Mahindra, Flipkart, Myntra & Paytm',
+    eligibility: 'Final-year UG students',
+    type: 'Campus Drive',
+  },
+  {
+    date: '4–9 December 2023',
+    year: '2023–24',
+    title: 'Employability & Soft Skills Training',
+    partner: 'Karnataka Skill Development Corporation (Nandi Foundation)',
+    eligibility: 'All final-year students',
+    type: 'Training',
+  },
+  {
+    date: '13 January 2024',
+    year: '2023–24',
+    title: 'Q-Spiders Campus Connect Drive (IT & Computing)',
+    partner: 'Q-Spiders Campus Connect',
+    eligibility: 'BCA and B.Sc (Computer Science) students',
+    outcome: '19 students placed',
+    type: 'Campus Drive',
+  },
+  {
+    date: '25 March 2024',
+    year: '2023–24',
+    title: 'Mock Interviews for Final-Year Students',
+    partner: 'Nandi Foundation',
+    eligibility: 'All final-year students',
+    type: 'Training',
+  },
+  {
+    date: '12 April 2024',
+    year: '2023–24',
+    title: 'Q-Spiders Campus Connect Drive (Commerce & Management)',
+    partner: 'Q-Spiders Campus Connect',
+    eligibility: 'B.Com and BBA students',
+    outcome: '20 students placed',
+    type: 'Campus Drive',
+  },
+  {
+    date: '11 May 2024',
+    year: '2023–24',
+    title: 'ICICI Prudential Life Insurance Campus Drive',
+    partner: 'ICICI Prudential Life Insurance',
+    eligibility: 'Final-year students',
+    type: 'Campus Drive',
+  },
+  {
+    date: '23 May 2024',
+    year: '2023–24',
+    title: 'Mega Job Fair',
+    partner: 'DBWH – Staffing & Payroll Solution',
+    eligibility: 'Graduating students',
+    type: 'Job Fair',
+  },
+];
 
 export const recruitmentHighlights = [
   {
-    value: '22',
-    label: 'SJRC students selected',
-    context: 'Infosys campus drive, January 2023',
-    href: `${placementSources.reports}#page=26`,
+    value: '19',
+    label: 'BCA & B.Sc (CS) students placed',
+    context: 'Q-Spiders Campus Connect, 13 Jan 2024',
+    href: placementSources.annualReport2324,
   },
   {
-    value: '115',
-    label: 'SJRC students shortlisted',
-    context: 'Mega Job Fair, 2022',
-    href: placementSources.jobFair,
+    value: '20',
+    label: 'B.Com & BBA students placed',
+    context: 'Q-Spiders Campus Connect, 12 Apr 2024',
+    href: placementSources.annualReport2324,
   },
   {
-    value: '39.97%',
-    label: 'Placed or entered higher education',
-    context: 'Combined NAAC measure, 2017–18 to 2021–22',
-    href: placementSources.progression,
+    value: '7',
+    label: 'Documented Disha drives & trainings',
+    context: 'Academic Year 2023–24 Annual Report',
+    href: placementSources.annualReport2324,
   },
 ] as const;
 
 export const progressionByYear = [
-  { year: '2021–22', outgoing: 142, progressed: 59 },
-  { year: '2020–21', outgoing: 158, progressed: 60 },
-  { year: '2019–20', outgoing: 140, progressed: 32 },
-  { year: '2018–19', outgoing: 144, progressed: 36 },
-  { year: '2017–18', outgoing: 89, progressed: 82 },
+  { year: '2023–24 (Drives)', outgoing: 39, progressed: 39 },
 ] as const;

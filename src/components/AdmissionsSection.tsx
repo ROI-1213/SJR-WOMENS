@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap, Laptop } from 'lucide-react';
+import { ArrowRight, Atom, Award, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap, Laptop } from 'lucide-react';
 import { availableProgrammes, naacGrade } from '@/data/institute';
 import { AdmissionDialog } from './AdmissionDialog';
 
 const programmeIcons = {
+  bsc: Atom,
   bcom: ChartNoAxesCombined,
   bba: BriefcaseBusiness,
   bca: Laptop,

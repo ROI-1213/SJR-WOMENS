@@ -19,6 +19,8 @@ import BangaloreCampus from "./pages/about/BangaloreCampus";
 import InstitutionMentor from "./pages/about/InstitutionMentor";
 import EducationSociety from "./pages/about/EducationSociety";
 import VillageAdoption from "./pages/about/VillageAdoption";
+import MilestonesPage from "./pages/about/MilestonesPage";
+import RtiPage from "./pages/RtiPage";
 
 // Academics Pages
 import AcademicsHome from "./pages/academics/AcademicsHome";
@@ -134,12 +136,17 @@ const App = () => (
           <Route path="/about/institution-mentor" element={<InstitutionMentor />} />
           <Route path="/about/society" element={<EducationSociety />} />
           <Route path="/about/principals-message" element={<PrincipalMessagePage />} />
+          <Route path="/principal-message" element={<PrincipalMessagePage />} />
           <Route path="/about/faculties" element={<Faculties />} />
+          <Route path="/faculty" element={<Faculties />} />
+          <Route path="/about/milestones" element={<MilestonesPage />} />
+          <Route path="/milestones" element={<MilestonesPage />} />
           <Route path="/about/campus" element={<BangaloreCampus />} />
           <Route path="/about/village-adoption" element={<VillageAdoption />} />
           
           {/* Academics Routes */}
           <Route path="/academics" element={<AcademicsHome />} />
+          <Route path="/courses" element={<AcademicsHome />} />
           <Route path="/departments" element={<DepartmentsOverview />} />
           <Route path="/academics/departments" element={<LegacyRedirect to="/departments" />} />
           {departmentsDropdownData.map(department => (
@@ -209,6 +216,7 @@ const App = () => (
           <Route path="/research/publications" element={<LegacyRedirect to={researchPages.publications.href} />} />
           
           {/* Placements Routes */}
+          <Route path="/placements" element={<PlacementsOverview />} />
           <Route path={placementPages.overview.href} element={<PlacementsOverview />} />
           <Route path={placementPages.brochure.href} element={<PlacementBrochure />} />
           <Route path={placementPages.director.href} element={<DirectorMessage />} />
@@ -233,9 +241,12 @@ const App = () => (
           <Route path={mediaCenterPages.video.href} element={<Videos />} />
 
           {/* Other Routes */}
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/naac" element={<NaacIqac />} />
           <Route path="/naac-iqac" element={<NaacIqac />} />
+          <Route path="/rti" element={<RtiPage />} />
           <Route path="/mandatory-disclosure" element={<DisclosurePage />} />
-          {mandatoryDisclosureMenuData.map(item => (
+          {mandatoryDisclosureMenuData.filter(item => item.href !== '/rti').map(item => (
             <Route key={item.href} path={item.href} element={<DisclosurePage item={item} />} />
           ))}
           <Route path="/sitemap" element={<Sitemap />} />

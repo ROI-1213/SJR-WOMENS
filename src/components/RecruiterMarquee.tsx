@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { ArrowUpRight, Pause, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import infosys from '@/assets/homepage/infosys.svg';
-import tcs from '@/assets/recruiter-tcs.jpg';
-import capgemini from '@/assets/homepage/capgemini.svg';
-import techMahindra from '@/assets/homepage/tech-mahindra.svg';
-import standardChartered from '@/assets/homepage/standard-chartered.svg';
-import iciciPrudential from '@/assets/homepage/icici-prudential.webp';
 
 const recruiters = [
-  { name: 'Infosys', logo: infosys },
-  { name: 'TCS', logo: tcs },
-  { name: 'Capgemini', logo: capgemini },
-  { name: 'Tech Mahindra', logo: techMahindra },
-  { name: 'Standard Chartered', logo: standardChartered },
-  { name: 'ICICI Prudential Life', logo: iciciPrudential, currentName: 'ICICI Life Insurance' },
+  { name: 'Infosys', logo: '/images/placements/infosys.jpg' },
+  { name: 'TCS', logo: '/images/placements/tcs.png' },
+  { name: 'Wipro', logo: '/images/placements/wipro.png' },
+  { name: 'Accenture', logo: '/images/placements/accenture.png' },
+  { name: 'Capgemini', logo: '/images/placements/capgemini.png' },
+  { name: 'Amazon', logo: '/images/placements/amazon.png' },
+  { name: 'DXC Technology', logo: '/images/placements/dxc.png' },
+  { name: 'SAP', logo: '/images/placements/sap.png' },
+  { name: 'Concentrix', logo: '/images/placements/concentrix.png' },
+  { name: 'SLK', logo: '/images/placements/slk.png' },
+  { name: 'UnitedHealth Group', logo: '/images/placements/unitedhealthgroup.jpg' },
+  { name: 'Q-Spiders', logo: '/images/placements/qspiders.jpg' },
 ];
 
 export const RecruiterMarquee = () => {
@@ -25,8 +25,8 @@ export const RecruiterMarquee = () => {
     <section aria-labelledby="recruiters-title" className="mt-6 border-t border-[#d2e0d4] pt-5 sm:mt-7">
       <div className="mb-3 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <div>
-          <h3 id="recruiters-title" className="home-section-title home-section-title--small">Our Top Recruiters</h3>
-          <p className="mt-2 text-sm text-[#43534a]">Employers listed in the college’s campus and off-campus placement records.</p>
+          <h3 id="recruiters-title" className="home-section-title home-section-title--small">Recruiting Partners</h3>
+          <p className="mt-2 text-sm text-[#43534a]">Recruiting partners published on SJR College for Women’s Placement Cell “Disha” page.</p>
         </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link to="/placements/companies" className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-[#185d40] underline underline-offset-4">
@@ -53,7 +53,6 @@ export const RecruiterMarquee = () => {
                   <img src={company.logo} alt="" decoding="async" className="h-9 w-full max-w-32 object-contain" />
                   <span className="text-center text-xs font-semibold text-[#43534a]">
                     {company.name}
-                    {company.currentName && <span className="sr-only">, now {company.currentName}</span>}
                   </span>
                 </li>
               ))}

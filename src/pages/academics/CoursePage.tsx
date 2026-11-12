@@ -1,10 +1,10 @@
-import { ArrowRight, ArrowUpRight, BarChart3, BriefcaseBusiness, Calculator, Check, Code2, FileText } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Atom, BarChart3, BriefcaseBusiness, Calculator, Check, Code2, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionPageLayout } from '@/components/layout/SectionPageLayout';
 import { courseDetails } from '@/data/courseDetails';
 import { programmeTitle, type AvailableProgramme } from '@/data/institute';
 
-const programmeIcons = { bcom: Calculator, bba: BriefcaseBusiness, bca: Code2, mcom: BarChart3 };
+const programmeIcons = { bsc: Atom, bcom: Calculator, bba: BriefcaseBusiness, bca: Code2, mcom: BarChart3 };
 const heading = 'text-2xl font-bold leading-tight text-[color:var(--section-heading-color)]';
 
 export default function CoursePage({ programme }: { programme: AvailableProgramme }) {
@@ -24,8 +24,33 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
           <section aria-labelledby="course-overview" className="rounded-xl border border-neutral-200 bg-[#177249]/5 p-5 sm:p-7">
             <h2 id="course-overview" className={heading}>Programme Overview</h2>
             <p className="mt-3 leading-relaxed text-neutral-700">{course.overview}</p>
+            <dl className="mt-4 space-y-2 border-t border-neutral-200 pt-4 text-sm text-neutral-700">
+              <div><dt className="inline font-semibold text-[#182d23]">Affiliation: </dt><dd className="inline">{course.affiliation}</dd></div>
+              <div><dt className="inline font-semibold text-[#182d23]">Eligibility: </dt><dd className="inline">{course.eligibility}</dd></div>
+              <div><dt className="inline font-semibold text-[#182d23]">Duration / Scheme: </dt><dd className="inline">{course.durationNote}</dd></div>
+            </dl>
           </section>
         </div>
+
+        {course.combinations && course.combinations.length > 0 && (
+          <section aria-labelledby="course-combinations">
+            <h2 id="course-combinations" className={heading}>Official Subject Combinations</h2>
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+              {course.combinations.map(combo => (
+                <li key={combo.code} className="rounded-xl border border-neutral-200 border-l-4 border-l-[#177249] bg-white p-5">
+                  <span className="inline-block rounded bg-[#eef4ef] px-2.5 py-0.5 text-xs font-bold text-[#177249]">{combo.code}</span>
+                  <h3 className="mt-2 text-lg font-bold text-[color:var(--section-heading-color)]">{combo.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-700">{combo.description}</p>
+                  {combo.labs && (
+                    <p className="mt-3 text-xs font-medium text-[#185d40]">
+                      Laboratories: {combo.labs.join(' · ')}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <section aria-labelledby="course-learning">
           <h2 id="course-learning" className={heading}>Key Learning Areas</h2>

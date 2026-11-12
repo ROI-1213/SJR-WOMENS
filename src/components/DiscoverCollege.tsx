@@ -2,9 +2,9 @@ import { ArrowUpRight, BookOpen, GraduationCap, Handshake, LibraryBig } from 'lu
 import { Link } from 'react-router-dom';
 
 const destinations = [
-  { name: 'Programmes', description: 'Explore degree programmes in commerce, business administration and computer applications.', href: '/academics', icon: GraduationCap },
-  { name: 'Library', description: 'Explore the reading rooms and resources that support independent study.', href: '/infrastructure/library', icon: LibraryBig },
-  { name: 'Student support', description: 'Find student services and learn where to go for guidance during college.', href: '/student-services/support', icon: Handshake },
+  { name: 'Programmes', description: 'Explore degree programmes in science, commerce, business administration and computer applications.', href: '/academics', icon: GraduationCap },
+  { name: 'Milestones', description: 'Trace the college’s journey from its founding in 1988 to four cycles of NAAC accreditation.', href: '/milestones', icon: LibraryBig },
+  { name: 'Right to Information', description: 'Access Section 4(1)(b) RTI disclosures, college timings and official documents.', href: '/rti', icon: Handshake },
 ];
 
 export const DiscoverCollege = () => (
@@ -21,8 +21,8 @@ export const DiscoverCollege = () => (
         <div className="flex min-h-36 flex-col justify-between rounded-lg bg-[#177249] p-5 text-white sm:p-6">
           <BookOpen size={23} aria-hidden="true" />
           <div className="mt-4">
-            <p className="home-display-title text-5xl leading-none">1945</p>
-            <p className="mt-2 text-sm text-green-50">Year the college was founded</p>
+            <p className="home-display-title text-5xl leading-none">1988</p>
+            <p className="mt-2 text-sm text-green-50">Year SJR College for Women was established</p>
           </div>
         </div>
         {destinations.map(({ name, description, href, icon: Icon }) => (

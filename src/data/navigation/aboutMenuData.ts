@@ -1,5 +1,6 @@
 export const aboutMenuData = [
   { label: 'Overview', href: '/about/overview' },
+  { label: 'Milestones', href: '/about/milestones' },
   { label: 'Vision & Mission', href: '/about/vision-mission' },
   { label: "Chief Patron's Message", href: '/about/chief-patrons-message' },
   { label: "President's Message", href: '/about/presidents-message' },

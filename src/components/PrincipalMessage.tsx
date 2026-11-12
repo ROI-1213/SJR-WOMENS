@@ -1,47 +1,123 @@
-import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, Languages } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import leadershipImage from '@/assets/homepage/academic-leadership.webp';
 import { principalCredentials, principalName } from '@/data/institute';
 
-const message = [
-  'A degree should teach students how to ask better questions, weigh evidence and put what they learn to work. We encourage students to participate actively in class, seek feedback from faculty and take responsibility for the quality of their work.',
-  'The habits students build here matter beyond exams. Working with others, listening carefully and following through on commitments are as important in college as they are in a career or in service to the community.',
-  'We welcome prospective students and families to learn about our programmes, visit the campus and speak with us about the support available during their time at the college.',
+const kannadaParagraphs = [
+  'ಶ್ರೀ ಜಗದ್ಗುರು ರೇಣುಕಾಚಾರ್ಯ ವಿದ್ಯಾಸಂಸ್ಥೆ 75 ವರ್ಷಗಳನ್ನು ಪೂರೈಸಿದ ವರ್ಷದಲ್ಲಿದೆ. ಇದರ ಅಂಗಸಂಸ್ಥೆಯಾದ ಎಸ್.ಜೆ.ಆರ್. ಮಹಿಳಾ ಕಾಲೇಜು ಸ್ಥಾಪನೆಗೊಂಡು ಈಗ 30 ವರ್ಷಗಳಿಗೆ ಕಾಲಿಟ್ಟಿದೆ. ಇಲ್ಲಿ ಪದವಿ ಪಡೆದ ಸಾವಿರಾರು ವಿದ್ಯಾರ್ಥಿನಿಯರು ಪ್ರಪಂಚದ ಮೂಲೆ ಮೂಲೆಗಳಲ್ಲಿ ಹಲವು ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತಿರುವುದು ವಿದ್ಯಾಲಯಕ್ಕೆ ಹೆಮ್ಮೆಯ ಸಂಗತಿ. ಆ ವಿದ್ಯಾರ್ಥಿನಿಯರು ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿನಿಯರ ಸಂಘ “ಅನುಬಂಧ”ದೊಡನೆ ಕಾಲೇಜಿನ ಸಂಪರ್ಕದಲ್ಲಿ ಇದ್ದಾರೆ.',
+  'ನಮ್ಮ ವಿದ್ಯಾರ್ಥಿನಿಯರು ಅಂತರರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದಲ್ಲಿ ಅನೇಕ ಬಹುಮಾನಗಳನ್ನು ಪ್ರತಿವರ್ಷ ಪಠ್ಯೇತರ ಚಟುವಟಿಕೆಗಳಲ್ಲಿ ಪಡೆಯುತ್ತಿರುವುದು, ರಾಷ್ಟ್ರೀಯ ಮಟ್ಟದ ವಿಚಾರ ಸಂಕಿರಣಗಳಲ್ಲಿ ಭಾಗವಹಿಸುವುದು, ವಿಶ್ವವಿದ್ಯಾಲಯದ ಪರೀಕ್ಷೆಯಲ್ಲಿ ಪ್ರತೀ ವರ್ಷ ಶೇ.90ಕ್ಕೂ ಹೆಚ್ಚು ಫಲಿತಾಂಶಗಳನ್ನು ಪಡೆದು ತೇರ್ಗಡೆ ಹೊಂದುವುದರ ಜೊತೆಗೆ ಹಲವು ವಿಷಯಗಳಲ್ಲಿ ಶೇ.100 ಅಂಕಗಳನ್ನು ಪಡೆದಿರುವ ನೂರಾರು ವಿದ್ಯಾರ್ಥಿನಿಯರು ಇದ್ದಾರೆ. ಈವರೆಗಿನ ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾಲಯದ ಪರೀಕ್ಷೆಯಲ್ಲಿ ನಮ್ಮ ಕಾಲೇಜಿಗೆ ನಾಲ್ಕು ರಾಂಕ್‌ಗಳು ಮತ್ತು ಹಲವು ಚಿನ್ನದ ಪದಕಗಳನ್ನು ನಮ್ಮ ವಿದ್ಯಾರ್ಥಿನಿಯರು ಪಡೆದಿದ್ದಾರೆ.',
+  'ಪ್ರತೀವರ್ಷ ಕ್ಯಾಂಪಸ್ ಆಯ್ಕೆಯಲ್ಲಿ ನೂರಕ್ಕೂ ಹೆಚ್ಚು ವಿದ್ಯಾರ್ಥಿನಿಯರು ಇನ್ಫೋಸಿಸ್, ವಿಪ್ರೋ, ಐಬಿಎಂ ಮತ್ತು ಅಕ್ಸೆಂಚರ್ ಮುಂತಾದ ಕಂಪನಿಗಳಿಗೆ ಆಯ್ಕೆಯಾಗುತ್ತಿರುತ್ತಾರೆ. ಸಾಂಸ್ಕೃತಿಕ ವೇದಿಕೆಯಿಂದ ವರ್ಷವಿಡೀ ವೈವಿಧ್ಯಮಯ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಹೆಣ್ಣು ಮಕ್ಕಳ ಪ್ರತಿಭೆಗೆ ಪ್ರೋತ್ಸಾಹ ನೀಡಲು ಆಯೋಜಿಸಲಾಗುತ್ತದೆ. ನೃತ್ಯ, ಗಾಯನ, ರಂಗೋಲಿ, ಕಂಸಾಳೆ, ವೀರಗಾಸೆ, ಮೆಹಂದಿ, ಮೇಕಪ್ ಮತ್ತು ಹೇರ್ ಸ್ಟೈಲ್ ಇತ್ಯಾದಿ ಸ್ಪರ್ಧೆಗಳಲ್ಲಿ ಅಂತರ ಕಾಲೇಜು ಮಟ್ಟದಲ್ಲಿ ಬಹುಮಾನ ವಿಜೇತರಾಗಿ ನಮ್ಮ ವಿದ್ಯಾರ್ಥಿನಿಯರು ಕಾಲೇಜಿಗೆ ಮೆರುಗು ನೀಡುತ್ತಾ ಬರುತ್ತಿದ್ದಾರೆ.',
+  'ಕಲಾ, ವಾಣಿಜ್ಯ ಮತ್ತು ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ವಿಭಾಗ ಮತ್ತು ವಿಜ್ಞಾನ ವಿಭಾಗಗಳು ಆಯಾ ವಿಭಾಗಕ್ಕೆ ತಕ್ಕಂತೆ ಗೋಷ್ಠಿ ವಿಚಾರ ಸಂಕಿರಣಗಳನ್ನು ಕಾಲಕಾಲಕ್ಕೆ ಆಯೋಜಿಸಿ ವಿದ್ಯಾರ್ಥಿನಿಯರ ಮಾನಸಿಕ ಬೆಳವಣಿಗೆಗೆ ಬೇಕಾದ ಎಲ್ಲಾ ಆದ್ಯತೆಗಳನ್ನು ನೀಡುತ್ತಾ ಬರುತ್ತಿದ್ದಾರೆ. ನುರಿತ ಪ್ರತಿಭಾವಂತ ಹಿರಿಯ ಬೋಧಕ ವೃಂದ ನಮ್ಮ ವಿದ್ಯಾಲಯದ ಹಿರಿಮೆಗಳಲ್ಲಿ ಒಂದು.',
+  'ವಿದ್ಯಾರ್ಥಿನಿಯರ ಸರ್ವತೋಮುಖ ಬೆಳವಣಿಗೆಗೆ ಬೇಕಾದ ವಿಶಾಲವಾದ ಸಭಾಂಗಣ, ವಾಚನಾಲಯ, ಗ್ರಂಥಾಲಯ, ಒಳ ಮತ್ತು ಹೊರಾಂಗಣ ಕ್ರೀಡಾ ಸೌಲಭ್ಯ, ಥ್ರೋಬಾಲ್, ವಾಲಿಬಾಲ್, ಖೋಖೋ ಕ್ರೀಡಾಂಗಣ, ಸುಸಜ್ಜಿತ ಪ್ರಯೋಗಾಲಯಗಳು – ಭೌತಶಾಸ್ತ್ರ, ರಸಾಯನಶಾಸ್ತ್ರ, ಸಸ್ಯಶಾಸ್ತ್ರ, ಜೈವಿಕ ತಂತ್ರಜ್ಞಾನ, ಮನಃಶಾಸ್ತ್ರ, ಕಂಪ್ಯೂಟರ್ ವಿಜ್ಞಾನದ ಪ್ರಯೋಗಾಲಯಗಳು ಆಧುನಿಕ ರೀತಿಯಲ್ಲಿ ಸುಸಜ್ಜಿತಗೊಂಡಿರುತ್ತವೆ. ಇದರ ಜೊತೆಗೆ ಭಾಷಾ ವಿಭಾಗದಲ್ಲಿ ಆಂಗ್ಲ ಭಾಷಾ ಪ್ರಯೋಗಾಲಯ, ವಾಣಿಜ್ಯ ವಿಭಾಗದಲ್ಲಿ ವ್ಯವಹಾರಿಕ ಪ್ರಯೋಗಾಲಯ, ವಿಶಾಲವಾದ ಕೊಠಡಿಗಳು, ಸೂಕ್ತ ಸೌಕರ್ಯಗಳು ಇಲ್ಲಿನ ಹೆಗ್ಗಳಿಕೆಗಳಾಗಿವೆ.',
 ];
 
-export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolean }) => (
-  <section aria-labelledby="leadership-title" className="bg-[#eef4ef] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
-    <div className="mx-auto max-w-[1284px]">
-      <h2 id="leadership-title" className="home-section-title mb-5 sm:mb-6">
-        {fullMessage ? 'From the Principal’s Office' : 'Leadership'}
-      </h2>
-      <article className="overflow-hidden rounded-xl border border-[#d8e5dc] bg-white md:grid md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-        <figure className="relative min-h-44 bg-[#183c2b] sm:min-h-56">
-          <img
-            src={leadershipImage}
-            alt="An academic office with a teak desk, books and a sunlit window"
-            width={1200}
-            height={900}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <figcaption className="absolute bottom-3 left-3 rounded bg-[#183c2b] px-2 py-1 text-xs text-white">AI-generated illustration</figcaption>
-        </figure>
-        <div className="p-5 sm:p-6 lg:p-8">
-          <p className="mb-2 text-sm font-semibold text-[#177249]">Principal</p>
-          <h3 className="home-display-title text-2xl leading-tight lg:text-[1.65rem]">{principalName}</h3>
-          <p className="mt-2 text-sm font-medium text-[#43534a]">{principalCredentials}</p>
-          <div className="mt-5 space-y-4 border-t border-[#d8e5dc] pt-5 leading-relaxed text-[#43534a]">
-            {(fullMessage ? message : message.slice(0, 1)).map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+const kannadaSignoff = 'ನಮ್ಮ ಕಾಲೇಜು ನಮ್ಮ ಹೆಮ್ಮೆ — ಡಾ. ಪ್ರೇಮ ಸಿದ್ಧರಾಜು, ಪ್ರಾಂಶುಪಾಲರು.';
+
+const englishTranslationParagraphs = [
+  'Sri Jagadguru Renukacharya Education Society has completed 75 years, and its constituent institution SJR College for Women has stepped into 30 years of service. It is a matter of pride that thousands of graduates from this college are working across diverse fields around the world and remain connected through the alumni association "Anubandha".',
+  'Our students regularly win prizes in co-curricular activities at international levels, participate in national seminars, achieve over 90% pass results in university examinations each year—with hundreds scoring 100 marks in individual subjects—and have earned four university ranks and several gold medals in Bangalore University examinations.',
+  'Every year, over a hundred students are selected through campus placements in companies such as Infosys, Wipro, IBM, and Accenture. Our cultural forum organizes diverse programmes throughout the year to encourage young women’s talents in dance, music, rangoli, kamsale, veeragase, mehendi, and inter-collegiate competitions.',
+  'The Arts, Commerce & Management, and Science departments regularly organize seminars and symposia tailored to their disciplines, supported by an experienced and dedicated senior teaching faculty.',
+  'For the holistic growth of students, the campus provides a spacious auditorium, reading room, library, indoor and outdoor sports facilities (throwball, volleyball, kho-kho), modern laboratories for Physics, Chemistry, Botany, Biotechnology, Psychology, and Computer Science, along with an English Language Lab and a Business Lab.',
+];
+
+export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolean }) => {
+  const [language, setLanguage] = useState<'kn' | 'en'>('kn');
+  const [expanded, setExpanded] = useState(fullMessage);
+
+  const activeParagraphs = language === 'kn' ? kannadaParagraphs : englishTranslationParagraphs;
+  const visibleParagraphs = expanded ? activeParagraphs : activeParagraphs.slice(0, 1);
+
+  return (
+    <section aria-labelledby="leadership-title" className="bg-[#eef4ef] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1284px]">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
+          <h2 id="leadership-title" className="home-section-title">
+            {fullMessage ? 'Principal’s Message' : 'Leadership'}
+          </h2>
+          <div className="inline-flex rounded-lg border border-[#d8e5dc] bg-white p-1" role="group" aria-label="Message language">
+            <button
+              type="button"
+              onClick={() => setLanguage('kn')}
+              className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
+                language === 'kn' ? 'bg-[#177249] text-white' : 'text-[#185d40] hover:bg-[#eef4ef]'
+              }`}
+            >
+              <Languages size={14} aria-hidden="true" />
+              ಕನ್ನಡ (Original)
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
+                language === 'en' ? 'bg-[#177249] text-white' : 'text-[#185d40] hover:bg-[#eef4ef]'
+              }`}
+            >
+              English Translation
+            </button>
           </div>
-          {!fullMessage && (
-            <Link to="/about/principals-message" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#185d40] underline underline-offset-4 hover:text-[#177249]">
-              Read the Principal’s message
-              <ArrowRight size={17} aria-hidden="true" />
-            </Link>
-          )}
         </div>
-      </article>
-    </div>
-  </section>
-);
+
+        <article className="overflow-hidden rounded-xl border border-[#d8e5dc] bg-white md:grid md:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+          <figure className="relative flex min-h-64 items-center justify-center bg-[#183c2b] p-6 sm:min-h-72">
+            <img
+              src="/images/principal/dr-prema-siddaraju.jpg"
+              alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
+              width={270}
+              height={270}
+              loading="lazy"
+              className="h-56 w-56 rounded-xl border-2 border-[#ff8c00]/80 object-cover shadow-lg sm:h-64 sm:w-64"
+            />
+            <figcaption className="absolute bottom-3 left-3 rounded bg-[#153b2a]/90 px-2.5 py-1 text-xs text-white">
+              {principalName} · {principalCredentials}
+            </figcaption>
+          </figure>
+          <div className="p-5 sm:p-6 lg:p-8">
+            <p className="mb-1 text-sm font-semibold text-[#177249]">Principal’s Message (Attributed on Official Site)</p>
+            <h3 className="home-display-title text-2xl leading-tight lg:text-[1.65rem]">{principalName}</h3>
+            <p className="mt-1 text-sm font-medium text-[#43534a]">{principalCredentials}</p>
+
+            {language === 'en' && (
+              <p className="mt-3 rounded-md bg-[#faf7ef] px-3 py-2 text-xs font-medium text-[#43534a] border border-[#e0ddce]">
+                English translation of the original Kannada message published on sjrcw.edu.in.
+              </p>
+            )}
+
+            <div
+              lang={language === 'kn' ? 'kn' : 'en'}
+              className="mt-5 space-y-4 border-t border-[#d8e5dc] pt-5 leading-relaxed text-[#43534a]"
+            >
+              {visibleParagraphs.map(paragraph => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {expanded && language === 'kn' && (
+                <p className="font-semibold text-[#182d23]">{kannadaSignoff}</p>
+              )}
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center gap-5">
+              {!fullMessage && (
+                <Link
+                  to="/about/principals-message"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#185d40] underline underline-offset-4 hover:text-[#177249]"
+                >
+                  Read full Principal’s message
+                  <ArrowRight size={17} aria-hidden="true" />
+                </Link>
+              )}
+              {!expanded && (
+                <button
+                  type="button"
+                  onClick={() => setExpanded(true)}
+                  className="text-sm font-semibold text-[#177249] underline underline-offset-4 hover:text-[#185d40]"
+                >
+                  Expand message here
+                </button>
+              )}
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+};

@@ -1,17 +1,16 @@
 import { ArrowUpRight, FileText, Globe, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { availableProgrammes, instituteContact, instituteName, naacGrade, naacResources } from '@/data/institute';
-import { researchPages } from '@/data/navigation/researchMenuData';
 
 const quickLinks = [
   { label: 'About Us', href: '/about/overview' },
-  { label: 'Admissions', href: '/admissions' },
-  { label: 'Academics', href: '/academics' },
-  { label: 'Campus Life', href: '/infrastructure/campus' },
-  { label: 'Library', href: '/infrastructure/library' },
-  { label: 'Research Publications', href: researchPages.publications.href },
-  { label: 'Placements', href: '/placements/overview' },
-  { label: 'Alumni Network', href: '/student-services/alumni' },
+  { label: 'Courses', href: '/courses' },
+  { label: 'Milestones', href: '/milestones' },
+  { label: 'Faculties', href: '/faculty' },
+  { label: 'NAAC & IQAC', href: '/naac' },
+  { label: 'Right to Information (RTI)', href: '/rti' },
+  { label: 'Placements (Disha)', href: '/placements' },
+  { label: 'Gallery', href: '/gallery' },
 ];
 
 const linkStyle = 'text-green-50/90 hover:text-white hover:underline underline-offset-4 focus-visible:underline';
@@ -27,7 +26,7 @@ export const Footer = ({ contactPhone }: { contactPhone?: string }) => (
             <img src="/branding/center.png" alt="" width={48} height={48} loading="lazy" className="h-12 w-12 shrink-0 object-contain" />
             <span>{instituteName}</span>
           </Link>
-          <p className="mt-3 max-w-xs text-xs leading-relaxed text-green-50/90">Established in 1945. Affiliated to Bengaluru City University.</p>
+          <p className="mt-3 max-w-xs text-xs leading-relaxed text-green-50/90">Established in 1988. Affiliated to Bengaluru City University.</p>
         </section>
 
         <nav aria-label="Academic Programmes" className="min-w-0 border-l border-white/15 pl-3 sm:pl-4 xl:px-5">
@@ -80,7 +79,7 @@ export const Footer = ({ contactPhone }: { contactPhone?: string }) => (
               {contactPhone ? <span>{contactPhone}</span> : <a href={instituteContact.phoneHref} className={linkStyle}>{instituteContact.phone}</a>}
             </p>
             <p className="flex gap-2"><Mail size={16} className={iconStyle} aria-hidden="true" /><a href={`mailto:${instituteContact.email}`} className={`min-w-0 break-words [overflow-wrap:anywhere] ${linkStyle}`}>{instituteContact.email}</a></p>
-            <p className="flex gap-2"><Globe size={16} className={iconStyle} aria-hidden="true" /><a href={instituteContact.website} className={linkStyle}>sjrc.edu.in</a></p>
+            <p className="flex gap-2"><Globe size={16} className={iconStyle} aria-hidden="true" /><a href={instituteContact.website} target="_blank" rel="noopener noreferrer" className={linkStyle}>sjrcw.edu.in</a></p>
           </address>
         </section>
       </div>

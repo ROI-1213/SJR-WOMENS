@@ -1,19 +1,257 @@
-import nikki from '@/assets/homepage/nikki-kumari.webp';
-import shubha from '@/assets/homepage/shubha-bg.webp';
-import sujatha from '@/assets/homepage/sujatha-naik.webp';
-import jayarama from '@/assets/homepage/jayarama-naik.webp';
-import vimala from '@/assets/homepage/vimala-bs.webp';
-import sumithra from '@/assets/homepage/sumithra-ks.webp';
+export interface FacultyMember {
+  name: string;
+  field: string;
+  designation: string;
+  qualification?: string;
+  programme: string;
+  image?: string;
+  detail: string;
+  source: string;
+}
 
-const facultyDisclosure = 'https://sjrc.edu.in/wp-content/uploads/2025/01/ANNEXURE-18-MANDATORY-DISCLOSURES.pdf';
-const annualReport2022 = 'https://sjrc.edu.in/wp-content/uploads/2023/03/Annual-Report-2021-22.pdf';
-const annualReport2023 = 'https://sjrc.edu.in/wp-content/uploads/2024/02/SJRC-Annual-Report-2022-23.pdf';
+const iqacPage = 'https://www.sjrcw.edu.in/iqac/';
+const annualReport2324 = '/documents/Annual-Report-23-24.pdf';
+const botanyPage = 'https://www.sjrcw.edu.in/botany/';
+const englishStaffSource = 'https://www.sjrcw.edu.in/principal-message/';
+const facultyDetailsPage = 'https://www.sjrcw.edu.in/faculty-details/';
 
-export const publishedFaculty = [
-  { name: 'Dr. Nikki Kumari', field: 'Management', designation: 'Management Studies faculty', programme: 'BBA', image: nikki, detail: 'Listed as permanent faculty for the Bachelor of Business Administration programme.', source: facultyDisclosure },
-  { name: 'Shubha B. G.', field: 'Computer Science', designation: 'Computer Applications faculty', programme: 'BCA', image: shubha, detail: 'Listed as permanent faculty for the Bachelor of Computer Applications programme. The college’s annual report records an M.Sc. qualification.', source: facultyDisclosure },
-  { name: 'Sujatha Naik', field: 'Computer Science', designation: 'Computer Applications faculty', programme: 'BCA', image: sujatha, detail: 'Listed as permanent faculty for the Bachelor of Computer Applications programme. The college’s annual report records an M.Tech. qualification.', source: facultyDisclosure },
-  { name: 'Jayarama Naik', field: 'Hindi', designation: 'Hindi faculty', programme: 'BBA', image: jayarama, detail: 'Listed as permanent faculty for Hindi in the Bachelor of Business Administration programme.', source: facultyDisclosure },
-  { name: 'Vimala B. S.', field: 'Commerce', designation: 'Lecturer in Commerce', programme: 'Commerce · 2022–23', image: vimala, detail: 'Listed as a lecturer in the Department of Commerce in the 2022–23 annual report. The report records B.Com and M.Com qualifications.', source: annualReport2023 },
-  { name: 'Sumithra K. S.', field: 'Commerce', designation: 'Assistant Professor, Commerce', programme: 'M.Com · 2021–22', image: sumithra, detail: 'Listed as an assistant professor in the M.Com faculty roster in the 2021–22 annual report, with M.Com and NET qualifications.', source: annualReport2022 },
+export const facultyDepartments = [
+  'All Faculty',
+  'Administration',
+  'Botany',
+  'Bio-Technology',
+  'Commerce',
+  'Management',
+  'Computer Science',
+  'Physics',
+  'Mathematics',
+  'English',
+  'Kannada',
+  'Hindi',
+  'Political Science',
+  'Psychology',
+  'Physical Education',
+  'Library',
+] as const;
+
+export const publishedFaculty: FacultyMember[] = [
+  {
+    name: 'Dr. Prema Siddaraju',
+    field: 'Administration',
+    designation: 'Principal & IQAC Chairman',
+    programme: 'Institution Head · Kannada',
+    image: '/images/principal/dr-prema-siddaraju.jpg',
+    detail: 'Head of Institution (SJR College for Women), IQAC Chairman, Chief Custodian (All Languages Unit), and BOS Member. Recipient of Janaspandana Ratna 2023.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Chandrakala S. (Chandrakala Shivakumar)',
+    field: 'Botany',
+    designation: 'Assistant Professor & Head of Department',
+    programme: 'B.Sc · Botany',
+    detail: 'Head of the Department of Botany; IQAC Faculty Member; BOS (NEP/SEP) and BOE Member in Botany (UG), Bengaluru City University.',
+    source: botanyPage,
+  },
+  {
+    name: 'Smt. Gayathri M. P.',
+    field: 'Botany',
+    designation: 'IQAC Co-ordinator & Lecturer',
+    programme: 'B.Sc · Botany',
+    detail: 'IQAC Co-ordinator and faculty member in the Department of Botany.',
+    source: iqacPage,
+  },
+  {
+    name: 'Dr. Roopa B.',
+    field: 'Botany',
+    designation: 'Faculty, Department of Botany',
+    programme: 'B.Sc · Botany',
+    detail: 'Published researcher in plant sciences (European Chemical Bulletin, 2023) and FDP participant in Research Methodology.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Dr. Jyothi E.',
+    field: 'Bio-Technology',
+    designation: 'Faculty, Department of Bio-Technology',
+    programme: 'B.Sc · Bio-Technology',
+    detail: 'IQAC Faculty Member, Assistant Custodian, BOE Member in Biotechnology (UG), BCU, and question paper setter.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Dr. Sujay Kumar S.',
+    field: 'Commerce',
+    designation: 'Faculty, Department of Commerce',
+    programme: 'B.Com / M.Com',
+    detail: 'IQAC Faculty Member representing the Department of Commerce.',
+    source: iqacPage,
+  },
+  {
+    name: 'Vidyashree C.',
+    field: 'Commerce',
+    designation: 'Faculty, Department of Commerce',
+    programme: 'B.Com / M.Com',
+    detail: 'Faculty member in the Department of Commerce; active in data analysis and commerce academic workshops.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Kavitha B. V.',
+    field: 'Commerce',
+    designation: 'Faculty, Department of Commerce',
+    programme: 'B.Com / M.Com',
+    detail: 'Faculty member in Commerce; served as inter-collegiate Commerce & Cultural fest judge (Aakarsh VVN 2023).',
+    source: annualReport2324,
+  },
+  {
+    name: 'Punith Kumar',
+    field: 'Commerce',
+    designation: 'Faculty, Department of Commerce',
+    programme: 'B.Com',
+    detail: 'Faculty member in Commerce; recipient of the Best Service Award from Seva Hastha Foundation (July 2023).',
+    source: annualReport2324,
+  },
+  {
+    name: 'Gurudath M. N.',
+    field: 'Management',
+    designation: 'Faculty & IQAC Co-ordinator (2022–23)',
+    programme: 'BBA · Management',
+    detail: 'Faculty member in Management, IQAC Co-ordinator (AQAR 2022–23), and Deputy Custodian for university examinations.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Bhuvaneshwari M. R.',
+    field: 'Computer Science',
+    designation: 'Faculty, Department of Computer Science',
+    programme: 'BCA / B.Sc (PMCS)',
+    detail: 'Faculty member in Computer Science; completed international FDP on Latest Trends and Techniques in Software Engineering (2024).',
+    source: annualReport2324,
+  },
+  {
+    name: 'Rekha Shirwalkar',
+    field: 'Computer Science',
+    designation: 'Faculty, Department of Computer Science',
+    programme: 'BCA / B.Sc (PMCS)',
+    detail: 'BOE Member for UG B.Sc Computer Science and B.Voc (IT) examinations at Bengaluru City University.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Rashmi A.',
+    field: 'Computer Science',
+    designation: 'Faculty, Department of Computer Science',
+    programme: 'BCA / B.Sc (PMCS)',
+    detail: 'IQAC Faculty Member and Question Paper Setter for B.Voc Computer Science (IT)–NEP at Bengaluru City University.',
+    source: iqacPage,
+  },
+  {
+    name: 'Dr. Manjula S. N.',
+    field: 'Physics',
+    designation: 'Faculty, Department of Physics',
+    programme: 'B.Sc · Physics',
+    detail: 'Member of BOS Physics (BCU), External BOE Member, published nanomaterials researcher, and IAPT workshop resource person.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Siddalingamma S. C.',
+    field: 'Physics',
+    designation: 'Faculty, Department of Physics',
+    programme: 'B.Sc · Physics',
+    detail: 'IQAC Faculty Member representing the Department of Physics.',
+    source: iqacPage,
+  },
+  {
+    name: 'Nagarathna V. R.',
+    field: 'Mathematics',
+    designation: 'Faculty, Department of Mathematics',
+    programme: 'B.Sc · Mathematics',
+    detail: 'Member of BOS for Mathematics (NEP & SEP) at Bengaluru City University and question paper setter.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Sindu H. K.',
+    field: 'English',
+    designation: 'Assistant Professor',
+    qualification: 'M.A., B.Ed.',
+    programme: 'Languages · English',
+    detail: 'Assistant Professor in the Department of English.',
+    source: englishStaffSource,
+  },
+  {
+    name: 'Saniya Sabahath',
+    field: 'English',
+    designation: 'Assistant Professor',
+    qualification: 'M.A.',
+    programme: 'Languages · English',
+    detail: 'Assistant Professor in the Department of English.',
+    source: englishStaffSource,
+  },
+  {
+    name: 'Dr. Roopa S.',
+    field: 'Kannada',
+    designation: 'Faculty, Department of Kannada',
+    programme: 'Languages · Kannada',
+    detail: 'BOE Member and question paper setter for Bengaluru City University and autonomous colleges.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Dr. Kavya M.',
+    field: 'Kannada',
+    designation: 'Faculty, Department of Kannada',
+    programme: 'Languages · Kannada',
+    detail: 'Published Kannada researcher on Vachana Sahitya (2023).',
+    source: annualReport2324,
+  },
+  {
+    name: 'Dr. Kusuma C. R.',
+    field: 'Kannada',
+    designation: 'Faculty, Department of Kannada',
+    programme: 'Languages · Kannada',
+    detail: 'Presented research paper at National Seminar on Sarvajna Tripadi, Davanagere University (2024).',
+    source: annualReport2324,
+  },
+  {
+    name: 'Dr. Vijayashree B. Gudi',
+    field: 'Hindi',
+    designation: 'Faculty, Department of Hindi',
+    programme: 'Languages · Hindi',
+    detail: 'Question Paper Setter for UG B.Sc & BBA at Bengaluru City University; recipient of Jan Spandana Ratna 2023.',
+    source: annualReport2324,
+  },
+  {
+    name: 'Mahalakshmi K.',
+    field: 'Political Science',
+    designation: 'Faculty, Department of Political Science',
+    programme: 'Humanities · Political Science',
+    detail: 'IQAC Faculty Member representing the Department of Political Science.',
+    source: iqacPage,
+  },
+  {
+    name: 'Sheena V. A.',
+    field: 'Psychology',
+    designation: 'Faculty, Department of Psychology',
+    programme: 'Humanities · Psychology',
+    detail: 'IQAC Faculty Member representing the Department of Psychology.',
+    source: iqacPage,
+  },
+  {
+    name: 'Dr. Paramma B. Kuruvatti',
+    field: 'Physical Education',
+    designation: 'Director of Physical Education',
+    programme: 'Sports & Physical Education',
+    detail: 'IQAC Faculty Member representing the Department of Physical Education.',
+    source: iqacPage,
+  },
+  {
+    name: 'Chandrakala T. R.',
+    field: 'Library',
+    designation: 'Librarian',
+    programme: 'Central Library',
+    detail: 'Librarian and IQAC Member overseeing the college library and e-resources.',
+    source: iqacPage,
+  },
+  {
+    name: 'Gayatri',
+    field: 'Botany',
+    designation: 'Lecturer',
+    programme: 'B.Sc · Botany',
+    detail: 'Listed as Lecturer in the Department of Botany on the official faculty details page.',
+    source: facultyDetailsPage,
+  },
 ];
