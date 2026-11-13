@@ -64,14 +64,14 @@ export const FacultySection = () => {
 
           <TabsContent value={filter} className="mt-0">
             <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
-              {profiles.map(profile => (
-                <li key={profile.name} className="min-w-0">
+              {profiles.map((profile, idx) => (
+                <li key={profile.name} className={`min-w-0 stagger-${(idx % 6) + 1}`}>
                   <Dialog>
                     <DialogTrigger asChild>
                       <button
                         type="button"
                         aria-label={`View profile for ${profile.name}`}
-                        className="academic-card group flex h-full w-full flex-col text-left shadow-xs transition-all duration-300 hover:border-[#143a29] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                        className="luxury-glass-card group flex h-full w-full flex-col text-left transition-all duration-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
                       >
                         <div className="aspect-[4/3] w-full shrink-0 overflow-hidden bg-[#eef4f0]">
                           {profile.image ? (

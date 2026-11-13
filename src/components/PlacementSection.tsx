@@ -54,10 +54,10 @@ export const PlacementSection = () => (
         
         {/* Services List: Formal White Cards */}
         <div className="space-y-3.5">
-          {careerServices.map(({ title, detail, icon: Icon, badge }) => (
+          {careerServices.map(({ title, detail, icon: Icon, badge }, idx) => (
             <div
               key={title}
-              className="academic-card flex items-start gap-4 p-5 shadow-xs transition-all duration-300 hover:border-[#143a29] hover:shadow-lg"
+              className={`luxury-glass-card flex items-start gap-4 p-5.5 transition-all duration-400 stagger-${idx + 1}`}
             >
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-[#c4dcce] bg-gradient-to-br from-[#edf4ef] to-[#dfede3] text-[#143a29] shadow-xs">
                 <Icon size={22} aria-hidden="true" />

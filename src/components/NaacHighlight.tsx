@@ -5,7 +5,7 @@ import { accreditation, naacGrade, naacResources } from '@/data/institute';
 export const NaacHighlight = () => (
   <section aria-labelledby="home-naac-title" className="bg-[#fcfbf7] px-5 home-section text-[#143a29] sm:px-8 lg:px-12 border-b border-[#e5dfce]">
     <div className="mx-auto max-w-[1284px]">
-      <div className="overflow-hidden rounded-2xl border-2 border-[#dcd6c5] bg-white shadow-xl md:grid md:grid-cols-[minmax(0,0.52fr)_minmax(0,1.48fr)]">
+      <div className="luxury-glass-card overflow-hidden border-2 border-[#dcd6c5] shadow-2xl md:grid md:grid-cols-[minmax(0,0.52fr)_minmax(0,1.48fr)]">
         
         {/* Left Plaque */}
         <div className="flex flex-col justify-between border-t-4 border-[#c28422] bg-gradient-to-br from-[#0c2619] via-[#133c28] to-[#081a11] p-7 text-white sm:p-9">

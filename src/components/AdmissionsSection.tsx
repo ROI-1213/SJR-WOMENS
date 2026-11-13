@@ -101,14 +101,14 @@ export const AdmissionsSection = () => {
             </div>
 
             <ul className="grid gap-3.5 sm:grid-cols-2">
-              {availableProgrammes.map(programme => {
+              {availableProgrammes.map((programme, idx) => {
                 const Icon = programmeIcons[programme.id];
                 const tag = programmeTags[programme.id] || 'Degree Programme';
                 return (
-                  <li key={programme.id} className="min-w-0">
+                  <li key={programme.id} className={`min-w-0 stagger-${(idx % 5) + 1}`}>
                     <Link
                       to={programme.href}
-                      className="group flex h-full flex-col justify-between rounded-xl border border-[#d6dfd8] bg-white p-4.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#143a29] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                      className="luxury-glass-card group flex h-full flex-col justify-between p-5 transition-all duration-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2">
@@ -160,7 +160,7 @@ export const AdmissionsSection = () => {
           <button
             type="button"
             onClick={() => setIsDialogOpen(true)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#dfa03e]/30 bg-[#143a29] px-6 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#1b4d37] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+            className="luxury-btn-shine inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#143a29] to-[#0d2a1c] px-6 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:scale-[1.02] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
           >
             <span>Apply Online for Admission</span>
             <ArrowRight size={16} className="text-[#dfa03e]" aria-hidden="true" />

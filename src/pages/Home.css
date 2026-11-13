@@ -1,6 +1,6 @@
 /* ==========================================================================
    Formal Academic Design System — SJR College for Women (Bengaluru)
-   Elevated Collegiate Aesthetic, Bespoke Section Styling & Micro-Animations
+   Cinematic Scroll Animations, Luxury Glassmorphism & Micro-Interactions
    ========================================================================== */
 
 :root {
@@ -19,8 +19,141 @@
 
 /* Base Spacing for Homepage Sections */
 .home-section {
-  padding-block: clamp(2.5rem, 5vw, 4.25rem);
+  padding-block: clamp(2.75rem, 5.5vw, 4.75rem);
   position: relative;
+}
+
+/* ==========================================================================
+   Cinematic Scroll-Triggered Reveal Engine
+   ========================================================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Directional & Scale Variants */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(20px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered Delay Helpers */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+.stagger-6 { transition-delay: 0.48s; }
+.stagger-7 { transition-delay: 0.56s; }
+
+/* ==========================================================================
+   Luxury Brand Glassmorphism & Soft Shadows
+   ========================================================================== */
+
+.luxury-glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(220, 230, 222, 0.85);
+  box-shadow: 0 8px 24px -4px rgba(11, 40, 27, 0.05),
+              0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-glass-card:hover {
+  transform: translateY(-6px) scale(1.008);
+  border-color: #c28422;
+  box-shadow: 0 20px 45px -10px rgba(11, 40, 27, 0.14),
+              0 8px 18px -4px rgba(194, 132, 34, 0.12);
+}
+
+.luxury-glass-dark {
+  background: rgba(8, 28, 18, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(223, 160, 62, 0.35);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-glass-dark:hover {
+  transform: translateY(-5px);
+  border-color: rgba(223, 160, 62, 0.7);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.55),
+              inset 0 1px 0 rgba(223, 160, 62, 0.3);
+}
+
+/* Button Shimmer Effect */
+.luxury-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-btn-shine:hover::after {
+  transform: translateX(100%);
 }
 
 /* Formal Collegiate Section Header */
@@ -86,7 +219,7 @@
   border: 1px solid #dce4dd;
   border-radius: 0.85rem;
   box-shadow: 0 2px 6px -1px rgba(16, 45, 32, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
 
@@ -103,9 +236,9 @@
 }
 
 .academic-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: #184833;
-  box-shadow: 0 14px 28px -6px rgba(16, 45, 32, 0.12), 0 6px 12px -3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 16px 32px -6px rgba(16, 45, 32, 0.12), 0 6px 14px -3px rgba(0, 0, 0, 0.05);
 }
 
 .academic-card:hover::before {
@@ -119,26 +252,20 @@
   background: linear-gradient(145deg, #0b281b 0%, #143a29 55%, #081d13 100%);
   border: 1.5px solid rgba(223, 160, 62, 0.45);
   box-shadow: 0 12px 30px -5px rgba(11, 40, 27, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: all 0.35s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .plaque-card:hover {
-  box-shadow: 0 18px 36px -6px rgba(11, 40, 27, 0.35), inset 0 1px 0 rgba(223, 160, 62, 0.4);
-  border-color: rgba(223, 160, 62, 0.7);
-  transform: translateY(-3px);
+  box-shadow: 0 20px 42px -6px rgba(11, 40, 27, 0.38), inset 0 1px 0 rgba(223, 160, 62, 0.4);
+  border-color: rgba(223, 160, 62, 0.75);
+  transform: translateY(-4px);
 }
 
 /* Gold Gleam Animation for Badges & Honors */
 @keyframes goldGleam {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .gold-badge {
@@ -152,18 +279,11 @@
 
 /* Course Pill Controls */
 .filter-pill {
-  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filter-pill:hover {
-  transform: translateY(-1px);
-}
-
-/* Subtle Academic Watermark Grid */
-.bg-academic-pattern {
-  background-color: #faf8f2;
-  background-image: radial-gradient(rgba(20, 58, 41, 0.06) 1px, transparent 0);
-  background-size: 24px 24px;
+  transform: translateY(-2px);
 }
 
 /* Recruiter Endless Marquee */
@@ -194,13 +314,13 @@
 
 .recruiter-tile {
   width: clamp(10.5rem, 19vw, 15rem);
-  transition: all 0.28s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .recruiter-tile:hover {
   border-color: #c28422;
-  box-shadow: 0 8px 20px -3px rgba(194, 132, 34, 0.16);
-  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -3px rgba(194, 132, 34, 0.18);
+  transform: translateY(-4px);
 }
 
 @keyframes recruiter-scroll {
@@ -215,7 +335,34 @@
   }
 }
 
+/* Mobile Touch & Performance Optimization */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    transform: translateY(16px);
+    transition-duration: 0.65s;
+  }
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(16px);
+  }
+  .reveal-scale {
+    transform: scale(0.97) translateY(12px);
+  }
+  .luxury-glass-card:hover {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   .recruiter-viewport {
     overflow-x: auto;
   }

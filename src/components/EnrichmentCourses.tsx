@@ -129,7 +129,7 @@ export const EnrichmentCourses = () => {
             return (
               <article
                 key={course.id}
-                className="academic-card flex h-full flex-col justify-between border border-[#dcd6c5] bg-white p-5 shadow-xs transition-all duration-300 hover:border-[#c28422] hover:shadow-xl"
+                className="luxury-glass-card flex h-full flex-col justify-between p-5.5 transition-all duration-400 hover:border-[#c28422]"
               >
                 <div>
                   {/* Card Top: Icon & Category Badge */}

@@ -73,7 +73,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
         </div>
 
         {/* Dignified Principal Profile & Message Card */}
-        <article className="overflow-hidden rounded-2xl border-2 border-[#dbe3dc] bg-white shadow-xl md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-cols-[420px_minmax(0,1fr)]">
+        <article className="luxury-glass-card overflow-hidden shadow-2xl md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-cols-[420px_minmax(0,1fr)]">
           {/* Big HD Square Portrait Column */}
           <figure className="relative aspect-square w-full overflow-hidden bg-[#0c2619] md:aspect-auto md:h-full">
             <img

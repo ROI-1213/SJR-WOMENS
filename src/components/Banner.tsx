@@ -77,6 +77,7 @@ export const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const images = useRef<(HTMLImageElement | null)[]>([]);
   const photoRequest = useRef(0);
   const activeSlide = campusSlides[activeIndex];
@@ -103,6 +104,21 @@ export const Banner = () => {
   };
 
   useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(Math.min(window.scrollY, 700));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const pauseForReducedMotion = (event: MediaQueryListEvent) => {
       if (event.matches) setIsPlaying(false);
@@ -126,10 +142,13 @@ export const Banner = () => {
   return (
     <section
       aria-labelledby="home-hero-title"
-      className="relative min-h-[600px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#071a10] text-white lg:min-h-[660px]"
+      className="relative min-h-[620px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#071a10] text-white lg:min-h-[680px]"
     >
-      {/* Background Rotating Images */}
-      <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
+      {/* Background Rotating Images with Parallax Shift */}
+      <div
+        className="absolute inset-0 z-0 h-full w-full overflow-hidden will-change-transform"
+        style={{ transform: `translate3d(0, ${scrollY * 0.22}px, 0)` }}
+      >
         {campusSlides.map((slide, index) => {
           const isSelected = index === activeIndex;
           return (
@@ -148,12 +167,19 @@ export const Banner = () => {
           );
         })}
 
+        {/* Ambient Radial Golden Glow Sphere */}
+        <div
+          className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-[#dfa03e]/10 blur-3xl"
+          style={{ transform: `translate3d(${scrollY * 0.1}px, ${scrollY * 0.05}px, 0)` }}
+          aria-hidden="true"
+        />
+
         {/* Cinematic Multi-Stop Gradient Scrim for Flawless Readability */}
         <div className="hero-scrim-desktop absolute inset-0 z-2" aria-hidden="true" />
       </div>
 
       {/* Hero Content Container */}
-      <div className="relative z-10 mx-auto flex min-h-[600px] max-w-[1380px] flex-col justify-between px-5 py-10 sm:px-8 sm:py-12 lg:min-h-[660px] lg:px-12 lg:py-14">
+      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-[1380px] flex-col justify-between px-5 py-10 sm:px-8 sm:py-12 lg:min-h-[680px] lg:px-12 lg:py-14">
         
         {/* Main Content Row */}
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12">
@@ -161,7 +187,7 @@ export const Banner = () => {
           {/* Left Column: Prestigious University Copy */}
           <div className="max-w-2xl">
             {/* Illuminated Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/50 bg-black/40 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#dfa03e] shadow-lg backdrop-blur-md sm:text-xs">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/50 bg-black/45 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#dfa03e] shadow-xl backdrop-blur-md sm:text-xs">
               <Sparkles size={14} className="text-[#dfa03e] animate-pulse" aria-hidden="true" />
               <span>Sri Jagadguru Renukacharya Education Society · Estd. 1945</span>
             </div>
@@ -169,7 +195,7 @@ export const Banner = () => {
             {/* Grand Headline */}
             <h1
               id="home-hero-title"
-              className="home-display-title mt-5 text-[clamp(2.4rem,4.8vw,4.5rem)] font-normal leading-[1.08] tracking-[-0.02em] text-white"
+              className="home-display-title mt-5 text-[clamp(2.45rem,4.9vw,4.6rem)] font-normal leading-[1.07] tracking-[-0.02em] text-white drop-shadow-md"
             >
               Empowering Women Through{' '}
               <span className="hero-gold-gradient block sm:inline">
@@ -186,16 +212,16 @@ export const Banner = () => {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/academics"
-                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#0c2619] shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
+                className="luxury-btn-shine group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#0c2619] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
               >
                 <span>Explore Degree Programmes</span>
-                <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(true)}
-                className="inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/40 bg-black/30 px-6 py-3.5 text-sm font-bold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-[#c28422]/20 hover:text-[#dfa03e] hover:scale-[1.02]"
+                className="luxury-btn-shine inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/40 bg-black/40 px-6 py-3.5 text-sm font-bold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-[#c28422]/25 hover:text-[#dfa03e] hover:scale-[1.03]"
               >
                 <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
                 <span>Admissions 2024–25</span>
@@ -204,8 +230,11 @@ export const Banner = () => {
           </div>
 
           {/* Right Column: Live Slide Showcase Pill & Controls */}
-          <div className="flex flex-col items-start justify-end lg:items-end">
-            <div className="w-full max-w-sm rounded-2xl border-2 border-white/20 bg-black/60 p-5 shadow-2xl backdrop-blur-xl ring-1 ring-white/10 sm:p-6">
+          <div
+            className="flex flex-col items-start justify-end lg:items-end will-change-transform"
+            style={{ transform: `translate3d(0, ${-scrollY * 0.08}px, 0)` }}
+          >
+            <div className="luxury-glass-dark w-full max-w-sm p-5 sm:p-6">
               
               {/* Header with Live Status Indicator */}
               <div className="flex items-center justify-between border-b border-white/15 pb-3">
@@ -306,15 +335,16 @@ export const Banner = () => {
 
         </div>
 
-        {/* Bottom Docked Institutional Metrics Bar */}
+        {/* Bottom Docked Institutional Metrics Bar with Luxury Hover Elevation */}
         <div className="mt-10 border-t border-white/15 pt-6 lg:mt-12">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-6">
-            {keyHighlights.map((item) => {
+            {keyHighlights.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.label}
-                  className="flex items-center gap-3 rounded-xl border border-white/15 bg-black/40 p-3.5 shadow-md backdrop-blur-md transition-all hover:border-[#dfa03e]/60 hover:bg-black/55 sm:p-4"
+                  className="luxury-glass-dark flex items-center gap-3 p-3.5 sm:p-4 hover:border-[#dfa03e]"
+                  style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#dfa03e]/40 bg-[#dfa03e]/15 text-[#dfa03e]">
                     <Icon size={20} aria-hidden="true" />

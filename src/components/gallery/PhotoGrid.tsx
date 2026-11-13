@@ -18,7 +18,7 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             type="button"
             aria-label={`Preview ${photo.title}`}
             onClick={() => onImageClick(index)}
-            className={`academic-card group relative flex h-full w-full overflow-hidden text-left transition-all duration-300 hover:border-[#c28422] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123625] ${
+            className={`luxury-glass-card group relative flex h-full w-full overflow-hidden text-left transition-all duration-400 hover:border-[#c28422] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123625] ${
               isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#0c2619] lg:aspect-auto' : 'items-center gap-4 bg-white p-3.5 hover:border-[#c28422]'
             }`}
           >

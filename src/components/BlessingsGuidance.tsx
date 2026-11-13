@@ -19,7 +19,7 @@ export const BlessingsGuidance = () => (
         </div>
       </div>
 
-      <article className="overflow-hidden rounded-2xl border-2 border-[#e0d8c3] bg-white shadow-lg md:grid md:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)] md:items-center">
+      <article className="luxury-glass-card overflow-hidden border-2 border-[#e0d8c3] shadow-xl md:grid md:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)] md:items-center">
         {/* Left Column: Framed Sacred Portrait */}
         <div className="flex flex-col items-center justify-center border-b border-[#e8e1cf] bg-gradient-to-b from-[#fbf8f0] to-[#f4ecd8] p-7 md:border-b-0 md:border-r md:p-8">
           <div className="relative rounded-2xl border-4 border-[#c28422]/70 bg-white p-2 shadow-md ring-2 ring-[#c28422]/30">

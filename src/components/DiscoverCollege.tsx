@@ -75,11 +75,11 @@ export const DiscoverCollege = () => (
         </div>
 
         {/* Dossier Cards */}
-        {destinations.map(({ name, description, href, icon: Icon, badge }) => (
+        {destinations.map(({ name, description, href, icon: Icon, badge }, idx) => (
           <Link
             key={href}
             to={href}
-            className="academic-card group flex min-h-52 flex-col justify-between p-6 shadow-xs transition-all duration-300 hover:border-[#143a29] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+            className={`luxury-glass-card group flex min-h-52 flex-col justify-between p-6 transition-all duration-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] stagger-${idx + 1}`}
           >
             <div>
               <div className="flex items-center justify-between">
