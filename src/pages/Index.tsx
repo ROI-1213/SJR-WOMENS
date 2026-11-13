@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Header } from '../components/Header';
 import { Banner } from '../components/Banner';
 import { AdmissionsSection } from '../components/AdmissionsSection';
+import { EnrichmentCourses } from '../components/EnrichmentCourses';
 import { BlessingsGuidance } from '../components/BlessingsGuidance';
 import { DiscoverCollege } from '../components/DiscoverCollege';
 import { JoinCommunity } from '../components/JoinCommunity';
@@ -40,6 +41,7 @@ const Index = () => {
         </div>
         <MarqueeStrip />
         <AdmissionsSection />
+        <EnrichmentCourses />
         <BlessingsGuidance />
         <DiscoverCollege />
         <JoinCommunity />
