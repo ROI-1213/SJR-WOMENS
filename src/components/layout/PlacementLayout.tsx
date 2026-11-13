@@ -9,10 +9,15 @@ interface PlacementLayoutProps {
   page: PlacementPageKey;
   related: readonly PlacementPageKey[];
   children: ReactNode;
+  customTitle?: string;
+  subtitle?: string;
+  breadcrumbPath?: string;
 }
 
-export const PlacementLayout = ({ page, related, children }: PlacementLayoutProps) => {
-  const title = page === 'photos' ? 'Placement Photos' : placementPages[page].label;
+export const PlacementLayout = ({ page, related, children, customTitle, subtitle, breadcrumbPath }: PlacementLayoutProps) => {
+  const defaultTitle = page === 'photos' ? 'Placement Photos' : placementPages[page].label;
+  const title = customTitle || defaultTitle;
+  const breadcrumb = breadcrumbPath || defaultTitle;
 
   useEffect(() => {
     const previousTitle = document.title;
@@ -23,8 +28,9 @@ export const PlacementLayout = ({ page, related, children }: PlacementLayoutProp
   return (
     <SectionPageLayout
       pageTitle={title}
-      breadcrumbPath={title}
-      section={{ label: 'Placements', href: placementPages.overview.href }}
+      subtitle={subtitle}
+      breadcrumbPath={breadcrumb}
+      section={{ label: 'Placement', href: placementPages.overview.href }}
       brandedBreadcrumb
       showFloatingApply={false}
     >

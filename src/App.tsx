@@ -216,6 +216,7 @@ const App = () => (
           <Route path="/research/publications" element={<LegacyRedirect to={researchPages.publications.href} />} />
           
           {/* Placements Routes */}
+          <Route path="/placement" element={<PlacementsOverview />} />
           <Route path="/placements" element={<PlacementsOverview />} />
           <Route path={placementPages.overview.href} element={<PlacementsOverview />} />
           <Route path={placementPages.brochure.href} element={<PlacementBrochure />} />

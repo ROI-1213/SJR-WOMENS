@@ -18,6 +18,7 @@ import {
 interface SectionPageLayoutProps {
   children: React.ReactNode;
   pageTitle: string;
+  subtitle?: string;
   breadcrumbPath: string;
   section: { label: string; href: string };
   showFloatingApply?: boolean;
@@ -28,6 +29,7 @@ interface SectionPageLayoutProps {
 export const SectionPageLayout: React.FC<SectionPageLayoutProps> = ({ 
   children, 
   pageTitle, 
+  subtitle,
   breadcrumbPath,
   section,
   showFloatingApply = true,
@@ -35,6 +37,9 @@ export const SectionPageLayout: React.FC<SectionPageLayoutProps> = ({
   contactPhone,
 }) => {
   const breadcrumbLink = brandedBreadcrumb ? 'text-[#177249] hover:underline' : 'text-logo-navy hover:text-logo-blue';
+  const isDirectSection =
+    section.label.toLowerCase() === breadcrumbPath.toLowerCase() ||
+    (section.label.toLowerCase().startsWith('placement') && breadcrumbPath.toLowerCase().startsWith('placement'));
 
   return (
     <LanguageProvider>
@@ -52,12 +57,16 @@ export const SectionPageLayout: React.FC<SectionPageLayoutProps> = ({
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild className={breadcrumbLink}>
-                    <Link to={section.href}>{section.label}</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
+                {!isDirectSection && (
+                  <>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink asChild className={breadcrumbLink}>
+                        <Link to={section.href}>{section.label}</Link>
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                  </>
+                )}
                 <BreadcrumbItem>
                   <BreadcrumbPage className={`font-medium ${brandedBreadcrumb ? 'text-neutral-800' : 'text-logo-navy-dark'}`}>
                     {breadcrumbPath}
@@ -71,10 +80,15 @@ export const SectionPageLayout: React.FC<SectionPageLayoutProps> = ({
         {/* Page Hero Section */}
         <div className="internal-page-hero">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-bold mb-2 animate-fade-in-up">
               {pageTitle}
             </h1>
-            <div className="w-24 h-1 bg-white mx-auto rounded-full animate-scale-in animate-delay-200"></div>
+            {subtitle && (
+              <p className="text-lg md:text-xl font-medium text-[#dfa03e] mb-3">
+                {subtitle}
+              </p>
+            )}
+            <div className="w-24 h-1 bg-[#c28422] mx-auto rounded-full animate-scale-in animate-delay-200"></div>
           </div>
         </div>
 
