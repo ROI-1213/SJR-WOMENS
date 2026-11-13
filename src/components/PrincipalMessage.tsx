@@ -74,22 +74,20 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
         </div>
 
         {/* Dignified Principal Profile & Message Card */}
-        <article className="overflow-hidden rounded-xl border border-[#dce4dd] bg-white shadow-sm md:grid md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)]">
-          <figure className="relative flex min-h-64 flex-col items-center justify-center border-b border-[#dce4dd] bg-gradient-to-br from-[#123625] to-[#184530] p-6 sm:min-h-72 md:border-b-0 md:border-r">
-            <div className="relative rounded-2xl border-2 border-[#dfa03e]/70 p-1.5 shadow-md">
-              <img
-                src="/images/principal/dr-prema-siddaraju.jpg"
-                alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
-                width={270}
-                height={270}
-                loading="lazy"
-                className="h-52 w-52 rounded-xl object-cover sm:h-60 sm:w-60"
-              />
+        <article className="overflow-hidden rounded-xl border border-[#dce4dd] bg-white shadow-sm md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-cols-[400px_minmax(0,1fr)]">
+          <figure className="relative aspect-square w-full overflow-hidden bg-[#123625] md:aspect-auto md:h-full">
+            <img
+              src="/images/principal/dr-prema-siddaraju.jpg"
+              alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
+              width={853}
+              height={853}
+              loading="lazy"
+              className="h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-5 text-white sm:p-6">
+              <p className="font-serif text-xl font-bold leading-tight text-white sm:text-2xl">{principalName}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#dfa03e]">{principalCredentials}</p>
             </div>
-            <figcaption className="mt-3 text-center">
-              <p className="font-bold text-white">{principalName}</p>
-              <p className="text-xs text-[#dfa03e]">{principalCredentials}</p>
-            </figcaption>
           </figure>
 
           <div className="p-6 sm:p-8 lg:p-10">
