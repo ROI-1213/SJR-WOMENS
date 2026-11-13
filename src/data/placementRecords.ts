@@ -1,6 +1,11 @@
 export const placementSources = {
   cell: 'https://www.sjrcw.edu.in/placement/',
   annualReport2324: '/documents/Annual-Report-23-24.pdf',
+  reports: '/documents/Annual-Report-23-24.pdf',
+  disclosure: '/documents/MANDATORY-DISCLOSURES-2025-26.pdf',
+  progression: '/documents/SSR-2023-24.pdf',
+  archive: '/documents/AQAR-22-23-Report.pdf',
+  jobFair: '/documents/Annual-Report-23-24.pdf',
 } as const;
 
 export interface CampusDriveRecord {
