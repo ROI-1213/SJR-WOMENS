@@ -144,7 +144,7 @@ export const EnrichmentCourses = () => {
 
                   {/* Title */}
                   <h3 className="mt-4 text-base font-bold text-[#143a29] transition-colors group-hover:text-[#185e3c]">
-                    {course.title}
+                    {course.displayTitle || course.officialTitle}
                   </h3>
 
                   {/* Short Description */}
@@ -156,7 +156,7 @@ export const EnrichmentCourses = () => {
                   <div className="mt-4 border-t border-[#f0ece1] pt-3">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6528]">Key Highlights</p>
                     <ul className="mt-1.5 space-y-1">
-                      {course.highlights.slice(0, 3).map((item) => (
+                      {(course.learningHighlights || []).slice(0, 3).map((item) => (
                         <li key={item} className="flex items-center gap-1.5 text-xs text-[#3b4e42]">
                           <CheckCircle2 size={12} className="text-[#143a29] shrink-0" />
                           <span className="truncate">{item}</span>
