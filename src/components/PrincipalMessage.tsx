@@ -28,42 +28,46 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
   const visibleParagraphs = expanded ? activeParagraphs : activeParagraphs.slice(0, 2);
 
   return (
-    <section aria-labelledby="leadership-title" className="border-b border-[#dde5de] bg-[#f9f8f4] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+    <section
+      aria-labelledby="leadership-title"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+    >
       <div className="mx-auto max-w-[1284px]">
-        {/* Section Title & Language Switcher */}
-        <div className="mb-7 flex flex-wrap items-center justify-between gap-4">
+        {/* Header */}
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <span className="home-section-eyebrow">
-              Institutional Leadership
-            </span>
-            <h2 id="leadership-title" className="home-section-title mt-1.5">
+            <div className="flex items-center gap-2">
+              <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
+              <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSTITUTIONAL LEADERSHIP</span>
+            </div>
+            <h2 id="leadership-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
               {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
             </h2>
           </div>
 
           <div
-            className="inline-flex rounded-xl border border-[#d2dcd3] bg-white p-1.5 shadow-sm"
+            className="inline-flex rounded-xl border border-[#d2dcd3] bg-white p-1 shadow-2xs"
             role="group"
             aria-label="Message language"
           >
             <button
               type="button"
               onClick={() => setLanguage('kn')}
-              className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+              className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'kn'
-                  ? 'bg-[#143a29] text-white shadow-sm ring-1 ring-[#c28422]'
+                  ? 'bg-[#143a29] text-white shadow-xs ring-1 ring-[#c28422]'
                   : 'text-[#185d40] hover:bg-[#eef4ef]'
               }`}
             >
-              <Languages size={14} aria-hidden="true" />
+              <Languages size={13} aria-hidden="true" />
               ಕನ್ನಡ (Original)
             </button>
             <button
               type="button"
               onClick={() => setLanguage('en')}
-              className={`rounded-lg px-4 py-2 text-xs font-bold transition-all ${
+              className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'en'
-                  ? 'bg-[#143a29] text-white shadow-sm ring-1 ring-[#c28422]'
+                  ? 'bg-[#143a29] text-white shadow-xs ring-1 ring-[#c28422]'
                   : 'text-[#185d40] hover:bg-[#eef4ef]'
               }`}
             >
@@ -72,10 +76,10 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
           </div>
         </div>
 
-        {/* Dignified Principal Profile & Message Card */}
-        <article className="luxury-glass-card overflow-hidden shadow-2xl md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-cols-[420px_minmax(0,1fr)]">
+        {/* Executive Portrait & Address Dossier */}
+        <article className="luxury-glass-card overflow-hidden shadow-xl md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:grid-cols-[400px_minmax(0,1fr)]">
           {/* Big HD Square Portrait Column */}
-          <figure className="relative aspect-square w-full overflow-hidden bg-[#0c2619] md:aspect-auto md:h-full">
+          <figure className="relative aspect-square w-full overflow-hidden bg-[#0a2316] md:aspect-auto md:h-full">
             <img
               src="/images/principal/dr-prema-siddaraju.jpg"
               alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
@@ -89,7 +93,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               Principal’s Desk
             </div>
 
-            {/* Bottom Name & Credentials Banner */}
+            {/* Bottom Credentials Scrim */}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-6 text-white">
               <p className="font-serif text-2xl font-bold leading-tight text-white">{principalName}</p>
               <p className="mt-1 text-xs font-bold uppercase tracking-wider text-[#dfa03e]">{principalCredentials}</p>
@@ -104,23 +108,23 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
                   Authentic Institutional Address
                 </span>
-                <h3 className="home-display-title mt-0.5 text-2xl font-normal leading-tight text-[#102d20] lg:text-[1.75rem]">
+                <h3 className="mt-0.5 font-serif text-2xl font-bold leading-tight text-[#143a29]">
                   {principalName}
                 </h3>
               </div>
-              <span className="rounded-full bg-[#fbf5e6] px-3 py-1 text-xs font-bold text-[#8b6528]">
+              <span className="rounded-full border border-[#dcd6c5] bg-[#faf6ee] px-3 py-1 text-xs font-bold text-[#8b6528]">
                 {language === 'kn' ? 'ಮೂಲ ಸಂದೇಶ' : 'Official Translation'}
               </span>
             </div>
 
             {/* Inspiring Pull-Quote */}
-            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold italic text-[#143a29]">
+            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold italic text-[#143a29] shadow-2xs">
               <Quote className="inline-block mr-1.5 size-4 text-[#c28422]" aria-hidden="true" />
               {language === 'kn' ? '“ನಮ್ಮ ಕಾಲೇಜು ನಮ್ಮ ಹೆಮ್ಮೆ” — ಡಾ. ಪ್ರೇಮ ಸಿದ್ಧರಾಜು' : '“Our College, Our Pride” — Dr. Prema Siddaraju'}
             </div>
 
             {/* Address Paragraphs */}
-            <div className="space-y-4 text-sm leading-relaxed text-[#384c40] sm:text-[0.95rem]">
+            <div className="space-y-4 text-xs leading-relaxed text-[#384c40] sm:text-sm">
               {visibleParagraphs.map((paragraph, index) => (
                 <p key={index} className="leading-relaxed">
                   {paragraph}
@@ -134,13 +138,13 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <button
                   type="button"
                   onClick={() => setExpanded(!expanded)}
-                  className="group inline-flex items-center gap-2 rounded-lg border border-[#c28422]/50 bg-[#faf6ee] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#935e12] transition-all hover:bg-[#c28422] hover:text-white"
+                  className="luxury-btn-shine group inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#143a29] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-[#1a4a33] hover:text-[#dfa03e]"
                 >
                   <span>{expanded ? 'Show Brief Message' : 'Read Complete Address (5 Paragraphs)'}</span>
                   {expanded ? (
-                    <ChevronUp size={16} aria-hidden="true" />
+                    <ChevronUp size={15} aria-hidden="true" />
                   ) : (
-                    <ChevronDown size={16} className="transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+                    <ChevronDown size={15} className="transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
                   )}
                 </button>
 

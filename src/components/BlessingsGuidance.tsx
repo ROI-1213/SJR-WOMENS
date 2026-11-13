@@ -3,71 +3,77 @@ import { Link } from 'react-router-dom';
 import chiefPatron from '@/assets/homepage/chief-patron.webp';
 
 export const BlessingsGuidance = () => (
-  <section aria-labelledby="blessings-title" className="border-b border-[#e5dfce] bg-[#fdfbf7] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+  <section
+    aria-labelledby="blessings-title"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+  >
     <div className="mx-auto max-w-[1284px]">
-      <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+      {/* Section Header */}
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
         <div>
-          <span className="home-section-eyebrow">
-            Inspirational Leadership
-          </span>
-          <h2 id="blessings-title" className="home-section-title mt-1.5">
+          <div className="flex items-center gap-2">
+            <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
+            <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSPIRATIONAL LEADERSHIP</span>
+          </div>
+          <h2 id="blessings-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
             Blessings &amp; Guidance
           </h2>
-          <p className="mt-1 text-sm text-[#54685b]">
-            Guiding principles and spiritual blessings of the founders and patron of Sri Jagadguru Renukacharya Education Society.
+          <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
+            Guiding principles and spiritual benediction of the founders and patron of Sri Jagadguru Renukacharya Education Society.
           </p>
         </div>
       </div>
 
-      <article className="luxury-glass-card overflow-hidden border-2 border-[#e0d8c3] shadow-xl md:grid md:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)] md:items-center">
+      {/* Formal Ornate Card */}
+      <article className="ornate-patron-card md:grid md:grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] md:items-center">
         {/* Left Column: Framed Sacred Portrait */}
-        <div className="flex flex-col items-center justify-center border-b border-[#e8e1cf] bg-gradient-to-b from-[#fbf8f0] to-[#f4ecd8] p-7 md:border-b-0 md:border-r md:p-8">
-          <div className="relative rounded-2xl border-4 border-[#c28422]/70 bg-white p-2 shadow-md ring-2 ring-[#c28422]/30">
+        <div className="flex flex-col items-center justify-center border-b border-[#e8e1cf] bg-gradient-to-b from-[#fbf8f0] to-[#f4ecd8] p-8 md:border-b-0 md:border-r md:p-10">
+          <div className="patron-portrait-frame">
             <img
               src={chiefPatron}
               alt="Poojya Sri Rambhapuri Jagadgurugalu"
               width={720}
               height={911}
               loading="lazy"
-              className="w-full max-w-48 rounded-xl object-cover shadow-sm sm:max-w-56"
+              className="w-full max-w-44 rounded-lg object-cover shadow-sm sm:max-w-52"
             />
           </div>
-          <div className="mt-3.5 text-center">
-            <span className="inline-block rounded-full border border-[#c28422]/50 bg-[#c28422]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#935e12]">
+          <div className="mt-4 text-center">
+            <span className="inline-block rounded-full border border-[#c28422]/60 bg-[#c28422]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#8b6528]">
               Permanent Chief Patron
             </span>
           </div>
         </div>
 
         {/* Right Column: Benediction Address */}
-        <div className="p-7 sm:p-9 lg:p-10">
-          <div className="inline-flex items-center gap-1.5 rounded-md border border-[#c28422]/30 bg-[#faf6ee] px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider text-[#935e12]">
-            <Sparkles size={13} className="text-[#c28422]" aria-hidden="true" />
+        <div className="p-7 sm:p-9 lg:p-11">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-[#c28422]/40 bg-[#faf6ee] px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#8b6528]">
+            <Sparkles size={12} className="text-[#c28422]" aria-hidden="true" />
             <span>Patron’s Benediction</span>
           </div>
 
-          <h3 className="home-display-title mt-3 text-2xl font-normal leading-tight text-[#102d20] lg:text-[1.85rem]">
+          <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-[#143a29] sm:text-3xl">
             Poojya Sri Rambhapuri Jagadgurugalu
           </h3>
           <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#73634c]">
             Srimad Rambhapuri Veerasimhasanaadeeshwara, Sri Sri Sri 1008 Jagadguru Prasanna Renuka Veera Someshwara Rajadeshikendra Shivacharya Mahaswamigalu, Balehonnuru
           </p>
 
-          <p className="mt-4 text-sm leading-relaxed text-[#43534a]">
+          <p className="mt-4 text-xs leading-relaxed text-[#43534a] sm:text-sm">
             In his message, the Chief Patron reflects on the Society’s dedicated service to education since 1945. He emphasises knowledge, discipline and character, welcoming new approaches to learning grounded in the Society’s rich cultural heritage.
           </p>
 
-          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#fbf8f0] to-[#f8f5eb] py-4 pl-5 pr-4 text-base italic leading-relaxed text-[#143a29] shadow-xs">
-            <Quote className="mb-1 inline-block size-4 text-[#c28422] opacity-75" aria-hidden="true" />
+          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#faf6ed] to-[#f4ede0] py-4 pl-5 pr-4 text-sm font-medium italic leading-relaxed text-[#143a29] shadow-xs sm:text-base">
+            <Quote className="mb-1 mr-1.5 inline-block size-4 text-[#c28422] opacity-80" aria-hidden="true" />
             “I pray that the students, faculty, and management continue to be guided by wisdom and righteousness in all their endeavours.”
           </blockquote>
 
           <Link
             to="/about/chief-patrons-message"
-            className="group inline-flex items-center gap-2 text-sm font-bold text-[#143a29] transition-colors hover:text-[#c28422]"
+            className="luxury-btn-shine inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#143a29] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#1a4a33] hover:text-[#dfa03e]"
           >
-            <span className="underline decoration-[#c28422] underline-offset-4">Read Chief Patron’s Full Message</span>
-            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 text-[#c28422]" aria-hidden="true" />
+            <span>Read Chief Patron’s Full Message</span>
+            <ArrowRight size={14} className="text-[#dfa03e] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
       </article>
