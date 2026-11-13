@@ -10,10 +10,10 @@ export const FloatingApplyButton = ({ inline = false }: { inline?: boolean }) =>
           ? 'rounded-md'
           : 'fixed bottom-[max(5rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-40 rounded-full md:bottom-6 md:right-22'
       }`}
-      aria-label="Apply for Admission 2024–25"
+      aria-label="Apply for Admission 2026–27"
     >
       <GraduationCap size={19} className="text-[#dfa03e]" aria-hidden="true" />
-      <span className="font-medium">Admissions 2024–25</span>
+      <span className="font-medium">Admissions 2026–27</span>
     </Link>
   );
 };

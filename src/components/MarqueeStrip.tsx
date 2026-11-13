@@ -16,7 +16,7 @@ export const MarqueeStrip = () => {
         to="/admissions/online-application"
         className="font-bold text-[#dfa03e] underline decoration-[#dfa03e]/70 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
       >
-        Admissions Open for Academic Year 2024–25 — Apply Online
+        Admissions Open for Academic Year 2026–27 — Apply Online
       </Link>
       <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
     </span>

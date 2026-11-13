@@ -224,7 +224,7 @@ export const Banner = () => {
                 className="luxury-btn-shine inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/40 bg-black/40 px-6 py-3.5 text-sm font-bold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-[#c28422]/25 hover:text-[#dfa03e] hover:scale-[1.03]"
               >
                 <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
-                <span>Admissions 2024–25</span>
+                <span>Admissions 2026–27</span>
               </button>
             </div>
           </div>

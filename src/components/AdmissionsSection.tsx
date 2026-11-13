@@ -296,7 +296,7 @@ export const AdmissionsSection = () => {
               <GraduationCap size={22} />
             </span>
             <div>
-              <p className="text-base font-bold text-[#143a29]">Admissions Open for Academic Session 2024–25</p>
+              <p className="text-base font-bold text-[#143a29]">Admissions Open for Academic Session 2026–27</p>
               <p className="mt-0.5 text-xs text-[#52645a]">
                 Direct counselling, merit scholarships, and offline application guidance available at our Rajajinagar campus.
               </p>

@@ -9,7 +9,7 @@ export const NewsAnnouncements = () => {
   const news = [
     {
       type: 'Admission',
-      title: 'Admissions Open for Academic Year 2024-25',
+      title: 'Admissions Open for Academic Year 2026-27',
       description: 'Applications are now being accepted for all undergraduate programs. Early bird discount available until March 31st.',
       date: '2024-03-15',
       urgent: true
