@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { GalleryHeader } from './gallery/GalleryHeader';
 import { PhotoGrid } from './gallery/PhotoGrid';
@@ -29,7 +28,7 @@ export const Gallery = () => {
   };
 
   return (
-    <section aria-labelledby="campus-gallery-title" className="bg-[#edf4ee] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+    <section aria-labelledby="campus-gallery-title" className="bg-[#fbfaf6] px-5 home-section text-[#182d23] sm:px-8 lg:px-12 border-b border-[#dde5de]">
       <div className="mx-auto max-w-[1284px]">
         <GalleryHeader viewMode={viewMode} setViewMode={setViewMode} />
         <PhotoGrid photos={photos} viewMode={viewMode} onImageClick={openLightbox} />

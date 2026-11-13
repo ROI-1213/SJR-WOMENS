@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Pause, Play, Landmark } from 'lucide-react';
-import { FloatingApplyButton } from './FloatingApplyButton';
+import { ArrowRight, Pause, Play, Landmark, Award, ShieldCheck, Sparkles } from 'lucide-react';
 import './Banner.css';
 
 const campusPhotos = [
@@ -47,7 +46,7 @@ export const Banner = () => {
       await image.decode();
       if (request === photoRequest.current) setActiveIndex(index);
     } catch {
-      // Keep the last usable image if the next one fails to load.
+      // Keep the last usable image if decoding fails
     }
   }, []);
 
@@ -73,125 +72,175 @@ export const Banner = () => {
   }, [activeIndex, isPlaying, selectPhoto]);
 
   return (
-    <section aria-labelledby="home-hero-title" className="border-b border-[#e1e6e1] bg-[#fbfaf6]">
-      <div className="mx-auto grid max-w-[1380px] items-stretch gap-6 px-5 py-7 sm:px-8 md:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] md:gap-8 md:py-8 lg:gap-12 lg:px-12 lg:py-10 xl:gap-14">
-        {/* Left Hero Panel */}
-        <div
-          data-hero-panel="content"
-          className="relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#23583e] bg-gradient-to-br from-[#123625] via-[#16432f] to-[#0e2c1e] p-6 shadow-md sm:p-8 lg:p-10"
-        >
-          {/* Subtle collegiate watermark */}
-          <Landmark className="pointer-events-none absolute -bottom-10 -right-8 h-64 w-64 text-white/[0.04]" strokeWidth={0.7} aria-hidden="true" />
-
-          <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#dfa03e] sm:mb-5">
-            <span className="h-0.5 w-7 bg-gradient-to-r from-[#dfa03e] to-[#c28422]" aria-hidden="true" />
-            <span>Undergraduate &amp; Postgraduate Study</span>
-          </div>
-
-          <h1
-            id="home-hero-title"
-            className="home-display-title text-[clamp(2.15rem,4.4vw,4.15rem)] font-normal leading-[1.05] tracking-[-0.02em] text-white"
+    <section aria-labelledby="home-hero-title" className="border-b border-[#e1e6e1] bg-gradient-to-b from-[#fbfaf6] to-[#f4f1ea] py-6 sm:py-8 lg:py-10">
+      <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
+        <div className="grid items-stretch gap-6 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] md:gap-8 lg:gap-10">
+          
+          {/* Left Hero Panel: Formal Academic Dossier */}
+          <div
+            data-hero-panel="content"
+            className="relative flex min-w-0 flex-col justify-between overflow-hidden rounded-2xl border-2 border-[#1e4d36] bg-gradient-to-br from-[#0c2619] via-[#133c28] to-[#081a11] p-7 shadow-xl text-white sm:p-9 lg:p-11"
           >
-            <span className="home-hero-gold">Science, Arts</span>{' '}
-            <span className="block">&amp; Commerce</span>
-          </h1>
+            {/* Watermark Crest */}
+            <Landmark
+              className="pointer-events-none absolute -bottom-10 -right-8 h-72 w-72 text-white/[0.04]"
+              strokeWidth={0.7}
+              aria-hidden="true"
+            />
 
-          <p className="mt-4 max-w-md text-base leading-relaxed text-white/90 sm:text-[1.05rem] lg:mt-5">
-            Dedicated to empowering women through value-based higher education, holistic personal development, and academic excellence at our Rajajinagar campus in Bengaluru.
-          </p>
+            <div>
+              {/* Prestigious Eyebrow Pill */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#c28422]/50 bg-[#c28422]/15 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[#dfa03e] shadow-sm">
+                <Sparkles size={13} className="text-[#dfa03e]" aria-hidden="true" />
+                <span>Undergraduate &amp; Postgraduate Study</span>
+              </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3 lg:mt-8">
-            <Link
-              to="/academics"
-              className="inline-flex min-h-11 items-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-[#143a29] shadow-sm transition-all hover:bg-[#faf7ee] hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Academic Programmes
-              <ArrowRight size={17} aria-hidden="true" />
-            </Link>
-            <FloatingApplyButton inline />
-          </div>
+              {/* Main Headline */}
+              <h1
+                id="home-hero-title"
+                className="home-display-title mt-5 text-[clamp(2.35rem,4.5vw,4.25rem)] font-normal leading-[1.06] tracking-[-0.02em] text-white"
+              >
+                <span className="bg-gradient-to-r from-[#e7b65e] via-[#f7d88c] to-[#c28422] bg-clip-text text-transparent">
+                  Science, Arts
+                </span>{' '}
+                <span className="block">&amp; Commerce</span>
+              </h1>
 
-          <div className="mt-auto pt-8">
-            <div className="border-t border-white/15 pt-4">
-              <p className="home-display-title text-xl leading-tight text-white/95 sm:text-2xl">
-                “In Pursuit of Excellence”
+              {/* Formal Editorial Description */}
+              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/90 sm:text-[1.05rem]">
+                Dedicated to empowering women through value-based higher education, holistic personal development, and academic excellence at our Rajajinagar campus in Bengaluru.
               </p>
-              <p className="mt-1 text-xs uppercase tracking-wider text-[#dfa03e]">
-                Affiliated to Bengaluru City University · NAAC Accredited
-              </p>
+
+              {/* CTA Action Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
+                <Link
+                  to="/academics"
+                  className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] to-[#c28422] px-6 py-3 text-sm font-bold text-[#0c2619] shadow-lg transition-all duration-300 hover:from-[#eec068] hover:to-[#d0912c] hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
+                >
+                  <span>Academic Programmes</span>
+                  <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+
+                <Link
+                  to="/admissions"
+                  className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-white/15 hover:text-[#dfa03e] hover:-translate-y-0.5"
+                >
+                  <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
+                  <span>Admissions 2024–25</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bottom Motto & Affiliation Ribbon */}
+            <div className="mt-8 border-t border-white/15 pt-5">
+              <div className="flex flex-wrap items-center justify-between gap-y-2 text-xs">
+                <div>
+                  <p className="font-serif text-lg italic text-[#e7b65e]">“In Pursuit of Excellence”</p>
+                  <p className="mt-0.5 font-medium uppercase tracking-wider text-white/70">
+                    Affiliated to Bengaluru City University · NAAC Accredited
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] text-[#dfa03e]">
+                  <ShieldCheck size={14} />
+                  <span>Est. 1988</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Photo Carousel Panel */}
-        <div
-          data-hero-panel="photos"
-          className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#dce4dd] bg-white shadow-sm"
-        >
-          <figure
-            id="home-hero-photo"
-            className="relative isolate aspect-[4/3] overflow-hidden bg-[#123625] sm:aspect-[16/10] md:aspect-auto md:min-h-80 md:flex-1 lg:min-h-96"
+          {/* Right Hero Panel: Architectural Visual Showcase */}
+          <div
+            data-hero-panel="gallery"
+            className="flex min-w-0 flex-col overflow-hidden rounded-2xl border-2 border-[#d9e2db] bg-white p-3 shadow-xl lg:p-4"
           >
-            {campusPhotos.map((photo, index) => (
-              <img
-                key={photo.label}
-                ref={image => { images.current[index] = image; }}
-                src={photo.small}
-                srcSet={`${photo.small} 800w, ${photo.large} 1440w`}
-                sizes="(min-width: 1380px) 710px, (min-width: 768px) 53vw, 94vw"
-                width={1440}
-                height={960}
-                alt={photo.alt}
-                aria-hidden={index !== activeIndex}
-                fetchPriority={index === 0 ? 'high' : 'low'}
-                className="home-hero-photo absolute inset-0 h-full w-full object-cover object-center"
-              />
-            ))}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-[#0e2c1e]/90 via-[#0e2c1e]/20 to-transparent" />
-            <figcaption
-              aria-live={isPlaying ? 'off' : 'polite'}
-              className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5"
-            >
-              <span className="mb-1 inline-block rounded bg-[#c28422] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
-                Official Campus View
-              </span>
-              <p className="text-sm font-semibold text-white drop-shadow-sm sm:text-base">
-                {activePhoto.caption}
-              </p>
-            </figcaption>
-          </figure>
+            {/* Viewport Frame */}
+            <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-[#0c2619] shadow-inner sm:aspect-[16/10]">
+              {campusPhotos.map((photo, index) => {
+                const isSelected = index === activeIndex;
+                return (
+                  <img
+                    key={photo.label}
+                    ref={(node) => {
+                      images.current[index] = node;
+                    }}
+                    src={photo.large}
+                    alt={photo.alt}
+                    aria-hidden={!isSelected}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    className={`home-hero-photo absolute inset-0 h-full w-full object-cover object-center ${
+                      isSelected ? 'z-10 opacity-100 scale-100' : 'pointer-events-none z-0 opacity-0 scale-105'
+                    }`}
+                  />
+                );
+              })}
 
-          {/* Carousel Thumbnail Navigation */}
-          <div role="group" aria-label="Campus photos" className="grid grid-cols-[repeat(3,minmax(0,1fr))_auto] items-center gap-1.5 border-t border-[#e2e8e2] bg-[#fbfcfb] p-2 sm:gap-2">
-            {campusPhotos.map((photo, index) => (
+              {/* Top Status Badge */}
+              <div className="absolute left-3.5 top-3.5 z-20 flex items-center gap-2 rounded-full border border-black/30 bg-black/60 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#dfa03e] backdrop-blur-md">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+                <span>Official Campus View</span>
+              </div>
+
+              {/* Bottom Caption Overlay */}
+              <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-4 text-white sm:p-5">
+                <p className="font-serif text-lg font-normal leading-snug text-white sm:text-xl">
+                  {activePhoto.caption}
+                </p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#dfa03e]">
+                  SJR College for Women · Bengaluru
+                </p>
+              </div>
+            </div>
+
+            {/* Thumbnail Navigation Bar */}
+            <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#edf2ee] pt-3">
+              <div className="grid flex-1 grid-cols-3 gap-2">
+                {campusPhotos.map((photo, index) => {
+                  const isSelected = index === activeIndex;
+                  return (
+                    <button
+                      key={photo.label}
+                      type="button"
+                      aria-pressed={isSelected}
+                      onClick={() => void selectPhoto(index)}
+                      className={`group flex items-center gap-2 rounded-lg border p-1.5 text-left transition-all duration-300 ${
+                        isSelected
+                          ? 'border-[#c28422] bg-[#fbf8f0] shadow-sm ring-1 ring-[#c28422]'
+                          : 'border-[#e4ebe5] bg-[#fafbf9] hover:border-[#143a29] hover:bg-white'
+                      }`}
+                    >
+                      <img
+                        src={photo.preview}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-9 w-9 shrink-0 rounded-md object-cover"
+                      />
+                      <span className="min-w-0">
+                        <span className={`block truncate text-xs font-bold ${isSelected ? 'text-[#143a29]' : 'text-[#485c51]'}`}>
+                          {photo.label}
+                        </span>
+                        <span className="hidden text-[10px] text-[#8c9c92] sm:block">
+                          {index === 0 ? 'Campus' : index === 1 ? 'Central Lib' : 'Computer Lab'}
+                        </span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Play/Pause Button */}
               <button
-                key={photo.label}
                 type="button"
-                aria-controls="home-hero-photo"
-                aria-pressed={index === activeIndex}
-                onClick={() => void selectPhoto(index)}
-                className="flex min-h-11 min-w-0 items-center justify-center gap-2 rounded-md border border-transparent px-2 py-1.5 text-center text-xs font-semibold leading-snug text-[#43534a] transition-all hover:bg-[#eef4f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] aria-pressed:border-[#c2dbca] aria-pressed:bg-[#e6f0e9] aria-pressed:text-[#123625] lg:justify-start lg:text-left lg:text-sm"
+                aria-label={isPlaying ? 'Pause campus photo rotation' : 'Play campus photo rotation'}
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#d6dfd8] bg-white text-[#143a29] shadow-sm transition-colors hover:bg-[#edf4ee] hover:text-[#0c2619]"
               >
-                <img
-                  src={photo.preview}
-                  alt=""
-                  width={144}
-                  height={96}
-                  className="hidden h-7 w-11 shrink-0 rounded border border-neutral-300 object-cover lg:block"
-                />
-                <span className="truncate">{photo.label}</span>
+                {isPlaying ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
               </button>
-            ))}
-            <button
-              type="button"
-              aria-label={isPlaying ? 'Pause photo rotation' : 'Play photo rotation'}
-              aria-controls="home-hero-photo"
-              onClick={() => setIsPlaying(playing => !playing)}
-              className="flex min-h-11 w-11 items-center justify-center rounded-md border border-transparent text-[#185d40] transition-colors hover:bg-[#eef4f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
-            >
-              {isPlaying ? <Pause size={17} aria-hidden="true" /> : <Play size={17} aria-hidden="true" />}
-            </button>
+            </div>
+
           </div>
+
         </div>
       </div>
     </section>

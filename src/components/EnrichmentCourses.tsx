@@ -11,6 +11,7 @@ import {
   Sparkles,
   Target,
   BookOpenCheck,
+  CheckCircle2,
 } from 'lucide-react';
 import { enrichmentCourses, type EnrichmentCourse } from '@/data/enrichmentCourses';
 import { EnrichmentCourseModal } from './enrichment/EnrichmentCourseModal';
@@ -25,137 +26,163 @@ const iconMap = {
   MessagesSquare,
 };
 
+const filterCategories = [
+  { id: 'all', label: 'All Programmes', count: 7 },
+  { id: 'Finance & Banking', label: 'Finance & Banking', count: 2 },
+  { id: 'Technology & Data', label: 'Technology & Data', count: 2 },
+  { id: 'Career & Personal Skills', label: 'Career & Personal Skills', count: 3 },
+];
+
 export const EnrichmentCourses = () => {
   const [selectedCourse, setSelectedCourse] = useState<EnrichmentCourse | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('all');
 
   const openCourse = (course: EnrichmentCourse) => {
     setSelectedCourse(course);
     setIsModalOpen(true);
   };
 
+  const filteredCourses = enrichmentCourses.filter(course => {
+    if (activeFilter === 'all') return true;
+    if (activeFilter === 'Finance & Banking') {
+      return course.category === 'Accounting & Finance' || course.category === 'Banking & Finance';
+    }
+    if (activeFilter === 'Technology & Data') {
+      return course.category === 'Data & Productivity' || course.category === 'Programming & Technology';
+    }
+    if (activeFilter === 'Career & Personal Skills') {
+      return (
+        course.category === 'Career Readiness' ||
+        course.category === 'Communication & Soft Skills' ||
+        course.category === 'Personality Development'
+      );
+    }
+    return true;
+  });
+
   return (
     <section
       id="enrichment-courses"
       aria-labelledby="enrichment-courses-title"
-      className="border-b border-[#e1e6e1] bg-[#f8faf8] px-5 home-section text-[#182d23] sm:px-8 lg:px-12"
+      className="border-b border-[#e5dfce] bg-[#f9f7f2] px-5 home-section text-[#182d23] sm:px-8 lg:px-12"
     >
       <div className="mx-auto max-w-[1284px]">
-        {/* Header with formal title & quick link (matching image 1) */}
+        {/* Header with formal title & quick link */}
         <div className="mb-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#c28422]">
+            <span className="home-section-eyebrow">
               BEYOND THE CLASSROOM
             </span>
-            <h2 id="enrichment-courses-title" className="home-section-title mt-1">
+            <h2 id="enrichment-courses-title" className="home-section-title mt-1.5">
               Enrichment Courses
             </h2>
+            <p className="mt-1 text-sm font-semibold text-[#8b6528]">
+              Empowering Students with Skills for a Brighter Future
+            </p>
           </div>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-[#143a29] transition-colors hover:text-[#c28422]"
           >
-            Enquire About Enrichment Courses
-            <ArrowRight size={16} aria-hidden="true" />
+            <span className="underline decoration-[#c28422] underline-offset-4">Enquire About Enrichment Courses</span>
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 text-[#c28422]" aria-hidden="true" />
           </Link>
         </div>
 
-        {/* 2-Column Grid (matching image 1) */}
-        <div className="grid gap-6 md:grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] lg:gap-8">
-          {/* Formal Spotlight Card (matching image 1 NAAC card) */}
-          <article className="relative isolate flex min-h-56 flex-col justify-between overflow-hidden rounded-xl border border-[#c28422]/40 bg-gradient-to-br from-[#123625] via-[#16432f] to-[#0d2a1c] p-6 text-white shadow-md sm:p-8">
-            <Sparkles
-              className="pointer-events-none absolute -bottom-10 -right-8 -z-10 h-60 w-60 text-white/[0.07]"
-              strokeWidth={0.8}
-              aria-hidden="true"
-            />
-            <div>
-              <div className="mb-3 flex items-center gap-2">
-                <span className="grid h-8 w-8 place-items-center rounded-full border border-[#c28422]/40 bg-[#c28422]/20 text-[#dfa03e]">
-                  <Sparkles size={18} aria-hidden="true" />
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#dfa03e]">
-                  SKILL &amp; CAREER READINESS
-                </span>
-              </div>
-              <p className="home-display-title text-7xl font-normal leading-none tracking-tight text-[#dfa03e] sm:text-8xl">
-                07
-              </p>
-              <p className="mt-2 text-sm font-semibold text-white/95">Certified Enrichment Programmes</p>
-              <p className="mt-1 text-xs leading-relaxed text-white/75">
-                Vocational and skill-oriented training complementing undergraduate &amp; postgraduate degrees at SJR College for Women.
-              </p>
-            </div>
+        {/* Narrative Description Banner */}
+        <div className="mb-7 rounded-xl border border-[#e4ded0] bg-white/80 p-5 shadow-xs backdrop-blur-sm sm:p-6">
+          <p className="text-sm leading-relaxed text-[#3b4e42] sm:text-base">
+            At SJR College for Women, education goes beyond traditional academics. Our enrichment courses are designed to complement classroom learning through practical knowledge, industry-relevant skills, professional development, and career readiness. Through vocational and skill-oriented training, we aim to empower students with the confidence and capabilities to pursue opportunities in an evolving professional world.
+          </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="mb-7 flex flex-wrap items-center gap-2" role="group" aria-label="Filter enrichment courses">
+          {filterCategories.map(cat => (
             <button
+              key={cat.id}
               type="button"
-              onClick={() => openCourse(enrichmentCourses[0])}
-              className="mt-6 inline-flex items-center gap-1.5 self-start text-xs font-semibold uppercase tracking-wider text-[#dfa03e] underline decoration-[#dfa03e]/60 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+              onClick={() => setActiveFilter(cat.id)}
+              className={`filter-pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all shadow-xs ${
+                activeFilter === cat.id
+                  ? 'bg-[#143a29] text-white shadow-sm ring-2 ring-[#c28422]/50'
+                  : 'border border-[#dcd6c5] bg-white text-[#455c4d] hover:border-[#143a29] hover:bg-[#faf9f5]'
+              }`}
             >
-              Explore Course Syllabi &amp; Highlights
-              <ArrowRight size={13} aria-hidden="true" />
+              <span>{cat.label}</span>
+              <span
+                className={`grid h-4.5 w-4.5 place-items-center rounded-full text-[10px] font-bold ${
+                  activeFilter === cat.id ? 'bg-[#dfa03e] text-[#0a2316]' : 'bg-[#eef2ed] text-[#143a29]'
+                }`}
+              >
+                {cat.count}
+              </span>
             </button>
-          </article>
-
-          {/* Programmes Grid (matching image 1 right column) */}
-          <div>
-            <div className="mb-3 flex items-center justify-between">
-              <h3 className="text-base font-bold uppercase tracking-wider text-[#143a29]">
-                Available Enrichment Courses
-              </h3>
-              <span className="text-xs text-neutral-500">Karnataka Skill Dev &amp; Industry Aligned</span>
-            </div>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {enrichmentCourses.map((course, index) => {
-                const Icon = iconMap[course.iconName] || BookOpenCheck;
-                const isSeventh = index === enrichmentCourses.length - 1;
-                return (
-                  <li key={course.id} className={isSeventh ? 'min-w-0 sm:col-span-2' : 'min-w-0'}>
-                    <button
-                      type="button"
-                      onClick={() => openCourse(course)}
-                      className="group flex h-full w-full items-start gap-3 rounded-xl border border-[#d8e2d9] bg-white p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#143a29] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] lg:p-5"
-                    >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#c8decb] bg-[#eef5f0] text-[#143a29] transition-colors group-hover:bg-[#143a29] group-hover:text-white">
-                        <Icon size={20} aria-hidden="true" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-base font-bold leading-tight text-[#143a29] group-hover:text-[#17563b]">
-                          {course.displayTitle}
-                        </span>
-                        <span className="mt-1 block text-xs leading-relaxed text-[#45584d]">
-                          {course.category}
-                          {course.association ? ' · In Assoc. with KSDC' : ''}
-                        </span>
-                      </span>
-                      <ArrowRight
-                        size={16}
-                        className="mt-1 shrink-0 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-[#143a29]"
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          ))}
         </div>
 
-        {/* Action Button (matching image 1 bottom row) */}
-        <div className="mt-7 flex flex-wrap items-center gap-4">
-          <Link
-            to="/contact"
-            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[#123625] px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#194c34] hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#123625]"
-          >
-            Enquire About Enrichment Courses
-            <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-          <span className="text-xs text-[#52645a]">
-            Enrichment courses run concurrently with regular degree semesters. Contact department coordinators during college hours.
-          </span>
+        {/* Course Cards Grid */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {filteredCourses.map((course, idx) => {
+            const Icon = iconMap[course.iconName as keyof typeof iconMap] || BookOpenCheck;
+            return (
+              <article
+                key={course.id}
+                className="academic-card flex h-full flex-col justify-between border border-[#dcd6c5] bg-white p-5 shadow-xs transition-all duration-300 hover:border-[#c28422] hover:shadow-xl"
+              >
+                <div>
+                  {/* Card Top: Icon & Category Badge */}
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#faf4e6] to-[#f4e8cc] text-[#935e12] shadow-xs">
+                      <Icon size={22} aria-hidden="true" />
+                    </span>
+                    <span className="rounded-md border border-[#c28422]/25 bg-[#faf6ee] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8b6528]">
+                      {course.category}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-4 text-base font-bold text-[#143a29] transition-colors group-hover:text-[#185e3c]">
+                    {course.title}
+                  </h3>
+
+                  {/* Short Description */}
+                  <p className="mt-2 text-xs leading-relaxed text-[#4d5e53]">
+                    {course.shortDescription}
+                  </p>
+
+                  {/* Highlights Bullet List */}
+                  <div className="mt-4 border-t border-[#f0ece1] pt-3">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b6528]">Key Highlights</p>
+                    <ul className="mt-1.5 space-y-1">
+                      {course.highlights.slice(0, 3).map((item) => (
+                        <li key={item} className="flex items-center gap-1.5 text-xs text-[#3b4e42]">
+                          <CheckCircle2 size={12} className="text-[#143a29] shrink-0" />
+                          <span className="truncate">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Card Action */}
+                <div className="mt-5 border-t border-[#f0ece1] pt-3">
+                  <button
+                    type="button"
+                    onClick={() => openCourse(course)}
+                    className="group/btn flex w-full items-center justify-between rounded-lg border border-[#d6dfd8] bg-[#f8faf8] px-3.5 py-2 text-xs font-bold text-[#143a29] transition-all hover:border-[#143a29] hover:bg-[#143a29] hover:text-white"
+                  >
+                    <span>Course Details &amp; Syllabus</span>
+                    <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" aria-hidden="true" />
+                  </button>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
 
-      {/* Accessible Detail Modal */}
       <EnrichmentCourseModal
         course={selectedCourse}
         isOpen={isModalOpen}

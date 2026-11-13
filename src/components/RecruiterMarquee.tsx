@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Pause, Play } from 'lucide-react';
+import { ArrowUpRight, Pause, Play, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const recruiters = [
@@ -26,28 +26,29 @@ export const RecruiterMarquee = () => {
       <div className="mb-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <div>
           <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
-            Corporate Engagement
+            Corporate Engagement &amp; Placement Drives
           </span>
           <h3 id="recruiters-title" className="text-base font-bold text-[#143a29] sm:text-lg">
             Recruiting Partners &amp; Industry Associations
           </h3>
           <p className="mt-0.5 text-xs text-[#52645a]">
-            Leading employers and partners participating in SJR College for Women campus recruitment and drives.
+            Leading IT, banking, and corporate recruiters participating in SJR College for Women campus hiring.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link
-            to="/placements/companies"
-            className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
+            to="/placements"
+            className="group inline-flex min-h-9 items-center gap-1.5 text-xs font-bold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
           >
-            All Recruiting Companies <ArrowUpRight size={14} aria-hidden="true" />
+            <span>All Recruiting Companies</span>
+            <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#c28422]" aria-hidden="true" />
           </Link>
           <button
             type="button"
             aria-controls="recruiter-logos"
             aria-label={isPaused ? 'Resume logo scrolling' : 'Pause logo scrolling'}
             onClick={() => setIsPaused(paused => !paused)}
-            className="grid h-8 w-8 place-items-center rounded-md border border-[#d2dcd3] bg-white text-[#143a29] hover:bg-[#eef5f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] motion-reduce:hidden"
+            className="grid h-8 w-8 place-items-center rounded-lg border border-[#d2dcd3] bg-white text-[#143a29] shadow-xs hover:bg-[#eef5f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] motion-reduce:hidden"
           >
             <ScrollIcon size={14} aria-hidden="true" />
           </button>
@@ -61,10 +62,10 @@ export const RecruiterMarquee = () => {
               {recruiters.map(company => (
                 <li
                   key={company.name}
-                  className="recruiter-tile relative flex min-h-[5.25rem] flex-col items-center justify-center gap-1.5 rounded-lg border border-[#dce4dd] bg-white px-3 py-2.5 shadow-sm hover:border-[#143a29] hover:shadow transition-all"
+                  className="recruiter-tile relative flex min-h-[5.5rem] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#dce4dd] bg-white px-4 py-3 shadow-xs hover:border-[#c28422] hover:shadow-md transition-all duration-300"
                 >
-                  <img src={company.logo} alt="" decoding="async" className="h-9 w-full max-w-32 object-contain" />
-                  <span className="text-center text-[11px] font-semibold text-[#43534a]">
+                  <img src={company.logo} alt="" decoding="async" className="h-10 w-full max-w-32 object-contain" />
+                  <span className="text-center text-[11px] font-bold text-[#143a29]">
                     {company.name}
                   </span>
                 </li>

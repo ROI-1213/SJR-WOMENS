@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Atom, Award, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap, Laptop } from 'lucide-react';
+import { ArrowRight, Atom, Award, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap, Laptop, Sparkles, CheckCircle2 } from 'lucide-react';
 import { availableProgrammes, naacGrade, naacCycleLabel } from '@/data/institute';
 import { AdmissionDialog } from './AdmissionDialog';
 
@@ -12,115 +12,161 @@ const programmeIcons = {
   mcom: GraduationCap,
 };
 
+const programmeTags: Record<string, string> = {
+  bsc: 'Faculty of Science',
+  bcom: 'Faculty of Commerce',
+  bba: 'Faculty of Management',
+  bca: 'Faculty of Computing',
+  mcom: 'Postgraduate Studies',
+};
+
 export const AdmissionsSection = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <section aria-labelledby="excellence-title" className="border-b border-[#e1e6e1] bg-[#f8faf8] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+    <section aria-labelledby="excellence-title" className="border-b border-[#dde5de] bg-[#fdfcf9] px-5 home-section text-[#143a29] sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1284px]">
-        {/* Header with formal title & quick link */}
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+        {/* Section Header */}
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#c28422]">
+            <span className="home-section-eyebrow">
               Academic Offerings &amp; Accreditation
             </span>
-            <h2 id="excellence-title" className="home-section-title mt-1">
+            <h2 id="excellence-title" className="home-section-title mt-1.5">
               Excellence in Education
             </h2>
+            <p className="mt-1 text-sm text-[#4b6154]">
+              Degree courses structured under Bengaluru City University with continuous mentoring, skill labs, and career pathways.
+            </p>
           </div>
           <Link
             to="/admissions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
+            className="group inline-flex items-center gap-2 text-sm font-bold text-[#143a29] transition-colors hover:text-[#c28422]"
           >
-            Admissions Information &amp; Guidelines
-            <ArrowRight size={16} aria-hidden="true" />
+            <span className="underline decoration-[#c28422] underline-offset-4">Admissions Information &amp; Guidelines</span>
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 text-[#c28422]" aria-hidden="true" />
           </Link>
         </div>
 
         {/* 2-Column Grid */}
-        <div className="grid gap-6 md:grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] lg:gap-8">
-          {/* Formal NAAC Feature Card */}
-          <article className="relative isolate flex min-h-56 flex-col justify-between overflow-hidden rounded-xl border border-[#c28422]/40 bg-gradient-to-br from-[#123625] via-[#16432f] to-[#0d2a1c] p-6 text-white shadow-md sm:p-8">
-            <Award className="pointer-events-none absolute -bottom-10 -right-8 -z-10 h-60 w-60 text-white/[0.07]" strokeWidth={0.8} aria-hidden="true" />
+        <div className="grid gap-6 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-8">
+          
+          {/* Executive NAAC Accreditation Plaque Card */}
+          <article className="plaque-card relative isolate flex min-h-64 flex-col justify-between overflow-hidden p-7 text-white shadow-xl sm:p-9">
+            {/* Watermark Crest */}
+            <Award className="pointer-events-none absolute -bottom-10 -right-8 -z-10 h-64 w-64 text-white/[0.05]" strokeWidth={0.7} aria-hidden="true" />
+            
             <div>
-              <div className="mb-3 flex items-center gap-2">
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#c28422]/20 border border-[#c28422]/40 text-[#dfa03e]">
-                  <Award size={18} aria-hidden="true" />
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#dfa03e]">
-                  Institutional Accreditation
-                </span>
+              {/* Badge */}
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/40 bg-[#dfa03e]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#dfa03e]">
+                <Sparkles size={14} className="text-[#dfa03e]" aria-hidden="true" />
+                <span>Institutional Accreditation</span>
               </div>
-              <p className="home-display-title text-7xl font-normal leading-none tracking-tight text-[#dfa03e] sm:text-8xl">
-                {naacGrade}
-              </p>
-              <p className="mt-2 text-sm font-semibold text-white/95">NAAC Accreditation Grade</p>
-              <p className="mt-0.5 text-xs text-white/75">{naacCycleLabel} · CGPA 2.95</p>
+
+              {/* Large Grade Display */}
+              <div className="flex items-baseline gap-3">
+                <p className="home-display-title text-7xl font-normal leading-none tracking-tight text-[#dfa03e] drop-shadow sm:text-8xl">
+                  {naacGrade}
+                </p>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-white">Grade Level</span>
+                  <span className="text-xs text-white/70">Cycle 4 (2023–2028)</span>
+                </div>
+              </div>
+
+              <div className="mt-4 flex items-center gap-2 border-t border-white/15 pt-3 text-xs text-white/85">
+                <CheckCircle2 size={15} className="text-[#dfa03e] shrink-0" />
+                <span>Institutional CGPA: <strong>2.95</strong> on a 4-point scale</span>
+              </div>
             </div>
+
             <Link
               to="/naac"
-              className="mt-6 inline-flex items-center gap-1.5 self-start text-xs font-semibold uppercase tracking-wider text-[#dfa03e] underline decoration-[#dfa03e]/60 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+              className="mt-6 inline-flex items-center gap-2 self-start rounded-lg border border-[#dfa03e]/40 bg-[#dfa03e]/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#dfa03e] transition-all hover:bg-[#dfa03e] hover:text-[#0c2619]"
             >
-              View Accreditation Records &amp; AQAR
-              <ArrowRight size={13} aria-hidden="true" />
+              <span>View Accreditation Records &amp; AQAR</span>
+              <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </article>
 
           {/* Programmes Grid */}
           <div>
-            <div className="mb-3 flex items-center justify-between">
-              <h3 className="text-base font-bold uppercase tracking-wider text-[#143a29]">
+            <div className="mb-3 flex items-center justify-between border-b border-[#dde5de] pb-2">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#143a29]">
                 Available Programmes
               </h3>
-              <span className="text-xs text-neutral-500">Affiliated to BCU</span>
+              <span className="rounded-full bg-[#eef5f0] px-2.5 py-0.5 text-[11px] font-semibold text-[#143a29]">
+                Affiliated to BCU
+              </span>
             </div>
-            <ul className="grid gap-3 sm:grid-cols-2">
+
+            <ul className="grid gap-3.5 sm:grid-cols-2">
               {availableProgrammes.map(programme => {
                 const Icon = programmeIcons[programme.id];
+                const tag = programmeTags[programme.id] || 'Degree Programme';
                 return (
                   <li key={programme.id} className="min-w-0">
                     <Link
                       to={programme.href}
-                      className="group flex h-full items-start gap-3 rounded-xl border border-[#d8e2d9] bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#143a29] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] lg:p-5"
+                      className="group flex h-full flex-col justify-between rounded-xl border border-[#d6dfd8] bg-white p-4.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#143a29] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
                     >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#c8decb] bg-[#eef5f0] text-[#143a29] transition-colors group-hover:bg-[#143a29] group-hover:text-white">
-                        <Icon size={20} aria-hidden="true" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-base font-bold leading-tight text-[#143a29] group-hover:text-[#17563b]">
-                          {programme.name}
+                      <div>
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-gradient-to-br from-[#eef5f0] to-[#e0ede4] text-[#143a29] shadow-xs transition-colors group-hover:bg-[#143a29] group-hover:text-white">
+                            <Icon size={20} aria-hidden="true" />
+                          </span>
+                          <span className="rounded-full bg-[#f4f7f4] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#486353]">
+                            {tag}
+                          </span>
+                        </div>
+                        
+                        <div className="mt-3">
+                          <span className="block text-lg font-bold leading-tight text-[#143a29] group-hover:text-[#185e3c]">
+                            {programme.name}
+                          </span>
+                          <span className="mt-1 block text-xs leading-relaxed text-[#566c5f]">
+                            {programme.fullName}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="mt-3.5 flex items-center justify-between border-t border-[#f0f4f0] pt-2 text-xs font-semibold text-[#143a29]">
+                        <span className="text-[11px] text-[#718579]">3-Year / 4-Year Honors</span>
+                        <span className="inline-flex items-center gap-1 text-[#c28422] transition-transform group-hover:translate-x-1">
+                          Curriculum <ArrowRight size={13} aria-hidden="true" />
                         </span>
-                        <span className="mt-1 block text-xs leading-relaxed text-[#45584d]">
-                          {programme.fullName}
-                        </span>
-                      </span>
-                      <ArrowRight
-                        size={16}
-                        className="mt-1 shrink-0 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-[#143a29]"
-                        aria-hidden="true"
-                      />
+                      </div>
                     </Link>
                   </li>
                 );
               })}
             </ul>
           </div>
+
         </div>
 
-        {/* Action Button */}
-        <div className="mt-7 flex flex-wrap items-center gap-4">
+        {/* Admissions CTA Bar */}
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#d5ded7] bg-gradient-to-r from-[#edf4ef] via-[#f7faf8] to-[#edf4ef] p-4 sm:p-5 shadow-sm">
+          <div className="flex items-center gap-3">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#143a29] text-[#dfa03e]">
+              <GraduationCap size={20} />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-[#143a29]">Ready to Begin Your Academic Journey?</p>
+              <p className="text-xs text-[#52645a]">Admissions are open for the academic session 2024–25. Direct counselling is available on campus.</p>
+            </div>
+          </div>
+          
           <button
             type="button"
             onClick={() => setIsDialogOpen(true)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[#123625] px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#194c34] hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#123625]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#dfa03e]/30 bg-[#143a29] px-6 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:bg-[#1b4d37] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
           >
-            Apply Online for Admission
-            <ArrowRight size={17} aria-hidden="true" />
+            <span>Apply Online for Admission</span>
+            <ArrowRight size={16} className="text-[#dfa03e]" aria-hidden="true" />
           </button>
-          <span className="text-xs text-[#52645a]">
-            For course counselling, contact the admission desk during college hours.
-          </span>
         </div>
+
       </div>
 
       <AdmissionDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />

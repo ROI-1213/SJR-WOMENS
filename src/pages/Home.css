@@ -1,44 +1,65 @@
 /* ==========================================================================
-   Formal Academic Design System — SJR College for Women
+   Formal Academic Design System — SJR College for Women (Bengaluru)
+   Elevated Collegiate Aesthetic, Bespoke Section Styling & Micro-Animations
    ========================================================================== */
 
 :root {
+  --college-forest: #0b281b;
   --college-green: #143a29;
-  --college-green-light: #1b4d36;
+  --college-green-mid: #184833;
+  --college-green-light: #205c42;
   --college-gold: #c28422;
-  --college-gold-light: #dfa03e;
+  --college-gold-bright: #dfa03e;
+  --college-gold-subtle: #f4e8cc;
   --college-cream: #faf8f2;
-  --college-border: #e3e7e2;
+  --college-ivory: #fcfbf7;
+  --college-border: #dde5de;
   --college-border-gold: #e2c99b;
 }
 
+/* Base Spacing for Homepage Sections */
 .home-section {
-  padding-block: clamp(2rem, 4.5vw, 3.75rem);
+  padding-block: clamp(2.5rem, 5vw, 4.25rem);
+  position: relative;
 }
 
-.home-section--connected {
-  padding-block-start: 0;
+/* Formal Collegiate Section Header */
+.home-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--college-gold);
 }
 
-/* Formal Section Heading */
+.home-section-eyebrow::before,
+.home-section-eyebrow::after {
+  content: "✦";
+  font-size: 0.65rem;
+  color: var(--college-gold-bright);
+}
+
 .home-section-title {
-  color: #123324;
+  color: #102d20;
   font-family: "DM Serif Text", Georgia, "Times New Roman", serif;
-  font-size: clamp(1.65rem, 2.75vw, 2.25rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.18;
   letter-spacing: -0.015em;
   text-wrap: balance;
   position: relative;
 }
 
-.home-section-title::before {
+.home-section-title::after {
   content: "";
   display: block;
-  width: 2.25rem;
+  width: 2.75rem;
   height: 3px;
-  margin-bottom: 0.65rem;
-  background: linear-gradient(90deg, #c28422, #dfa03e);
+  margin-top: 0.65rem;
+  background: linear-gradient(90deg, #c28422 0%, #dfa03e 70%, transparent 100%);
   border-radius: 2px;
 }
 
@@ -46,7 +67,7 @@
   text-align: center;
 }
 
-.home-section-title--center::before {
+.home-section-title--center::after {
   margin-inline: auto;
 }
 
@@ -54,49 +75,109 @@
   color: #ffffff;
 }
 
-.home-section-title--light::before {
-  background: linear-gradient(90deg, #dfa03e, #f3ca7e);
+.home-section-title--light::after {
+  background: linear-gradient(90deg, #dfa03e 0%, #f3ca7e 70%, transparent 100%);
 }
 
-.home-section-title--small {
-  font-size: clamp(1.3rem, 2.1vw, 1.75rem);
-}
-
-/* Formal Academic Card Treatment */
-.formal-card {
+/* Premium Academic Card Treatment */
+.academic-card {
+  position: relative;
   background: #ffffff;
   border: 1px solid #dce4dd;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(18, 51, 36, 0.04);
-  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  border-radius: 0.85rem;
+  box-shadow: 0 2px 6px -1px rgba(16, 45, 32, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+  overflow: hidden;
 }
 
-.formal-card:hover {
-  border-color: #1b4d36;
-  box-shadow: 0 8px 24px -4px rgba(18, 51, 36, 0.1);
-  transform: translateY(-2px);
+.academic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c28422 50%, transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
-/* Formal Crest & Monogram */
-.formal-crest {
-  background: linear-gradient(135deg, #eef4f0 0%, #dfeee3 100%);
-  border: 1px solid #c2dbca;
-  color: #143a29;
-  font-family: "DM Serif Text", Georgia, serif;
+.academic-card:hover {
+  transform: translateY(-4px);
+  border-color: #184833;
+  box-shadow: 0 14px 28px -6px rgba(16, 45, 32, 0.12), 0 6px 12px -3px rgba(0, 0, 0, 0.05);
 }
 
-/* Recruiter Marquee */
+.academic-card:hover::before {
+  opacity: 1;
+}
+
+/* Plaque Feature Card (NAAC / Institutional Accreditation) */
+.plaque-card {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #0b281b 0%, #143a29 55%, #081d13 100%);
+  border: 1.5px solid rgba(223, 160, 62, 0.45);
+  box-shadow: 0 12px 30px -5px rgba(11, 40, 27, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.35s ease;
+}
+
+.plaque-card:hover {
+  box-shadow: 0 18px 36px -6px rgba(11, 40, 27, 0.35), inset 0 1px 0 rgba(223, 160, 62, 0.4);
+  border-color: rgba(223, 160, 62, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Gold Gleam Animation for Badges & Honors */
+@keyframes goldGleam {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #dfa03e, #f7d58a, #c28422, #e5b357);
+  background-size: 300% 300%;
+  animation: goldGleam 6s ease infinite;
+  color: #0b281b;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Course Pill Controls */
+.filter-pill {
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.filter-pill:hover {
+  transform: translateY(-1px);
+}
+
+/* Subtle Academic Watermark Grid */
+.bg-academic-pattern {
+  background-color: #faf8f2;
+  background-image: radial-gradient(rgba(20, 58, 41, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Recruiter Endless Marquee */
 .recruiter-viewport {
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .recruiter-track {
   display: flex;
   width: max-content;
-  animation: recruiter-scroll 42s linear infinite;
+  animation: recruiter-scroll 45s linear infinite;
 }
 
 .recruiter-track[data-paused="true"],
@@ -107,19 +188,19 @@
 .recruiter-list {
   display: flex;
   flex: none;
-  gap: 0.85rem;
-  padding-inline-end: 0.85rem;
+  gap: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .recruiter-tile {
-  width: clamp(10rem, 18vw, 14.5rem);
-  transition: all 0.25s ease;
+  width: clamp(10.5rem, 19vw, 15rem);
+  transition: all 0.28s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .recruiter-tile:hover {
   border-color: #c28422;
-  box-shadow: 0 4px 12px rgba(194, 132, 34, 0.12);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -3px rgba(194, 132, 34, 0.16);
+  transform: translateY(-3px);
 }
 
 @keyframes recruiter-scroll {
@@ -145,5 +226,9 @@
 
   .recruiter-list[aria-hidden="true"] {
     display: none;
+  }
+
+  .gold-badge {
+    animation: none;
   }
 }
