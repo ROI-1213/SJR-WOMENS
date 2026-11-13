@@ -1,41 +1,85 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Pause, Play, Landmark, Award, ShieldCheck, Sparkles } from 'lucide-react';
+import {
+  ArrowRight,
+  Award,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  Landmark,
+  Pause,
+  Play,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from 'lucide-react';
+import { AdmissionDialog } from './AdmissionDialog';
 import './Banner.css';
 
-const campusPhotos = [
+const campusSlides = [
   {
     label: 'Campus',
-    caption: 'SJR College for Women Campus Building, Rajajinagar',
+    tag: 'Rajajinagar, Bengaluru',
+    title: 'SJR College for Women Campus',
+    description: 'Premier women’s higher educational institution in Rajajinagar, established under SJRES since 1988.',
     alt: 'SJR College for Women campus building in Rajajinagar, Bengaluru',
-    small: '/images/campus/college-view.jpg',
-    large: '/images/campus/college-view.jpg',
-    preview: '/images/campus/college-view.jpg',
+    image: '/images/campus/college-view.jpg',
+    thumbnail: '/images/campus/college-view.jpg',
   },
   {
-    label: 'Library',
-    caption: 'Well-stacked Central Library with e-resources and reading rooms',
-    alt: 'Students reading in the SJR College for Women library',
-    small: '/images/infrastructure/library.jpg',
-    large: '/images/infrastructure/library.jpg',
-    preview: '/images/infrastructure/library.jpg',
+    label: 'Central Library',
+    tag: 'Academic Knowledge Center',
+    title: 'Central Library & Reading Halls',
+    description: 'Extensive academic repository with thousands of volumes, journals, digital e-resources, and study cubicles.',
+    alt: 'Students studying in the SJR College for Women Central Library',
+    image: '/images/infrastructure/library.jpg',
+    thumbnail: '/images/infrastructure/library.jpg',
   },
   {
     label: 'Computer Lab',
-    caption: 'Wi-Fi enabled Computer Science and Applications Laboratory',
-    alt: 'Students working at computers in the SJR College for Women computer lab',
-    small: '/images/infrastructure/computer-lab.jpg',
-    large: '/images/infrastructure/computer-lab.jpg',
-    preview: '/images/infrastructure/computer-lab.jpg',
+    tag: 'Advanced Computing Center',
+    title: 'Wi-Fi Enabled Computer Science Laboratory',
+    description: 'Modern high-speed network lab equipped with programming workstations, software tools, and digital classrooms.',
+    alt: 'Students working at workstations in the computer science laboratory',
+    image: '/images/infrastructure/computer-lab.jpg',
+    thumbnail: '/images/infrastructure/computer-lab.jpg',
+  },
+];
+
+const keyHighlights = [
+  {
+    label: 'Academic Legacy',
+    value: '1988',
+    detail: 'Over 35+ years dedicated to women’s higher education',
+    icon: Landmark,
+  },
+  {
+    label: 'NAAC Accreditation',
+    value: 'B++',
+    detail: 'Cycle 4 · CGPA 2.95 (Valid 2023–2028)',
+    icon: Award,
+  },
+  {
+    label: 'Affiliated University',
+    value: 'BCU',
+    detail: 'Bengaluru City University & UGC 2(f) / 12(B)',
+    icon: GraduationCap,
+  },
+  {
+    label: 'Placement Support',
+    value: '100%',
+    detail: 'Corporate campus connect with 15+ top recruiters',
+    icon: Users,
   },
 ];
 
 export const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const images = useRef<(HTMLImageElement | null)[]>([]);
   const photoRequest = useRef(0);
-  const activePhoto = campusPhotos[activeIndex];
+  const activeSlide = campusSlides[activeIndex];
 
   const selectPhoto = useCallback(async (index: number) => {
     const image = images.current[index];
@@ -46,9 +90,17 @@ export const Banner = () => {
       await image.decode();
       if (request === photoRequest.current) setActiveIndex(index);
     } catch {
-      // Keep the last usable image if decoding fails
+      setActiveIndex(index);
     }
   }, []);
+
+  const handleNext = () => {
+    selectPhoto((activeIndex + 1) % campusSlides.length);
+  };
+
+  const handlePrev = () => {
+    selectPhoto((activeIndex - 1 + campusSlides.length) % campusSlides.length);
+  };
 
   useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -63,7 +115,7 @@ export const Banner = () => {
     if (!isPlaying) return;
 
     const rotation = window.setInterval(() => {
-      if (!document.hidden) void selectPhoto((activeIndex + 1) % campusPhotos.length);
+      if (!document.hidden) void selectPhoto((activeIndex + 1) % campusSlides.length);
     }, 6000);
     return () => {
       window.clearInterval(rotation);
@@ -72,177 +124,221 @@ export const Banner = () => {
   }, [activeIndex, isPlaying, selectPhoto]);
 
   return (
-    <section aria-labelledby="home-hero-title" className="border-b border-[#e1e6e1] bg-gradient-to-b from-[#fbfaf6] to-[#f4f1ea] py-6 sm:py-8 lg:py-10">
-      <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <div className="grid items-stretch gap-6 md:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] md:gap-8 lg:gap-10">
-          
-          {/* Left Hero Panel: Formal Academic Dossier */}
-          <div
-            data-hero-panel="content"
-            className="relative flex min-w-0 flex-col justify-between overflow-hidden rounded-2xl border-2 border-[#1e4d36] bg-gradient-to-br from-[#0c2619] via-[#133c28] to-[#081a11] p-7 shadow-xl text-white sm:p-9 lg:p-11"
-          >
-            {/* Watermark Crest */}
-            <Landmark
-              className="pointer-events-none absolute -bottom-10 -right-8 h-72 w-72 text-white/[0.04]"
-              strokeWidth={0.7}
-              aria-hidden="true"
+    <section
+      aria-labelledby="home-hero-title"
+      className="relative min-h-[600px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#071a10] text-white lg:min-h-[660px]"
+    >
+      {/* Background Rotating Images */}
+      <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
+        {campusSlides.map((slide, index) => {
+          const isSelected = index === activeIndex;
+          return (
+            <img
+              key={slide.label}
+              ref={(node) => {
+                images.current[index] = node;
+              }}
+              src={slide.image}
+              alt={slide.alt}
+              aria-hidden={!isSelected}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              className={`hero-slide-bg ${isSelected ? 'z-1' : 'pointer-events-none'}`}
             />
+          );
+        })}
 
-            <div>
-              {/* Prestigious Eyebrow Pill */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#c28422]/50 bg-[#c28422]/15 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[#dfa03e] shadow-sm">
-                <Sparkles size={13} className="text-[#dfa03e]" aria-hidden="true" />
-                <span>Undergraduate &amp; Postgraduate Study</span>
-              </div>
+        {/* Cinematic Multi-Stop Gradient Scrim for Flawless Readability */}
+        <div className="hero-scrim-desktop absolute inset-0 z-2" aria-hidden="true" />
+      </div>
 
-              {/* Main Headline */}
-              <h1
-                id="home-hero-title"
-                className="home-display-title mt-5 text-[clamp(2.35rem,4.5vw,4.25rem)] font-normal leading-[1.06] tracking-[-0.02em] text-white"
-              >
-                <span className="bg-gradient-to-r from-[#e7b65e] via-[#f7d88c] to-[#c28422] bg-clip-text text-transparent">
-                  Science, Arts
-                </span>{' '}
-                <span className="block">&amp; Commerce</span>
-              </h1>
-
-              {/* Formal Editorial Description */}
-              <p className="mt-4 max-w-lg text-base leading-relaxed text-white/90 sm:text-[1.05rem]">
-                Dedicated to empowering women through value-based higher education, holistic personal development, and academic excellence at our Rajajinagar campus in Bengaluru.
-              </p>
-
-              {/* CTA Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4">
-                <Link
-                  to="/academics"
-                  className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] to-[#c28422] px-6 py-3 text-sm font-bold text-[#0c2619] shadow-lg transition-all duration-300 hover:from-[#eec068] hover:to-[#d0912c] hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
-                >
-                  <span>Academic Programmes</span>
-                  <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
-                </Link>
-
-                <Link
-                  to="/admissions"
-                  className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-white/15 hover:text-[#dfa03e] hover:-translate-y-0.5"
-                >
-                  <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
-                  <span>Admissions 2024–25</span>
-                </Link>
-              </div>
+      {/* Hero Content Container */}
+      <div className="relative z-10 mx-auto flex min-h-[600px] max-w-[1380px] flex-col justify-between px-5 py-10 sm:px-8 sm:py-12 lg:min-h-[660px] lg:px-12 lg:py-14">
+        
+        {/* Main Content Row */}
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12">
+          
+          {/* Left Column: Prestigious University Copy */}
+          <div className="max-w-2xl">
+            {/* Illuminated Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/50 bg-black/40 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#dfa03e] shadow-lg backdrop-blur-md sm:text-xs">
+              <Sparkles size={14} className="text-[#dfa03e] animate-pulse" aria-hidden="true" />
+              <span>Sri Jagadguru Renukacharya Education Society · Estd. 1945</span>
             </div>
 
-            {/* Bottom Motto & Affiliation Ribbon */}
-            <div className="mt-8 border-t border-white/15 pt-5">
-              <div className="flex flex-wrap items-center justify-between gap-y-2 text-xs">
-                <div>
-                  <p className="font-serif text-lg italic text-[#e7b65e]">“In Pursuit of Excellence”</p>
-                  <p className="mt-0.5 font-medium uppercase tracking-wider text-white/70">
-                    Affiliated to Bengaluru City University · NAAC Accredited
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] text-[#dfa03e]">
-                  <ShieldCheck size={14} />
-                  <span>Est. 1988</span>
-                </div>
-              </div>
+            {/* Grand Headline */}
+            <h1
+              id="home-hero-title"
+              className="home-display-title mt-5 text-[clamp(2.4rem,4.8vw,4.5rem)] font-normal leading-[1.08] tracking-[-0.02em] text-white"
+            >
+              Empowering Women Through{' '}
+              <span className="hero-gold-gradient block sm:inline">
+                Science, Arts &amp; Commerce
+              </span>
+            </h1>
+
+            {/* Subtitle / Mission Statement */}
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg sm:leading-relaxed">
+              Dedicated to value-based higher education, holistic personal development, and academic excellence at our prime Rajajinagar campus in Bengaluru.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                to="/academics"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#0c2619] shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
+              >
+                <span>Explore Degree Programmes</span>
+                <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setIsDialogOpen(true)}
+                className="inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/40 bg-black/30 px-6 py-3.5 text-sm font-bold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-[#c28422]/20 hover:text-[#dfa03e] hover:scale-[1.02]"
+              >
+                <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
+                <span>Admissions 2024–25</span>
+              </button>
             </div>
           </div>
 
-          {/* Right Hero Panel: Architectural Visual Showcase */}
-          <div
-            data-hero-panel="gallery"
-            className="flex min-w-0 flex-col overflow-hidden rounded-2xl border-2 border-[#d9e2db] bg-white p-3 shadow-xl lg:p-4"
-          >
-            {/* Viewport Frame */}
-            <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-[#0c2619] shadow-inner sm:aspect-[16/10]">
-              {campusPhotos.map((photo, index) => {
-                const isSelected = index === activeIndex;
-                return (
-                  <img
-                    key={photo.label}
-                    ref={(node) => {
-                      images.current[index] = node;
-                    }}
-                    src={photo.large}
-                    alt={photo.alt}
-                    aria-hidden={!isSelected}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    className={`home-hero-photo absolute inset-0 h-full w-full object-cover object-center ${
-                      isSelected ? 'z-10 opacity-100 scale-100' : 'pointer-events-none z-0 opacity-0 scale-105'
-                    }`}
-                  />
-                );
-              })}
-
-              {/* Top Status Badge */}
-              <div className="absolute left-3.5 top-3.5 z-20 flex items-center gap-2 rounded-full border border-black/30 bg-black/60 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#dfa03e] backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
-                <span>Official Campus View</span>
+          {/* Right Column: Live Slide Showcase Pill & Controls */}
+          <div className="flex flex-col items-start justify-end lg:items-end">
+            <div className="w-full max-w-sm rounded-2xl border-2 border-white/20 bg-black/60 p-5 shadow-2xl backdrop-blur-xl ring-1 ring-white/10 sm:p-6">
+              
+              {/* Header with Live Status Indicator */}
+              <div className="flex items-center justify-between border-b border-white/15 pb-3">
+                <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#dfa03e]">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+                  <span>Campus Showcase</span>
+                </span>
+                <span className="text-xs font-semibold text-white/70">
+                  0{activeIndex + 1} / 0{campusSlides.length}
+                </span>
               </div>
 
-              {/* Bottom Caption Overlay */}
-              <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-4 text-white sm:p-5">
-                <p className="font-serif text-lg font-normal leading-snug text-white sm:text-xl">
-                  {activePhoto.caption}
-                </p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#dfa03e]">
-                  SJR College for Women · Bengaluru
+              {/* Active Slide Info */}
+              <div className="mt-3.5">
+                <span className="rounded bg-[#c28422]/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#dfa03e]">
+                  {activeSlide.tag}
+                </span>
+                <h2 className="font-serif mt-2 text-xl font-bold leading-tight text-white">
+                  {activeSlide.title}
+                </h2>
+                <p className="mt-1 text-xs leading-relaxed text-white/80">
+                  {activeSlide.description}
                 </p>
               </div>
-            </div>
 
-            {/* Thumbnail Navigation Bar */}
-            <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#edf2ee] pt-3">
-              <div className="grid flex-1 grid-cols-3 gap-2">
-                {campusPhotos.map((photo, index) => {
+              {/* Slide Thumbnail Strip */}
+              <div className="mt-4 grid grid-cols-3 gap-2 border-t border-white/15 pt-3">
+                {campusSlides.map((slide, index) => {
                   const isSelected = index === activeIndex;
                   return (
                     <button
-                      key={photo.label}
+                      key={slide.label}
                       type="button"
-                      aria-pressed={isSelected}
+                      aria-label={`View slide ${index + 1}: ${slide.label}`}
                       onClick={() => void selectPhoto(index)}
-                      className={`group flex items-center gap-2 rounded-lg border p-1.5 text-left transition-all duration-300 ${
+                      className={`group relative overflow-hidden rounded-lg border-2 p-1 text-left transition-all ${
                         isSelected
-                          ? 'border-[#c28422] bg-[#fbf8f0] shadow-sm ring-1 ring-[#c28422]'
-                          : 'border-[#e4ebe5] bg-[#fafbf9] hover:border-[#143a29] hover:bg-white'
+                          ? 'border-[#dfa03e] bg-white/20 shadow-md ring-1 ring-[#dfa03e]'
+                          : 'border-white/20 bg-black/40 hover:border-white/50'
                       }`}
                     >
                       <img
-                        src={photo.preview}
+                        src={slide.thumbnail}
                         alt=""
-                        aria-hidden="true"
-                        className="h-9 w-9 shrink-0 rounded-md object-cover"
+                        className="h-10 w-full rounded object-cover"
                       />
-                      <span className="min-w-0">
-                        <span className={`block truncate text-xs font-bold ${isSelected ? 'text-[#143a29]' : 'text-[#485c51]'}`}>
-                          {photo.label}
-                        </span>
-                        <span className="hidden text-[10px] text-[#8c9c92] sm:block">
-                          {index === 0 ? 'Campus' : index === 1 ? 'Central Lib' : 'Computer Lab'}
-                        </span>
+                      <span className="mt-1 block truncate text-[10px] font-bold text-white text-center">
+                        {slide.label}
                       </span>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Play/Pause Button */}
-              <button
-                type="button"
-                aria-label={isPlaying ? 'Pause campus photo rotation' : 'Play campus photo rotation'}
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#d6dfd8] bg-white text-[#143a29] shadow-sm transition-colors hover:bg-[#edf4ee] hover:text-[#0c2619]"
-              >
-                {isPlaying ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
-              </button>
-            </div>
+              {/* Prev / Next & Pause Controls */}
+              <div className="mt-4 flex items-center justify-between border-t border-white/15 pt-3">
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    aria-label="Previous campus photo"
+                    onClick={handlePrev}
+                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#0c2619]"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next campus photo"
+                    onClick={handleNext}
+                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#0c2619]"
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
 
+                <button
+                  type="button"
+                  aria-label={isPlaying ? 'Pause slide rotation' : 'Resume slide rotation'}
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  className="flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-2.5 py-1 text-xs text-white/80 hover:bg-white/20"
+                >
+                  {isPlaying ? (
+                    <>
+                      <Pause size={12} className="text-[#dfa03e]" />
+                      <span className="text-[10px]">Autoplay ON</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play size={12} className="text-[#dfa03e]" />
+                      <span className="text-[10px]">Paused</span>
+                    </>
+                  )}
+                </button>
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+        {/* Bottom Docked Institutional Metrics Bar */}
+        <div className="mt-10 border-t border-white/15 pt-6 lg:mt-12">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-6">
+            {keyHighlights.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 rounded-xl border border-white/15 bg-black/40 p-3.5 shadow-md backdrop-blur-md transition-all hover:border-[#dfa03e]/60 hover:bg-black/55 sm:p-4"
+                >
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#dfa03e]/40 bg-[#dfa03e]/15 text-[#dfa03e]">
+                    <Icon size={20} aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-serif text-lg font-bold leading-tight text-white sm:text-xl">
+                      {item.value}
+                    </p>
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-[#dfa03e]">
+                      {item.label}
+                    </p>
+                    <p className="hidden truncate text-[10px] text-white/70 sm:block">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
       </div>
+
+      <AdmissionDialog isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
     </section>
   );
 };
