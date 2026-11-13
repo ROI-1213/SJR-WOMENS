@@ -105,8 +105,9 @@ export const AdmissionsSection = () => {
 
   return (
     <section
+      id="admissions"
       aria-labelledby="excellence-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+      className="scroll-mt-24 border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-14 text-[#143a29] sm:px-8 sm:py-16 lg:px-12 lg:py-20"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Simple & Elegant Header */}
@@ -135,7 +136,7 @@ export const AdmissionsSection = () => {
         {/* 2-Column Balanced Architecture */}
         <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-8 lg:items-stretch">
           
-          {/* Executive NAAC Accreditation Plaque (Simple, Stately & Breathing) */}
+          {/* Executive NAAC Accreditation Plaque */}
           <article className="plaque-card relative isolate flex flex-col justify-between overflow-hidden p-7 text-white sm:p-9">
             {/* Ambient Pulsing Aura */}
             <div className="plaque-ambient-glow" aria-hidden="true" />
@@ -202,7 +203,7 @@ export const AdmissionsSection = () => {
             </div>
           </article>
 
-          {/* Academic Programmes Grid (6 Cards, Simple, Clean & Responsive) */}
+          {/* Academic Programmes Grid (6 Cards, Spacious & Comfortable) */}
           <div>
             <div className="mb-3.5 flex items-center justify-between border-b border-[#dde5de] pb-2">
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#143a29] sm:text-sm">
@@ -213,7 +214,7 @@ export const AdmissionsSection = () => {
               </span>
             </div>
 
-            <ul className="grid gap-3.5 sm:grid-cols-2">
+            <ul className="grid gap-4 sm:grid-cols-2">
               {academicOfferings.map((prog, idx) => {
                 const Icon = prog.icon;
                 const isAnchor = prog.href.startsWith('#');
@@ -224,7 +225,7 @@ export const AdmissionsSection = () => {
                   <li key={prog.id} className={`min-w-0 stagger-${(idx % 6) + 1}`}>
                     <CardWrapper
                       {...(wrapperProps as any)}
-                      className="academic-card group flex h-full flex-col justify-between p-4.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                      className="academic-card group flex min-h-[210px] flex-col justify-between p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
                     >
                       <div>
                         {/* Top: Icon & Faculty Badge */}
@@ -238,11 +239,11 @@ export const AdmissionsSection = () => {
                         </div>
 
                         {/* Title & Full Name */}
-                        <div className="mt-3">
+                        <div className="mt-3.5 space-y-0.5">
                           <span className="block text-xl font-bold leading-tight text-[#143a29] transition-colors group-hover:text-[#185e3c]">
                             {prog.name}
                           </span>
-                          <span className="mt-0.5 block text-xs font-medium text-[#566c5f]">
+                          <span className="block text-xs font-semibold text-[#566c5f]">
                             {prog.fullName}
                           </span>
                         </div>
@@ -254,7 +255,7 @@ export const AdmissionsSection = () => {
                       </div>
 
                       {/* Footer with Duration and Animated Arrow */}
-                      <div className="mt-4 flex items-center justify-between border-t border-[#f0f4f0] pt-2.5 text-xs font-semibold text-[#143a29]">
+                      <div className="mt-4 flex items-center justify-between border-t border-[#f0f4f0] pt-3 text-xs font-semibold text-[#143a29]">
                         <span className="text-[11px] font-medium text-[#718579]">{prog.duration}</span>
                         <span className="academic-arrow grid h-6 w-6 place-items-center rounded-full border border-[#d4ded6] bg-[#f8faf8] text-[#143a29] transition-all duration-300">
                           <ChevronRight size={14} aria-hidden="true" />
@@ -269,7 +270,7 @@ export const AdmissionsSection = () => {
 
         </div>
 
-        {/* Admissions CTA Bar (Simple, Elegant & Uncluttered) */}
+        {/* Admissions CTA Bar */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#d5ded7] bg-gradient-to-r from-[#edf4ef] via-[#f7faf8] to-[#edf4ef] p-5 shadow-xs sm:p-6">
           <div className="flex items-center gap-3.5">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#143a29] text-[#dfa03e] shadow-xs">
