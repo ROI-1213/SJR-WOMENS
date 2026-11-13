@@ -22,24 +22,34 @@ export const RecruiterMarquee = () => {
   const ScrollIcon = isPaused ? Play : Pause;
 
   return (
-    <section aria-labelledby="recruiters-title" className="mt-6 border-t border-[#d2e0d4] pt-5 sm:mt-7">
-      <div className="mb-3 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+    <div className="mt-8 border-t border-[#dce4dd] pt-6">
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <div>
-          <h3 id="recruiters-title" className="home-section-title home-section-title--small">Recruiting Partners</h3>
-          <p className="mt-2 text-sm text-[#43534a]">Recruiting partners published on SJR College for Women’s Placement Cell “Disha” page.</p>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
+            Corporate Engagement
+          </span>
+          <h3 id="recruiters-title" className="text-base font-bold text-[#143a29] sm:text-lg">
+            Recruiting Partners &amp; Industry Associations
+          </h3>
+          <p className="mt-0.5 text-xs text-[#52645a]">
+            Leading employers and partners participating in SJR College for Women campus recruitment and drives.
+          </p>
         </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <Link to="/placements/companies" className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-[#185d40] underline underline-offset-4">
-            Recruiting companies <ArrowUpRight size={16} aria-hidden="true" />
+          <Link
+            to="/placements/companies"
+            className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
+          >
+            All Recruiting Companies <ArrowUpRight size={14} aria-hidden="true" />
           </Link>
           <button
             type="button"
             aria-controls="recruiter-logos"
             aria-label={isPaused ? 'Resume logo scrolling' : 'Pause logo scrolling'}
             onClick={() => setIsPaused(paused => !paused)}
-            className="grid h-10 w-10 place-items-center rounded-md border border-[#d7e5d9] bg-white text-[#177249] hover:border-[#177249] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] motion-reduce:hidden"
+            className="grid h-8 w-8 place-items-center rounded-md border border-[#d2dcd3] bg-white text-[#143a29] hover:bg-[#eef5f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29] motion-reduce:hidden"
           >
-            <ScrollIcon size={17} aria-hidden="true" />
+            <ScrollIcon size={14} aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -49,9 +59,12 @@ export const RecruiterMarquee = () => {
           {[false, true].map(duplicate => (
             <ul key={String(duplicate)} aria-hidden={duplicate || undefined} className="recruiter-list">
               {recruiters.map(company => (
-                <li key={company.name} className="recruiter-tile relative flex min-h-[5.25rem] flex-col items-center justify-center gap-1.5 rounded-lg border border-[#d7e5d9] bg-white px-3 py-2.5 hover:border-[#177249] motion-safe:transition-colors">
+                <li
+                  key={company.name}
+                  className="recruiter-tile relative flex min-h-[5.25rem] flex-col items-center justify-center gap-1.5 rounded-lg border border-[#dce4dd] bg-white px-3 py-2.5 shadow-sm hover:border-[#143a29] hover:shadow transition-all"
+                >
                   <img src={company.logo} alt="" decoding="async" className="h-9 w-full max-w-32 object-contain" />
-                  <span className="text-center text-xs font-semibold text-[#43534a]">
+                  <span className="text-center text-[11px] font-semibold text-[#43534a]">
                     {company.name}
                   </span>
                 </li>
@@ -60,6 +73,6 @@ export const RecruiterMarquee = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };

@@ -25,7 +25,7 @@ const MobileLink = ({ href, label, close }: BaseMenuItem & { close: () => void }
     to={href}
     end
     onClick={close}
-    className={({ isActive }) => `flex min-h-11 items-center rounded-md px-3 py-2 text-sm leading-snug transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white ${isActive ? 'bg-white/15 font-semibold underline decoration-[#ff8c00] underline-offset-4' : ''}`}
+    className={({ isActive }) => `flex min-h-11 items-center rounded-md px-3 py-2 text-sm leading-snug transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white ${isActive ? 'bg-white/15 font-semibold underline decoration-[#dfa03e] underline-offset-4' : ''}`}
   >
     {label}
   </NavLink>
@@ -37,7 +37,7 @@ const MobileGroup = ({ item, close }: { item: MainMenuItem; close: () => void })
       {item.label}
       <ChevronDown size={17} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
     </summary>
-    <ul id={`${item.key}-navigation-mobile`} className="mb-2 ml-2 border-l border-[#ff8c00]/75 pl-2">
+    <ul id={`${item.key}-navigation-mobile`} className="mb-2 ml-2 border-l border-[#dfa03e]/75 pl-2">
       {sectionLabels[item.key] && <li><MobileLink href={item.href} label={sectionLabels[item.key]} close={close} /></li>}
       {item.dropdown?.map(link => link.submenu?.length ? (
         <li key={link.href} className="pt-2">

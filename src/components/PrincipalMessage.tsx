@@ -29,18 +29,31 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
   const visibleParagraphs = expanded ? activeParagraphs : activeParagraphs.slice(0, 1);
 
   return (
-    <section aria-labelledby="leadership-title" className="bg-[#eef4ef] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
+    <section aria-labelledby="leadership-title" className="border-b border-[#e1e6e1] bg-[#fbfaf6] px-5 home-section text-[#182d23] sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1284px]">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 sm:mb-6">
-          <h2 id="leadership-title" className="home-section-title">
-            {fullMessage ? 'Principal’s Message' : 'Leadership'}
-          </h2>
-          <div className="inline-flex rounded-lg border border-[#d8e5dc] bg-white p-1" role="group" aria-label="Message language">
+        {/* Section Title & Language Switcher */}
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#c28422]">
+              Institutional Leadership
+            </span>
+            <h2 id="leadership-title" className="home-section-title mt-1">
+              {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
+            </h2>
+          </div>
+
+          <div
+            className="inline-flex rounded-lg border border-[#d2dcd3] bg-white p-1 shadow-sm"
+            role="group"
+            aria-label="Message language"
+          >
             <button
               type="button"
               onClick={() => setLanguage('kn')}
-              className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
-                language === 'kn' ? 'bg-[#177249] text-white' : 'text-[#185d40] hover:bg-[#eef4ef]'
+              className={`inline-flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-xs font-bold transition-all ${
+                language === 'kn'
+                  ? 'bg-[#123625] text-white shadow-sm'
+                  : 'text-[#185d40] hover:bg-[#eef4ef]'
               }`}
             >
               <Languages size={14} aria-hidden="true" />
@@ -49,8 +62,10 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
             <button
               type="button"
               onClick={() => setLanguage('en')}
-              className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
-                language === 'en' ? 'bg-[#177249] text-white' : 'text-[#185d40] hover:bg-[#eef4ef]'
+              className={`rounded-md px-3.5 py-1.5 text-xs font-bold transition-all ${
+                language === 'en'
+                  ? 'bg-[#123625] text-white shadow-sm'
+                  : 'text-[#185d40] hover:bg-[#eef4ef]'
               }`}
             >
               English Translation
@@ -58,60 +73,75 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
           </div>
         </div>
 
-        <article className="overflow-hidden rounded-xl border border-[#d8e5dc] bg-white md:grid md:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-          <figure className="relative flex min-h-64 items-center justify-center bg-[#183c2b] p-6 sm:min-h-72">
-            <img
-              src="/images/principal/dr-prema-siddaraju.jpg"
-              alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
-              width={270}
-              height={270}
-              loading="lazy"
-              className="h-56 w-56 rounded-xl border-2 border-[#ff8c00]/80 object-cover shadow-lg sm:h-64 sm:w-64"
-            />
-            <figcaption className="absolute bottom-3 left-3 rounded bg-[#153b2a]/90 px-2.5 py-1 text-xs text-white">
-              {principalName} · {principalCredentials}
+        {/* Dignified Principal Profile & Message Card */}
+        <article className="overflow-hidden rounded-xl border border-[#dce4dd] bg-white shadow-sm md:grid md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)]">
+          <figure className="relative flex min-h-64 flex-col items-center justify-center border-b border-[#dce4dd] bg-gradient-to-br from-[#123625] to-[#184530] p-6 sm:min-h-72 md:border-b-0 md:border-r">
+            <div className="relative rounded-2xl border-2 border-[#dfa03e]/70 p-1.5 shadow-md">
+              <img
+                src="/images/principal/dr-prema-siddaraju.jpg"
+                alt="Dr. Prema Siddaraju, Principal, SJR College for Women"
+                width={270}
+                height={270}
+                loading="lazy"
+                className="h-52 w-52 rounded-xl object-cover sm:h-60 sm:w-60"
+              />
+            </div>
+            <figcaption className="mt-3 text-center">
+              <p className="font-bold text-white">{principalName}</p>
+              <p className="text-xs text-[#dfa03e]">{principalCredentials}</p>
             </figcaption>
           </figure>
-          <div className="p-5 sm:p-6 lg:p-8">
-            <p className="mb-1 text-sm font-semibold text-[#177249]">Principal’s Message (Attributed on Official Site)</p>
-            <h3 className="home-display-title text-2xl leading-tight lg:text-[1.65rem]">{principalName}</h3>
-            <p className="mt-1 text-sm font-medium text-[#43534a]">{principalCredentials}</p>
+
+          <div className="p-6 sm:p-8 lg:p-10">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5ece6] pb-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
+                  Authentic Message
+                </span>
+                <h3 className="home-display-title text-2xl font-normal leading-tight text-[#123324] lg:text-[1.75rem]">
+                  {principalName}
+                </h3>
+              </div>
+              <span className="rounded bg-[#eef5f0] px-2.5 py-1 text-xs font-semibold text-[#143a29]">
+                Head of Institution
+              </span>
+            </div>
 
             {language === 'en' && (
-              <p className="mt-3 rounded-md bg-[#faf7ef] px-3 py-2 text-xs font-medium text-[#43534a] border border-[#e0ddce]">
-                English translation of the original Kannada message published on sjrcw.edu.in.
+              <p className="mt-4 rounded-md border border-[#e2dcce] bg-[#faf8f2] px-3.5 py-2 text-xs font-medium text-[#685e4c]">
+                Translation of the original Kannada message published on the official college website (sjrcw.edu.in).
               </p>
             )}
 
             <div
               lang={language === 'kn' ? 'kn' : 'en'}
-              className="mt-5 space-y-4 border-t border-[#d8e5dc] pt-5 leading-relaxed text-[#43534a]"
+              className="mt-4 space-y-3.5 text-sm leading-relaxed text-[#3a4d42] sm:text-[0.95rem]"
             >
               {visibleParagraphs.map(paragraph => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
               {expanded && language === 'kn' && (
-                <p className="font-semibold text-[#182d23]">{kannadaSignoff}</p>
+                <p className="pt-2 font-bold text-[#123324]">{kannadaSignoff}</p>
               )}
             </div>
 
-            <div className="mt-5 flex flex-wrap items-center gap-5">
+            <div className="mt-6 flex flex-wrap items-center gap-5 border-t border-[#e5ece6] pt-4">
               {!fullMessage && (
                 <Link
                   to="/about/principals-message"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#185d40] underline underline-offset-4 hover:text-[#177249]"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#143a29] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
                 >
-                  Read full Principal’s message
-                  <ArrowRight size={17} aria-hidden="true" />
+                  Read Full Principal’s Message
+                  <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               )}
               {!expanded && (
                 <button
                   type="button"
                   onClick={() => setExpanded(true)}
-                  className="text-sm font-semibold text-[#177249] underline underline-offset-4 hover:text-[#185d40]"
+                  className="text-sm font-semibold text-[#185d40] underline decoration-[#185d40]/60 underline-offset-4 transition-colors hover:text-[#123625]"
                 >
-                  Expand message here
+                  Expand Full Message
                 </button>
               )}
             </div>

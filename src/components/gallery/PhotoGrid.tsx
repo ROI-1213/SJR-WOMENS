@@ -18,20 +18,20 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             type="button"
             aria-label={`Preview ${photo.title}`}
             onClick={() => onImageClick(index)}
-            className={`group relative flex h-full w-full overflow-hidden rounded-xl border border-[#d8e5dc] text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] ${isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#183c2b] lg:aspect-auto' : 'items-center gap-4 bg-white p-2.5 hover:border-[#177249]'}`}
+            className={`group relative flex h-full w-full overflow-hidden rounded-xl border border-[#d6cfb8] text-left transition-all duration-300 hover:border-[#c28422] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123625] ${isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#102d21] lg:aspect-auto' : 'items-center gap-4 bg-white p-3 hover:border-[#c28422]'}`}
           >
             <img
               src={photo.previewSrc ?? photo.src}
               alt=""
               loading="lazy"
               decoding="async"
-              className={`object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.025] ${isGrid ? 'absolute inset-0 h-full w-full' : 'h-20 w-24 shrink-0 rounded-md'}`}
+              className={`object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.03] ${isGrid ? 'absolute inset-0 h-full w-full' : 'h-20 w-24 shrink-0 rounded-md'}`}
             />
-            <span className={isGrid ? 'relative block w-full bg-gradient-to-t from-black/90 to-transparent px-2.5 pb-2.5 pt-7 text-white sm:px-4 sm:pb-3 sm:pt-10' : 'min-w-0 flex-1 text-[#182d23]'}>
-              <span className={`block text-xs font-medium capitalize ${isGrid ? 'text-white/90' : 'text-[#177249]'}`}>{photo.category}</span>
-              <span className="mt-1 block text-sm font-semibold sm:text-base">{photo.title}</span>
+            <span className={isGrid ? 'relative block w-full bg-gradient-to-t from-black/90 via-black/40 to-transparent px-3 pb-3 pt-8 text-white sm:px-4 sm:pb-3.5 sm:pt-10' : 'min-w-0 flex-1 text-[#143a29]'}>
+              <span className={`block text-xs font-medium uppercase tracking-wider ${isGrid ? 'text-[#dfa03e]' : 'text-[#8b6528]'}`}>{photo.category}</span>
+              <span className="mt-1 block text-sm font-semibold text-white sm:text-base leading-snug">{photo.title}</span>
             </span>
-            <Maximize2 size={16} aria-hidden="true" className={isGrid ? 'absolute right-3 top-3 box-content rounded bg-[#183c2b] p-1.5 text-white' : 'mr-2 shrink-0 text-[#177249]'} />
+            <Maximize2 size={16} aria-hidden="true" className={isGrid ? 'absolute right-3 top-3 box-content rounded bg-[#102d21]/80 p-1.5 text-[#dfa03e] backdrop-blur-sm' : 'mr-2 shrink-0 text-[#8b6528]'} />
           </button>
         </li>
       ))}
