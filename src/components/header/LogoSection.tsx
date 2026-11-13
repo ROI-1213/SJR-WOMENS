@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { accreditation, instituteName, instituteNameKannada } from '@/data/institute';
+import { instituteName, instituteNameKannada } from '@/data/institute';
 
 export const LogoSection = () => (
   <div className="border-b border-gray-200 bg-white px-3 py-1.5 sm:px-6 lg:py-3">
@@ -18,7 +18,6 @@ export const LogoSection = () => (
         <p lang="en" className="mx-auto text-[15px] text-balance font-semibold leading-snug text-[#101e50] sm:text-lg max-lg:max-w-[36rem] max-lg:!leading-tight xl:text-xl">
           {instituteName}
         </p>
-        <p lang="en" className="mx-auto mt-0.5 max-w-[38rem] text-xs leading-snug text-[#841d1b] lg:mt-1 xl:text-[13px]">{accreditation}</p>
       </div>
       <img
         src="/branding/center.png"
@@ -31,7 +30,6 @@ export const LogoSection = () => (
         <p lang="kn" className="mx-auto text-[15px] text-balance font-kannada font-semibold leading-relaxed text-[#101e50] sm:text-lg max-lg:max-w-[36rem] xl:text-xl">
           {instituteNameKannada}
         </p>
-        <p lang="en" className="mx-auto mt-0.5 max-w-[38rem] text-xs leading-snug text-[#841d1b] lg:mt-1 xl:text-[13px]">{accreditation}</p>
       </div>
       <img
         src="/branding/right.png"
