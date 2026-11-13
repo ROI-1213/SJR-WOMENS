@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, Clock3, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUpRight, Building2, Clock3, Facebook, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ContactEnquiryForm } from '@/components/ContactEnquiryForm';
 import { Footer } from '@/components/Footer';
@@ -89,7 +89,7 @@ const Contact = () => (
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-[1.2fr_0.8fr_1fr_1.1fr]">
             {details.map(({ title, icon: Icon, content }) => (
               <li key={title} className="min-w-0 rounded-xl border border-[#177249]/15 bg-white p-4 shadow-sm transition-colors hover:border-[#177249]/40 sm:p-5">
-                <span className="grid size-10 place-items-center rounded-lg border-b-2 border-[#ff8c00] bg-[#177249]/10 text-[#177249]">
+                <span className="grid size-10 place-items-center rounded-lg border-b-2 border-[#c28422] bg-[#177249]/10 text-[#177249]">
                   <Icon size={20} aria-hidden="true" />
                 </span>
                 <h3 className="mt-3 font-bold text-[#153b2a]">{title}</h3>
@@ -97,6 +97,32 @@ const Contact = () => (
               </li>
             ))}
           </ul>
+
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#c28422]/30 bg-[#faf8f2] p-4 sm:px-6">
+            <span className="text-sm font-semibold text-[#143a29]">Official Social Media Channels:</span>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={instituteContact.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#143a29] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+              >
+                <Facebook size={15} className="text-[#1877F2]" aria-hidden="true" />
+                <span>Facebook Page (@sjrcw)</span>
+                <ArrowUpRight size={13} className="text-[#8b6528]" aria-hidden="true" />
+              </a>
+              <a
+                href={instituteContact.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#143a29] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+              >
+                <Youtube size={15} className="text-[#FF0000]" aria-hidden="true" />
+                <span>Official YouTube Channel</span>
+                <ArrowUpRight size={13} className="text-[#8b6528]" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
         </section>
 
         <div className="grid items-start gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">

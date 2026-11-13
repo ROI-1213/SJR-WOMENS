@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronDown, Facebook, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { instituteContact } from '@/data/institute';
 import { collegeLinks } from '@/data/navigation/collegeLinks';
@@ -47,6 +47,26 @@ export const TopBar = ({ contactPhone }: { contactPhone?: string }) => (
             {label}
           </Link>
         ))}
+        <div className="flex items-center gap-2 pl-2 border-l border-white/20">
+          <a
+            href={instituteContact.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="SJR College for Women on Facebook (opens in new tab)"
+            className="text-white/80 transition-colors hover:text-[#dfa03e]"
+          >
+            <Facebook size={13} aria-hidden="true" />
+          </a>
+          <a
+            href={instituteContact.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="SJR College for Women on YouTube (opens in new tab)"
+            className="text-white/80 transition-colors hover:text-[#dfa03e]"
+          >
+            <Youtube size={13} aria-hidden="true" />
+          </a>
+        </div>
       </nav>
     </div>
   </div>

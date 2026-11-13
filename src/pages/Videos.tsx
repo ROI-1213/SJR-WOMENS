@@ -1,5 +1,6 @@
-import { Film } from 'lucide-react';
+import { Film, Youtube, ArrowUpRight } from 'lucide-react';
 import { MediaCenterLayout } from '@/components/layout/MediaCenterLayout';
+import { instituteContact } from '@/data/institute';
 import campus from '@/assets/sjr-administrative-block.jpg';
 import classroom from '@/assets/sjr-teacher-guidance.jpg';
 import performance from '@/assets/gallery-cultural-fest.jpg';
@@ -65,6 +66,31 @@ const Videos = () => (
             </div>
           </article>
         ))}
+      </div>
+    </section>
+    <section aria-labelledby="youtube-channel" className="mt-8 rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#123625] to-[#0e271c] p-6 text-white sm:p-8">
+      <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <div>
+          <div className="flex items-center gap-2 text-[#dfa03e]">
+            <Youtube size={22} className="text-[#FF0000]" aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-wider">Official YouTube Channel</span>
+          </div>
+          <h2 id="youtube-channel" className="mt-1 font-serif text-xl font-bold text-white sm:text-2xl">
+            Watch More on SJR College for Women YouTube
+          </h2>
+          <p className="mt-1 text-xs text-white/80">
+            Subscribe for campus events, annual day celebrations, student activities, and special guest lectures.
+          </p>
+        </div>
+        <a
+          href={instituteContact.youtube}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2.5 text-xs font-bold text-[#102d21] shadow transition-colors hover:bg-white"
+        >
+          <span>Visit YouTube Channel</span>
+          <ArrowUpRight size={14} aria-hidden="true" />
+        </a>
       </div>
     </section>
   </MediaCenterLayout>

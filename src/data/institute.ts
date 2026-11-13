@@ -35,5 +35,7 @@ export const instituteContact = {
   iqacEmail: 'iqac.sjrcw@gmail.com',
   address: "1/D, 59th 'C' Cross, IV 'M' Block, Gopalapura, Rajajinagar, Bengaluru – 560010, Karnataka",
   website: 'https://www.sjrcw.edu.in/',
+  youtube: 'https://www.youtube.com/channel/UCNfkDEB6xReoJkbGv8kOUOw',
+  facebook: 'https://www.facebook.com/sjrcw',
   timings: 'Mon–Fri: 8:30 AM – 4:00 PM | Sat: 8:30 AM – 1:00 PM',
 };

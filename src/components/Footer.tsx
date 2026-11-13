@@ -1,4 +1,4 @@
-import { ArrowUpRight, FileText, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUpRight, Facebook, FileText, Globe, Mail, MapPin, Phone, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { availableProgrammes, instituteContact, instituteName, naacGrade, naacResources } from '@/data/institute';
 
@@ -27,6 +27,26 @@ export const Footer = ({ contactPhone }: { contactPhone?: string }) => (
             <span>{instituteName}</span>
           </Link>
           <p className="mt-3 max-w-xs text-xs leading-relaxed text-green-50/90">Established in 1988. Affiliated to Bengaluru City University.</p>
+          <div className="mt-4 flex items-center gap-2.5">
+            <a
+              href={instituteContact.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SJR College for Women on Facebook (opens in new tab)"
+              className="grid size-8 place-items-center rounded-full border border-white/20 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#c28422] hover:text-white"
+            >
+              <Facebook size={15} aria-hidden="true" />
+            </a>
+            <a
+              href={instituteContact.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SJR College for Women on YouTube (opens in new tab)"
+              className="grid size-8 place-items-center rounded-full border border-white/20 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#c28422] hover:text-white"
+            >
+              <Youtube size={15} aria-hidden="true" />
+            </a>
+          </div>
         </section>
 
         <nav aria-label="Academic Programmes" className="min-w-0 border-l border-white/15 pl-3 sm:pl-4 xl:px-5">
@@ -80,6 +100,18 @@ export const Footer = ({ contactPhone }: { contactPhone?: string }) => (
             </p>
             <p className="flex gap-2"><Mail size={16} className={iconStyle} aria-hidden="true" /><a href={`mailto:${instituteContact.email}`} className={`min-w-0 break-words [overflow-wrap:anywhere] ${linkStyle}`}>{instituteContact.email}</a></p>
             <p className="flex gap-2"><Globe size={16} className={iconStyle} aria-hidden="true" /><a href={instituteContact.website} target="_blank" rel="noopener noreferrer" className={linkStyle}>sjrcw.edu.in</a></p>
+            <div className="flex items-center gap-2.5 pt-1 text-xs text-green-50/90">
+              <span className="font-semibold text-white">Social:</span>
+              <a href={instituteContact.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[#dfa03e] hover:text-white transition-colors">
+                <Facebook size={13} aria-hidden="true" />
+                <span>Facebook</span>
+              </a>
+              <span className="text-white/30">·</span>
+              <a href={instituteContact.youtube} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[#dfa03e] hover:text-white transition-colors">
+                <Youtube size={13} aria-hidden="true" />
+                <span>YouTube</span>
+              </a>
+            </div>
           </address>
         </section>
       </div>
