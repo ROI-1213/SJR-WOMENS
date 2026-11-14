@@ -138,13 +138,13 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <button
                   type="button"
                   onClick={() => setExpanded(!expanded)}
-                  className="luxury-btn-shine group inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#177249] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-[#135c3b] hover:text-[#dfa03e]"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[#e67e00]"
                 >
                   <span>{expanded ? 'Show Brief Message' : 'Read Complete Address (5 Paragraphs)'}</span>
                   {expanded ? (
                     <ChevronUp size={15} aria-hidden="true" />
                   ) : (
-                    <ChevronDown size={15} className="transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+                    <ChevronDown size={15} className="text-white transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
                   )}
                 </button>
 

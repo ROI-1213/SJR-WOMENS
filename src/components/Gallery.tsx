@@ -47,10 +47,10 @@ export const Gallery = () => {
             <button
               type="button"
               onClick={() => setShowAll(true)}
-              className="luxury-btn-shine group inline-flex items-center gap-2 rounded-xl border border-[#c28422]/60 bg-gradient-to-r from-[#177249] to-[#125c3a] px-7 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:scale-[1.02] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-[#ff8c00] px-7 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:scale-[1.02] hover:bg-[#e67e00] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
             >
               <span>View More Events &amp; Activities ({photos.length - INITIAL_PHOTO_COUNT} More)</span>
-              <ChevronDown size={16} className="text-[#dfa03e] transition-transform duration-300 group-hover:translate-y-0.5" aria-hidden="true" />
+              <ChevronDown size={16} className="text-white transition-transform duration-300 group-hover:translate-y-0.5" aria-hidden="true" />
             </button>
           ) : (
             <button

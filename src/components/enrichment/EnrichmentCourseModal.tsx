@@ -124,10 +124,10 @@ export const EnrichmentCourseModal: React.FC<EnrichmentCourseModalProps> = ({
           <Link
             to="/contact"
             onClick={onClose}
-            className="inline-flex items-center gap-2 rounded-lg border border-[#dfa03e]/60 bg-[#177249] px-5 py-2.5 text-xs font-semibold text-white shadow transition-all duration-200 hover:bg-[#135c3b] hover:shadow-md"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-5 py-2.5 text-xs font-semibold text-white shadow transition-all duration-200 hover:bg-[#e67e00] hover:shadow-md"
           >
             <span>Enquire with Admission / Department</span>
-            <ArrowRight size={15} className="text-[#dfa03e]" aria-hidden="true" />
+            <ArrowRight size={15} className="text-white" aria-hidden="true" />
           </Link>
         </div>
       </DialogContent>

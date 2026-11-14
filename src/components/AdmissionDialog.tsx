@@ -179,7 +179,7 @@ export const AdmissionDialog: React.FC<AdmissionDialogProps> = ({ isOpen, onClos
             </Button>
             <Button 
               type="submit"
-              className="flex-1 bg-logo-navy hover:bg-logo-navy-dark"
+              className="flex-1 bg-[#ff8c00] hover:bg-[#e67e00] text-white font-semibold"
             >
               Submit Application
             </Button>

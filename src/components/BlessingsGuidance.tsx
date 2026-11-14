@@ -70,10 +70,10 @@ export const BlessingsGuidance = () => (
 
           <Link
             to="/about/chief-patrons-message"
-            className="luxury-btn-shine inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#177249] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#135c3b] hover:text-[#dfa03e]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#e67e00]"
           >
             <span>Read Chief Patron’s Full Message</span>
-            <ArrowRight size={14} className="text-[#dfa03e] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRight size={14} className="text-white transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
       </article>

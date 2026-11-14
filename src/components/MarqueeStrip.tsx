@@ -29,8 +29,8 @@ export const MarqueeStrip = () => {
     >
       <div className="flex items-center">
         {/* Heraldic Announcement Pill on Left */}
-        <div className="z-10 hidden shrink-0 items-center gap-2 border-r border-[#c28422]/50 bg-[#c28422] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#0a2316] shadow-md md:flex">
-          <Bell size={13} className="text-[#0a2316]" aria-hidden="true" />
+        <div className="z-10 hidden shrink-0 items-center gap-2 border-r border-[#e67e00] bg-[#ff8c00] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md md:flex">
+          <Bell size={13} className="text-white" aria-hidden="true" />
           <span>Notice Board</span>
         </div>
 

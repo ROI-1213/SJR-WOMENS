@@ -179,10 +179,10 @@ export const AdmissionsSection = () => {
             <div className="flex flex-wrap items-center gap-2">
               <Link
                 to="/naac"
-                className="luxury-btn-shine inline-flex items-center gap-1.5 rounded-lg border border-[#dfa03e] bg-gradient-to-r from-[#dfa03e] to-[#c28422] px-3.5 py-1.5 text-xs font-bold text-[#0a2316] shadow-2xs transition-all hover:bg-white hover:text-[#0a2316]"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#ff8c00] px-3.5 py-1.5 text-xs font-bold text-white shadow-2xs transition-all hover:bg-[#e67e00]"
               >
                 <span>NAAC &amp; AQAR Portal</span>
-                <ArrowRight size={12} aria-hidden="true" />
+                <ArrowRight size={12} className="text-white" aria-hidden="true" />
               </Link>
               <a
                 href="/documents/Annual-Report-23-24.pdf"
@@ -295,10 +295,10 @@ export const AdmissionsSection = () => {
             <button
               type="button"
               onClick={() => setIsDialogOpen(true)}
-              className="luxury-btn-shine inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#177249] to-[#125c3a] px-4 py-1.5 text-xs font-bold text-white shadow-xs transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+              className="inline-flex min-h-8 items-center gap-1.5 rounded-lg bg-[#ff8c00] px-4 py-1.5 text-xs font-bold text-white shadow-xs transition-all hover:bg-[#e67e00] hover:scale-[1.02] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
             >
               <span>Apply Online</span>
-              <ArrowRight size={13} className="text-[#dfa03e]" aria-hidden="true" />
+              <ArrowRight size={13} className="text-white" aria-hidden="true" />
             </button>
           </div>
         </div>

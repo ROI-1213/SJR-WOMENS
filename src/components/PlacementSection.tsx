@@ -118,11 +118,11 @@ export const PlacementSection = () => (
               href={placementSources.annualReport2324}
               target="_blank"
               rel="noopener noreferrer"
-              className="luxury-btn-shine group inline-flex min-h-10 items-center gap-2 rounded-lg border border-[#dfa03e] bg-gradient-to-r from-[#dfa03e] to-[#c28422] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0a2316] shadow-md transition-all hover:bg-white hover:text-[#0a2316]"
+              className="group inline-flex min-h-10 items-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#e67e00]"
             >
-              <FileText size={14} />
+              <FileText size={14} className="text-white" />
               <span>Placement Report 2023–24 (PDF)</span>
-              <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5" />
+              <ArrowUpRight size={13} className="text-white transition-transform group-hover:translate-x-0.5" />
             </a>
 
             <a

@@ -145,10 +145,10 @@ export const EnrichmentCourses = () => {
             <div className="mt-5 border-t border-white/15 pt-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#125c3a] shadow-sm transition-all hover:bg-white hover:text-[#125c3a]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[#e67e00]"
               >
                 <span>Enquire With Department</span>
-                <ArrowRight size={13} aria-hidden="true" />
+                <ArrowRight size={13} className="text-white" aria-hidden="true" />
               </Link>
             </div>
           </article>

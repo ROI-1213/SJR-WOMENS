@@ -86,10 +86,10 @@ const Videos = () => (
           href={instituteContact.youtube}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2.5 text-xs font-bold text-[#177249] shadow transition-colors hover:bg-white"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2.5 text-xs font-bold text-white shadow transition-colors hover:bg-[#e67e00]"
         >
           <span>Visit YouTube Channel</span>
-          <ArrowUpRight size={14} aria-hidden="true" />
+          <ArrowUpRight size={14} className="text-white" aria-hidden="true" />
         </a>
       </div>
     </section>

@@ -25,15 +25,15 @@ export const JoinCommunity = () => (
         <div className="mt-7 flex flex-wrap items-center gap-3.5">
           <Link
             to="/admissions"
-            className="luxury-btn-shine group inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#dfa03e] bg-gradient-to-r from-[#dfa03e] to-[#c28422] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-[#0a2316] shadow-md transition-all hover:scale-[1.02] hover:bg-white hover:text-[#0a2316]"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#ff8c00] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:scale-[1.02] hover:bg-[#e67e00]"
           >
             <span>Explore Admissions</span>
-            <ArrowRight size={15} className="text-[#0a2316] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowRight size={15} className="text-white transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
 
           <Link
             to="/contact"
-            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:border-[#dfa03e] hover:bg-white/20 hover:text-[#dfa03e]"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-transparent bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#177249] shadow-sm transition-all hover:bg-neutral-100"
           >
             <span>Contact College Office</span>
           </Link>

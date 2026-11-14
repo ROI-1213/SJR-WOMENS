@@ -212,19 +212,19 @@ export const Banner = () => {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/academics"
-                className="luxury-btn-shine group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#125c3a] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#177249] shadow-md transition-all duration-300 hover:bg-neutral-100 hover:shadow-lg hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                <span>Explore Degree Programmes</span>
-                <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
+                <span>Explore Programmes</span>
+                <ArrowRight size={17} className="text-[#177249] transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(true)}
-                className="luxury-btn-shine inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/40 bg-black/40 px-6 py-3.5 text-sm font-bold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#dfa03e] hover:bg-[#c28422]/25 hover:text-[#dfa03e] hover:scale-[1.03]"
+                className="inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-[#ff8c00] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-[#e67e00] hover:shadow-lg hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
               >
-                <Award size={16} className="text-[#dfa03e]" aria-hidden="true" />
-                <span>Admissions 2026–27</span>
+                <GraduationCap size={18} className="text-white" aria-hidden="true" />
+                <span>Apply for Admission</span>
               </button>
             </div>
           </div>
