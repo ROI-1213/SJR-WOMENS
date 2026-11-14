@@ -10,12 +10,12 @@
   font-family: "DM Serif Text", Georgia, "Times New Roman", serif;
 }
 
-/* Gold Gradient Typography */
+/* Warm Accent Typography */
 .hero-gold-gradient {
-  background: linear-gradient(135deg, #dfa03e 0%, #f7dc96 50%, #c28422 100%);
+  background: linear-gradient(135deg, #ff8c00 0%, #ffc04d 50%, #e67e00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 10px rgba(194, 132, 34, 0.25);
+  text-shadow: 0 2px 10px rgba(255, 140, 0, 0.25);
 }
 
 /* Background Slide Transitions with Subtle Ken Burns */

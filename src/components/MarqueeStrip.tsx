@@ -5,27 +5,27 @@ export const MarqueeStrip = () => {
   const content = (
     <span className="inline-flex items-center gap-6 whitespace-nowrap px-6">
       <span className="font-medium text-white/95">Welcome to SJR College for Women, Rajajinagar, Bengaluru</span>
-      <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
+      <span className="text-[#ff8c00] text-sm" aria-hidden="true">◆</span>
       <span className="text-white/85">Affiliated to Bengaluru City University</span>
-      <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
+      <span className="text-[#ff8c00] text-sm" aria-hidden="true">◆</span>
       <span className="text-white/85">UGC Recognised Under Sections 2(f) &amp; 12(B)</span>
-      <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
+      <span className="text-[#ff8c00] text-sm" aria-hidden="true">◆</span>
       <span className="text-white/85">NAAC Re-Accredited B++ (Cycle 4)</span>
-      <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
+      <span className="text-[#ff8c00] text-sm" aria-hidden="true">◆</span>
       <Link
         to="/admissions/online-application"
-        className="font-bold text-[#dfa03e] underline decoration-[#dfa03e]/70 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+        className="font-bold text-[#ff8c00] underline decoration-[#ff8c00]/80 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
       >
         Admissions Open for Academic Year 2026–27 — Apply Online
       </Link>
-      <span className="text-[#dfa03e] text-sm" aria-hidden="true">◆</span>
+      <span className="text-[#ff8c00] text-sm" aria-hidden="true">◆</span>
     </span>
   );
 
   return (
     <aside
       aria-label="Important Announcements"
-      className="relative w-full overflow-hidden border-y-2 border-[#c28422]/60 bg-gradient-to-r from-[#0a2316] via-[#103422] to-[#0a2316] shadow-md"
+      className="relative w-full overflow-hidden border-y border-[#ff8c00]/40 bg-gradient-to-r from-[#0a2316] via-[#103422] to-[#0a2316] shadow-md"
     >
       <div className="flex items-center">
         {/* Heraldic Announcement Pill on Left */}

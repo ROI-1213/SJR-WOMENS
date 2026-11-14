@@ -127,32 +127,32 @@ export const AdmissionsSection = () => {
           </div>
           <Link
             to="/admissions"
-            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422]"
+            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#ff8c00]"
           >
-            <span className="underline decoration-[#c28422] underline-offset-4">Admissions 2026–27 Guidelines</span>
-            <ArrowRight size={13} className="text-[#c28422] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <span className="underline decoration-[#ff8c00] underline-offset-4">Admissions 2026–27 Guidelines</span>
+            <ArrowRight size={13} className="text-[#ff8c00] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
 
         {/* Executive Accreditation Ribbon (Compact & Formal Institutional Credential) */}
-        <div className="mb-5 overflow-hidden rounded-xl border border-[#c28422]/35 bg-gradient-to-r from-[#0e4b30] via-[#177249] to-[#0e4b30] p-3.5 text-white shadow-sm sm:p-4">
+        <div className="mb-5 overflow-hidden rounded-xl border border-[#ff8c00]/35 bg-gradient-to-r from-[#0e4b30] via-[#177249] to-[#0e4b30] p-3.5 text-white shadow-sm sm:p-4">
           <div className="flex flex-col gap-3.5 lg:flex-row lg:items-center lg:justify-between">
             {/* Left: NAAC Grade Crest */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <div className="flex items-center gap-2 rounded-lg border border-[#dfa03e]/30 bg-[#dfa03e]/10 px-3 py-1 backdrop-blur-xs">
-                <span className="font-serif text-2xl font-bold text-[#dfa03e] sm:text-3xl">
+              <div className="flex items-center gap-2 rounded-lg border border-[#ff8c00]/30 bg-[#ff8c00]/10 px-3 py-1 backdrop-blur-xs">
+                <span className="font-serif text-2xl font-bold text-[#ff8c00] sm:text-3xl">
                   {naacGrade}
                 </span>
-                <div className="flex flex-col border-l border-[#dfa03e]/30 pl-2 text-left">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#dfa03e]">NAAC Grade Level</span>
+                <div className="flex flex-col border-l border-[#ff8c00]/30 pl-2 text-left">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff8c00]">NAAC Grade Level</span>
                   <span className="text-[11px] font-semibold text-white/95">CGPA 2.95 / 4.00</span>
                 </div>
               </div>
 
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#dfa03e]">
-                    <Sparkles size={11} className="text-[#dfa03e]" aria-hidden="true" />
+                  <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#ff8c00]">
+                    <Sparkles size={11} className="text-[#ff8c00]" aria-hidden="true" />
                     NAAC Re-Accredited · Cycle 4 (2023–2028)
                   </span>
                 </div>
@@ -169,7 +169,7 @@ export const AdmissionsSection = () => {
                   key={badge}
                   className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-2.5 py-0.5 text-[11px] font-medium text-white/90"
                 >
-                  <span className="h-1 w-1 rounded-full bg-[#dfa03e]" />
+                  <span className="h-1 w-1 rounded-full bg-[#ff8c00]" />
                   {badge}
                 </span>
               ))}
@@ -256,7 +256,7 @@ export const AdmissionsSection = () => {
                   {/* Footer: Duration pill & Curriculum CTA */}
                   <div className="mt-3.5 flex items-center justify-between border-t border-[#f0f4f0] pt-2.5 text-xs font-semibold text-[#177249]">
                     <span className="text-[10px] font-medium text-[#718579]">{prog.duration}</span>
-                    <span className="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#177249] transition-colors group-hover:text-[#c28422]">
+                    <span className="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#177249] transition-colors group-hover:text-[#ff8c00]">
                       <span>Curriculum</span>
                       <ChevronRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
                     </span>
@@ -270,7 +270,7 @@ export const AdmissionsSection = () => {
         {/* Compact Admissions CTA Bar */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#d5ded7] bg-gradient-to-r from-[#edf4ef] via-[#f7faf8] to-[#edf4ef] p-3.5 shadow-2xs sm:p-4">
           <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#177249] text-[#dfa03e] shadow-2xs">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#177249] text-[#ff8c00] shadow-2xs">
               <GraduationCap size={18} />
             </span>
             <div>
@@ -288,7 +288,7 @@ export const AdmissionsSection = () => {
               to="/admissions"
               className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#c4dcce] bg-white px-3 py-1.5 text-xs font-bold text-[#177249] shadow-2xs transition-colors hover:border-[#177249] hover:bg-[#f4f7f4]"
             >
-              <Scroll size={13} className="text-[#c28422]" />
+              <Scroll size={13} className="text-[#ff8c00]" />
               <span>Guidelines</span>
             </Link>
 
