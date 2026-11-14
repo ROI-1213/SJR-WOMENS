@@ -32,8 +32,8 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
         'absolute top-full z-50 overflow-y-auto overscroll-contain rounded-b-xl border border-[#143a29]/20 bg-white p-2 shadow-2xl',
         panelWidths[key],
         isAdmissions && 'p-5',
-        !compactKeys.includes(key) && 'border-t-4 border-t-[#c28422]',
-        isStudentServices && 'border-t-4 border-t-[#c28422] p-3 [@media(max-height:480px)]:p-2'
+        !compactKeys.includes(key) && 'border-t-4 border-t-[#ff8c00]',
+        isStudentServices && 'border-t-4 border-t-[#ff8c00] p-3 [@media(max-height:480px)]:p-2'
       )}
     >
       <ul className={cn(
@@ -127,7 +127,7 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
       <nav
         ref={navRef}
         aria-label="Primary navigation"
-        className={`z-50 border-b border-black/10 bg-[#123625] shadow-lg transition-all ${
+        className={`z-50 border-b border-black/10 bg-[#177249] shadow-lg transition-all ${
           isScrolled ? 'fixed inset-x-0 top-0 shadow-md' : 'relative'
         }`}
       >
@@ -162,8 +162,8 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                 >
                   <div
                     className={cn(
-                      'group relative flex items-center justify-center border-r border-white/15 text-sm font-semibold text-white/95 hover:bg-black/20 hover:text-white transition-colors',
-                      current && item.dropdown && 'after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-[#dfa03e]'
+                      'group relative flex items-center justify-center border-r border-white/15 text-sm font-semibold text-white/95 hover:bg-[#135c3b] hover:text-white transition-colors',
+                      current && item.dropdown && 'after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-[#ff8c00]'
                     )}
                   >
                     {!compact && (

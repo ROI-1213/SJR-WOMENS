@@ -25,7 +25,7 @@ const MobileLink = ({ href, label, close }: BaseMenuItem & { close: () => void }
     to={href}
     end
     onClick={close}
-    className={({ isActive }) => `flex min-h-11 items-center rounded-md px-3 py-2 text-sm leading-snug transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white ${isActive ? 'bg-white/15 font-semibold underline decoration-[#dfa03e] underline-offset-4' : ''}`}
+    className={({ isActive }) => `flex min-h-11 items-center rounded-md px-3 py-2 text-sm leading-snug transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-white ${isActive ? 'bg-white/15 font-semibold underline decoration-[#ff8c00] underline-offset-4' : ''}`}
   >
     {label}
   </NavLink>
@@ -37,7 +37,7 @@ const MobileGroup = ({ item, close }: { item: MainMenuItem; close: () => void })
       {item.label}
       <ChevronDown size={17} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
     </summary>
-    <ul id={`${item.key}-navigation-mobile`} className="mb-2 ml-2 border-l border-[#dfa03e]/75 pl-2">
+    <ul id={`${item.key}-navigation-mobile`} className="mb-2 ml-2 border-l border-[#ff8c00]/75 pl-2">
       {sectionLabels[item.key] && <li><MobileLink href={item.href} label={sectionLabels[item.key]} close={close} /></li>}
       {item.dropdown?.map(link => link.submenu?.length ? (
         <li key={link.href} className="pt-2">
@@ -77,7 +77,7 @@ export const MobileNavigation = () => {
         <SheetOverlay className="z-[60] bg-black/55" />
         <SheetPrimitive.Content
           aria-describedby={undefined}
-          className="fixed inset-y-0 right-0 z-[61] flex h-dvh w-full max-w-[27rem] flex-col border-l border-white/15 bg-[#135c3b] text-white shadow-xl motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right"
+          className="fixed inset-y-0 right-0 z-[61] flex h-dvh w-full max-w-[27rem] flex-col border-l border-white/15 bg-[#177249] text-white shadow-xl motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right"
         >
           <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/20 px-4 pb-2 pt-[max(0.5rem,env(safe-area-inset-top))] sm:px-5">
             <SheetTitle className="font-bold text-white">Navigation</SheetTitle>
