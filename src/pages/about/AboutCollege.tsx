@@ -9,7 +9,8 @@ import { availableProgrammes, instituteName, naacResources } from '@/data/instit
 import campus from '@/assets/sjr-administrative-block.jpg';
 import library from '@/assets/hero/library-1440.webp';
 
-const programmeDetails = {
+const programmeDetails: Record<string, { icon: typeof Calculator; description: string }> = {
+  bsc: { icon: FlaskConical, description: 'Explore foundational and applied sciences across physical, mathematical, biological, and computing disciplines.' },
   bcom: { icon: Calculator, description: 'Build a foundation in accounting, finance and commerce.' },
   bba: { icon: BriefcaseBusiness, description: 'Explore how organisations operate and develop business and management skills.' },
   bca: { icon: Laptop, description: 'Develop skills in programming and computer applications.' },
@@ -35,7 +36,7 @@ const milestones = [
   { year: '2010', title: 'NAAC Cycle 2', detail: 'Grade B · CGPA 2.82.' },
   { year: '2012', title: 'M.Com launched', detail: 'The college introduced its postgraduate commerce programme.' },
   { year: '2016', title: 'NAAC Cycle 3', detail: 'Grade B · CGPA 2.85.' },
-  { year: '2023', title: 'NAAC Cycle 4', detail: 'Grade B+ · CGPA 2.70 · 12 August 2023.' },
+  { year: '2023', title: 'NAAC Cycle 4', detail: 'Accredited with Grade B++ · CGPA 2.95 (valid 2023–2028).' },
 ];
 
 const sectionTitle = 'text-2xl font-bold leading-tight tracking-tight text-[color:var(--section-heading-color)] sm:text-3xl lg:text-4xl';
@@ -86,9 +87,14 @@ const AboutCollege = () => (
 
       <section className={`${container} ${sectionSpacing}`}>
         <h2 className={sectionTitle}>Academic Programmes</h2>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {availableProgrammes.map(programme => {
-            const { icon: Icon, description } = programmeDetails[programme.id];
+            const details = programmeDetails[programme.id] || {
+              icon: BookOpen,
+              description: 'Undergraduate and postgraduate degree programmes under NEP 2020.',
+            };
+            const Icon = details.icon;
+            const description = details.description;
             return (
               <li key={programme.id}>
                 <Link to={programme.href} className="group flex h-full flex-col rounded-xl border border-[#d6e6dc] bg-white p-5 transition-colors hover:border-[#177249] hover:bg-[#f5f9f6]">
@@ -177,8 +183,8 @@ const AboutCollege = () => (
               <Award size={32} className="shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-sm">Latest documented NAAC grade</p>
-                <p className="mt-1 text-xl font-bold">B+ · CGPA 2.70</p>
-                <p className="mt-1 text-sm">Cycle 4 · 12 August 2023</p>
+                <p className="mt-1 text-xl font-bold">B++ · CGPA 2.95</p>
+                <p className="mt-1 text-sm">Cycle 4 (2023–2028)</p>
               </div>
             </div>
             <ul className="mt-5 space-y-2">

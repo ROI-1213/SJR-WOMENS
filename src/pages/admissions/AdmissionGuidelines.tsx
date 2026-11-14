@@ -5,6 +5,10 @@ import { CheckCircle, AlertTriangle, FileText, Calendar } from 'lucide-react';
 import { availableProgrammes, programmeTitle, type AvailableProgramme } from '@/data/institute';
 
 const eligibilityByProgramme: Record<AvailableProgramme['id'], { requirement: string; source: string }> = {
+  bsc: {
+    requirement: 'Pass the two-year Karnataka Pre-University Course (PUC in Science stream) or 10+2 equivalent with relevant science disciplines.',
+    source: 'https://bcu.ac.in/',
+  },
   bcom: {
     requirement: 'Complete the two-year Karnataka PUC, 10+2 in Karnataka or another state, or an equivalent qualification. Students who pass the second PUC examination directly through open schooling are also eligible.',
     source: 'https://bcu.ac.in/uploads/syllabus/UG_Syllabus/commerce/B.Com_Regular_V_&_VI_Sem.pdf#page=10',
@@ -76,7 +80,11 @@ const AdmissionGuidelines = () => {
             </h3>
             <div className="grid gap-6 sm:grid-cols-2">
               {availableProgrammes.map((programme) => {
-                const { requirement, source } = eligibilityByProgramme[programme.id];
+                const eligibility = eligibilityByProgramme[programme.id] || {
+                  requirement: 'Pass 10+2 / Pre-University Course (PUC) or equivalent from a recognised board.',
+                  source: 'https://bcu.ac.in/',
+                };
+                const { requirement, source } = eligibility;
 
                 return (
                   <Card key={programme.id} className="flex flex-col p-6">
