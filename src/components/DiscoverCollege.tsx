@@ -1,117 +1,90 @@
-import { ArrowUpRight, BookOpen, GraduationCap, Milestone, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, BookOpen, GraduationCap, Handshake, LibraryBig } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const destinations = [
   {
-    name: 'Academic Programmes',
-    description: 'Explore undergraduate and postgraduate degrees in science, commerce, management and computing.',
+    name: 'Programmes',
+    description: 'Explore degree programmes in commerce, business administration and computer applications.',
     href: '/academics',
     icon: GraduationCap,
-    badge: 'Degree Studies',
   },
   {
-    name: 'Institutional Milestones',
-    description: 'Trace the college’s journey from its 1988 founding to voluntary NAAC accreditations.',
-    href: '/milestones',
-    icon: Milestone,
-    badge: 'Our History',
+    name: 'Library',
+    description: 'Explore the reading rooms and resources that support independent study.',
+    href: '/infrastructure/library',
+    icon: LibraryBig,
   },
   {
-    name: 'Right to Information',
-    description: 'Access statutory Section 4(1)(b) RTI declarations, college timings and official documents.',
-    href: '/rti',
-    icon: ShieldCheck,
-    badge: 'Statutory Disclosure',
+    name: 'Student support',
+    description: 'Find student services and learn where to go for guidance during college.',
+    href: '/student-services/support',
+    icon: Handshake,
   },
 ];
 
 export const DiscoverCollege = () => (
   <section
     aria-labelledby="discover-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#143a29] sm:px-8 sm:py-12 lg:px-12"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Header */}
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
-            <span className="home-section-eyebrow tracking-widest text-[#8b6528]">HERITAGE &amp; GOVERNANCE</span>
-          </div>
-          <h2 id="discover-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
+          <div className="mb-2 h-1 w-8 rounded-full bg-[#ea580c]" aria-hidden="true" />
+          <h2
+            id="discover-title"
+            className="text-2xl font-bold tracking-tight text-[#143a29] sm:text-3xl"
+          >
             Discover Excellence
           </h2>
-          <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
-            Established in 1988 to foster high standards of value-centric education for women.
-          </p>
         </div>
         <Link
           to="/about/overview"
-          className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#143a29] transition-colors hover:text-[#c28422] sm:text-sm"
+          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#185d40] underline underline-offset-4 hover:text-[#177249]"
         >
-          <span className="underline decoration-[#c28422] underline-offset-4">About SJR College for Women</span>
-          <ArrowUpRight size={15} className="text-[#c28422] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          <span>About the College</span>
+          <ArrowUpRight
+            size={16}
+            className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
         </Link>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Heritage Monolith Plaque */}
-        <div className="plaque-card relative flex min-h-56 flex-col justify-between overflow-hidden p-6 text-white shadow-xl">
-          <div className="plaque-ambient-glow" aria-hidden="true" />
-          
-          <div className="relative z-10 flex items-center justify-between">
-            <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#dfa03e]/40 bg-[#dfa03e]/15 text-[#dfa03e] shadow-2xs">
-              <BookOpen size={20} aria-hidden="true" />
-            </span>
-            <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#dfa03e]">
-              Est. 1988
-            </span>
-          </div>
-
-          <div className="relative z-10 mt-4">
-            <p className="home-display-title font-serif text-5xl font-bold leading-none tracking-tight text-[#dfa03e] drop-shadow-sm sm:text-6xl">
-              1988
-            </p>
-            <p className="mt-2 text-xs font-bold uppercase tracking-wider text-white">
-              Established by SJRES
-            </p>
-            <p className="mt-1 text-xs leading-relaxed text-white/80">
-              Over three decades dedicated to women’s higher education in Bengaluru.
-            </p>
+      {/* 4 Cards Grid */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Heritage Card */}
+        <div className="flex min-h-44 flex-col justify-between rounded-xl bg-[#177249] p-6 text-white shadow-sm">
+          <BookOpen size={24} className="text-white" aria-hidden="true" />
+          <div className="mt-4">
+            <p className="home-display-title text-5xl font-normal leading-none text-white">1945</p>
+            <p className="mt-2 text-sm font-normal text-white/90">Year the college was founded</p>
           </div>
         </div>
 
-        {/* Dossier Cards */}
-        {destinations.map(({ name, description, href, icon: Icon, badge }, idx) => (
+        {/* Feature Cards */}
+        {destinations.map(({ name, description, href, icon: Icon }) => (
           <Link
             key={href}
             to={href}
-            className={`dossier-card-advanced group flex min-h-56 flex-col justify-between p-6 stagger-${idx + 1}`}
+            className="group flex min-h-44 flex-col justify-between rounded-xl border border-[#d8e5dc] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#177249] hover:bg-[#f8fbf8] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
           >
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="dossier-icon grid h-10 w-10 place-items-center rounded-xl border border-[#c6ded0] bg-gradient-to-br from-[#edf4f0] to-[#dfede4] text-[#143a29] shadow-2xs transition-all duration-300">
-                  <Icon size={19} aria-hidden="true" />
-                </span>
-                <span className="rounded-full border border-[#dce4dd] bg-[#f8faf8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#4d6355]">
-                  {badge}
-                </span>
-              </div>
-              <div className="mt-4">
-                <h3 className="text-base font-bold text-[#143a29] transition-colors group-hover:text-[#185e3c]">
-                  {name}
-                </h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#566c5f]">
-                  {description}
-                </p>
-              </div>
+            <div className="flex items-center justify-between text-[#177249]">
+              <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
+              <ArrowUpRight
+                size={18}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#177249]"
+                aria-hidden="true"
+              />
             </div>
-
-            <div className="mt-4 flex items-center justify-between border-t border-[#f0f4f0] pt-3 text-xs font-semibold text-[#143a29]">
-              <span className="text-[11px] text-[#718579]">Explore Department</span>
-              <span className="grid h-6 w-6 place-items-center rounded-full border border-[#d4ded6] bg-[#f8faf8] text-[#143a29] transition-all duration-300 group-hover:bg-[#143a29] group-hover:text-white group-hover:border-[#143a29]">
-                <ArrowUpRight size={13} aria-hidden="true" />
-              </span>
+            <div className="mt-4">
+              <h3 className="text-lg font-bold text-[#143a29] transition-colors group-hover:text-[#177249]">
+                {name}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-[#4b5563]">
+                {description}
+              </p>
             </div>
           </Link>
         ))}
