@@ -1,6 +1,6 @@
 import { ArrowUpRight, Award, FileText, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { accreditation, naacGrade, naacResources } from '@/data/institute';
+import { accreditationFull, naacGrade, naacResources } from '@/data/institute';
 
 export const NaacHighlight = () => (
   <section
@@ -49,7 +49,7 @@ export const NaacHighlight = () => (
           </h2>
 
           <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[#43534a] sm:text-sm">
-            {accreditation}.
+            {accreditationFull}.
           </p>
 
           <dl className="mt-6 grid grid-cols-1 gap-3 rounded-xl border border-[#dce4dd] bg-[#f8faf8] p-4 text-sm sm:grid-cols-3">

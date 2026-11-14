@@ -2,6 +2,8 @@ export const instituteName = 'SJR College for Women';
 export const instituteNameFull = 'Sri Jagadguru Renukacharya College for Women';
 export const instituteNameKannada = 'ಎಸ್.ಜೆ.ಆರ್. ಮಹಿಳಾ ಕಾಲೇಜು, ರಾಜಾಜಿನಗರ';
 export const accreditation =
+  'Affiliated to Bengaluru City University, recognised by UGC and NAAC Accredited';
+export const accreditationFull =
   'Affiliated to Bengaluru City University, recognised by UGC under Sections 2(f) & 12(B), and NAAC Accredited (Cycle 4: B++ Grade, CGPA 2.95, valid 2023–2028; Cycle 3: A Grade, CGPA 3.09)';
 export const naacGrade = 'B++';
 export const naacCycleLabel = 'Cycle 4 (2023–2028)';
