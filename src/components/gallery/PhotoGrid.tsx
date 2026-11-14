@@ -11,15 +11,15 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
   const isGrid = viewMode === 'grid';
 
   return (
-    <ul className={isGrid ? 'grid grid-cols-2 gap-3.5 sm:gap-4 lg:auto-rows-[minmax(10.5rem,1fr)] lg:grid-cols-4' : 'grid gap-3.5 sm:grid-cols-2'}>
+    <ul className={isGrid ? 'grid grid-cols-2 gap-3.5 sm:gap-4 lg:grid-cols-4' : 'grid gap-3.5 sm:grid-cols-2'}>
       {photos.map((photo, index) => (
-        <li key={photo.id} className={isGrid && index === 0 ? 'col-span-2 min-w-0 lg:row-span-2' : 'min-w-0'}>
+        <li key={photo.id} className="min-w-0">
           <button
             type="button"
             aria-label={`Preview ${photo.title}`}
             onClick={() => onImageClick(index)}
             className={`luxury-glass-card group relative flex h-full w-full overflow-hidden text-left transition-all duration-400 hover:border-[#c28422] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123625] ${
-              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#0c2619] lg:aspect-auto' : 'items-center gap-4 bg-white p-3.5 hover:border-[#c28422]'
+              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#0c2619]' : 'items-center gap-4 bg-white p-3.5 hover:border-[#c28422]'
             }`}
           >
             <img
