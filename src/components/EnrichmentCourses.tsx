@@ -192,17 +192,17 @@ export const EnrichmentCourses = () => {
                     key={course.id}
                     type="button"
                     onClick={() => openCourse(course)}
-                    className="luxury-glass-card group flex items-start gap-3 p-3 text-left transition-all duration-300 hover:border-[#c28422] hover:shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+                    className="group flex items-start gap-3 rounded-xl border border-[#d8e3da] bg-white p-3 text-left shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#177249] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
                   >
                     {/* Icon */}
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-gradient-to-br from-[#eef5f0] to-[#e0ede4] text-[#177249] shadow-2xs transition-all duration-300 group-hover:bg-[#177249] group-hover:text-white group-hover:border-[#177249]">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#eef5f0] text-[#177249] shadow-2xs transition-colors duration-200 group-hover:border-[#177249] group-hover:bg-[#177249] group-hover:text-white">
                       <Icon size={18} aria-hidden="true" />
                     </span>
 
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1.5">
-                        <span className="truncate text-xs font-bold text-[#177249] group-hover:text-[#185e3c]">
+                        <span className="truncate text-xs font-bold text-[#177249] transition-colors group-hover:text-[#135c3b]">
                           {course.displayTitle || course.officialTitle}
                         </span>
                         <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#486353] shrink-0">
