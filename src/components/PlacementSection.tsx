@@ -27,7 +27,7 @@ const careerServices = [
 export const PlacementSection = () => (
   <section
     aria-labelledby="career-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Header */}
@@ -37,7 +37,7 @@ export const PlacementSection = () => (
             <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
             <span className="home-section-eyebrow tracking-widest text-[#8b6528]">CAREER DEVELOPMENT &amp; TRAINING</span>
           </div>
-          <h2 id="career-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
+          <h2 id="career-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
             Placement Cell “Disha”
           </h2>
           <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -46,7 +46,7 @@ export const PlacementSection = () => (
         </div>
         <Link
           to="/placements"
-          className="group inline-flex min-h-10 items-center gap-1.5 text-xs font-bold text-[#143a29] transition-colors hover:text-[#c28422] sm:text-sm"
+          className="group inline-flex min-h-10 items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422] sm:text-sm"
         >
           <span className="underline decoration-[#c28422] underline-offset-4">Placement Drives &amp; Reports</span>
           <ArrowUpRight size={15} className="text-[#c28422] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -63,12 +63,12 @@ export const PlacementSection = () => (
               key={title}
               className={`placement-pillar-card flex items-start gap-4 p-5 transition-all duration-300 stagger-${idx + 1}`}
             >
-              <span className="pillar-icon grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#c4dcce] bg-gradient-to-br from-[#edf4ef] to-[#dfede3] text-[#143a29] shadow-2xs transition-all duration-300">
+              <span className="pillar-icon grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#c4dcce] bg-gradient-to-br from-[#edf4ef] to-[#dfede3] text-[#177249] shadow-2xs transition-all duration-300">
                 <Icon size={20} aria-hidden="true" />
               </span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-bold text-[#143a29] sm:text-base">{title}</h3>
+                  <h3 className="text-sm font-bold text-[#177249] sm:text-base">{title}</h3>
                   <span className="rounded-full border border-[#dce4dd] bg-[#f8faf8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#54705e] shrink-0">
                     {badge}
                   </span>
@@ -141,10 +141,10 @@ export const PlacementSection = () => (
       {/* Recruiter Showcase Marquee */}
       <div className="mt-10">
         <div className="mb-3 flex items-center justify-between border-b border-[#dde5de] pb-2">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#143a29]">
+          <p className="text-xs font-bold uppercase tracking-wider text-[#177249]">
             Major Corporate Recruiting Partners
           </p>
-          <span className="rounded-full bg-[#eef5f0] px-2.5 py-0.5 text-[11px] font-semibold text-[#143a29]">
+          <span className="rounded-full bg-[#eef5f0] px-2.5 py-0.5 text-[11px] font-semibold text-[#177249]">
             Over 15+ Verified Corporate Employers
           </span>
         </div>

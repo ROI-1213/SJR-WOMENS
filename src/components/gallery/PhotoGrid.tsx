@@ -18,8 +18,8 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             type="button"
             aria-label={`Preview ${photo.title}`}
             onClick={() => onImageClick(index)}
-            className={`luxury-glass-card group relative flex h-full w-full overflow-hidden text-left transition-all duration-400 hover:border-[#c28422] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#123625] ${
-              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#0c2619]' : 'items-center gap-4 bg-white p-3.5 hover:border-[#c28422]'
+            className={`luxury-glass-card group relative flex h-full w-full overflow-hidden text-left transition-all duration-400 hover:border-[#c28422] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] ${
+              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#125c3a]' : 'items-center gap-4 bg-white p-3.5 hover:border-[#c28422]'
             }`}
           >
             <img
@@ -33,7 +33,7 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             />
             
             {/* Overlay Caption */}
-            <span className={isGrid ? 'relative block w-full bg-gradient-to-t from-black/95 via-black/50 to-transparent px-4 pb-4 pt-10 text-white' : 'min-w-0 flex-1 text-[#143a29]'}>
+            <span className={isGrid ? 'relative block w-full bg-gradient-to-t from-black/95 via-black/50 to-transparent px-4 pb-4 pt-10 text-white' : 'min-w-0 flex-1 text-[#177249]'}>
               <span className={`inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider ${isGrid ? 'text-[#dfa03e]' : 'text-[#8b6528]'}`}>
                 <span>{photo.category}</span>
               </span>

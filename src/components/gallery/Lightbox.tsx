@@ -11,7 +11,7 @@ interface LightboxProps {
   imageOnly?: boolean;
 }
 
-const overlayControl = 'absolute z-10 grid size-11 place-items-center rounded-full border border-white/40 bg-[#123625]/95 text-white shadow-lg transition-colors hover:bg-[#1a4a33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]';
+const overlayControl = 'absolute z-10 grid size-11 place-items-center rounded-full border border-white/40 bg-[#177249]/95 text-white shadow-lg transition-colors hover:bg-[#135c3b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]';
 
 export const Lightbox = ({ selectedImage, photos, onClose, onNavigate, imageOnly = false }: LightboxProps) => {
   const opener = useRef<HTMLElement | null>(null);

@@ -12,7 +12,7 @@ export const GalleryHeader = ({ viewMode, setViewMode }: GalleryHeaderProps) => 
       <span className="home-section-eyebrow">
         Campus Life &amp; Infrastructure
       </span>
-      <h2 id="campus-gallery-title" className="home-section-title mt-1.5 text-[#143a29]">
+      <h2 id="campus-gallery-title" className="home-section-title mt-1.5 text-[#177249]">
         Visual Archive &amp; Facilities
       </h2>
       <p className="mt-1 text-sm text-[#52645a]">
@@ -30,7 +30,7 @@ export const GalleryHeader = ({ viewMode, setViewMode }: GalleryHeaderProps) => 
           aria-label={label}
           aria-pressed={viewMode === mode}
           onClick={() => setViewMode(mode)}
-          className="grid h-9 w-9 place-items-center rounded-lg text-[#143a29] transition-all duration-200 hover:bg-[#edf5ef] aria-pressed:bg-[#143a29] aria-pressed:text-[#dfa03e] aria-pressed:shadow-xs"
+          className="grid h-9 w-9 place-items-center rounded-lg text-[#177249] transition-all duration-200 hover:bg-[#edf5ef] aria-pressed:bg-[#177249] aria-pressed:text-[#dfa03e] aria-pressed:shadow-xs"
         >
           <Icon size={16} aria-hidden="true" />
         </button>

@@ -31,7 +31,7 @@ const RtiPage = () => (
           <h2 id="rti-officer-heading" className="text-xl font-bold text-[#153b2a]">Head of Institution (RTI Contact)</h2>
           <dl className="mt-4 space-y-3 text-sm text-neutral-700">
             <div>
-              <dt className="font-semibold text-[#182d23]">Head of Institution</dt>
+              <dt className="font-semibold text-[#177249]">Head of Institution</dt>
               <dd>Dr. Prema, Principal, {instituteName}</dd>
             </div>
             <div className="flex items-start gap-2">
@@ -55,7 +55,7 @@ const RtiPage = () => (
             <div className="flex items-start gap-2">
               <Clock size={16} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
               <div>
-                <dt className="font-semibold text-[#182d23]">College Timings</dt>
+                <dt className="font-semibold text-[#177249]">College Timings</dt>
                 <dd>{instituteContact.timings} (Closed on Sundays and declared public holidays)</dd>
               </div>
             </div>

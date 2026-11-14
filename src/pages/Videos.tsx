@@ -68,7 +68,7 @@ const Videos = () => (
         ))}
       </div>
     </section>
-    <section aria-labelledby="youtube-channel" className="mt-8 rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#123625] to-[#0e271c] p-6 text-white sm:p-8">
+    <section aria-labelledby="youtube-channel" className="mt-8 rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#177249] to-[#0e271c] p-6 text-white sm:p-8">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <div className="flex items-center gap-2 text-[#dfa03e]">
@@ -86,7 +86,7 @@ const Videos = () => (
           href={instituteContact.youtube}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2.5 text-xs font-bold text-[#102d21] shadow transition-colors hover:bg-white"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2.5 text-xs font-bold text-[#177249] shadow transition-colors hover:bg-white"
         >
           <span>Visit YouTube Channel</span>
           <ArrowUpRight size={14} aria-hidden="true" />

@@ -30,7 +30,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
   return (
     <section
       aria-labelledby="leadership-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Header */}
@@ -40,7 +40,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
               <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSTITUTIONAL LEADERSHIP</span>
             </div>
-            <h2 id="leadership-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
+            <h2 id="leadership-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
             </h2>
           </div>
@@ -55,8 +55,8 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               onClick={() => setLanguage('kn')}
               className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'kn'
-                  ? 'bg-[#143a29] text-white shadow-xs ring-1 ring-[#c28422]'
-                  : 'text-[#185d40] hover:bg-[#eef4ef]'
+                  ? 'bg-[#177249] text-white shadow-xs ring-1 ring-[#c28422]'
+                  : 'text-[#177249] hover:bg-[#eef4ef]'
               }`}
             >
               <Languages size={13} aria-hidden="true" />
@@ -67,8 +67,8 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               onClick={() => setLanguage('en')}
               className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'en'
-                  ? 'bg-[#143a29] text-white shadow-xs ring-1 ring-[#c28422]'
-                  : 'text-[#185d40] hover:bg-[#eef4ef]'
+                  ? 'bg-[#177249] text-white shadow-xs ring-1 ring-[#c28422]'
+                  : 'text-[#177249] hover:bg-[#eef4ef]'
               }`}
             >
               English Translation
@@ -108,7 +108,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
                   Authentic Institutional Address
                 </span>
-                <h3 className="mt-0.5 font-serif text-2xl font-bold leading-tight text-[#143a29]">
+                <h3 className="mt-0.5 font-serif text-2xl font-bold leading-tight text-[#177249]">
                   {principalName}
                 </h3>
               </div>
@@ -118,7 +118,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
             </div>
 
             {/* Inspiring Pull-Quote */}
-            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold italic text-[#143a29] shadow-2xs">
+            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold italic text-[#177249] shadow-2xs">
               <Quote className="inline-block mr-1.5 size-4 text-[#c28422]" aria-hidden="true" />
               {language === 'kn' ? '“ನಮ್ಮ ಕಾಲೇಜು ನಮ್ಮ ಹೆಮ್ಮೆ” — ಡಾ. ಪ್ರೇಮ ಸಿದ್ಧರಾಜು' : '“Our College, Our Pride” — Dr. Prema Siddaraju'}
             </div>
@@ -138,7 +138,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <button
                   type="button"
                   onClick={() => setExpanded(!expanded)}
-                  className="luxury-btn-shine group inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#143a29] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-[#1a4a33] hover:text-[#dfa03e]"
+                  className="luxury-btn-shine group inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#177249] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-[#135c3b] hover:text-[#dfa03e]"
                 >
                   <span>{expanded ? 'Show Brief Message' : 'Read Complete Address (5 Paragraphs)'}</span>
                   {expanded ? (

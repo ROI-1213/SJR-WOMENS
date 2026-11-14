@@ -25,7 +25,7 @@ const destinations = [
 export const DiscoverCollege = () => (
   <section
     aria-labelledby="discover-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#143a29] sm:px-8 sm:py-12 lg:px-12"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#177249] sm:px-8 sm:py-12 lg:px-12"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Header */}
@@ -34,14 +34,14 @@ export const DiscoverCollege = () => (
           <div className="mb-2 h-1 w-8 rounded-full bg-[#ea580c]" aria-hidden="true" />
           <h2
             id="discover-title"
-            className="text-2xl font-bold tracking-tight text-[#143a29] sm:text-3xl"
+            className="text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl"
           >
             Discover Excellence
           </h2>
         </div>
         <Link
           to="/about/overview"
-          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#185d40] underline underline-offset-4 hover:text-[#177249]"
+          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#177249] underline underline-offset-4 hover:text-[#177249]"
         >
           <span>About the College</span>
           <ArrowUpRight
@@ -79,7 +79,7 @@ export const DiscoverCollege = () => (
               />
             </div>
             <div className="mt-4">
-              <h3 className="text-lg font-bold text-[#143a29] transition-colors group-hover:text-[#177249]">
+              <h3 className="text-lg font-bold text-[#177249] transition-colors group-hover:text-[#177249]">
                 {name}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-[#4b5563]">

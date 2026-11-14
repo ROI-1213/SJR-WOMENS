@@ -49,7 +49,7 @@ export default function Faculties() {
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors sm:text-sm ${
                   active
                     ? 'bg-[#177249] text-white shadow-sm'
-                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#185d40] hover:border-[#177249]'
+                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#177249] hover:border-[#177249]'
                 }`}
               >
                 {dept}
@@ -87,7 +87,7 @@ export default function Faculties() {
                     {member.field}
                   </span>
                   <h3 className="mt-1 text-base font-bold text-[color:var(--section-heading-color)]">{member.name}</h3>
-                  <p className="text-xs font-semibold text-[#185d40]">{member.designation}</p>
+                  <p className="text-xs font-semibold text-[#177249]">{member.designation}</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ export default function Faculties() {
                   href={member.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-[#177249] underline underline-offset-4 hover:text-[#185d40]"
+                  className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-[#177249] underline underline-offset-4 hover:text-[#177249]"
                 >
                   Official source <ArrowUpRight size={13} aria-hidden="true" />
                 </a>

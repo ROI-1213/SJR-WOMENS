@@ -25,9 +25,9 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
             <h2 id="course-overview" className={heading}>Programme Overview</h2>
             <p className="mt-3 leading-relaxed text-neutral-700">{course.overview}</p>
             <dl className="mt-4 space-y-2 border-t border-neutral-200 pt-4 text-sm text-neutral-700">
-              <div><dt className="inline font-semibold text-[#182d23]">Affiliation: </dt><dd className="inline">{course.affiliation}</dd></div>
-              <div><dt className="inline font-semibold text-[#182d23]">Eligibility: </dt><dd className="inline">{course.eligibility}</dd></div>
-              <div><dt className="inline font-semibold text-[#182d23]">Duration / Scheme: </dt><dd className="inline">{course.durationNote}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Affiliation: </dt><dd className="inline">{course.affiliation}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Eligibility: </dt><dd className="inline">{course.eligibility}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Duration / Scheme: </dt><dd className="inline">{course.durationNote}</dd></div>
             </dl>
           </section>
         </div>
@@ -42,7 +42,7 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
                   <h3 className="mt-2 text-lg font-bold text-[color:var(--section-heading-color)]">{combo.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-neutral-700">{combo.description}</p>
                   {combo.labs && (
-                    <p className="mt-3 text-xs font-medium text-[#185d40]">
+                    <p className="mt-3 text-xs font-medium text-[#177249]">
                       Laboratories: {combo.labs.join(' · ')}
                     </p>
                   )}

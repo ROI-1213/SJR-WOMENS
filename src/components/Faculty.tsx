@@ -23,7 +23,7 @@ export const FacultySection = () => {
   return (
     <section
       aria-labelledby="educators-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Header */}
@@ -33,7 +33,7 @@ export const FacultySection = () => {
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
               <span className="home-section-eyebrow tracking-widest text-[#8b6528]">ACADEMIC FACULTY &amp; GOVERNANCE</span>
             </div>
-            <h2 id="educators-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
+            <h2 id="educators-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               Distinguished Educators
             </h2>
             <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -42,7 +42,7 @@ export const FacultySection = () => {
           </div>
           <Link
             to="/about/faculties"
-            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#143a29] transition-colors hover:text-[#c28422] sm:text-sm"
+            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422] sm:text-sm"
           >
             <span className="underline decoration-[#c28422] underline-offset-4">Full Faculty Directory ({educators.length})</span>
             <ArrowUpRight size={15} className="text-[#c28422] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -59,7 +59,7 @@ export const FacultySection = () => {
               <TabsTrigger
                 key={field}
                 value={field}
-                className="min-h-9 rounded-lg px-3.5 text-xs font-bold text-[#143a29] transition-all data-[state=active]:bg-[#143a29] data-[state=active]:text-white data-[state=active]:shadow-xs data-[state=active]:ring-1 data-[state=active]:ring-[#c28422]"
+                className="min-h-9 rounded-lg px-3.5 text-xs font-bold text-[#177249] transition-all data-[state=active]:bg-[#177249] data-[state=active]:text-white data-[state=active]:shadow-xs data-[state=active]:ring-1 data-[state=active]:ring-[#c28422]"
               >
                 {field}
               </TabsTrigger>
@@ -75,7 +75,7 @@ export const FacultySection = () => {
                       <button
                         type="button"
                         aria-label={`View profile for ${profile.name}`}
-                        className="faculty-card-advanced group flex h-full w-full flex-col text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                        className="faculty-card-advanced group flex h-full w-full flex-col text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
                       >
                         <div className="aspect-[4/3] w-full shrink-0 overflow-hidden bg-[#eef4f0]">
                           {profile.image ? (
@@ -88,7 +88,7 @@ export const FacultySection = () => {
                             />
                           ) : (
                             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#eef4f0] to-[#dfeee3]">
-                              <span className="font-serif text-2xl font-bold text-[#143a29]" aria-hidden="true">
+                              <span className="font-serif text-2xl font-bold text-[#177249]" aria-hidden="true">
                                 {initialsOf(profile.name)}
                               </span>
                             </div>
@@ -98,7 +98,7 @@ export const FacultySection = () => {
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#8b6528]">
                             {profile.field}
                           </span>
-                          <h3 className="mt-1 text-xs font-bold leading-tight text-[#143a29] transition-colors group-hover:text-[#185e3c] sm:text-sm">
+                          <h3 className="mt-1 text-xs font-bold leading-tight text-[#177249] transition-colors group-hover:text-[#185e3c] sm:text-sm">
                             {profile.name}
                           </h3>
                           <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-[#52645a]">
@@ -111,8 +111,8 @@ export const FacultySection = () => {
                       </button>
                     </DialogTrigger>
 
-                    <DialogContent className="max-w-md border-[#c28422]/40 bg-[#fdfcf9] p-6 text-[#143a29]">
-                      <DialogTitle className="font-serif text-2xl font-bold text-[#143a29]">
+                    <DialogContent className="max-w-md border-[#c28422]/40 bg-[#fdfcf9] p-6 text-[#177249]">
+                      <DialogTitle className="font-serif text-2xl font-bold text-[#177249]">
                         {profile.name}
                       </DialogTitle>
                       <DialogDescription className="text-xs font-semibold uppercase tracking-wider text-[#8b6528]">
@@ -120,11 +120,11 @@ export const FacultySection = () => {
                       </DialogDescription>
                       <div className="mt-4 space-y-3 border-t border-[#e5dfce] pt-4 text-xs text-[#3d5044]">
                         <div>
-                          <strong className="block text-[11px] font-bold uppercase text-[#143a29]">Qualification</strong>
+                          <strong className="block text-[11px] font-bold uppercase text-[#177249]">Qualification</strong>
                           <span>{profile.qualification || 'Academic Credentials Verified'}</span>
                         </div>
                         <div>
-                          <strong className="block text-[11px] font-bold uppercase text-[#143a29]">Department / Role</strong>
+                          <strong className="block text-[11px] font-bold uppercase text-[#177249]">Department / Role</strong>
                           <span>{profile.designation || 'Faculty Member'}</span>
                         </div>
                       </div>

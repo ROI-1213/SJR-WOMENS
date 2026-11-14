@@ -18,7 +18,7 @@ const headingStyle = 'mb-3 text-sm font-semibold text-white';
 const iconStyle = 'mt-0.5 shrink-0 text-white';
 
 export const Footer = ({ contactPhone }: { contactPhone?: string }) => (
-  <footer className="border-t-2 border-[#c28422] bg-[#102d21] text-white">
+  <footer className="border-t-2 border-[#c28422] bg-[#177249] text-white">
     <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
       <div className="grid grid-cols-2 gap-x-5 gap-y-6 py-7 sm:grid-cols-3 sm:gap-x-6 lg:py-8 xl:grid-cols-[1.18fr_1.28fr_.88fr_1fr_1.12fr] xl:gap-0">
         <section className="col-span-2 border-b border-white/15 pb-4 sm:col-span-1 sm:border-0 sm:pb-0 xl:pr-5" aria-label="About the Institution">

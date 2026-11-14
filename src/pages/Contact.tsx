@@ -99,13 +99,13 @@ const Contact = () => (
           </ul>
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#c28422]/30 bg-[#faf8f2] p-4 sm:px-6">
-            <span className="text-sm font-semibold text-[#143a29]">Official Social Media Channels:</span>
+            <span className="text-sm font-semibold text-[#177249]">Official Social Media Channels:</span>
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href={instituteContact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#143a29] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#177249] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
               >
                 <Facebook size={15} className="text-[#1877F2]" aria-hidden="true" />
                 <span>Facebook Page (@sjrcw)</span>
@@ -115,7 +115,7 @@ const Contact = () => (
                 href={instituteContact.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#143a29] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#177249] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
               >
                 <Youtube size={15} className="text-[#FF0000]" aria-hidden="true" />
                 <span>Official YouTube Channel</span>

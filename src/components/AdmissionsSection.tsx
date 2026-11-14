@@ -106,7 +106,7 @@ export const AdmissionsSection = () => {
     <section
       id="admissions"
       aria-labelledby="excellence-title"
-      className="scroll-mt-24 border-b border-[#dde5de] bg-[#fbf9f4] px-4 py-8 text-[#143a29] sm:px-6 sm:py-10 lg:px-10 lg:py-12"
+      className="scroll-mt-24 border-b border-[#dde5de] bg-[#fbf9f4] px-4 py-8 text-[#177249] sm:px-6 sm:py-10 lg:px-10 lg:py-12"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Section Formal Header */}
@@ -118,7 +118,7 @@ export const AdmissionsSection = () => {
                 ACADEMIC PROGRAMMES &amp; ACCREDITATION
               </span>
             </div>
-            <h2 id="excellence-title" className="mt-1 font-serif text-2xl font-bold tracking-tight text-[#143a29] sm:text-3xl">
+            <h2 id="excellence-title" className="mt-1 font-serif text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
               Programmes of Study
             </h2>
             <p className="mt-0.5 text-xs text-[#52645a] sm:text-sm">
@@ -127,7 +127,7 @@ export const AdmissionsSection = () => {
           </div>
           <Link
             to="/admissions"
-            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#143a29] transition-colors hover:text-[#c28422]"
+            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422]"
           >
             <span className="underline decoration-[#c28422] underline-offset-4">Admissions 2026–27 Guidelines</span>
             <ArrowRight size={13} className="text-[#c28422] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
@@ -135,7 +135,7 @@ export const AdmissionsSection = () => {
         </div>
 
         {/* Executive Accreditation Ribbon (Compact & Formal Institutional Credential) */}
-        <div className="mb-5 overflow-hidden rounded-xl border border-[#c28422]/35 bg-gradient-to-r from-[#071f14] via-[#0f3322] to-[#071f14] p-3.5 text-white shadow-sm sm:p-4">
+        <div className="mb-5 overflow-hidden rounded-xl border border-[#c28422]/35 bg-gradient-to-r from-[#0e4b30] via-[#177249] to-[#0e4b30] p-3.5 text-white shadow-sm sm:p-4">
           <div className="flex flex-col gap-3.5 lg:flex-row lg:items-center lg:justify-between">
             {/* Left: NAAC Grade Crest */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
@@ -200,12 +200,12 @@ export const AdmissionsSection = () => {
         {/* Section Sub-heading */}
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Building2 size={14} className="text-[#143a29]" aria-hidden="true" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#143a29] sm:text-sm">
+            <Building2 size={14} className="text-[#177249]" aria-hidden="true" />
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#177249] sm:text-sm">
               Available Programmes
             </h3>
           </div>
-          <span className="rounded-full border border-[#c4dcce] bg-[#eef5f0] px-2.5 py-0.5 text-[10px] font-semibold text-[#143a29]">
+          <span className="rounded-full border border-[#c4dcce] bg-[#eef5f0] px-2.5 py-0.5 text-[10px] font-semibold text-[#177249]">
             Affiliated to BCU · NEP 2020
           </span>
         </div>
@@ -222,7 +222,7 @@ export const AdmissionsSection = () => {
               <li key={prog.id} className={`min-w-0 stagger-${(idx % 6) + 1}`}>
                 <CardWrapper
                   {...(wrapperProps as any)}
-                  className="academic-card group flex flex-col justify-between p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                  className="academic-card group flex flex-col justify-between p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
                 >
                   <div>
                     {/* Top: Faculty Badge & Icon */}
@@ -230,7 +230,7 @@ export const AdmissionsSection = () => {
                       <span className="rounded-md border border-[#d8e3da] bg-[#f8faf8] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#486353]">
                         {prog.faculty}
                       </span>
-                      <span className="academic-icon-box grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#f4f7f4] text-[#143a29] shadow-2xs transition-all duration-300">
+                      <span className="academic-icon-box grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#f4f7f4] text-[#177249] shadow-2xs transition-all duration-300">
                         <Icon size={16} aria-hidden="true" />
                       </span>
                     </div>
@@ -238,7 +238,7 @@ export const AdmissionsSection = () => {
                     {/* Degree Title & Full Name */}
                     <div className="mt-2.5">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-lg font-bold leading-tight text-[#143a29] transition-colors group-hover:text-[#185e3c]">
+                        <span className="text-lg font-bold leading-tight text-[#177249] transition-colors group-hover:text-[#185e3c]">
                           {prog.name}
                         </span>
                         <span className="text-xs font-semibold text-[#566c5f]">
@@ -254,9 +254,9 @@ export const AdmissionsSection = () => {
                   </div>
 
                   {/* Footer: Duration pill & Curriculum CTA */}
-                  <div className="mt-3.5 flex items-center justify-between border-t border-[#f0f4f0] pt-2.5 text-xs font-semibold text-[#143a29]">
+                  <div className="mt-3.5 flex items-center justify-between border-t border-[#f0f4f0] pt-2.5 text-xs font-semibold text-[#177249]">
                     <span className="text-[10px] font-medium text-[#718579]">{prog.duration}</span>
-                    <span className="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#143a29] transition-colors group-hover:text-[#c28422]">
+                    <span className="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#177249] transition-colors group-hover:text-[#c28422]">
                       <span>Curriculum</span>
                       <ChevronRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
                     </span>
@@ -270,11 +270,11 @@ export const AdmissionsSection = () => {
         {/* Compact Admissions CTA Bar */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#d5ded7] bg-gradient-to-r from-[#edf4ef] via-[#f7faf8] to-[#edf4ef] p-3.5 shadow-2xs sm:p-4">
           <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#143a29] text-[#dfa03e] shadow-2xs">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#177249] text-[#dfa03e] shadow-2xs">
               <GraduationCap size={18} />
             </span>
             <div>
-              <p className="text-xs font-bold text-[#143a29] sm:text-sm">
+              <p className="text-xs font-bold text-[#177249] sm:text-sm">
                 Admissions Open for Academic Session 2026–27
               </p>
               <p className="text-[11px] text-[#52645a]">
@@ -286,7 +286,7 @@ export const AdmissionsSection = () => {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               to="/admissions"
-              className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#c4dcce] bg-white px-3 py-1.5 text-xs font-bold text-[#143a29] shadow-2xs transition-colors hover:border-[#143a29] hover:bg-[#f4f7f4]"
+              className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#c4dcce] bg-white px-3 py-1.5 text-xs font-bold text-[#177249] shadow-2xs transition-colors hover:border-[#177249] hover:bg-[#f4f7f4]"
             >
               <Scroll size={13} className="text-[#c28422]" />
               <span>Guidelines</span>
@@ -295,7 +295,7 @@ export const AdmissionsSection = () => {
             <button
               type="button"
               onClick={() => setIsDialogOpen(true)}
-              className="luxury-btn-shine inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#143a29] to-[#0d2a1c] px-4 py-1.5 text-xs font-bold text-white shadow-xs transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+              className="luxury-btn-shine inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#177249] to-[#125c3a] px-4 py-1.5 text-xs font-bold text-white shadow-xs transition-all hover:scale-[1.02] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
             >
               <span>Apply Online</span>
               <ArrowRight size={13} className="text-[#dfa03e]" aria-hidden="true" />

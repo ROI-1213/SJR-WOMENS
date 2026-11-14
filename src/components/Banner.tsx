@@ -212,7 +212,7 @@ export const Banner = () => {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/academics"
-                className="luxury-btn-shine group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#0c2619] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
+                className="luxury-btn-shine group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-[#dfa03e]/40 bg-gradient-to-r from-[#dfa03e] via-[#f0ca78] to-[#c28422] px-7 py-3.5 text-sm font-bold text-[#125c3a] shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dfa03e]"
               >
                 <span>Explore Degree Programmes</span>
                 <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
@@ -296,7 +296,7 @@ export const Banner = () => {
                     type="button"
                     aria-label="Previous campus photo"
                     onClick={handlePrev}
-                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#0c2619]"
+                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#125c3a]"
                   >
                     <ChevronLeft size={16} />
                   </button>
@@ -304,7 +304,7 @@ export const Banner = () => {
                     type="button"
                     aria-label="Next campus photo"
                     onClick={handleNext}
-                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#0c2619]"
+                    className="grid h-8 w-8 place-items-center rounded-lg border border-white/25 bg-white/10 text-white transition-all hover:border-[#dfa03e] hover:bg-[#dfa03e] hover:text-[#125c3a]"
                   >
                     <ChevronRight size={16} />
                   </button>

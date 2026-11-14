@@ -69,7 +69,7 @@ const NaacIqac = () => {
 
         <section aria-labelledby="iqac-title" className="relative isolate overflow-hidden border-b-4 border-[#ff8c00] bg-[#153b2a] text-white">
           <img src="/images/campus/college-view.jpg" alt="" fetchPriority="high" className="absolute inset-0 -z-20 size-full object-cover object-center" />
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#102d21]/95 via-[#153b2a]/90 to-[#153b2a]/70" />
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#177249]/95 via-[#153b2a]/90 to-[#153b2a]/70" />
           <div className={`${sectionWidth} py-12 sm:py-16 lg:py-20`}>
             <div className="max-w-3xl">
               <span aria-hidden="true" className="mb-5 block h-1 w-12 rounded-full bg-[#ff8c00]" />

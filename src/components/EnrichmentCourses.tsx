@@ -67,7 +67,7 @@ export const EnrichmentCourses = () => {
     <section
       id="enrichment-courses"
       aria-labelledby="enrichment-courses-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#143a29] sm:px-8 sm:py-12 lg:px-12 lg:py-14"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#177249] sm:px-8 sm:py-12 lg:px-12 lg:py-14"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Section Header */}
@@ -86,7 +86,7 @@ export const EnrichmentCourses = () => {
           </div>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#143a29] transition-colors hover:text-[#c28422] sm:text-sm"
+            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422] sm:text-sm"
           >
             <span className="underline decoration-[#c28422] underline-offset-4">Enquire About Enrichment Programmes</span>
             <ArrowRight size={14} className="text-[#c28422] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
@@ -145,7 +145,7 @@ export const EnrichmentCourses = () => {
             <div className="mt-5 border-t border-white/15 pt-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0c2619] shadow-sm transition-all hover:bg-white hover:text-[#0c2619]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#dfa03e] bg-[#dfa03e] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#125c3a] shadow-sm transition-all hover:bg-white hover:text-[#125c3a]"
               >
                 <span>Enquire With Department</span>
                 <ArrowRight size={13} aria-hidden="true" />
@@ -157,7 +157,7 @@ export const EnrichmentCourses = () => {
           <div>
             {/* Subheader with Filter Tabs Embedded */}
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#dde5de] pb-2">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#143a29] sm:text-sm">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#177249] sm:text-sm">
                 Available Courses ({filteredCourses.length})
               </h3>
 
@@ -170,8 +170,8 @@ export const EnrichmentCourses = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all ${
                       activeTab === tab.id
-                        ? 'bg-[#143a29] text-white shadow-2xs'
-                        : 'border border-[#d2dcd3] bg-white text-[#486353] hover:border-[#143a29]'
+                        ? 'bg-[#177249] text-white shadow-2xs'
+                        : 'border border-[#d2dcd3] bg-white text-[#486353] hover:border-[#177249]'
                     }`}
                   >
                     <span>{tab.label}</span>
@@ -192,17 +192,17 @@ export const EnrichmentCourses = () => {
                     key={course.id}
                     type="button"
                     onClick={() => openCourse(course)}
-                    className="luxury-glass-card group flex items-start gap-3 p-3 text-left transition-all duration-300 hover:border-[#c28422] hover:shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#143a29]"
+                    className="luxury-glass-card group flex items-start gap-3 p-3 text-left transition-all duration-300 hover:border-[#c28422] hover:shadow-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
                   >
                     {/* Icon */}
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-gradient-to-br from-[#eef5f0] to-[#e0ede4] text-[#143a29] shadow-2xs transition-all duration-300 group-hover:bg-[#143a29] group-hover:text-white group-hover:border-[#143a29]">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-gradient-to-br from-[#eef5f0] to-[#e0ede4] text-[#177249] shadow-2xs transition-all duration-300 group-hover:bg-[#177249] group-hover:text-white group-hover:border-[#177249]">
                       <Icon size={18} aria-hidden="true" />
                     </span>
 
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1.5">
-                        <span className="truncate text-xs font-bold text-[#143a29] group-hover:text-[#185e3c]">
+                        <span className="truncate text-xs font-bold text-[#177249] group-hover:text-[#185e3c]">
                           {course.displayTitle || course.officialTitle}
                         </span>
                         <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#486353] shrink-0">

@@ -52,14 +52,14 @@ const PlacementsOverview: React.FC = () => {
               <span>Placement Cell</span>
             </div>
 
-            <h2 id="disha-heading" className="font-serif text-3xl font-bold tracking-tight text-[#123625] sm:text-4xl">
+            <h2 id="disha-heading" className="font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               PLACEMENT CELL: “DISHA”.
             </h2>
 
             {/* Original Motivational Quotation */}
-            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#f4f0e6] p-4 text-[#143a29] sm:p-5">
+            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#f4f0e6] p-4 text-[#177249] sm:p-5">
               <Quote size={20} className="mb-2 text-[#8b6528] opacity-80" aria-hidden="true" />
-              <blockquote className="font-serif text-sm font-semibold italic leading-relaxed text-[#123625] sm:text-base">
+              <blockquote className="font-serif text-sm font-semibold italic leading-relaxed text-[#177249] sm:text-base">
                 "DO NOT HIRE A PERSON WHO DOES YOUR WORK FOR MONEY, BUT HIRE A PERSON WHO DOES IT FOR IT”.
               </blockquote>
             </div>
@@ -76,7 +76,7 @@ const PlacementsOverview: React.FC = () => {
               </Link>
               <Link
                 to={placementPages.brochure.href}
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#d6cfb8] bg-white px-4 py-2.5 text-sm font-semibold text-[#143a29] transition-colors hover:bg-[#edf5ef]"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#d6cfb8] bg-white px-4 py-2.5 text-sm font-semibold text-[#177249] transition-colors hover:bg-[#edf5ef]"
               >
                 <span>View Placement Brochure</span>
               </Link>
@@ -84,7 +84,7 @@ const PlacementsOverview: React.FC = () => {
           </div>
 
           {/* Right Column: Verified Campus Training Photograph */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#d6cfb8] bg-[#123625] shadow-md sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[340px]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#d6cfb8] bg-[#177249] shadow-md sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[340px]">
             <img
               src="/images/placements/soft-skills-training.jpg"
               alt="Employability and soft skills training session at SJR College for Women"
@@ -128,13 +128,13 @@ const PlacementsOverview: React.FC = () => {
               >
                 <div>
                   <div className="flex items-start justify-between gap-3">
-                    <span className="grid size-11 place-items-center rounded-xl border border-[#c28422]/30 bg-[#f4f7f4] text-[#123625] transition-colors group-hover:bg-[#123625] group-hover:text-[#dfa03e]">
+                    <span className="grid size-11 place-items-center rounded-xl border border-[#c28422]/30 bg-[#f4f7f4] text-[#177249] transition-colors group-hover:bg-[#177249] group-hover:text-[#dfa03e]">
                       <IconComponent size={20} aria-hidden="true" />
                     </span>
                     <span className="text-xs font-bold tabular-nums text-[#8b6528]">0{index + 1}</span>
                   </div>
 
-                  <h3 className="mt-4 font-serif text-lg font-bold leading-snug text-[#143a29] group-hover:text-[#0f2e20]">
+                  <h3 className="mt-4 font-serif text-lg font-bold leading-snug text-[#177249] group-hover:text-[#0f2e20]">
                     {activity.title}
                   </h3>
 
@@ -181,7 +181,7 @@ const PlacementsOverview: React.FC = () => {
                   className="max-h-12 w-auto max-w-[120px] object-contain transition-transform duration-200 group-hover:scale-105"
                 />
               </div>
-              <p className="mt-2 text-xs font-semibold text-[#143a29] line-clamp-1">
+              <p className="mt-2 text-xs font-semibold text-[#177249] line-clamp-1">
                 {partner.name}
               </p>
             </div>
@@ -228,7 +228,7 @@ const PlacementsOverview: React.FC = () => {
                 </button>
               </div>
               <div className="p-4 sm:p-5">
-                <h3 className="font-serif text-base font-bold leading-snug text-[#143a29]">
+                <h3 className="font-serif text-base font-bold leading-snug text-[#177249]">
                   {item.title}
                 </h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-[#43534a]">
@@ -275,7 +275,7 @@ const PlacementsOverview: React.FC = () => {
       <section aria-labelledby="historical-drives-heading" className="rounded-2xl border border-[#d6cfb8] bg-[#fbfaf6] p-6 shadow-sm sm:p-8">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-4 border-b border-[#e5dfce] pb-3">
           <div>
-            <h3 id="historical-drives-heading" className="font-serif text-2xl font-bold text-[#123625]">
+            <h3 id="historical-drives-heading" className="font-serif text-2xl font-bold text-[#177249]">
               Historical Placement Drives &amp; Training (2023–24)
             </h3>
             <p className="mt-1 text-xs text-[#67776f]">
@@ -286,7 +286,7 @@ const PlacementsOverview: React.FC = () => {
             href={placementSources.annualReport2324}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold text-[#143a29] underline decoration-[#c28422] underline-offset-4 hover:text-[#8b6528]"
+            className="text-xs font-semibold text-[#177249] underline decoration-[#c28422] underline-offset-4 hover:text-[#8b6528]"
           >
             Source: Annual Report 2023–24 (PDF)
           </a>
@@ -299,7 +299,7 @@ const PlacementsOverview: React.FC = () => {
               className="rounded-xl border border-[#e5dfce] bg-white p-4 shadow-sm"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eef5f0] px-2.5 py-0.5 text-[11px] font-semibold text-[#143a29]">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eef5f0] px-2.5 py-0.5 text-[11px] font-semibold text-[#177249]">
                   <Calendar size={11} aria-hidden="true" />
                   {drive.date}
                 </span>
@@ -307,15 +307,15 @@ const PlacementsOverview: React.FC = () => {
                   {drive.type}
                 </span>
               </div>
-              <h4 className="mt-2 text-sm font-bold text-[#123625]">{drive.title}</h4>
+              <h4 className="mt-2 text-sm font-bold text-[#177249]">{drive.title}</h4>
               <p className="mt-1 text-xs text-[#43534a]">
-                <strong className="text-[#143a29]">Partner / Recruiters:</strong> {drive.partner}
+                <strong className="text-[#177249]">Partner / Recruiters:</strong> {drive.partner}
               </p>
               <p className="mt-0.5 text-xs text-[#43534a]">
-                <strong className="text-[#143a29]">Eligible Stream:</strong> {drive.eligibility}
+                <strong className="text-[#177249]">Eligible Stream:</strong> {drive.eligibility}
               </p>
               {drive.outcome && (
-                <p className="mt-2 inline-block rounded bg-[#123625]/10 px-2 py-0.5 text-[11px] font-bold text-[#143a29]">
+                <p className="mt-2 inline-block rounded bg-[#177249]/10 px-2 py-0.5 text-[11px] font-bold text-[#177249]">
                   Outcome: {drive.outcome}
                 </p>
               )}
@@ -343,7 +343,7 @@ const PlacementsOverview: React.FC = () => {
             />
             <div className="flex items-center justify-between border-t border-neutral-200 bg-white p-4">
               <div>
-                <p className="font-serif text-base font-bold text-[#143a29]">{activePhoto.title}</p>
+                <p className="font-serif text-base font-bold text-[#177249]">{activePhoto.title}</p>
                 <p className="text-xs text-[#43534a]">{activePhoto.caption}</p>
               </div>
               <button

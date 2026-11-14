@@ -5,7 +5,7 @@ import chiefPatron from '@/assets/homepage/chief-patron.webp';
 export const BlessingsGuidance = () => (
   <section
     aria-labelledby="blessings-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#143a29] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Section Header */}
@@ -15,7 +15,7 @@ export const BlessingsGuidance = () => (
             <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
             <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSPIRATIONAL LEADERSHIP</span>
           </div>
-          <h2 id="blessings-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#143a29] sm:text-4xl">
+          <h2 id="blessings-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
             Blessings &amp; Guidance
           </h2>
           <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -52,7 +52,7 @@ export const BlessingsGuidance = () => (
             <span>Patron’s Benediction</span>
           </div>
 
-          <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-[#143a29] sm:text-3xl">
+          <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-[#177249] sm:text-3xl">
             Poojya Sri Rambhapuri Jagadgurugalu
           </h3>
           <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#73634c]">
@@ -63,14 +63,14 @@ export const BlessingsGuidance = () => (
             In his message, the Chief Patron reflects on the Society’s dedicated service to education since 1945. He emphasises knowledge, discipline and character, welcoming new approaches to learning grounded in the Society’s rich cultural heritage.
           </p>
 
-          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#faf6ed] to-[#f4ede0] py-4 pl-5 pr-4 text-sm font-medium italic leading-relaxed text-[#143a29] shadow-xs sm:text-base">
+          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#faf6ed] to-[#f4ede0] py-4 pl-5 pr-4 text-sm font-medium italic leading-relaxed text-[#177249] shadow-xs sm:text-base">
             <Quote className="mb-1 mr-1.5 inline-block size-4 text-[#c28422] opacity-80" aria-hidden="true" />
             “I pray that the students, faculty, and management continue to be guided by wisdom and righteousness in all their endeavours.”
           </blockquote>
 
           <Link
             to="/about/chief-patrons-message"
-            className="luxury-btn-shine inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#143a29] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#1a4a33] hover:text-[#dfa03e]"
+            className="luxury-btn-shine inline-flex items-center gap-2 rounded-lg border border-[#c28422] bg-[#177249] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#135c3b] hover:text-[#dfa03e]"
           >
             <span>Read Chief Patron’s Full Message</span>
             <ArrowRight size={14} className="text-[#dfa03e] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

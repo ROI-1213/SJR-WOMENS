@@ -29,7 +29,7 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
       id={`${key}-navigation-desktop`}
       style={{ maxHeight: room }}
       className={cn(
-        'absolute top-full z-50 overflow-y-auto overscroll-contain rounded-b-xl border border-[#143a29]/20 bg-white p-2 shadow-2xl',
+        'absolute top-full z-50 overflow-y-auto overscroll-contain rounded-b-xl border border-[#177249]/20 bg-white p-2 shadow-2xl',
         panelWidths[key],
         isAdmissions && 'p-5',
         !compactKeys.includes(key) && 'border-t-4 border-t-[#ff8c00]',
@@ -45,7 +45,7 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
         {dropdown?.map(link => {
           const Icon = link.label === 'Application Process' ? FileText : link.label === 'Scholarships' ? GraduationCap : BookOpen;
           const linkClass = ({ isActive }: { isActive: boolean }) => cn(
-            'block rounded-md px-3 py-2 text-sm font-medium text-[#143a29] hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
+            'block rounded-md px-3 py-2 text-sm font-medium text-[#177249] hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
             isActive && 'bg-[#edf5ef] font-semibold underline decoration-[#c28422] underline-offset-4',
             isStudentServices && 'whitespace-nowrap border-l-2 border-transparent px-2.5 font-semibold hover:border-l-[#c28422] [@media(max-height:480px)]:px-2 [@media(max-height:480px)]:py-1 [@media(max-height:480px)]:text-xs',
             isStudentServices && isActive && 'border-l-[#c28422]'
@@ -53,10 +53,10 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
           return (
             <li key={link.href}>
               <NavLink to={link.href} end onClick={close} className={linkClass}>
-                {isAdmissions ? <span className="flex items-center gap-2 font-semibold"><Icon size={16} className="shrink-0 text-[#143a29]" aria-hidden="true" />{link.label}</span> : link.label}
+                {isAdmissions ? <span className="flex items-center gap-2 font-semibold"><Icon size={16} className="shrink-0 text-[#177249]" aria-hidden="true" />{link.label}</span> : link.label}
               </NavLink>
               {link.submenu?.length ? (
-                <ul className="mt-1 border-t border-[#143a29]/15 pt-1">
+                <ul className="mt-1 border-t border-[#177249]/15 pt-1">
                   {link.submenu.map(sub => <li key={sub.href}><NavLink to={sub.href} end onClick={close} className={linkClass}>{sub.label}</NavLink></li>)}
                 </ul>
               ) : null}

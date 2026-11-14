@@ -47,7 +47,7 @@ export const JoinCommunity = () => (
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
         />
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#071f14]/85 via-transparent to-transparent md:bg-gradient-to-r md:from-[#071f14] md:via-transparent" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0e4b30]/85 via-transparent to-transparent md:bg-gradient-to-r md:from-[#0e4b30] md:via-transparent" />
       </div>
     </div>
   </section>

@@ -43,9 +43,9 @@ export default function AcademicsHome({ level }: { level?: 'undergraduate' | 'po
               {enrichmentCourses.map(item => (
                 <li key={item.title} className="rounded-xl border border-neutral-200 bg-[#f8fbf8] p-5">
                   <span className="text-xs font-semibold text-[#177249]">{item.category}</span>
-                  <h3 className="mt-1 font-bold text-[#182d23]">{item.title}</h3>
+                  <h3 className="mt-1 font-bold text-[#177249]">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-neutral-700">{item.description}</p>
-                  {item.partner && <p className="mt-2 text-xs font-medium text-[#185d40]">In association with {item.partner}</p>}
+                  {item.partner && <p className="mt-2 text-xs font-medium text-[#177249]">In association with {item.partner}</p>}
                 </li>
               ))}
             </ul>

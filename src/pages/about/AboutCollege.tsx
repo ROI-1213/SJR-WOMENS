@@ -47,7 +47,7 @@ const textLink = 'inline-flex items-center gap-2 text-sm font-semibold text-[#17
 
 const AboutCollege = () => (
   <AboutLayout pageTitle="Overview" breadcrumbPath="Overview">
-    <div className="text-[#182d23]">
+    <div className="text-[#177249]">
       <section className={`${container} ${sectionSpacing} grid items-center gap-7 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12`}>
         <div>
           <div className="mb-4 h-1 w-12 rounded-full bg-[#ff8c00]" aria-hidden="true" />

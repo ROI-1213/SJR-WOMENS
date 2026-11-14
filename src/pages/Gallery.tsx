@@ -31,7 +31,7 @@ const Gallery = () => {
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors sm:text-sm ${
                   active
                     ? 'bg-[#177249] text-white shadow-sm'
-                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#185d40] hover:border-[#177249]'
+                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#177249] hover:border-[#177249]'
                 }`}
               >
                 {category}
@@ -60,7 +60,7 @@ const Gallery = () => {
                 </div>
                 <div className="p-3">
                   <span className="text-[11px] font-semibold uppercase tracking-wide text-[#177249]">{photo.category}</span>
-                  <p className="mt-0.5 text-sm font-semibold text-[#182d23]">{photo.title}</p>
+                  <p className="mt-0.5 text-sm font-semibold text-[#177249]">{photo.title}</p>
                 </div>
               </button>
             </li>
