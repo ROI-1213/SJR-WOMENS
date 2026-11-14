@@ -6,8 +6,8 @@ import { Lightbox } from './gallery/Lightbox';
 import { photos } from './gallery/data';
 import { ViewMode } from './gallery/types';
 
-// Show only the 8 Campus & Infrastructure showcase photos initially, hiding all 23 event photos until "View More" is clicked
-const INITIAL_PHOTO_COUNT = 8;
+// Show the primary 9 campus showcase photos initially matching reference layout with 2x2 featured card
+const INITIAL_PHOTO_COUNT = 9;
 
 export const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
