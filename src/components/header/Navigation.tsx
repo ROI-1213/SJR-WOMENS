@@ -213,15 +213,6 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
           <MobileNavigation />
         </div>
       </nav>
-
-      {/* Dismissible Backdrop Scrim when a mega menu is open to prevent awkward overlap */}
-      {activeDropdown && (
-        <div
-          onClick={close}
-          className="fixed inset-0 top-[52px] z-40 bg-black/20 backdrop-blur-2xs transition-opacity"
-          aria-hidden="true"
-        />
-      )}
     </>
   );
 };
