@@ -26,5 +26,15 @@ export default defineConfig(({ command, mode }) => {
       },
       dedupe: ["react", "react-dom", "react/jsx-runtime"],
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            "react-vendor": ["react", "react-dom", "react-router-dom"],
+            "ui-icons": ["lucide-react"],
+          },
+        },
+      },
+    },
   };
 });
