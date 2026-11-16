@@ -162,20 +162,20 @@ export const Banner = () => {
               aria-hidden={!isSelected}
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
-              className={`hero-slide-bg ${isSelected ? 'z-1' : 'pointer-events-none'}`}
+              className={`hero-slide-bg ${isSelected ? 'z-[1]' : 'pointer-events-none'}`}
             />
           );
         })}
 
         {/* Ambient Radial Golden Glow Sphere */}
         <div
-          className="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-[#dfa03e]/10 blur-3xl"
+          className="pointer-events-none absolute -top-24 left-1/4 z-[2] h-96 w-96 rounded-full bg-[#ff8c00]/10 blur-3xl"
           style={{ transform: `translate3d(${scrollY * 0.1}px, ${scrollY * 0.05}px, 0)` }}
           aria-hidden="true"
         />
 
         {/* Cinematic Multi-Stop Gradient Scrim for Flawless Readability */}
-        <div className="hero-scrim-desktop absolute inset-0 z-2" aria-hidden="true" />
+        <div className="hero-scrim-desktop absolute inset-0 z-[2]" aria-hidden="true" />
       </div>
 
       {/* Hero Content Container */}
@@ -187,15 +187,15 @@ export const Banner = () => {
           {/* Left Column: Prestigious University Copy */}
           <div className="max-w-2xl">
             {/* Illuminated Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/50 bg-black/45 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#dfa03e] shadow-xl backdrop-blur-md sm:text-xs">
-              <Sparkles size={14} className="text-[#dfa03e] animate-pulse" aria-hidden="true" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/50 bg-black/55 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff8c00] shadow-xl backdrop-blur-md sm:text-xs">
+              <Sparkles size={14} className="text-[#ff8c00] animate-pulse" aria-hidden="true" />
               <span>Sri Jagadguru Renukacharya Education Society · Estd. 1945</span>
             </div>
 
             {/* Grand Headline */}
             <h1
               id="home-hero-title"
-              className="home-display-title mt-5 text-[clamp(2.45rem,4.9vw,4.6rem)] font-normal leading-[1.07] tracking-[-0.02em] text-white drop-shadow-md"
+              className="home-display-title mt-5 text-[clamp(2.45rem,4.9vw,4.6rem)] font-normal leading-[1.07] tracking-[-0.02em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]"
             >
               Empowering Women Through{' '}
               <span className="hero-gold-gradient block sm:inline">
@@ -204,7 +204,7 @@ export const Banner = () => {
             </h1>
 
             {/* Subtitle / Mission Statement */}
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg sm:leading-relaxed">
+            <p className="mt-4 max-w-xl text-base font-medium leading-relaxed text-white/95 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] sm:text-lg sm:leading-relaxed">
               Dedicated to value-based higher education, holistic personal development, and academic excellence at our prime Rajajinagar campus in Bengaluru.
             </p>
 
