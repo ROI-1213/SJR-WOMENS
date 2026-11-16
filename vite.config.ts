@@ -11,10 +11,11 @@ const contactEnquiries: Plugin = {
   configurePreviewServer: server => () => { server.middlewares.use("/api/contact", contactApp); },
 };
 
-export default defineConfig(({ command, mode }) => {
-  const listener = command === "serve" ? { ...readServerConfig(), strictPort: true } : undefined;
+export default defineConfig(({ mode }) => {
+  const { host, port, allowedHosts } = readServerConfig();
+  const listener = { host, port, strictPort: true, allowedHosts };
   return {
-    server: listener && {
+    server: {
       ...listener,
       fs: { deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "**/.data/**"] },
     },
