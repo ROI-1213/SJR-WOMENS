@@ -140,7 +140,7 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
               >
                 <div
                   className={cn(
-                    'group relative flex items-center justify-center border-r border-white/15 text-sm font-semibold text-white/95 hover:bg-[#135c3b] hover:text-white transition-colors duration-100',
+                    'group relative flex items-center justify-center text-[15px] font-bold tracking-[0.01em] text-white hover:bg-[#135c3b] hover:text-white transition-colors duration-100',
                     current && item.dropdown && 'after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-[#ff8c00]'
                   )}
                 >
@@ -150,7 +150,7 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                       to={item.href}
                       onClick={close}
                       className={cn(
-                        'flex min-h-[52px] items-center whitespace-nowrap pl-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
+                        'flex min-h-[50px] items-center whitespace-nowrap pl-3 font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
                         !item.dropdown && 'w-full justify-center px-3'
                       )}
                     >
@@ -168,12 +168,12 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                         setActiveDropdown(open ? '' : item.key);
                       }}
                       className={cn(
-                        'flex min-h-[52px] items-center justify-center gap-2 whitespace-nowrap px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
+                        'flex min-h-[50px] items-center justify-center gap-1.5 whitespace-nowrap px-1.5 font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
                         compact && 'w-full px-3'
                       )}
                     >
                       {compact && item.label}
-                      <ChevronDown size={16} className={cn('shrink-0 transition-transform duration-100', open && 'rotate-180')} aria-hidden="true" />
+                      <ChevronDown size={15} strokeWidth={2.5} className={cn('shrink-0 transition-transform duration-100', open && 'rotate-180')} aria-hidden="true" />
                     </button>
                   )}
                 </div>
