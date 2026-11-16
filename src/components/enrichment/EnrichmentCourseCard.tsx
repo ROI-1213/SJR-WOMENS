@@ -59,7 +59,7 @@ export const EnrichmentCourseCard: React.FC<EnrichmentCourseCardProps> = ({
 
         {/* Course Title & Subtitle */}
         <div className="mt-3">
-          <h3 className="font-serif text-xl font-bold leading-snug text-[#177249] transition-colors duration-200 group-hover:text-[#0f2e20]">
+          <h3 className="font-sans text-xl font-bold leading-snug text-[#177249] transition-colors duration-200 group-hover:text-[#0f2e20]">
             {course.displayTitle}
           </h3>
           {course.subtitle && (

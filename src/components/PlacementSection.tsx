@@ -37,7 +37,7 @@ export const PlacementSection = () => (
             <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
             <span className="home-section-eyebrow tracking-widest text-[#8b6528]">CAREER DEVELOPMENT &amp; TRAINING</span>
           </div>
-          <h2 id="career-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+          <h2 id="career-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
             Placement Cell “Disha”
           </h2>
           <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -90,7 +90,7 @@ export const PlacementSection = () => (
               <span>Documented Outcomes · Academic Year 2023–24</span>
             </div>
 
-            <h3 className="mt-3 font-serif text-2xl font-bold text-white sm:text-3xl">
+            <h3 className="mt-3 font-sans text-2xl font-bold text-white sm:text-3xl">
               Q-Spiders Campus Connect Drives
             </h3>
             <p className="mt-1 text-xs text-white/80">
@@ -99,13 +99,13 @@ export const PlacementSection = () => (
 
             <dl className="mt-6 grid grid-cols-2 gap-3.5 sm:gap-4">
               <div className="rounded-xl border border-white/20 bg-white/[0.08] p-4 backdrop-blur-xs">
-                <dd className="font-serif text-4xl font-bold text-[#dfa03e]">19</dd>
+                <dd className="font-sans text-4xl font-bold text-[#dfa03e]">19</dd>
                 <dt className="mt-1 text-xs font-semibold text-white/90">
                   BCA &amp; B.Sc (CS) Students Placed
                 </dt>
               </div>
               <div className="rounded-xl border border-white/20 bg-white/[0.08] p-4 backdrop-blur-xs">
-                <dd className="font-serif text-4xl font-bold text-[#dfa03e]">20</dd>
+                <dd className="font-sans text-4xl font-bold text-[#dfa03e]">20</dd>
                 <dt className="mt-1 text-xs font-semibold text-white/90">
                   B.Com &amp; BBA Students Placed
                 </dt>

@@ -75,7 +75,7 @@ const Videos = () => (
             <Youtube size={22} className="text-[#FF0000]" aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-wider">Official YouTube Channel</span>
           </div>
-          <h2 id="youtube-channel" className="mt-1 font-serif text-xl font-bold text-white sm:text-2xl">
+          <h2 id="youtube-channel" className="mt-1 font-sans text-xl font-bold text-white sm:text-2xl">
             Watch More on SJR College for Women YouTube
           </h2>
           <p className="mt-1 text-xs text-white/80">

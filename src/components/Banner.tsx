@@ -229,7 +229,7 @@ export const Banner = () => {
                 <span className="rounded bg-[#c28422]/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#dfa03e]">
                   {activeSlide.tag}
                 </span>
-                <h2 className="font-serif mt-2 text-xl font-bold leading-tight text-white">
+                <h2 className="font-sans mt-2 text-xl font-bold leading-tight text-white">
                   {activeSlide.title}
                 </h2>
                 <p className="mt-1 text-xs leading-relaxed text-white/80">
@@ -327,7 +327,7 @@ export const Banner = () => {
                     <Icon size={20} aria-hidden="true" />
                   </span>
                   <div className="min-w-0">
-                    <p className="font-serif text-lg font-bold leading-tight text-white sm:text-xl">
+                    <p className="font-sans text-lg font-bold leading-tight text-white sm:text-xl">
                       {item.value}
                     </p>
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-[#dfa03e]">

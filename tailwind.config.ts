@@ -20,6 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sans: ["Inter", "system-ui", "ui-sans-serif", "sans-serif"],
 				kannada: ["Noto Sans Kannada", "Nirmala UI", "Tunga", "sans-serif"]
 			},
 			colors: {

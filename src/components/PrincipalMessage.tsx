@@ -40,7 +40,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
               <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSTITUTIONAL LEADERSHIP</span>
             </div>
-            <h2 id="leadership-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+            <h2 id="leadership-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
             </h2>
           </div>
@@ -95,7 +95,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
 
             {/* Bottom Credentials Scrim */}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-6 text-white">
-              <p className="font-serif text-2xl font-bold leading-tight text-white">{principalName}</p>
+              <p className="font-sans text-2xl font-bold leading-tight text-white">{principalName}</p>
               <p className="mt-1 text-xs font-bold uppercase tracking-wider text-[#dfa03e]">{principalCredentials}</p>
               <p className="mt-0.5 text-xs text-white/75">Principal, SJR College for Women</p>
             </div>
@@ -108,7 +108,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
                   Authentic Institutional Address
                 </span>
-                <h3 className="mt-0.5 font-serif text-2xl font-bold leading-tight text-[#177249]">
+                <h3 className="mt-0.5 font-sans text-2xl font-bold leading-tight text-[#177249]">
                   {principalName}
                 </h3>
               </div>

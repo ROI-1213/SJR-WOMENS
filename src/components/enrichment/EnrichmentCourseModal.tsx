@@ -62,7 +62,7 @@ export const EnrichmentCourseModal: React.FC<EnrichmentCourseModalProps> = ({
               <IconComponent size={24} aria-hidden="true" />
             </div>
             <div>
-              <DialogTitle className="font-serif text-2xl font-bold leading-snug text-[#177249] sm:text-3xl">
+              <DialogTitle className="font-sans text-2xl font-bold leading-snug text-[#177249] sm:text-3xl">
                 {course.displayTitle}
               </DialogTitle>
               {course.subtitle && (

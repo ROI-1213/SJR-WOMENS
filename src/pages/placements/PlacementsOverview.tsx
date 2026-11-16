@@ -52,14 +52,14 @@ const PlacementsOverview: React.FC = () => {
               <span>Placement Cell</span>
             </div>
 
-            <h2 id="disha-heading" className="font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+            <h2 id="disha-heading" className="font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               PLACEMENT CELL: “DISHA”.
             </h2>
 
             {/* Original Motivational Quotation */}
             <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#f4f0e6] p-4 text-[#177249] sm:p-5">
               <Quote size={20} className="mb-2 text-[#8b6528] opacity-80" aria-hidden="true" />
-              <blockquote className="font-serif text-sm font-semibold italic leading-relaxed text-[#177249] sm:text-base">
+              <blockquote className="font-sans text-sm font-semibold italic leading-relaxed text-[#177249] sm:text-base">
                 "DO NOT HIRE A PERSON WHO DOES YOUR WORK FOR MONEY, BUT HIRE A PERSON WHO DOES IT FOR IT”.
               </blockquote>
             </div>
@@ -134,7 +134,7 @@ const PlacementsOverview: React.FC = () => {
                     <span className="text-xs font-bold tabular-nums text-[#8b6528]">0{index + 1}</span>
                   </div>
 
-                  <h3 className="mt-4 font-serif text-lg font-bold leading-snug text-[#177249] group-hover:text-[#0f2e20]">
+                  <h3 className="mt-4 font-sans text-lg font-bold leading-snug text-[#177249] group-hover:text-[#0f2e20]">
                     {activity.title}
                   </h3>
 
@@ -228,7 +228,7 @@ const PlacementsOverview: React.FC = () => {
                 </button>
               </div>
               <div className="p-4 sm:p-5">
-                <h3 className="font-serif text-base font-bold leading-snug text-[#177249]">
+                <h3 className="font-sans text-base font-bold leading-snug text-[#177249]">
                   {item.title}
                 </h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-[#43534a]">
@@ -275,7 +275,7 @@ const PlacementsOverview: React.FC = () => {
       <section aria-labelledby="historical-drives-heading" className="rounded-2xl border border-[#d6cfb8] bg-[#fbfaf6] p-6 shadow-sm sm:p-8">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-4 border-b border-[#e5dfce] pb-3">
           <div>
-            <h3 id="historical-drives-heading" className="font-serif text-2xl font-bold text-[#177249]">
+            <h3 id="historical-drives-heading" className="font-sans text-2xl font-bold text-[#177249]">
               Historical Placement Drives &amp; Training (2023–24)
             </h3>
             <p className="mt-1 text-xs text-[#67776f]">
@@ -343,7 +343,7 @@ const PlacementsOverview: React.FC = () => {
             />
             <div className="flex items-center justify-between border-t border-neutral-200 bg-white p-4">
               <div>
-                <p className="font-serif text-base font-bold text-[#177249]">{activePhoto.title}</p>
+                <p className="font-sans text-base font-bold text-[#177249]">{activePhoto.title}</p>
                 <p className="text-xs text-[#43534a]">{activePhoto.caption}</p>
               </div>
               <button

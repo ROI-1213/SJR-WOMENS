@@ -118,7 +118,7 @@ export const AdmissionsSection = () => {
                 ACADEMIC PROGRAMMES &amp; ACCREDITATION
               </span>
             </div>
-            <h2 id="excellence-title" className="mt-1 font-serif text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
+            <h2 id="excellence-title" className="mt-1 font-sans text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
               Programmes of Study
             </h2>
             <p className="mt-0.5 text-xs text-[#52645a] sm:text-sm">
@@ -140,7 +140,7 @@ export const AdmissionsSection = () => {
             {/* Left: NAAC Grade Crest */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <div className="flex items-center gap-2 rounded-lg border border-[#ff8c00]/30 bg-[#ff8c00]/10 px-3 py-1 backdrop-blur-xs">
-                <span className="font-serif text-2xl font-bold text-[#ff8c00] sm:text-3xl">
+                <span className="font-sans text-2xl font-bold text-[#ff8c00] sm:text-3xl">
                   {naacGrade}
                 </span>
                 <div className="flex flex-col border-l border-[#ff8c00]/30 pl-2 text-left">

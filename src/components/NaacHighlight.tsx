@@ -19,7 +19,7 @@ export const NaacHighlight = () => (
               <Sparkles size={12} className="text-[#dfa03e]" aria-hidden="true" />
               <span>Accreditation</span>
             </div>
-            <p className="home-display-title font-serif mt-4 text-7xl font-bold leading-none text-[#dfa03e] drop-shadow-sm sm:text-8xl">
+            <p className="home-display-title font-sans mt-4 text-7xl font-bold leading-none text-[#dfa03e] drop-shadow-sm sm:text-8xl">
               {naacGrade}
             </p>
             <p className="mt-2 text-sm font-bold tracking-wide text-white">NAAC Grade · Cycle 4</p>
@@ -44,7 +44,7 @@ export const NaacHighlight = () => (
             <span className="text-xs font-bold uppercase tracking-wider text-[#8b6528]">Institutional Quality &amp; Assurance</span>
           </div>
 
-          <h2 id="home-naac-title" className="home-section-title font-serif text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
+          <h2 id="home-naac-title" className="home-section-title font-sans text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
             NAAC Accreditation &amp; Quality Metrics
           </h2>
 

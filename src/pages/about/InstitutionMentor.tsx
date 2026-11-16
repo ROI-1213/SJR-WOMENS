@@ -40,7 +40,7 @@ const InstitutionMentor = () => {
 
               {/* Heading */}
               <div className="text-center space-y-2">
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
                   Dr. H. Narasimhaiah
                 </h2>
                 <p className="text-logo-navy font-medium text-base tracking-wide">
@@ -76,7 +76,7 @@ const InstitutionMentor = () => {
 
               {/* Timeline */}
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                <h3 className="text-xl font-bold text-foreground mb-6">
                   Key Positions &amp; Contributions
                 </h3>
                 <div className="relative border-l-2 border-logo-navy/30 ml-3 space-y-6">

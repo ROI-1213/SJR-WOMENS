@@ -14,7 +14,7 @@ export const JoinCommunity = () => (
           <span>Rajajinagar, Bengaluru – 560010</span>
         </div>
 
-        <h2 id="community-title" className="home-display-title mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem]">
+        <h2 id="community-title" className="home-display-title mt-4 font-sans text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem]">
           Join Our Academic Community
         </h2>
 

@@ -1,13 +1,7 @@
-@font-face {
-  font-family: "DM Serif Text";
-  src: url("../assets/hero/dm-serif-text.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 .home-display-title {
-  font-family: "DM Serif Text", Georgia, "Times New Roman", serif;
+  font-family: "Inter", system-ui, ui-sans-serif, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 /* Warm Accent Typography */

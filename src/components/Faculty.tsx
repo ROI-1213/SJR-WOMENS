@@ -33,7 +33,7 @@ export const FacultySection = () => {
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
               <span className="home-section-eyebrow tracking-widest text-[#8b6528]">ACADEMIC FACULTY &amp; GOVERNANCE</span>
             </div>
-            <h2 id="educators-title" className="home-section-title mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+            <h2 id="educators-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               Distinguished Educators
             </h2>
             <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -88,7 +88,7 @@ export const FacultySection = () => {
                             />
                           ) : (
                             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#eef4f0] to-[#dfeee3]">
-                              <span className="font-serif text-2xl font-bold text-[#177249]" aria-hidden="true">
+                              <span className="font-sans text-2xl font-bold text-[#177249]" aria-hidden="true">
                                 {initialsOf(profile.name)}
                               </span>
                             </div>
@@ -112,7 +112,7 @@ export const FacultySection = () => {
                     </DialogTrigger>
 
                     <DialogContent className="max-w-md border-[#c28422]/40 bg-[#fdfcf9] p-6 text-[#177249]">
-                      <DialogTitle className="font-serif text-2xl font-bold text-[#177249]">
+                      <DialogTitle className="font-sans text-2xl font-bold text-[#177249]">
                         {profile.name}
                       </DialogTitle>
                       <DialogDescription className="text-xs font-semibold uppercase tracking-wider text-[#8b6528]">
