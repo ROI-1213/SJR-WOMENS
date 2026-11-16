@@ -55,10 +55,12 @@ export const DiscoverCollege = () => (
       {/* 4 Cards Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Heritage Card */}
-        <div className="flex min-h-44 flex-col justify-between rounded-xl bg-[#177249] p-6 text-white shadow-sm">
-          <BookOpen size={24} className="text-white" aria-hidden="true" />
-          <div className="mt-4">
-            <p className="home-display-title text-5xl font-normal leading-none text-white">1945</p>
+        <div className="flex flex-col rounded-xl bg-[#177249] p-6 text-white shadow-sm">
+          <div className="flex items-center justify-between">
+            <BookOpen size={24} className="text-white" aria-hidden="true" />
+          </div>
+          <div className="mt-5">
+            <p className="home-display-title text-5xl font-extrabold leading-none text-white">1945</p>
             <p className="mt-2 text-sm font-normal text-white/90">Year the college was founded</p>
           </div>
         </div>
@@ -68,7 +70,7 @@ export const DiscoverCollege = () => (
           <Link
             key={href}
             to={href}
-            className="group flex min-h-44 flex-col justify-between rounded-xl border border-[#d8e5dc] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#177249] hover:bg-[#f8fbf8] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+            className="group flex flex-col rounded-xl border border-[#d8e5dc] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#177249] hover:bg-[#f8fbf8] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
           >
             <div className="flex items-center justify-between text-[#177249]">
               <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
@@ -78,11 +80,11 @@ export const DiscoverCollege = () => (
                 aria-hidden="true"
               />
             </div>
-            <div className="mt-4">
+            <div className="mt-5">
               <h3 className="text-lg font-bold text-[#177249] transition-colors group-hover:text-[#177249]">
                 {name}
               </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-[#4b5563]">
+              <p className="mt-2 text-sm leading-relaxed text-[#4b5563]">
                 {description}
               </p>
             </div>
