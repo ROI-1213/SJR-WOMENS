@@ -118,7 +118,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
             </div>
 
             {/* Inspiring Pull-Quote */}
-            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold italic text-[#177249] shadow-2xs">
+            <div className="my-5 rounded-xl border-l-4 border-[#c28422] bg-[#fbf8f2] p-4 text-sm font-semibold text-[#384c40] shadow-2xs">
               <Quote className="inline-block mr-1.5 size-4 text-[#c28422]" aria-hidden="true" />
               {language === 'kn' ? '“ನಮ್ಮ ಕಾಲೇಜು ನಮ್ಮ ಹೆಮ್ಮೆ” — ಡಾ. ಪ್ರೇಮ ಸಿದ್ಧರಾಜು' : '“Our College, Our Pride” — Dr. Prema Siddaraju'}
             </div>
@@ -148,7 +148,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                   )}
                 </button>
 
-                <p className="text-xs italic text-[#73847a]">
+                <p className="text-xs text-[#73847a]">
                   {language === 'kn' ? kannadaSignoff : 'Our College, Our Pride — Dr. Prema Siddaraju, Principal.'}
                 </p>
               </div>

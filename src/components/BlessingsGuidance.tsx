@@ -63,7 +63,7 @@ export const BlessingsGuidance = () => (
             In his message, the Chief Patron reflects on the Society’s dedicated service to education since 1945. He emphasises knowledge, discipline and character, welcoming new approaches to learning grounded in the Society’s rich cultural heritage.
           </p>
 
-          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#faf6ed] to-[#f4ede0] py-4 pl-5 pr-4 text-sm font-medium italic leading-relaxed text-[#177249] shadow-xs sm:text-base">
+          <blockquote className="relative my-5 rounded-xl border-l-4 border-[#c28422] bg-gradient-to-r from-[#faf6ed] to-[#f4ede0] py-4 pl-5 pr-4 text-sm leading-relaxed text-[#43534a] shadow-xs sm:text-base">
             <Quote className="mb-1 mr-1.5 inline-block size-4 text-[#c28422] opacity-80" aria-hidden="true" />
             “I pray that the students, faculty, and management continue to be guided by wisdom and righteousness in all their endeavours.”
           </blockquote>
