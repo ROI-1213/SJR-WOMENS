@@ -29,7 +29,7 @@ export const Header = ({ contactPhone }: { contactPhone?: string }) => {
   }, []);
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-[#153c2a] text-white shadow-sm">
       <TopBar contactPhone={contactPhone} />
       <LogoSection />
       <div ref={navSlot} className="h-[49px] xl:h-[53px]">
