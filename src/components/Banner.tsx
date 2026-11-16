@@ -126,7 +126,7 @@ export const Banner = () => {
   return (
     <section
       aria-labelledby="home-hero-title"
-      className="relative min-h-[620px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#071a10] text-white lg:min-h-[680px]"
+      className="relative min-h-[620px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#153c2a] text-white lg:min-h-[680px]"
     >
       {/* Background Rotating Images */}
       <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
