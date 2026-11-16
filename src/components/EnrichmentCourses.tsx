@@ -71,84 +71,84 @@ export const EnrichmentCourses = () => {
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Section Header */}
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
           <div>
             <div className="flex items-center gap-2">
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
-              <span className="home-section-eyebrow">BEYOND THE CLASSROOM</span>
+              <span className="home-section-eyebrow text-xs font-bold tracking-widest text-[#8b6528]">BEYOND THE CLASSROOM</span>
             </div>
-            <h2 id="enrichment-courses-title" className="home-section-title mt-1">
+            <h2 id="enrichment-courses-title" className="home-section-title mt-1.5 text-3xl font-extrabold text-[#177249] sm:text-4xl">
               Enrichment Courses
             </h2>
-            <p className="mt-0.5 text-xs text-[#52645a] sm:text-sm">
+            <p className="mt-1 text-sm text-[#43534a] sm:text-base">
               Vocational, skill-oriented certifications designed to complement degree education with practical competencies.
             </p>
           </div>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-1.5 text-xs font-bold text-[#177249] transition-colors hover:text-[#c28422] sm:text-sm"
+            className="group inline-flex items-center gap-1.5 text-sm font-bold text-[#177249] transition-colors hover:text-[#ff8c00] sm:text-base"
           >
-            <span className="underline decoration-[#c28422] underline-offset-4">Enquire About Enrichment Programmes</span>
-            <ArrowRight size={14} className="text-[#c28422] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+            <span className="underline decoration-[#ff8c00] underline-offset-4">Enquire About Enrichment Programmes</span>
+            <ArrowRight size={16} className="text-[#ff8c00] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
 
         {/* Space-Efficient 2-Column Layout */}
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-8">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-8">
           
           {/* Executive Value Addition Plaque */}
-          <article className="plaque-card relative isolate flex flex-col justify-between overflow-hidden p-6 text-white shadow-xl sm:p-7">
+          <article className="plaque-card relative isolate flex flex-col justify-between overflow-hidden p-6 text-white shadow-xl sm:p-8">
             {/* Watermark Crest */}
-            <Award className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-52 w-52 text-white/[0.04]" strokeWidth={0.7} aria-hidden="true" />
+            <Award className="pointer-events-none absolute -bottom-6 -right-6 -z-10 h-56 w-56 text-white/[0.04]" strokeWidth={0.7} aria-hidden="true" />
 
             <div>
               {/* Badge */}
-              <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-[#dfa03e]/40 bg-[#dfa03e]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#dfa03e]">
-                <Sparkles size={12} className="text-[#dfa03e]" aria-hidden="true" />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/40 bg-[#ff8c00]/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-[#ffc04d]">
+                <Sparkles size={14} className="text-[#ff8c00]" aria-hidden="true" />
                 <span>Value-Added Certifications</span>
               </div>
 
               {/* Stat & Title */}
-              <div className="flex items-baseline gap-3">
-                <span className="home-display-title text-5xl font-normal leading-none tracking-tight text-[#dfa03e] drop-shadow-sm sm:text-6xl">
+              <div className="flex items-baseline gap-3.5">
+                <span className="home-display-title text-6xl font-extrabold leading-none tracking-tight text-[#ff8c00] drop-shadow-sm sm:text-7xl">
                   7+
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold text-white">Career Skill Tracks</span>
-                  <span className="text-[11px] text-[#dfa03e]">Integrated with Degree Curricula</span>
+                  <span className="text-base font-bold text-white sm:text-lg">Career Skill Tracks</span>
+                  <span className="text-xs sm:text-sm font-medium text-[#ffc04d]">Integrated with Degree Curricula</span>
                 </div>
               </div>
 
               {/* Brief narrative */}
-              <p className="mt-3.5 text-xs leading-relaxed text-white/85">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95">
                 Our enrichment courses go beyond textbooks to empower students with hands-on technical skills, financial acumen, and professional readiness for an evolving job market.
               </p>
 
               {/* Institutional Hallmarks */}
-              <ul className="mt-4 space-y-2 border-t border-white/15 pt-3.5 text-xs text-white/90">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="shrink-0 text-[#dfa03e]" aria-hidden="true" />
+              <ul className="mt-5 space-y-2.5 border-t border-white/15 pt-4 text-sm sm:text-[15px] text-white/95 leading-normal">
+                <li className="flex items-center gap-2.5">
+                  <CheckCircle2 size={16} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Hands-on lab training in computing &amp; finance</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="shrink-0 text-[#dfa03e]" aria-hidden="true" />
+                <li className="flex items-center gap-2.5">
+                  <CheckCircle2 size={16} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Industry-relevant syllabus with formal certification</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="shrink-0 text-[#dfa03e]" aria-hidden="true" />
+                <li className="flex items-center gap-2.5">
+                  <CheckCircle2 size={16} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Interview preparedness &amp; communication enhancement</span>
                 </li>
               </ul>
             </div>
 
             {/* Action */}
-            <div className="mt-5 border-t border-white/15 pt-4">
+            <div className="mt-6 border-t border-white/15 pt-5">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[#e67e00]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#ff8c00] px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-[#e67e00]"
               >
                 <span>Enquire With Department</span>
-                <ArrowRight size={13} className="text-white" aria-hidden="true" />
+                <ArrowRight size={15} className="text-white" aria-hidden="true" />
               </Link>
             </div>
           </article>
@@ -156,8 +156,8 @@ export const EnrichmentCourses = () => {
           {/* Compact Course Offerings Matrix */}
           <div>
             {/* Subheader with Filter Tabs Embedded */}
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#dde5de] pb-2">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#177249] sm:text-sm">
+            <div className="mb-3.5 flex flex-wrap items-center justify-between gap-2.5 border-b border-[#dde5de] pb-3">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#177249] sm:text-base">
                 Available Courses ({filteredCourses.length})
               </h3>
 
@@ -168,14 +168,14 @@ export const EnrichmentCourses = () => {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveTab(tab.id)}
-                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all ${
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs sm:text-sm font-semibold transition-all ${
                       activeTab === tab.id
                         ? 'bg-[#177249] text-white shadow-2xs'
                         : 'border border-[#d2dcd3] bg-white text-[#486353] hover:border-[#177249]'
                     }`}
                   >
                     <span>{tab.label}</span>
-                    <span className={`text-[10px] ${activeTab === tab.id ? 'text-[#dfa03e]' : 'text-[#718579]'}`}>
+                    <span className={`text-xs ${activeTab === tab.id ? 'text-[#ffc04d] font-bold' : 'text-[#718579]'}`}>
                       ({tab.count})
                     </span>
                   </button>
@@ -183,8 +183,8 @@ export const EnrichmentCourses = () => {
               </div>
             </div>
 
-            {/* Compact 2-Column Course Cards Grid */}
-            <div className="grid gap-2.5 sm:grid-cols-2">
+            {/* 2-Column Course Cards Grid */}
+            <div className="grid gap-3 sm:grid-cols-2">
               {filteredCourses.map((course, idx) => {
                 const Icon = iconMap[course.iconName as keyof typeof iconMap] || BookOpenCheck;
                 return (
@@ -192,32 +192,32 @@ export const EnrichmentCourses = () => {
                     key={course.id}
                     type="button"
                     onClick={() => openCourse(course)}
-                    className="group flex items-start gap-3 rounded-xl border border-[#d8e3da] bg-white p-3 text-left shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#177249] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+                    className="group flex items-start gap-3.5 rounded-xl border border-[#d8e3da] bg-white p-4 text-left shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#177249] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
                   >
                     {/* Icon */}
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#eef5f0] text-[#177249] shadow-2xs transition-colors duration-200 group-hover:border-[#177249] group-hover:bg-[#177249] group-hover:text-white">
-                      <Icon size={18} aria-hidden="true" />
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#c4dcce] bg-[#eef5f0] text-[#177249] shadow-2xs transition-colors duration-200 group-hover:border-[#177249] group-hover:bg-[#177249] group-hover:text-white sm:h-12 sm:w-12">
+                      <Icon size={22} aria-hidden="true" />
                     </span>
 
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1.5">
-                        <span className="truncate text-xs font-bold text-[#177249] transition-colors group-hover:text-[#135c3b]">
+                        <span className="truncate text-sm sm:text-base font-bold text-[#177249] transition-colors group-hover:text-[#135c3b]">
                           {course.displayTitle || course.officialTitle}
                         </span>
-                        <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#486353] shrink-0">
+                        <span className="rounded-md bg-[#eef5f0] px-2 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#177249] shrink-0 border border-[#c4dcce]/60">
                           {course.category.split(' ')[0]}
                         </span>
                       </div>
                       
-                      <p className="mt-0.5 line-clamp-1 text-[11px] text-[#566c5f]">
+                      <p className="mt-1 line-clamp-2 text-xs sm:text-sm leading-relaxed text-[#43534a]">
                         {course.shortDescription}
                       </p>
 
-                      <div className="mt-1.5 flex items-center justify-between text-[10px] font-semibold text-[#8b6528]">
-                        <span>Skill Certification</span>
-                        <span className="inline-flex items-center gap-0.5 text-[#c28422] group-hover:translate-x-0.5 transition-transform">
-                          Syllabus <ArrowRight size={11} aria-hidden="true" />
+                      <div className="mt-2.5 flex items-center justify-between text-xs sm:text-[13px] font-semibold text-[#8b6528]">
+                        <span className="font-medium text-[#52645a]">Skill Certification</span>
+                        <span className="inline-flex items-center gap-1 font-bold text-[#ff8c00] group-hover:translate-x-0.5 transition-transform">
+                          Syllabus <ArrowRight size={13} aria-hidden="true" />
                         </span>
                       </div>
                     </div>

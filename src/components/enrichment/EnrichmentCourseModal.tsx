@@ -95,7 +95,7 @@ export const EnrichmentCourseModal: React.FC<EnrichmentCourseModalProps> = ({
               {course.learningHighlights.map((highlight, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-2.5 rounded-lg border border-[#e8e2d4] bg-white p-3 text-xs font-medium text-[#177249] shadow-sm"
+                  className="flex items-start gap-2.5 rounded-lg border border-[#e8e2d4] bg-white p-3 text-sm font-medium text-[#177249] shadow-sm"
                 >
                   <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#8b6528]" aria-hidden="true" />
                   <span>{highlight}</span>
@@ -104,8 +104,8 @@ export const EnrichmentCourseModal: React.FC<EnrichmentCourseModalProps> = ({
             </ul>
           </div>
 
-          <div className="rounded-lg border border-[#d6cfb8] bg-[#f4f0e6] p-4 text-xs text-[#52645a]">
-            <p className="font-medium text-[#177249]">Curriculum &amp; Batch Information</p>
+          <div className="rounded-lg border border-[#d6cfb8] bg-[#f4f0e6] p-4 text-sm text-[#52645a]">
+            <p className="font-semibold text-[#177249]">Curriculum &amp; Batch Information</p>
             <p className="mt-1">
               Enrichment programmes run concurrently with regular undergraduate semesters. Detailed batch schedules, timings, and faculty coordinators are notified at the commencement of each academic session.
             </p>
@@ -117,7 +117,7 @@ export const EnrichmentCourseModal: React.FC<EnrichmentCourseModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg border border-[#d6cfb8] bg-white px-4 py-2.5 text-xs font-semibold text-[#177249] transition-colors hover:bg-[#edf5ef]"
+            className="rounded-lg border border-[#d6cfb8] bg-white px-4 py-2.5 text-sm font-semibold text-[#177249] transition-colors hover:bg-[#edf5ef]"
           >
             Close Details
           </button>
