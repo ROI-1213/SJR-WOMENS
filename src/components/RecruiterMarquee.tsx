@@ -23,25 +23,25 @@ export const RecruiterMarquee = () => {
 
   return (
     <div className="mt-8 border-t border-[#dce4dd] pt-6">
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#c28422]">
             Corporate Engagement &amp; Placement Drives
           </span>
-          <h3 id="recruiters-title" className="text-base font-bold text-[#177249] sm:text-lg">
+          <h3 id="recruiters-title" className="text-lg font-bold text-[#177249] sm:text-xl">
             Recruiting Partners &amp; Industry Associations
           </h3>
-          <p className="mt-0.5 text-xs text-[#52645a]">
+          <p className="mt-1 text-xs sm:text-sm text-[#52645a]">
             Leading IT, banking, and corporate recruiters participating in SJR College for Women campus hiring.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link
             to="/placements"
-            className="group inline-flex min-h-9 items-center gap-1.5 text-xs font-bold text-[#177249] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#c28422]"
+            className="group inline-flex min-h-9 items-center gap-1.5 text-xs sm:text-sm font-bold text-[#177249] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#ff8c00]"
           >
             <span>All Recruiting Companies</span>
-            <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#c28422]" aria-hidden="true" />
+            <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#ff8c00]" aria-hidden="true" />
           </Link>
           <button
             type="button"
@@ -62,10 +62,10 @@ export const RecruiterMarquee = () => {
               {recruiters.map(company => (
                 <li
                   key={company.name}
-                  className="recruiter-tile relative flex min-h-[5.5rem] flex-col items-center justify-center gap-1.5 rounded-xl border border-[#dce4dd] bg-white px-4 py-3 shadow-xs hover:border-[#c28422] hover:shadow-md transition-all duration-300"
+                  className="recruiter-tile group relative flex min-h-[6.75rem] flex-col items-center justify-center gap-2 rounded-xl border border-[#dce4dd] bg-white px-5 py-4 shadow-xs hover:border-[#177249] hover:shadow-md transition-all duration-300"
                 >
-                  <img src={company.logo} alt="" decoding="async" className="h-10 w-full max-w-32 object-contain" />
-                  <span className="text-center text-[11px] font-bold text-[#177249]">
+                  <img src={company.logo} alt="" decoding="async" className="h-12 sm:h-14 w-full max-w-[140px] sm:max-w-[160px] object-contain transition-transform duration-300 group-hover:scale-105" />
+                  <span className="text-center text-xs sm:text-sm font-bold text-[#177249]">
                     {company.name}
                   </span>
                 </li>
