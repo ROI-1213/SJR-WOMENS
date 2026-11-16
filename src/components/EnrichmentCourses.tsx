@@ -67,7 +67,7 @@ export const EnrichmentCourses = () => {
     <section
       id="enrichment-courses"
       aria-labelledby="enrichment-courses-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#153c2a] sm:px-8 sm:py-12 lg:px-12 lg:py-14"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-11 text-[#153c2a] sm:px-8 sm:py-13 lg:px-12 lg:py-15"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Section Header */}
@@ -94,7 +94,7 @@ export const EnrichmentCourses = () => {
         </div>
 
         {/* Space-Efficient 2-Column Layout */}
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-8">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-8">
           
           {/* Executive Value Addition Plaque */}
           <article className="plaque-card relative isolate flex flex-col justify-between overflow-hidden p-6 text-white shadow-xl sm:p-7">
@@ -104,7 +104,7 @@ export const EnrichmentCourses = () => {
             <div>
               {/* Badge */}
               <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/40 bg-[#ff8c00]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#ffc04d]">
-                <Sparkles size={12} className="text-[#ff8c00]" aria-hidden="true" />
+                <Sparkles size={13} className="text-[#ff8c00]" aria-hidden="true" />
                 <span>Value-Added Certifications</span>
               </div>
 
@@ -114,8 +114,8 @@ export const EnrichmentCourses = () => {
                   7+
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold text-white">Career Skill Tracks</span>
-                  <span className="text-[11px] text-[#ffc04d]">Integrated with Degree Curricula</span>
+                  <span className="text-sm font-bold text-white sm:text-base">Career Skill Tracks</span>
+                  <span className="text-xs text-[#ffc04d]">Integrated with Degree Curricula</span>
                 </div>
               </div>
 
@@ -127,15 +127,15 @@ export const EnrichmentCourses = () => {
               {/* Institutional Hallmarks */}
               <ul className="mt-4 space-y-2 border-t border-white/15 pt-3.5 text-xs text-white/90 leading-normal">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
+                  <CheckCircle2 size={15} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Hands-on lab training in computing &amp; finance</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
+                  <CheckCircle2 size={15} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Industry-relevant syllabus with formal certification</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
+                  <CheckCircle2 size={15} className="shrink-0 text-[#ff8c00]" aria-hidden="true" />
                   <span>Interview preparedness &amp; communication enhancement</span>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ export const EnrichmentCourses = () => {
           {/* Compact Course Offerings Matrix */}
           <div>
             {/* Subheader with Filter Tabs Embedded */}
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#dde5de] pb-2">
+            <div className="mb-3.5 flex flex-wrap items-center justify-between gap-2 border-b border-[#dde5de] pb-2.5">
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#153c2a] sm:text-sm">
                 Available Courses ({filteredCourses.length})
               </h3>
@@ -168,14 +168,14 @@ export const EnrichmentCourses = () => {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveTab(tab.id)}
-                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold transition-all ${
+                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-all ${
                       activeTab === tab.id
                         ? 'bg-[#153c2a] text-white shadow-2xs'
                         : 'border border-[#d2dcd3] bg-white text-[#486353] hover:border-[#153c2a]'
                     }`}
                   >
                     <span>{tab.label}</span>
-                    <span className={`text-[10px] ${activeTab === tab.id ? 'text-[#ffc04d]' : 'text-[#718579]'}`}>
+                    <span className={`text-[11px] ${activeTab === tab.id ? 'text-[#ffc04d] font-bold' : 'text-[#718579]'}`}>
                       ({tab.count})
                     </span>
                   </button>
@@ -183,8 +183,8 @@ export const EnrichmentCourses = () => {
               </div>
             </div>
 
-            {/* Compact 2-Column Course Cards Grid */}
-            <div className="grid gap-2.5 sm:grid-cols-2">
+            {/* Balanced 2-Column Course Cards Grid */}
+            <div className="grid gap-3 sm:grid-cols-2">
               {filteredCourses.map((course, idx) => {
                 const Icon = iconMap[course.iconName as keyof typeof iconMap] || BookOpenCheck;
                 return (
@@ -192,32 +192,32 @@ export const EnrichmentCourses = () => {
                     key={course.id}
                     type="button"
                     onClick={() => openCourse(course)}
-                    className="group flex items-start gap-3 rounded-xl border border-[#d8e3da] bg-white p-3 text-left shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#153c2a] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]"
+                    className="group flex items-start gap-3.5 rounded-xl border border-[#d8e3da] bg-white p-3.5 text-left shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#153c2a] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]"
                   >
                     {/* Icon */}
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#eef5f0] text-[#153c2a] shadow-2xs transition-colors duration-200 group-hover:border-[#153c2a] group-hover:bg-[#153c2a] group-hover:text-white">
-                      <Icon size={18} aria-hidden="true" />
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-[#c4dcce] bg-[#eef5f0] text-[#153c2a] shadow-2xs transition-colors duration-200 group-hover:border-[#153c2a] group-hover:bg-[#153c2a] group-hover:text-white">
+                      <Icon size={19} aria-hidden="true" />
                     </span>
 
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1.5">
-                        <span className="truncate text-xs font-bold text-[#153c2a] transition-colors group-hover:text-[#0f3222]">
+                        <span className="truncate text-[13px] font-bold text-[#153c2a] transition-colors group-hover:text-[#0f3222] sm:text-sm">
                           {course.displayTitle || course.officialTitle}
                         </span>
-                        <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#486353] shrink-0">
+                        <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-[#486353] shrink-0 border border-[#c4dcce]/50">
                           {course.category.split(' ')[0]}
                         </span>
                       </div>
                       
-                      <p className="mt-0.5 line-clamp-1 text-[11px] leading-snug text-[#566c5f]">
+                      <p className="mt-1 line-clamp-1 text-xs leading-relaxed text-[#4b6053]">
                         {course.shortDescription}
                       </p>
 
-                      <div className="mt-1.5 flex items-center justify-between text-[10px] font-semibold text-[#8b6528]">
+                      <div className="mt-2 flex items-center justify-between text-[11px] font-semibold text-[#8b6528]">
                         <span className="font-medium text-[#52645a]">Skill Certification</span>
                         <span className="inline-flex items-center gap-0.5 font-bold text-[#ff8c00] group-hover:translate-x-0.5 transition-transform">
-                          Syllabus <ArrowRight size={11} aria-hidden="true" />
+                          Syllabus <ArrowRight size={12} aria-hidden="true" />
                         </span>
                       </div>
                     </div>
