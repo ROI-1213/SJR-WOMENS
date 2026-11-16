@@ -77,7 +77,6 @@ export const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const images = useRef<(HTMLImageElement | null)[]>([]);
   const photoRequest = useRef(0);
   const activeSlide = campusSlides[activeIndex];
@@ -102,21 +101,6 @@ export const Banner = () => {
   const handlePrev = () => {
     selectPhoto((activeIndex - 1 + campusSlides.length) % campusSlides.length);
   };
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrollY(Math.min(window.scrollY, 700));
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -144,11 +128,8 @@ export const Banner = () => {
       aria-labelledby="home-hero-title"
       className="relative min-h-[620px] w-full overflow-hidden border-b-2 border-[#c28422]/60 bg-[#071a10] text-white lg:min-h-[680px]"
     >
-      {/* Background Rotating Images with Parallax Shift */}
-      <div
-        className="absolute inset-0 z-0 h-full w-full overflow-hidden will-change-transform"
-        style={{ transform: `translate3d(0, ${scrollY * 0.22}px, 0)` }}
-      >
+      {/* Background Rotating Images */}
+      <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
         {campusSlides.map((slide, index) => {
           const isSelected = index === activeIndex;
           return (
@@ -170,7 +151,6 @@ export const Banner = () => {
         {/* Ambient Radial Golden Glow Sphere */}
         <div
           className="pointer-events-none absolute -top-24 left-1/4 z-[2] h-96 w-96 rounded-full bg-[#ff8c00]/10 blur-3xl"
-          style={{ transform: `translate3d(${scrollY * 0.1}px, ${scrollY * 0.05}px, 0)` }}
           aria-hidden="true"
         />
 
@@ -212,16 +192,16 @@ export const Banner = () => {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/academics"
-                className="inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-[#ff8c00] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-[#e67e00] hover:shadow-lg hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-[#ff8c00] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-100 hover:bg-[#e67e00] hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
               >
                 <span>Explore Degree Programmes</span>
-                <ArrowRight size={17} className="text-white transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden="true" />
+                <ArrowRight size={17} className="text-white transition-transform duration-100 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(true)}
-                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#177249] shadow-md transition-all duration-300 hover:bg-neutral-100 hover:shadow-lg hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#177249] shadow-md transition-all duration-100 hover:bg-neutral-100 hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <GraduationCap size={18} className="text-[#177249]" aria-hidden="true" />
                 <span>Apply for Admission</span>
@@ -230,10 +210,7 @@ export const Banner = () => {
           </div>
 
           {/* Right Column: Live Slide Showcase Pill & Controls */}
-          <div
-            className="flex flex-col items-start justify-end lg:items-end will-change-transform"
-            style={{ transform: `translate3d(0, ${-scrollY * 0.08}px, 0)` }}
-          >
+          <div className="flex flex-col items-start justify-end lg:items-end">
             <div className="luxury-glass-dark w-full max-w-sm p-5 sm:p-6">
               
               {/* Header with Live Status Indicator */}

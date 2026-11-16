@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -105,7 +105,26 @@ const LegacyRedirect = ({ to }: { to: string }) => {
   return <Navigate to={{ pathname: to, search, hash }} replace />;
 };
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      void import("./pages/academics/AcademicsHome");
+      void import("./pages/academics/CoursePage");
+      void import("./pages/academics/DepartmentsOverview");
+      void import("./pages/academics/DepartmentPage");
+      void import("./pages/admissions/AdmissionsHome");
+      void import("./pages/admissions/OnlineApplication");
+      void import("./pages/about/AboutCollege");
+      void import("./pages/Contact");
+      void import("./pages/NaacIqac");
+      void import("./pages/Gallery");
+      void import("./pages/placements/PlacementsOverview");
+      void import("./pages/infrastructure/InfrastructureHome");
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -259,6 +278,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;

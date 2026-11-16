@@ -8,10 +8,20 @@ export const Header = ({ contactPhone }: { contactPhone?: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const syncNavigation = () => setIsScrolled((navSlot.current?.getBoundingClientRect().top ?? 0) < 0);
+    let ticking = false;
+    const syncNavigation = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const next = (navSlot.current?.getBoundingClientRect().top ?? 0) < 0;
+          setIsScrolled(prev => (prev !== next ? next : prev));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     syncNavigation();
     window.addEventListener('scroll', syncNavigation, { passive: true });
-    window.addEventListener('resize', syncNavigation);
+    window.addEventListener('resize', syncNavigation, { passive: true });
     return () => {
       window.removeEventListener('scroll', syncNavigation);
       window.removeEventListener('resize', syncNavigation);

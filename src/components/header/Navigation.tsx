@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BookOpen, ChevronDown, FileText, GraduationCap } from 'lucide-react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { menuItems, type MainMenuItem } from '@/data/navigationData';
 import { cn } from '@/lib/utils';
 import { MobileNavigation } from './MobileNavigation';
@@ -19,7 +19,7 @@ const panelWidths: Record<string, string> = {
   research: 'right-0 w-64',
 };
 
-const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: number; close: () => void }) => {
+const DesktopDropdown = ({ item, close }: { item: MainMenuItem; close: () => void }) => {
   const { key, dropdown } = item;
   const isAdmissions = key === 'admissions';
   const isStudentServices = key === 'student-services';
@@ -27,9 +27,8 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
   return (
     <div
       id={`${key}-navigation-desktop`}
-      style={{ maxHeight: room }}
       className={cn(
-        'absolute top-full z-50 overflow-y-auto overscroll-contain rounded-b-xl border border-[#177249]/20 bg-white p-2 shadow-2xl',
+        'absolute top-full z-50 max-h-[calc(100vh-4.5rem)] overflow-y-auto overscroll-contain rounded-b-xl border border-[#177249]/20 bg-white p-2 shadow-2xl',
         panelWidths[key],
         isAdmissions && 'p-5',
         !compactKeys.includes(key) && 'border-t-4 border-t-[#ff8c00]',
@@ -45,10 +44,10 @@ const DesktopDropdown = ({ item, room, close }: { item: MainMenuItem; room: numb
         {dropdown?.map(link => {
           const Icon = link.label === 'Application Process' ? FileText : link.label === 'Scholarships' ? GraduationCap : BookOpen;
           const linkClass = ({ isActive }: { isActive: boolean }) => cn(
-            'block rounded-md px-3 py-2 text-sm font-medium text-[#177249] hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
-            isActive && 'bg-[#edf5ef] font-semibold underline decoration-[#c28422] underline-offset-4',
-            isStudentServices && 'whitespace-nowrap border-l-2 border-transparent px-2.5 font-semibold hover:border-l-[#c28422] [@media(max-height:480px)]:px-2 [@media(max-height:480px)]:py-1 [@media(max-height:480px)]:text-xs',
-            isStudentServices && isActive && 'border-l-[#c28422]'
+            'block rounded-md px-3 py-2 text-sm font-medium text-[#177249] transition-colors duration-75 hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
+            isActive && 'bg-[#edf5ef] font-semibold underline decoration-[#ff8c00] underline-offset-4',
+            isStudentServices && 'whitespace-nowrap border-l-2 border-transparent px-2.5 font-semibold hover:border-l-[#ff8c00] [@media(max-height:480px)]:px-2 [@media(max-height:480px)]:py-1 [@media(max-height:480px)]:text-xs',
+            isStudentServices && isActive && 'border-l-[#ff8c00]'
           );
           return (
             <li key={link.href}>
@@ -81,138 +80,115 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
 
   const handlePointerEnter = (key: string, hasDropdown: boolean) => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
-    if (!hasDropdown) {
-      setActiveDropdown('');
-      return;
-    }
-    // Intentional hover delay (220ms) to prevent accidental dropdown opening while scrolling or moving cursor
-    if (activeDropdown) {
-      setActiveDropdown(key);
-    } else {
-      hoverTimer.current = setTimeout(() => {
-        setActiveDropdown(key);
-      }, 220);
-    }
+    setActiveDropdown(hasDropdown ? key : '');
   };
 
   const handlePointerLeave = () => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
     hoverTimer.current = setTimeout(() => {
       setActiveDropdown('');
-    }, 180);
+    }, 60);
   };
 
-  useEffect(() => close(), [pathname, isScrolled]);
+  useEffect(() => close(), [pathname]);
 
   useEffect(() => {
     if (!activeDropdown) return;
     const outside = (event: PointerEvent) => {
       if (!navRef.current?.contains(event.target as Node)) close();
     };
-    const onScrollOrResize = () => close();
 
     document.addEventListener('pointerdown', outside);
-    window.addEventListener('resize', onScrollOrResize);
-    window.addEventListener('scroll', onScrollOrResize, { passive: true });
     return () => {
       document.removeEventListener('pointerdown', outside);
-      window.removeEventListener('resize', onScrollOrResize);
-      window.removeEventListener('scroll', onScrollOrResize);
       if (hoverTimer.current) clearTimeout(hoverTimer.current);
     };
   }, [activeDropdown]);
 
   return (
-    <>
-      <nav
-        ref={navRef}
-        aria-label="Primary navigation"
-        className={`z-50 border-b border-black/10 bg-[#177249] shadow-lg transition-all ${
-          isScrolled ? 'fixed inset-x-0 top-0 shadow-md' : 'relative'
-        }`}
-      >
-        <div className="container mx-auto flex items-center px-4">
-          <ul className="hidden w-full items-center xl:flex">
-            {menuItems.map(item => {
-              const open = activeDropdown === item.key;
-              const compact = compactKeys.includes(item.key);
-              const current =
-                item.dropdown?.some(link => link.href === pathname || link.submenu?.some(sub => sub.href === pathname)) ||
-                item.href === pathname;
-              const panelId = `${item.key}-navigation-desktop`;
-              return (
-                <li
-                  key={item.key}
-                  className="relative flex-1"
-                  onPointerEnter={event => {
-                    if (event.pointerType === 'mouse') handlePointerEnter(item.key, !!item.dropdown);
-                  }}
-                  onPointerLeave={event => {
-                    if (event.pointerType === 'mouse') handlePointerLeave();
-                  }}
-                  onBlur={event => {
-                    if (!event.currentTarget.contains(event.relatedTarget)) close();
-                  }}
-                  onKeyDown={event => {
-                    if (event.key === 'Escape' && open) {
-                      event.currentTarget.querySelector('button')?.focus();
-                      close();
-                    }
-                  }}
-                >
-                  <div
-                    className={cn(
-                      'group relative flex items-center justify-center border-r border-white/15 text-sm font-semibold text-white/95 hover:bg-[#135c3b] hover:text-white transition-colors',
-                      current && item.dropdown && 'after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-[#ff8c00]'
-                    )}
-                  >
-                    {!compact && (
-                      <NavLink
-                        end
-                        to={item.href}
-                        onClick={close}
-                        className={cn(
-                          'flex min-h-[52px] items-center whitespace-nowrap pl-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
-                          !item.dropdown && 'w-full justify-center px-3'
-                        )}
-                      >
-                        {item.label}
-                      </NavLink>
-                    )}
-                    {item.dropdown && (
-                      <button
-                        type="button"
-                        aria-label={compact ? undefined : `${item.label} menu`}
-                        aria-expanded={open}
-                        aria-controls={open ? panelId : undefined}
-                        onClick={() => {
-                          if (hoverTimer.current) clearTimeout(hoverTimer.current);
-                          setActiveDropdown(open ? '' : item.key);
-                        }}
-                        className={cn(
-                          'flex min-h-[52px] items-center justify-center gap-2 whitespace-nowrap px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
-                          compact && 'w-full px-3'
-                        )}
-                      >
-                        {compact && item.label}
-                        <ChevronDown size={16} className={cn('shrink-0 transition-transform duration-200', open && 'rotate-180')} aria-hidden="true" />
-                      </button>
-                    )}
-                  </div>
-                  {open && item.dropdown && (
-                    <DesktopDropdown
-                      item={item}
-                      room={Math.max(96, window.innerHeight - (navRef.current?.getBoundingClientRect().bottom ?? 0) - 12)}
-                      close={close}
-                    />
+    <nav
+      ref={navRef}
+      aria-label="Primary navigation"
+      className={`z-50 border-b border-black/10 bg-[#177249] shadow-lg ${
+        isScrolled ? 'fixed inset-x-0 top-0 shadow-md' : 'relative'
+      }`}
+    >
+      <div className="container mx-auto flex items-center px-4">
+        <ul className="hidden w-full items-center xl:flex">
+          {menuItems.map(item => {
+            const open = activeDropdown === item.key;
+            const compact = compactKeys.includes(item.key);
+            const current =
+              item.dropdown?.some(link => link.href === pathname || link.submenu?.some(sub => sub.href === pathname)) ||
+              item.href === pathname;
+            const panelId = `${item.key}-navigation-desktop`;
+            return (
+              <li
+                key={item.key}
+                className="relative flex-1"
+                onMouseEnter={() => handlePointerEnter(item.key, !!item.dropdown)}
+                onMouseLeave={handlePointerLeave}
+                onBlur={event => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) close();
+                }}
+                onKeyDown={event => {
+                  if (event.key === 'Escape' && open) {
+                    event.currentTarget.querySelector('button')?.focus();
+                    close();
+                  }
+                }}
+              >
+                <div
+                  className={cn(
+                    'group relative flex items-center justify-center border-r border-white/15 text-sm font-semibold text-white/95 hover:bg-[#135c3b] hover:text-white transition-colors duration-100',
+                    current && item.dropdown && 'after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-[#ff8c00]'
                   )}
-                </li>
-              );
-            })}
-          </ul>
-          <MobileNavigation />
-        </div>
-      </nav>
-    </>
+                >
+                  {!compact && (
+                    <NavLink
+                      end
+                      to={item.href}
+                      onClick={close}
+                      className={cn(
+                        'flex min-h-[52px] items-center whitespace-nowrap pl-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
+                        !item.dropdown && 'w-full justify-center px-3'
+                      )}
+                    >
+                      {item.label}
+                    </NavLink>
+                  )}
+                  {item.dropdown && (
+                    <button
+                      type="button"
+                      aria-label={compact ? undefined : `${item.label} menu`}
+                      aria-expanded={open}
+                      aria-controls={open ? panelId : undefined}
+                      onClick={() => {
+                        if (hoverTimer.current) clearTimeout(hoverTimer.current);
+                        setActiveDropdown(open ? '' : item.key);
+                      }}
+                      className={cn(
+                        'flex min-h-[52px] items-center justify-center gap-2 whitespace-nowrap px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
+                        compact && 'w-full px-3'
+                      )}
+                    >
+                      {compact && item.label}
+                      <ChevronDown size={16} className={cn('shrink-0 transition-transform duration-100', open && 'rotate-180')} aria-hidden="true" />
+                    </button>
+                  )}
+                </div>
+                {open && item.dropdown && (
+                  <DesktopDropdown
+                    item={item}
+                    close={close}
+                  />
+                )}
+              </li>
+            );
+          })}
+        </ul>
+        <MobileNavigation />
+      </div>
+    </nav>
   );
 };
