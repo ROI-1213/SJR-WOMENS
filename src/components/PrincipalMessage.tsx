@@ -30,7 +30,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
   return (
     <section
       aria-labelledby="leadership-title"
-      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+      className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#153c2a] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
     >
       <div className="mx-auto max-w-[1284px]">
         {/* Header */}
@@ -40,7 +40,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
               <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSTITUTIONAL LEADERSHIP</span>
             </div>
-            <h2 id="leadership-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+            <h2 id="leadership-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#153c2a] sm:text-4xl">
               {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
             </h2>
           </div>
@@ -55,8 +55,8 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               onClick={() => setLanguage('kn')}
               className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'kn'
-                  ? 'bg-[#177249] text-white shadow-xs ring-1 ring-[#c28422]'
-                  : 'text-[#177249] hover:bg-[#eef4ef]'
+                  ? 'bg-[#153c2a] text-white shadow-xs ring-1 ring-[#c28422]'
+                  : 'text-[#153c2a] hover:bg-[#eef4ef]'
               }`}
             >
               <Languages size={13} aria-hidden="true" />
@@ -67,8 +67,8 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
               onClick={() => setLanguage('en')}
               className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition-all ${
                 language === 'en'
-                  ? 'bg-[#177249] text-white shadow-xs ring-1 ring-[#c28422]'
-                  : 'text-[#177249] hover:bg-[#eef4ef]'
+                  ? 'bg-[#153c2a] text-white shadow-xs ring-1 ring-[#c28422]'
+                  : 'text-[#153c2a] hover:bg-[#eef4ef]'
               }`}
             >
               English Translation
@@ -108,7 +108,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
                   Authentic Institutional Address
                 </span>
-                <h3 className="mt-0.5 font-sans text-2xl font-bold leading-tight text-[#177249]">
+                <h3 className="mt-0.5 font-sans text-2xl font-bold leading-tight text-[#153c2a]">
                   {principalName}
                 </h3>
               </div>

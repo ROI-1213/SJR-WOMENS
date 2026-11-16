@@ -42,7 +42,7 @@ const ResearchGuides = () => (
       </div>
     </section>
 
-    <section aria-labelledby="recognised-supervisors" className="rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-8">
+    <section aria-labelledby="recognised-supervisors" className="rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-8">
       <h2 id="recognised-supervisors" className={researchHeading}>University-recognised doctoral supervisors</h2>
       <p className="mt-3 max-w-3xl leading-relaxed">Ph.D. supervision requires formal university recognition. Check Bengaluru City University’s research-centre and admission notices, and confirm the supervisor’s recognised subject area and availability with the university before applying.</p>
       <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">

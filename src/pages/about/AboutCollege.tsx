@@ -43,11 +43,11 @@ const sectionTitle = 'text-2xl font-bold leading-tight tracking-tight text-[colo
 const bodyText = 'leading-relaxed text-[#43534a]';
 const container = 'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8';
 const sectionSpacing = 'py-10 sm:py-14 lg:py-16';
-const textLink = 'inline-flex items-center gap-2 text-sm font-semibold text-[#177249] underline underline-offset-4 hover:text-[#103f2a]';
+const textLink = 'inline-flex items-center gap-2 text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:text-[#103f2a]';
 
 const AboutCollege = () => (
   <AboutLayout pageTitle="Overview" breadcrumbPath="Overview">
-    <div className="text-[#177249]">
+    <div className="text-[#153c2a]">
       <section className={`${container} ${sectionSpacing} grid items-center gap-7 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12`}>
         <div>
           <div className="mb-4 h-1 w-12 rounded-full bg-[#ff8c00]" aria-hidden="true" />
@@ -97,12 +97,12 @@ const AboutCollege = () => (
             const description = details.description;
             return (
               <li key={programme.id}>
-                <Link to={programme.href} className="group flex h-full flex-col rounded-xl border border-[#d6e6dc] bg-white p-5 transition-colors hover:border-[#177249] hover:bg-[#f5f9f6]">
-                  <Icon size={24} className="mb-4 text-[#177249]" aria-hidden="true" />
+                <Link to={programme.href} className="group flex h-full flex-col rounded-xl border border-[#d6e6dc] bg-white p-5 transition-colors hover:border-[#153c2a] hover:bg-[#f5f9f6]">
+                  <Icon size={24} className="mb-4 text-[#153c2a]" aria-hidden="true" />
                   <h3 className="text-xl font-bold text-[#153d2c]">{programme.name}</h3>
                   <p className="mt-1 text-sm font-semibold">{programme.fullName}</p>
                   <p className={`mb-4 mt-2 text-sm ${bodyText}`}>{description}</p>
-                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#177249] group-hover:underline">
+                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[#153c2a] group-hover:underline">
                     Programme details <ArrowRight size={16} aria-hidden="true" />
                   </span>
                 </Link>
@@ -119,14 +119,14 @@ const AboutCollege = () => (
             <div className="overflow-hidden rounded-2xl border border-[#d6e6dc] bg-white">
               <img src={library} alt="Bookshelves in the college library" loading="lazy" className="aspect-[16/9] w-full object-cover" />
               <dl className="grid grid-cols-2 divide-x divide-[#d6e6dc] text-center">
-                <div className="p-3"><dt className="text-sm text-[#43534a]">Classrooms</dt><dd className="text-xl font-bold text-[#177249]">19</dd></div>
-                <div className="p-3"><dt className="text-sm text-[#43534a]">Science laboratories</dt><dd className="text-xl font-bold text-[#177249]">9</dd></div>
+                <div className="p-3"><dt className="text-sm text-[#43534a]">Classrooms</dt><dd className="text-xl font-bold text-[#153c2a]">19</dd></div>
+                <div className="p-3"><dt className="text-sm text-[#43534a]">Science laboratories</dt><dd className="text-xl font-bold text-[#153c2a]">9</dd></div>
               </dl>
             </div>
             <ul className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
               {facilities.map(({ icon: Icon, title, detail }) => (
                 <li key={title} className="flex gap-3 border-b border-[#d6e6dc] pb-4">
-                  <Icon size={21} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
+                  <Icon size={21} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />
                   <div>
                     <h3 className="font-bold text-[#153d2c]">{title}</h3>
                     <p className={`mt-1 text-sm ${bodyText}`}>{detail}</p>
@@ -144,9 +144,9 @@ const AboutCollege = () => (
           {studentInitiatives.map(({ icon: Icon, title, items }) => (
             <div key={title} className="rounded-xl bg-[#eaf3ed] p-5">
               <h3 className="flex items-center gap-2 font-bold text-[#153d2c]">
-                <Icon size={20} className="shrink-0 text-[#177249]" aria-hidden="true" /> {title}
+                <Icon size={20} className="shrink-0 text-[#153c2a]" aria-hidden="true" /> {title}
               </h3>
-              <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm text-[#43534a] marker:text-[#177249]">
+              <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm text-[#43534a] marker:text-[#153c2a]">
                 {items.map(item => <li key={item}>{item}</li>)}
               </ul>
             </div>
@@ -156,14 +156,14 @@ const AboutCollege = () => (
 
       <div className={`${container} grid gap-5 pb-10 md:grid-cols-2 sm:pb-14`}>
         <section className="rounded-2xl border border-[#d6e6dc] p-5 sm:p-7">
-          <FlaskConical size={24} className="mb-3 text-[#177249]" aria-hidden="true" />
+          <FlaskConical size={24} className="mb-3 text-[#153c2a]" aria-hidden="true" />
           <h2 className="text-2xl font-bold text-[color:var(--section-heading-color)]">Research &amp; Academic Excellence</h2>
           <p className={`mt-3 ${bodyText}`}>Faculty members with Ph.D. and M.Phil. qualifications contribute to research in their disciplines.</p>
           <p className={`mt-3 ${bodyText}`}>The college has offered UGC-sponsored add-on courses and self-financed certificate courses in Tally, Web Designing and Advanced Excel.</p>
           <Link to="/research/publications" className={`mt-4 ${textLink}`}>Faculty publications <ArrowRight size={16} aria-hidden="true" /></Link>
         </section>
         <section className="rounded-2xl border border-[#e9dfce] bg-[#fbf7ef] p-5 sm:p-7">
-          <Wallet size={24} className="mb-3 text-[#177249]" aria-hidden="true" />
+          <Wallet size={24} className="mb-3 text-[#153c2a]" aria-hidden="true" />
           <h2 className="text-2xl font-bold text-[color:var(--section-heading-color)]">Scholarships &amp; Student Welfare</h2>
           <ul className={`mt-3 list-disc space-y-2 pl-5 ${bodyText}`}>
             <li>Fee concessions and instalment payment options.</li>
@@ -179,7 +179,7 @@ const AboutCollege = () => (
         <div className={`${container} grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-12`}>
           <div>
             <h2 className={sectionTitle}>Accreditation &amp; Institutional Milestones</h2>
-            <div className="mt-5 flex max-w-sm items-center gap-4 rounded-xl bg-[#177249] p-4 text-white">
+            <div className="mt-5 flex max-w-sm items-center gap-4 rounded-xl bg-[#153c2a] p-4 text-white">
               <Award size={32} className="shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-sm">Latest documented NAAC grade</p>
@@ -196,7 +196,7 @@ const AboutCollege = () => (
           <ol className="ml-1 border-l border-[#9fbfac]">
             {milestones.map(({ year, title, detail }) => (
               <li key={year} className="relative pb-4 pl-5 last:pb-0 sm:pl-6">
-                <span className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full bg-[#177249]" aria-hidden="true" />
+                <span className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full bg-[#153c2a]" aria-hidden="true" />
                 <h3 className="font-bold text-[#153d2c]"><time dateTime={year}>{year}</time> · {title}</h3>
                 <p className={`mt-0.5 text-sm ${bodyText}`}>{detail}</p>
               </li>

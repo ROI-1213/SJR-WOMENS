@@ -35,7 +35,7 @@ export const TopBar = ({ contactPhone }: { contactPhone?: string }) => (
             </summary>
             <div className="absolute right-0 top-full z-[100] mt-1 w-64 rounded-md border border-neutral-200 bg-white p-1.5 text-neutral-800 shadow-xl">
               {item.dropdown?.map(link => (
-                <Link key={link.href} to={link.href} onClick={event => event.currentTarget.closest('details')?.removeAttribute('open')} className="block rounded px-3 py-1.5 text-xs font-semibold hover:bg-[#edf5ef] hover:text-[#177249]">
+                <Link key={link.href} to={link.href} onClick={event => event.currentTarget.closest('details')?.removeAttribute('open')} className="block rounded px-3 py-1.5 text-xs font-semibold hover:bg-[#edf5ef] hover:text-[#153c2a]">
                   {link.label}
                 </Link>
               ))}

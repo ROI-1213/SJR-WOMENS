@@ -25,7 +25,7 @@ const destinations = [
 export const DiscoverCollege = () => (
   <section
     aria-labelledby="discover-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#177249] sm:px-8 sm:py-12 lg:px-12"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-10 text-[#153c2a] sm:px-8 sm:py-12 lg:px-12"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Header */}
@@ -34,14 +34,14 @@ export const DiscoverCollege = () => (
           <div className="mb-2 h-1 w-8 rounded-full bg-[#ea580c]" aria-hidden="true" />
           <h2
             id="discover-title"
-            className="text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl"
+            className="text-2xl font-bold tracking-tight text-[#153c2a] sm:text-3xl"
           >
             Discover Excellence
           </h2>
         </div>
         <Link
           to="/about/overview"
-          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#177249] underline underline-offset-4 hover:text-[#177249]"
+          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:text-[#153c2a]"
         >
           <span>About the College</span>
           <ArrowUpRight
@@ -55,7 +55,7 @@ export const DiscoverCollege = () => (
       {/* 4 Cards Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {/* Heritage Card */}
-        <div className="flex flex-col rounded-xl bg-[#177249] p-6 text-white shadow-sm">
+        <div className="flex flex-col rounded-xl bg-[#153c2a] p-6 text-white shadow-sm">
           <div className="flex items-center justify-between">
             <BookOpen size={24} className="text-white" aria-hidden="true" />
           </div>
@@ -70,18 +70,18 @@ export const DiscoverCollege = () => (
           <Link
             key={href}
             to={href}
-            className="group flex flex-col rounded-xl border border-[#d8e5dc] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#177249] hover:bg-[#f8fbf8] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+            className="group flex flex-col rounded-xl border border-[#d8e5dc] bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#153c2a] hover:bg-[#f8fbf8] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]"
           >
-            <div className="flex items-center justify-between text-[#177249]">
+            <div className="flex items-center justify-between text-[#153c2a]">
               <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
               <ArrowUpRight
                 size={18}
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#177249]"
+                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#153c2a]"
                 aria-hidden="true"
               />
             </div>
             <div className="mt-5">
-              <h3 className="text-lg font-bold text-[#177249] transition-colors group-hover:text-[#177249]">
+              <h3 className="text-lg font-bold text-[#153c2a] transition-colors group-hover:text-[#153c2a]">
                 {name}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#4b5563]">

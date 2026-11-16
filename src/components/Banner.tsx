@@ -201,9 +201,9 @@ export const Banner = () => {
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(true)}
-                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#177249] shadow-md transition-all duration-100 hover:bg-neutral-100 hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#153c2a] shadow-md transition-all duration-100 hover:bg-neutral-100 hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                <GraduationCap size={18} className="text-[#177249]" aria-hidden="true" />
+                <GraduationCap size={18} className="text-[#153c2a]" aria-hidden="true" />
                 <span>Apply for Admission</span>
               </button>
             </div>

@@ -24,17 +24,17 @@ const VisionMission = () => (
         <h2 id="placement-vision" className="text-2xl font-bold sm:text-3xl">Vision</h2>
         <p className="mt-4 text-lg leading-relaxed text-white/90">Develop capable, ethical graduates who can make informed career choices, contribute confidently in the workplace, and continue learning as industries change.</p>
       </section>
-      <section aria-labelledby="placement-mission" className="rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-6 sm:p-8">
-        <Compass className="mb-5 size-8 text-[#177249]" aria-hidden="true" />
+      <section aria-labelledby="placement-mission" className="rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-6 sm:p-8">
+        <Compass className="mb-5 size-8 text-[#153c2a]" aria-hidden="true" />
         <h2 id="placement-mission" className={placementHeading}>Mission</h2>
-        <ul className="mt-4 list-disc space-y-3 pl-5 leading-relaxed text-neutral-700 marker:text-[#177249]">
+        <ul className="mt-4 list-disc space-y-3 pl-5 leading-relaxed text-neutral-700 marker:text-[#153c2a]">
           {mission.map(item => <li key={item}>{item}</li>)}
         </ul>
       </section>
     </div>
 
     <section aria-labelledby="placement-practice">
-      <div className="mb-5 grid overflow-hidden rounded-2xl border border-[#177249]/15 md:grid-cols-2">
+      <div className="mb-5 grid overflow-hidden rounded-2xl border border-[#153c2a]/15 md:grid-cols-2">
         <div className="flex flex-col justify-center p-6 sm:p-8">
           <h2 id="placement-practice" className={`border-l-4 border-[#ff8c00] pl-4 ${placementHeading}`}>Placement practices</h2>
           <p className="mt-4 leading-relaxed text-neutral-700">The Placement Cell connects preparation with opportunities by combining career guidance, practical training, and conversations with employers.</p>

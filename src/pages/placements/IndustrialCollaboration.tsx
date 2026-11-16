@@ -19,7 +19,7 @@ const IndustrialCollaboration = () => (
       <Link to="/contact" className={`${placementAction} mt-5`}>Discuss a collaboration</Link>
     </section>
 
-    <section aria-labelledby="industry-records" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 sm:p-7">
+    <section aria-labelledby="industry-records" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 sm:p-7">
       <h2 id="industry-records" className={`${placementHeading} mb-4`}>Examples from the college’s records</h2>
       <PlacementReportLinks reports={[
         { label: 'Anudip Foundation training collaboration', href: `${placementSources.reports}#page=5`, description: 'The 2022–23 accounting and IT fundamentals course included practical training in Tally.' },

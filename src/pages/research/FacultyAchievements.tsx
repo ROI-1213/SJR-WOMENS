@@ -11,8 +11,8 @@ const FacultyAchievements = () => (
         <article className={`${researchCard} border-t-4 border-t-[#ff8c00]`}>
           <ResearchIcon icon={Award} />
           <h3 className="mt-4 text-xl font-bold text-[#153b2a]">Dr. Mylarappa M</h3>
-          <p className="mt-1 text-sm font-semibold text-[#177249]">Department of Chemistry</p>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed marker:text-[#177249]">
+          <p className="mt-1 text-sm font-semibold text-[#153c2a]">Department of Chemistry</p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed marker:text-[#153c2a]">
             <li>Young Research Award</li>
             <li>Best paper presentation award</li>
           </ul>
@@ -20,8 +20,8 @@ const FacultyAchievements = () => (
         <article className={`${researchCard} border-t-4 border-t-[#ff8c00]`}>
           <ResearchIcon icon={GraduationCap} />
           <h3 className="mt-4 text-xl font-bold text-[#153b2a]">Shobha Rani R</h3>
-          <p className="mt-1 text-sm font-semibold text-[#177249]">Department of Commerce</p>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed marker:text-[#177249]">
+          <p className="mt-1 text-sm font-semibold text-[#153c2a]">Department of Commerce</p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed marker:text-[#153c2a]">
             <li>State-level best teacher award (2018)</li>
             <li>International-level best research scholar award</li>
             <li>Outstanding educator distinction at the 2019 South Indian Women’s Achievers Award</li>
@@ -31,7 +31,7 @@ const FacultyAchievements = () => (
       <div className="mt-4"><ResearchSource href={researchSources.facultyAwards}>Annual Report 2020–21, section XV (PDF)</ResearchSource></div>
     </section>
 
-    <section aria-labelledby="faculty-contributions" className="rounded-2xl bg-[#177249]/5 p-5 sm:p-8">
+    <section aria-labelledby="faculty-contributions" className="rounded-2xl bg-[#153c2a]/5 p-5 sm:p-8">
       <h2 id="faculty-contributions" className={researchHeading}>Contributions to research at SJRC</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <article className={researchCard}>

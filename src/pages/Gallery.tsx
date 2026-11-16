@@ -30,8 +30,8 @@ const Gallery = () => {
                 }}
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors sm:text-sm ${
                   active
-                    ? 'bg-[#177249] text-white shadow-sm'
-                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#177249] hover:border-[#177249]'
+                    ? 'bg-[#153c2a] text-white shadow-sm'
+                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#153c2a] hover:border-[#153c2a]'
                 }`}
               >
                 {category}
@@ -47,9 +47,9 @@ const Gallery = () => {
                 type="button"
                 aria-label={`View ${photo.title}`}
                 onClick={() => setSelected(index)}
-                className="group flex h-full w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white text-left transition-colors hover:border-[#177249] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
+                className="group flex h-full w-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white text-left transition-colors hover:border-[#153c2a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]"
               >
-                <div className="aspect-[4/3] w-full overflow-hidden bg-[#177249]/5">
+                <div className="aspect-[4/3] w-full overflow-hidden bg-[#153c2a]/5">
                   <img
                     src={photo.src}
                     alt={photo.title}
@@ -59,8 +59,8 @@ const Gallery = () => {
                   />
                 </div>
                 <div className="p-3">
-                  <span className="text-[11px] font-semibold uppercase tracking-wide text-[#177249]">{photo.category}</span>
-                  <p className="mt-0.5 text-sm font-semibold text-[#177249]">{photo.title}</p>
+                  <span className="text-[11px] font-semibold uppercase tracking-wide text-[#153c2a]">{photo.category}</span>
+                  <p className="mt-0.5 text-sm font-semibold text-[#153c2a]">{photo.title}</p>
                 </div>
               </button>
             </li>

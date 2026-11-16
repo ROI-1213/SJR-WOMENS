@@ -5,7 +5,7 @@
 
 :root {
   --college-forest: #0b281b;
-  --college-green: #177249;
+  --college-green: #153c2a;
   --college-green-mid: #156c45;
   --college-green-light: #205c42;
   --college-gold: #ff8c00;
@@ -173,7 +173,7 @@
 }
 
 .home-section-title {
-  color: #177249;
+  color: #153c2a;
   font-family: "Inter", system-ui, ui-sans-serif, sans-serif;
   font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   font-weight: 700;
@@ -246,7 +246,7 @@
 .plaque-card {
   position: relative;
   border-radius: 1.25rem;
-  background: linear-gradient(150deg, #0e4b30 0%, #177249 55%, #071910 100%);
+  background: linear-gradient(150deg, #0e4b30 0%, #153c2a 55%, #071910 100%);
   border: 1.5px solid rgba(223, 160, 62, 0.45);
   box-shadow: 0 16px 36px -6px rgba(11, 40, 27, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -318,16 +318,16 @@
 }
 
 .academic-card:hover .academic-icon-box {
-  background: #177249;
+  background: #153c2a;
   color: #dfa03e;
-  border-color: #177249;
+  border-color: #153c2a;
   transform: scale(1.08) rotate(-2deg);
 }
 
 .academic-card:hover .academic-arrow {
-  background: #177249;
+  background: #153c2a;
   color: #ffffff;
-  border-color: #177249;
+  border-color: #153c2a;
   transform: translateX(4px);
 }
 
@@ -425,7 +425,7 @@
 }
 
 .dossier-card-advanced:hover .dossier-icon {
-  background: #177249;
+  background: #153c2a;
   color: #dfa03e;
   transform: scale(1.08) rotate(-3deg);
 }
@@ -434,7 +434,7 @@
 .community-banner-card {
   position: relative;
   border-radius: 1.25rem;
-  background: linear-gradient(135deg, #0e4b30 0%, #177249 55%, #081d13 100%);
+  background: linear-gradient(135deg, #0e4b30 0%, #153c2a 55%, #081d13 100%);
   border: 1.5px solid rgba(223, 160, 62, 0.4);
   box-shadow: 0 20px 48px -10px rgba(7, 31, 20, 0.35);
   overflow: hidden;
@@ -463,7 +463,7 @@
 }
 
 .placement-pillar-card:hover .pillar-icon {
-  background: #177249;
+  background: #153c2a;
   color: #dfa03e;
   transform: scale(1.08);
 }

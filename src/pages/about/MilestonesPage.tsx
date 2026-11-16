@@ -88,7 +88,7 @@ export default function MilestonesPage() {
     <AboutLayout pageTitle="College Milestones" breadcrumbPath="Milestones">
       <section aria-labelledby="milestones-heading" className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14">
         <header className="mb-10 text-center">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#eef4ef] text-[#177249]">
+          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#eef4ef] text-[#153c2a]">
             <Award size={24} aria-hidden="true" />
           </div>
           <h2 id="milestones-heading" className="text-2xl font-bold text-[#153b2a] sm:text-3xl">
@@ -99,15 +99,15 @@ export default function MilestonesPage() {
           </p>
         </header>
 
-        <ol className="relative space-y-6 border-l-2 border-[#177249]/25 pl-6 sm:pl-8">
+        <ol className="relative space-y-6 border-l-2 border-[#153c2a]/25 pl-6 sm:pl-8">
           {milestones.map(item => (
             <li key={item.year} className="relative rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
               <span
                 aria-hidden="true"
-                className="absolute -left-[33px] top-6 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#177249] bg-[#ff8c00] sm:-left-[41px]"
+                className="absolute -left-[33px] top-6 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#153c2a] bg-[#ff8c00] sm:-left-[41px]"
               />
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#177249] px-3 py-1 text-xs font-bold text-white">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#153c2a] px-3 py-1 text-xs font-bold text-white">
                   <Calendar size={12} aria-hidden="true" />
                   {item.year}
                 </span>

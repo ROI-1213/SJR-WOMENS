@@ -28,7 +28,7 @@ const DesktopDropdown = ({ item, close }: { item: MainMenuItem; close: () => voi
     <div
       id={`${key}-navigation-desktop`}
       className={cn(
-        'absolute top-full z-50 max-h-[calc(100vh-4.5rem)] overflow-y-auto overscroll-contain rounded-b-xl border border-[#177249]/20 border-t-4 border-t-[#ff8c00] bg-white p-2 shadow-2xl',
+        'absolute top-full z-50 max-h-[calc(100vh-4.5rem)] overflow-y-auto overscroll-contain rounded-b-xl border border-[#153c2a]/20 border-t-4 border-t-[#ff8c00] bg-white p-2 shadow-2xl',
         panelWidths[key],
         isAdmissions && 'p-5',
         isStudentServices && 'p-3 [@media(max-height:480px)]:p-2'
@@ -43,7 +43,7 @@ const DesktopDropdown = ({ item, close }: { item: MainMenuItem; close: () => voi
         {dropdown?.map(link => {
           const Icon = link.label === 'Application Process' ? FileText : link.label === 'Scholarships' ? GraduationCap : BookOpen;
           const linkClass = ({ isActive }: { isActive: boolean }) => cn(
-            'block rounded-md px-3 py-2 text-sm font-medium text-[#177249] transition-colors duration-75 hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
+            'block rounded-md px-3 py-2 text-sm font-medium text-[#153c2a] transition-colors duration-75 hover:bg-[#edf5ef] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px]',
             isActive && 'bg-[#edf5ef] font-semibold underline decoration-[#ff8c00] underline-offset-4',
             isStudentServices && 'whitespace-nowrap border-l-2 border-transparent px-2.5 font-semibold hover:border-l-[#ff8c00] [@media(max-height:480px)]:px-2 [@media(max-height:480px)]:py-1 [@media(max-height:480px)]:text-xs',
             isStudentServices && isActive && 'border-l-[#ff8c00]'
@@ -51,10 +51,10 @@ const DesktopDropdown = ({ item, close }: { item: MainMenuItem; close: () => voi
           return (
             <li key={link.href}>
               <NavLink to={link.href} end onClick={close} className={linkClass}>
-                {isAdmissions ? <span className="flex items-center gap-2 font-semibold"><Icon size={16} className="shrink-0 text-[#177249]" aria-hidden="true" />{link.label}</span> : link.label}
+                {isAdmissions ? <span className="flex items-center gap-2 font-semibold"><Icon size={16} className="shrink-0 text-[#153c2a]" aria-hidden="true" />{link.label}</span> : link.label}
               </NavLink>
               {link.submenu?.length ? (
-                <ul className="mt-1 border-t border-[#177249]/15 pt-1">
+                <ul className="mt-1 border-t border-[#153c2a]/15 pt-1">
                   {link.submenu.map(sub => <li key={sub.href}><NavLink to={sub.href} end onClick={close} className={linkClass}>{sub.label}</NavLink></li>)}
                 </ul>
               ) : null}
@@ -108,7 +108,7 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
     <nav
       ref={navRef}
       aria-label="Primary navigation"
-      className={`z-50 border-b border-black/10 bg-[#177249] shadow-lg ${
+      className={`z-50 border-b border-black/10 bg-[#153c2a] shadow-lg ${
         isScrolled ? 'fixed inset-x-0 top-0 shadow-md' : 'relative'
       }`}
     >
@@ -144,8 +144,8 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                     aria-expanded={item.dropdown ? open : undefined}
                     aria-controls={open && item.dropdown ? panelId : undefined}
                     className={cn(
-                      'flex min-h-[48px] w-full items-center justify-center gap-1.5 px-2 py-3 text-center whitespace-nowrap text-[13.5px] 2xl:text-[14.5px] font-bold tracking-[0.01em] text-white transition-colors duration-100 hover:bg-[#125838] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
-                      current && 'bg-[#125838] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-[#ff8c00]'
+                      'flex min-h-[48px] w-full items-center justify-center gap-1.5 px-2 py-3 text-center whitespace-nowrap text-[13.5px] 2xl:text-[14.5px] font-bold tracking-[0.01em] text-white transition-colors duration-100 hover:bg-[#0e2b1e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
+                      current && 'bg-[#0e2b1e] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-[#ff8c00]'
                     )}
                   >
                     <span>{item.label}</span>

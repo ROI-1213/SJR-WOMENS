@@ -23,7 +23,7 @@ const projectSteps = [
 
 const ResearchEnrollment = () => (
   <ResearchLayout page="enrollment" related={['guides', 'activities', 'studentAchievements']}>
-    <section aria-labelledby="enrollment-pathways" className="rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-8">
+    <section aria-labelledby="enrollment-pathways" className="rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-8">
       <h2 id="enrollment-pathways" className={researchHeading}>Choose the right research pathway</h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         <article className={researchCard}>
@@ -43,7 +43,7 @@ const ResearchEnrollment = () => (
 
     <section aria-labelledby="project-preparation">
       <h2 id="project-preparation" className={researchHeading}>Prepare for your first project discussion</h2>
-      <ol className="mt-5 divide-y divide-[#177249]/15 rounded-2xl border border-[#177249]/15">
+      <ol className="mt-5 divide-y divide-[#153c2a]/15 rounded-2xl border border-[#153c2a]/15">
         {projectSteps.map(({ icon, title, text }, index) => (
           <li key={title} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4 p-4 sm:gap-5 sm:p-6">
             <ResearchIcon icon={icon} />

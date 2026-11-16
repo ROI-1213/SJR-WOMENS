@@ -21,7 +21,7 @@ const hours = [
   { days: 'Sunday', time: 'Closed' },
 ];
 const offices = ['Admissions Office', 'Academic Office', 'Student Services', 'Placement Cell'];
-const linkStyle = 'rounded-sm font-semibold text-[#177249] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#177249]';
+const linkStyle = 'rounded-sm font-semibold text-[#153c2a] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#153c2a]';
 
 const details = [
   {
@@ -63,11 +63,11 @@ const details = [
 const Contact = () => (
   <div className="min-h-screen bg-white">
     <Header />
-    <div className="internal-page-breadcrumb border-b border-[#177249]/15 bg-[#177249]/5">
+    <div className="internal-page-breadcrumb border-b border-[#153c2a]/15 bg-[#153c2a]/5">
       <div className="container mx-auto px-4">
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem><BreadcrumbLink asChild className="text-[#177249] hover:underline"><Link to="/">Home</Link></BreadcrumbLink></BreadcrumbItem>
+            <BreadcrumbItem><BreadcrumbLink asChild className="text-[#153c2a] hover:underline"><Link to="/">Home</Link></BreadcrumbLink></BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem><BreadcrumbPage>Contact Us</BreadcrumbPage></BreadcrumbItem>
           </BreadcrumbList>
@@ -88,8 +88,8 @@ const Contact = () => (
           <h2 id="contact-details-title" className="mb-4 text-2xl font-bold tracking-tight text-[#153b2a] sm:mb-5 sm:text-3xl">College contact details</h2>
           <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-[1.2fr_0.8fr_1fr_1.1fr]">
             {details.map(({ title, icon: Icon, content }) => (
-              <li key={title} className="min-w-0 rounded-xl border border-[#177249]/15 bg-white p-4 shadow-sm transition-colors hover:border-[#177249]/40 sm:p-5">
-                <span className="grid size-10 place-items-center rounded-lg border-b-2 border-[#c28422] bg-[#177249]/10 text-[#177249]">
+              <li key={title} className="min-w-0 rounded-xl border border-[#153c2a]/15 bg-white p-4 shadow-sm transition-colors hover:border-[#153c2a]/40 sm:p-5">
+                <span className="grid size-10 place-items-center rounded-lg border-b-2 border-[#c28422] bg-[#153c2a]/10 text-[#153c2a]">
                   <Icon size={20} aria-hidden="true" />
                 </span>
                 <h3 className="mt-3 font-bold text-[#153b2a]">{title}</h3>
@@ -99,13 +99,13 @@ const Contact = () => (
           </ul>
 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#c28422]/30 bg-[#faf8f2] p-4 sm:px-6">
-            <span className="text-sm font-semibold text-[#177249]">Official Social Media Channels:</span>
+            <span className="text-sm font-semibold text-[#153c2a]">Official Social Media Channels:</span>
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href={instituteContact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#177249] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#153c2a] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
               >
                 <Facebook size={15} className="text-[#1877F2]" aria-hidden="true" />
                 <span>Facebook Page (@sjrcw)</span>
@@ -115,7 +115,7 @@ const Contact = () => (
                 href={instituteContact.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#177249] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#c28422]/30 bg-white px-3.5 py-1.5 text-xs font-semibold text-[#153c2a] shadow-sm transition-colors hover:border-[#c28422] hover:bg-[#edf5ef]"
               >
                 <Youtube size={15} className="text-[#FF0000]" aria-hidden="true" />
                 <span>Official YouTube Channel</span>
@@ -126,7 +126,7 @@ const Contact = () => (
         </section>
 
         <div className="grid items-start gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
-          <section aria-labelledby="contact-map-title" className="min-w-0 overflow-hidden rounded-2xl border border-[#177249]/15 bg-white shadow-sm">
+          <section aria-labelledby="contact-map-title" className="min-w-0 overflow-hidden rounded-2xl border border-[#153c2a]/15 bg-white shadow-sm">
             <div className="p-4 sm:p-6">
               <h2 id="contact-map-title" className="text-xl font-bold tracking-tight text-[#153b2a] sm:text-2xl">Find Us on Google Maps</h2>
               <p className="mt-1.5 text-sm leading-relaxed text-neutral-700">{instituteContact.address}</p>
@@ -140,9 +140,9 @@ const Contact = () => (
               allowFullScreen
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
-              className="block aspect-[4/3] h-auto min-h-64 w-full bg-[#177249]/5"
+              className="block aspect-[4/3] h-auto min-h-64 w-full bg-[#153c2a]/5"
             />
-            <div className="flex items-center border-t border-[#177249]/15 bg-[#177249]/5 px-4 py-3 sm:px-6">
+            <div className="flex items-center border-t border-[#153c2a]/15 bg-[#153c2a]/5 px-4 py-3 sm:px-6">
               <a href={directionsUrl} target="_blank" rel="noopener noreferrer" className={`${linkStyle} inline-flex min-h-10 items-center gap-2 text-sm`}>
                 Open directions in Google Maps <ArrowUpRight size={16} className="shrink-0" aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
@@ -150,15 +150,15 @@ const Contact = () => (
             </div>
           </section>
 
-          <section aria-labelledby="contact-form-title" className="min-w-0 rounded-2xl border border-[#177249]/15 border-t-4 border-t-[#ff8c00] bg-[#177249]/5 p-4 shadow-sm sm:p-6">
+          <section aria-labelledby="contact-form-title" className="min-w-0 rounded-2xl border border-[#153c2a]/15 border-t-4 border-t-[#ff8c00] bg-[#153c2a]/5 p-4 shadow-sm sm:p-6">
             <h2 id="contact-form-title" className="text-xl font-bold tracking-tight text-[#153b2a] sm:text-2xl">Send us a message</h2>
             <p className="mt-1.5 text-sm leading-relaxed text-neutral-700">All fields are required.</p>
             <ContactEnquiryForm />
           </section>
         </div>
 
-        <section aria-labelledby="contact-offices-title" className="flex flex-wrap items-start gap-3 rounded-xl border border-[#177249]/15 bg-white px-4 py-4 sm:items-center sm:px-6">
-          <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#177249]/10 text-[#177249]">
+        <section aria-labelledby="contact-offices-title" className="flex flex-wrap items-start gap-3 rounded-xl border border-[#153c2a]/15 bg-white px-4 py-4 sm:items-center sm:px-6">
+          <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#153c2a]/10 text-[#153c2a]">
             <Building2 size={20} aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">

@@ -63,7 +63,7 @@ export const DisclosurePage = ({ item }: { item?: BaseMenuItem }) => {
   const title = item?.label ?? section.label;
   const record = item ? records[item.href] : undefined;
   const links = record?.links ?? mandatoryDisclosureMenuData;
-  const linkStyle = 'flex min-h-12 items-center gap-3 rounded-lg border border-[#177249]/20 bg-white px-4 py-3 text-sm font-semibold text-[#177249] underline-offset-4 hover:bg-[#177249]/5 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]';
+  const linkStyle = 'flex min-h-12 items-center gap-3 rounded-lg border border-[#153c2a]/20 bg-white px-4 py-3 text-sm font-semibold text-[#153c2a] underline-offset-4 hover:bg-[#153c2a]/5 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]';
 
   return (
     <SectionPageLayout pageTitle={title} breadcrumbPath={item?.label ?? 'Overview'} section={section} brandedBreadcrumb showFloatingApply={false}>
@@ -82,7 +82,7 @@ export const DisclosurePage = ({ item }: { item?: BaseMenuItem }) => {
             </li>
           ))}
         </ul>
-        <Link to="/contact" className="mt-6 inline-block text-sm font-semibold text-[#177249] underline underline-offset-4">Contact the college office</Link>
+        <Link to="/contact" className="mt-6 inline-block text-sm font-semibold text-[#153c2a] underline underline-offset-4">Contact the college office</Link>
       </section>
     </SectionPageLayout>
   );

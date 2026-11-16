@@ -48,13 +48,13 @@ const CampusOverview = () => (
           { src: classroom, caption: 'Classroom teaching' },
           { src: library, caption: 'Library reading room' },
         ].map(({ src, caption }) => (
-          <figure key={caption} className="overflow-hidden rounded-xl border border-[#177249]/15">
+          <figure key={caption} className="overflow-hidden rounded-xl border border-[#153c2a]/15">
             <img src={src} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
-            <figcaption className="bg-[#177249]/5 px-4 py-3 text-sm font-semibold text-[#177249]">{caption}</figcaption>
+            <figcaption className="bg-[#153c2a]/5 px-4 py-3 text-sm font-semibold text-[#153c2a]">{caption}</figcaption>
           </figure>
         ))}
-        <div className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 sm:col-span-2">
-          <h2 className="font-semibold text-[#177249]">Spaces for Study and Student Life</h2>
+        <div className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 sm:col-span-2">
+          <h2 className="font-semibold text-[#153c2a]">Spaces for Study and Student Life</h2>
           <p className="mt-1 text-sm leading-relaxed text-neutral-700">The reading room gives students space to focus, while classrooms and common areas make it easier to work with classmates and faculty.</p>
         </div>
       </section>
@@ -69,9 +69,9 @@ const CampusOverview = () => (
 
       <div className="grid gap-4 sm:grid-cols-2">
         {campusDetails.map(({ title, items }) => (
-          <section key={title} className="rounded-xl border border-[#177249]/15 p-5 sm:p-7">
-            <h2 className="text-xl font-bold text-[#177249]">{title}</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-neutral-700 marker:text-[#177249]">
+          <section key={title} className="rounded-xl border border-[#153c2a]/15 p-5 sm:p-7">
+            <h2 className="text-xl font-bold text-[#153c2a]">{title}</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-neutral-700 marker:text-[#153c2a]">
               {items.map(item => <li key={item}>{item}</li>)}
             </ul>
           </section>
@@ -81,22 +81,22 @@ const CampusOverview = () => (
       <FacilitySection title="Prime Location in Ananda Rao Circle">
         <p className="mb-5 max-w-2xl leading-relaxed text-neutral-700">The college is at 9 Race Course Road, Bengaluru 560009. Three transport hubs around Majestic connect students and visitors with the rest of the city.</p>
         <FacilityCards items={connections} />
-        <figure className="mt-5 overflow-hidden rounded-xl border border-[#177249]/15">
+        <figure className="mt-5 overflow-hidden rounded-xl border border-[#153c2a]/15">
           <img src={lab} alt="" loading="lazy" className="aspect-[2/1] max-h-80 w-full object-cover" />
-          <figcaption className="bg-[#177249]/5 px-4 py-3 text-sm font-semibold text-[#177249]">Students working in the computer laboratory</figcaption>
+          <figcaption className="bg-[#153c2a]/5 px-4 py-3 text-sm font-semibold text-[#153c2a]">Students working in the computer laboratory</figcaption>
         </figure>
       </FacilitySection>
 
-      <section className="rounded-2xl bg-[#177249]/5 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-8">
+      <section className="rounded-2xl bg-[#153c2a]/5 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-8">
         <div>
-          <h2 className="text-2xl font-bold text-[#177249]">Experience Our Campus</h2>
+          <h2 className="text-2xl font-bold text-[#153c2a]">Experience Our Campus</h2>
           <p className="mt-2 text-neutral-700">Take a virtual walk-through or contact the college to arrange a visit.</p>
         </div>
         <div className="mt-5 flex flex-wrap gap-3 sm:mt-0 sm:shrink-0">
           <CampusTourModal>
-            {openModal => <Button onClick={openModal} className="bg-[#177249] text-white hover:bg-[#135c3b]"><Eye className="mr-2 size-4" aria-hidden="true" />Take Virtual Tour</Button>}
+            {openModal => <Button onClick={openModal} className="bg-[#153c2a] text-white hover:bg-[#0f3222]"><Eye className="mr-2 size-4" aria-hidden="true" />Take Virtual Tour</Button>}
           </CampusTourModal>
-          <Button asChild variant="outline" className="border-[#177249] text-[#177249] hover:bg-[#177249]/10 hover:text-[#177249]">
+          <Button asChild variant="outline" className="border-[#153c2a] text-[#153c2a] hover:bg-[#153c2a]/10 hover:text-[#153c2a]">
             <Link to="/contact"><Users className="mr-2 size-4" aria-hidden="true" />Schedule a Visit</Link>
           </Button>
         </div>

@@ -5,7 +5,7 @@ export const LogoSection = () => (
   <div className="border-b border-gray-200 bg-white px-3 py-2 sm:px-6 lg:py-3">
     <Link
       to="/"
-      className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_repeat(3,clamp(3rem,10vw,4.75rem))_minmax(0,1fr)] items-center gap-x-2 gap-y-1 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] sm:gap-x-3 lg:grid-cols-[auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto] lg:gap-x-5 xl:gap-x-8"
+      className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_repeat(3,clamp(3rem,10vw,4.75rem))_minmax(0,1fr)] items-center gap-x-2 gap-y-1 text-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a] sm:gap-x-3 lg:grid-cols-[auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto] lg:gap-x-5 xl:gap-x-8"
     >
       <img
         src="/branding/left.png"

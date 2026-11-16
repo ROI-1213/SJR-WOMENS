@@ -28,7 +28,7 @@ export const RecruiterMarquee = () => {
           <span className="text-xs font-bold uppercase tracking-wider text-[#c28422]">
             Corporate Engagement &amp; Placement Drives
           </span>
-          <h3 id="recruiters-title" className="text-lg font-bold text-[#177249] sm:text-xl">
+          <h3 id="recruiters-title" className="text-lg font-bold text-[#153c2a] sm:text-xl">
             Recruiting Partners &amp; Industry Associations
           </h3>
           <p className="mt-1 text-xs sm:text-sm text-[#52645a]">
@@ -38,7 +38,7 @@ export const RecruiterMarquee = () => {
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link
             to="/placements"
-            className="group inline-flex min-h-9 items-center gap-1.5 text-xs sm:text-sm font-bold text-[#177249] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#ff8c00]"
+            className="group inline-flex min-h-9 items-center gap-1.5 text-xs sm:text-sm font-bold text-[#153c2a] underline decoration-[#c28422] underline-offset-4 transition-colors hover:text-[#ff8c00]"
           >
             <span>All Recruiting Companies</span>
             <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-[#ff8c00]" aria-hidden="true" />
@@ -48,7 +48,7 @@ export const RecruiterMarquee = () => {
             aria-controls="recruiter-logos"
             aria-label={isPaused ? 'Resume logo scrolling' : 'Pause logo scrolling'}
             onClick={() => setIsPaused(paused => !paused)}
-            className="grid h-8 w-8 place-items-center rounded-lg border border-[#d2dcd3] bg-white text-[#177249] shadow-xs hover:bg-[#eef5f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] motion-reduce:hidden"
+            className="grid h-8 w-8 place-items-center rounded-lg border border-[#d2dcd3] bg-white text-[#153c2a] shadow-xs hover:bg-[#eef5f0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a] motion-reduce:hidden"
           >
             <ScrollIcon size={14} aria-hidden="true" />
           </button>
@@ -62,10 +62,10 @@ export const RecruiterMarquee = () => {
               {recruiters.map(company => (
                 <li
                   key={company.name}
-                  className="recruiter-tile group relative flex min-h-[6.75rem] flex-col items-center justify-center gap-2 rounded-xl border border-[#dce4dd] bg-white px-5 py-4 shadow-xs hover:border-[#177249] hover:shadow-md transition-all duration-300"
+                  className="recruiter-tile group relative flex min-h-[6.75rem] flex-col items-center justify-center gap-2 rounded-xl border border-[#dce4dd] bg-white px-5 py-4 shadow-xs hover:border-[#153c2a] hover:shadow-md transition-all duration-300"
                 >
                   <img src={company.logo} alt="" decoding="async" className="h-12 sm:h-14 w-full max-w-[140px] sm:max-w-[160px] object-contain transition-transform duration-300 group-hover:scale-105" />
-                  <span className="text-center text-xs sm:text-sm font-bold text-[#177249]">
+                  <span className="text-center text-xs sm:text-sm font-bold text-[#153c2a]">
                     {company.name}
                   </span>
                 </li>

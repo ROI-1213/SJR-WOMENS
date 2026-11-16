@@ -19,7 +19,7 @@ const Auditorium = () => (
       </FacilityIntro>
       <FacilitySection title="Auditorium Facilities">
         <FacilityCards items={features} columns="sm:grid-cols-2 lg:grid-cols-4" />
-        <a className="mt-5 inline-block text-sm font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]" href="https://sjrc.edu.in/wp-content/uploads/2023/06/SSR-2023-24.pdf#page=44" target="_blank" rel="noopener noreferrer">College Self-Study Report (PDF)</a>
+        <a className="mt-5 inline-block text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]" href="https://sjrc.edu.in/wp-content/uploads/2023/06/SSR-2023-24.pdf#page=44" target="_blank" rel="noopener noreferrer">College Self-Study Report (PDF)</a>
       </FacilitySection>
     </div>
   </InfrastructureLayout>

@@ -77,7 +77,7 @@ export const MobileNavigation = () => {
         <SheetOverlay className="z-[60] bg-black/55" />
         <SheetPrimitive.Content
           aria-describedby={undefined}
-          className="fixed inset-y-0 right-0 z-[61] flex h-dvh w-full max-w-[27rem] flex-col border-l border-white/15 bg-[#177249] text-white shadow-xl motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right"
+          className="fixed inset-y-0 right-0 z-[61] flex h-dvh w-full max-w-[27rem] flex-col border-l border-white/15 bg-[#153c2a] text-white shadow-xl motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right"
         >
           <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/20 px-4 pb-2 pt-[max(0.5rem,env(safe-area-inset-top))] sm:px-5">
             <SheetTitle className="font-bold text-white">Navigation</SheetTitle>

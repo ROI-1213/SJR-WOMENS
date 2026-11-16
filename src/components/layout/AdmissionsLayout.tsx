@@ -28,7 +28,7 @@ export const AdmissionsLayout: React.FC<AdmissionsLayoutProps> = ({
   category,
   branded = false,
 }) => {
-  const breadcrumbLinkClass = branded ? 'text-[#177249] hover:underline' : 'text-logo-navy hover:text-logo-blue';
+  const breadcrumbLinkClass = branded ? 'text-[#153c2a] hover:underline' : 'text-logo-navy hover:text-logo-blue';
 
   return (
     <LanguageProvider>
@@ -36,7 +36,7 @@ export const AdmissionsLayout: React.FC<AdmissionsLayoutProps> = ({
         <Header />
         
         {/* Breadcrumb Navigation */}
-        <div className={`internal-page-breadcrumb border-b border-gray-200 ${branded ? 'bg-[#177249]/5' : 'bg-gradient-to-r from-logo-navy/5 to-logo-blue/5'}`}>
+        <div className={`internal-page-breadcrumb border-b border-gray-200 ${branded ? 'bg-[#153c2a]/5' : 'bg-gradient-to-r from-logo-navy/5 to-logo-blue/5'}`}>
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>

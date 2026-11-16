@@ -46,8 +46,8 @@ const Library = () => (
           { value: '8,000', label: 'Titles' },
           { value: '10,000', label: 'Reference books' },
         ]} />
-        <div className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 lg:col-span-2">
-          <h2 className="font-semibold text-[#177249]">Support for Independent Study</h2>
+        <div className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 lg:col-span-2">
+          <h2 className="font-semibold text-[#153c2a]">Support for Independent Study</h2>
           <p className="mt-1 text-sm leading-relaxed text-neutral-700">A quiet place to work, access to reference material, and help from library staff give students a starting point for longer assignments and projects.</p>
         </div>
       </div>
@@ -56,23 +56,23 @@ const Library = () => (
       <FacilitySection title="Specialized Learning Spaces"><FacilityCards items={spaces} /></FacilitySection>
       <FacilitySection title="Library Services"><FacilityCards items={services} columns="sm:grid-cols-2" /></FacilitySection>
 
-      <div className="rounded-2xl bg-[#177249]/5 p-5 sm:p-8">
+      <div className="rounded-2xl bg-[#153c2a]/5 p-5 sm:p-8">
         <FacilitySection title="Access & Booking Information">
           <FacilityCards items={[
             { icon: Clock, title: 'Published Library Hours', description: 'Monday to Friday, 8 am–4 pm. Saturday, 8 am–2 pm. Closed on Sundays and public holidays.' },
             { icon: Calendar, title: 'Study Space & Reference Access', description: 'Ask the library desk about space availability and how to consult reference materials.' },
             { icon: HelpCircle, title: 'Research Enquiries', description: 'Contact the library for help with catalogue searches and electronic resources.' },
           ]} />
-          <a href={libraryReport} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-sm font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]">Published hours and collection figures (PDF)</a>
+          <a href={libraryReport} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]">Published hours and collection figures (PDF)</a>
         </FacilitySection>
       </div>
 
-      <section className="rounded-2xl border border-[#177249]/15 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-8">
+      <section className="rounded-2xl border border-[#153c2a]/15 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-8">
         <div>
-          <h2 className="text-2xl font-bold text-[#177249]">Discover Our Resources</h2>
+          <h2 className="text-2xl font-bold text-[#153c2a]">Discover Our Resources</h2>
           <p className="mt-2 max-w-xl text-neutral-700">Ask the college about catalogue access, library orientation, or a space to study.</p>
         </div>
-        <Link to="/contact" className="mt-5 inline-flex shrink-0 rounded-lg bg-[#177249] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#135c3b] sm:mt-0">Contact the College</Link>
+        <Link to="/contact" className="mt-5 inline-flex shrink-0 rounded-lg bg-[#153c2a] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0f3222] sm:mt-0">Contact the College</Link>
       </section>
     </div>
   </InfrastructureLayout>

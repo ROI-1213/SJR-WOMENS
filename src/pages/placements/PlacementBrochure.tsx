@@ -20,12 +20,12 @@ const PlacementBrochure = () => (
       <Link to="/contact" className={`${placementAction} mt-5`}>Request the current placement brochure <ArrowRight className="size-4 shrink-0" aria-hidden="true" /></Link>
     </section>
 
-    <section aria-labelledby="recruiter-programmes" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 sm:p-7">
+    <section aria-labelledby="recruiter-programmes" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 sm:p-7">
       <h2 id="recruiter-programmes" className={`${placementHeading} mb-4`}>Programmes offered</h2>
       <ul className="grid gap-3 sm:grid-cols-2">
         {availableProgrammes.map(programme => (
           <li key={programme.id}>
-            <Link to={programme.href} className="flex h-full flex-wrap items-baseline gap-x-2 rounded-lg border border-[#177249]/20 bg-white px-4 py-3 text-sm text-[#177249] hover:underline">
+            <Link to={programme.href} className="flex h-full flex-wrap items-baseline gap-x-2 rounded-lg border border-[#153c2a]/20 bg-white px-4 py-3 text-sm text-[#153c2a] hover:underline">
               <span className="font-bold">{programme.name}</span> <span>{programme.fullName}</span>
             </Link>
           </li>

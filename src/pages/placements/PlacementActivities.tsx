@@ -15,17 +15,17 @@ const PlacementActivities = () => (
   <PlacementLayout page="activities" related={['training', 'photos', 'statistics']}>
     <section aria-labelledby="activity-records">
       <div className="mb-3 flex items-center gap-3">
-        <CalendarDays className="size-6 shrink-0 text-[#177249]" aria-hidden="true" />
+        <CalendarDays className="size-6 shrink-0 text-[#153c2a]" aria-hidden="true" />
         <h2 id="activity-records" className={placementHeading}>Activities from the placement archive</h2>
       </div>
       <p className="mb-5 max-w-3xl leading-relaxed text-neutral-700">These college reports show how training, workshops, and employer events fit into placement preparation.</p>
       <ul className="grid gap-4 sm:grid-cols-2">
         {activities.map(({ title, period, detail, href }) => (
-          <li key={title} className="rounded-xl border border-[#177249]/15 border-t-4 border-t-[#ff8c00] bg-white p-5 sm:p-6">
-            <p className="text-sm font-semibold text-[#177249]">{period}</p>
-            <h3 className="mt-2 text-lg font-bold text-[#177249]">{title}</h3>
+          <li key={title} className="rounded-xl border border-[#153c2a]/15 border-t-4 border-t-[#ff8c00] bg-white p-5 sm:p-6">
+            <p className="text-sm font-semibold text-[#153c2a]">{period}</p>
+            <h3 className="mt-2 text-lg font-bold text-[#153c2a]">{title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-neutral-700">{detail}</p>
-            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Read the ${title} report (PDF)`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]">
+            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Read the ${title} report (PDF)`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]">
               Read report (PDF) <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
           </li>

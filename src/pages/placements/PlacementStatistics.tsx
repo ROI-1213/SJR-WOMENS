@@ -13,26 +13,26 @@ const PlacementStatistics = () => (
 
     <section aria-labelledby="statistics-progression">
       <div className="mb-4 flex items-center gap-3">
-        <BarChart3 className="size-6 shrink-0 text-[#177249]" aria-hidden="true" />
+        <BarChart3 className="size-6 shrink-0 text-[#153c2a]" aria-hidden="true" />
         <h2 id="statistics-progression" className={placementHeading}>Graduate progression by academic year</h2>
       </div>
       <p id="statistics-progression-note" className="mb-5 max-w-3xl text-sm leading-relaxed text-neutral-700">The college’s NAAC Self Study Report counts graduates who were placed, progressed to higher education, or did both. The outgoing student count gives the size of each reporting cohort.</p>
-      <div className="overflow-hidden rounded-xl border border-[#177249]/20">
+      <div className="overflow-hidden rounded-xl border border-[#153c2a]/20">
         <table aria-labelledby="statistics-progression" aria-describedby="statistics-progression-note" className="w-full table-fixed text-left text-sm max-sm:[&_td]:px-2 max-sm:[&_th]:px-2 sm:text-base">
           <colgroup><col className="w-[25%]" /><col className="w-[30%]" /><col className="w-[45%]" /></colgroup>
-          <thead className="bg-[#177249] text-white">
+          <thead className="bg-[#153c2a] text-white">
             <tr>
               <th scope="col" className="p-3 font-semibold sm:p-4">Year</th>
               <th scope="col" className="p-3 font-semibold sm:p-4">Outgoing students</th>
               <th scope="col" className="p-3 font-semibold sm:p-4">Placed or in higher education</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#177249]/15">
+          <tbody className="divide-y divide-[#153c2a]/15">
             {progressionByYear.map(({ year, outgoing, progressed }) => (
-              <tr key={year} className="odd:bg-white even:bg-[#177249]/5">
-                <th scope="row" className="whitespace-nowrap p-3 font-semibold text-[#177249] sm:p-4">{year}</th>
+              <tr key={year} className="odd:bg-white even:bg-[#153c2a]/5">
+                <th scope="row" className="whitespace-nowrap p-3 font-semibold text-[#153c2a] sm:p-4">{year}</th>
                 <td className="p-3 tabular-nums sm:p-4">{outgoing}</td>
-                <td className="p-3 font-semibold tabular-nums text-[#177249] sm:p-4">{progressed}</td>
+                <td className="p-3 font-semibold tabular-nums text-[#153c2a] sm:p-4">{progressed}</td>
               </tr>
             ))}
           </tbody>
@@ -40,7 +40,7 @@ const PlacementStatistics = () => (
       </div>
     </section>
 
-    <section aria-labelledby="recent-placement-disclosure" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 sm:p-7">
+    <section aria-labelledby="recent-placement-disclosure" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 sm:p-7">
       <h2 id="recent-placement-disclosure" className={placementHeading}>2024–25 provisional placement records</h2>
       <p className="mb-5 mt-3 max-w-3xl leading-relaxed text-neutral-700">The 2025–26 Mandatory Disclosures list provisional placements for BBA and BCA students in 2024–25. The entries include Muthoot Finance, Nivara Housing Finance, and HR-Spectrum, with outcomes labelled provisional.</p>
       <PlacementReportLinks reports={[

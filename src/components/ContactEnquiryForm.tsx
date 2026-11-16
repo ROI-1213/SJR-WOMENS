@@ -13,7 +13,7 @@ const fields = [
   { name: 'subject', label: 'Subject', type: 'text', autoComplete: 'off', maxLength: 150, wide: true },
 ] as const;
 
-const inputStyle = 'mt-1.5 border-[#177249]/25 bg-white text-base focus-visible:ring-[#177249] aria-[invalid=true]:border-red-700';
+const inputStyle = 'mt-1.5 border-[#153c2a]/25 bg-white text-base focus-visible:ring-[#153c2a] aria-[invalid=true]:border-red-700';
 const errorStyle = 'mt-1.5 text-sm text-red-800';
 
 type Result = { reference: string } | { error: string };
@@ -81,14 +81,14 @@ export const ContactEnquiryForm = () => {
           />
           {errors.message && <p id="contact-message-error" className={errorStyle}>{errors.message.message}</p>}
         </div>
-        <button type="submit" className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#177249] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#135c3b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] disabled:opacity-60 sm:col-span-2 sm:w-fit">
+        <button type="submit" className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#153c2a] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0f3222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a] disabled:opacity-60 sm:col-span-2 sm:w-fit">
           {isSubmitting ? <LoaderCircle size={17} className="motion-safe:animate-spin" aria-hidden="true" /> : <Send size={17} aria-hidden="true" />}
           {isSubmitting ? 'Sending…' : 'Send Message'}
         </button>
       </fieldset>
       {result && ('reference' in result ? (
-        <div role="status" className="mt-4 flex items-start gap-2.5 rounded-lg border border-[#177249]/20 bg-[#177249]/5 p-3 text-sm text-[#153b2a]">
-          <CheckCircle2 size={18} className="shrink-0 text-[#177249]" aria-hidden="true" />
+        <div role="status" className="mt-4 flex items-start gap-2.5 rounded-lg border border-[#153c2a]/20 bg-[#153c2a]/5 p-3 text-sm text-[#153b2a]">
+          <CheckCircle2 size={18} className="shrink-0 text-[#153c2a]" aria-hidden="true" />
           <div><p className="font-semibold">Your enquiry was received.</p><p className="mt-1 break-all">Reference {result.reference}</p></div>
         </div>
       ) : <p role="alert" className="mt-4 rounded-lg border border-red-700/20 bg-red-50 p-3 text-sm text-red-800">{result.error}</p>)}

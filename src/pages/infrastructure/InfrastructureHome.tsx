@@ -24,7 +24,7 @@ const InfrastructureHome = () => (
     <div className="mx-auto max-w-6xl space-y-12 px-4 py-10 sm:space-y-16 sm:py-14">
       <section aria-labelledby="infrastructure-overview">
         <div className="mb-7 max-w-2xl">
-          <h2 id="infrastructure-overview" className="border-l-4 border-[#ff8c00] pl-4 text-2xl font-bold text-[#177249] sm:text-3xl">Facilities at a Glance</h2>
+          <h2 id="infrastructure-overview" className="border-l-4 border-[#ff8c00] pl-4 text-2xl font-bold text-[#153c2a] sm:text-3xl">Facilities at a Glance</h2>
           <p className="mt-4 leading-relaxed text-neutral-700">Explore the teaching, study, and recreation spaces that support student life at Ananda Rao Circle.</p>
         </div>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -32,10 +32,10 @@ const InfrastructureHome = () => (
             const { image, icon: Icon } = facilityMedia[label];
             return (
               <li key={href}>
-                <Link to={href} className="group block h-full overflow-hidden rounded-xl border border-[#177249]/15 bg-white transition-colors hover:border-[#177249] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]">
+                <Link to={href} className="group block h-full overflow-hidden rounded-xl border border-[#153c2a]/15 bg-white transition-colors hover:border-[#153c2a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]">
                   <img src={image} alt="" loading="lazy" className="aspect-[2/1] w-full object-cover" />
                   <div className="p-5">
-                    <h3 className="flex items-center gap-2 font-semibold text-[#177249] group-hover:underline">
+                    <h3 className="flex items-center gap-2 font-semibold text-[#153c2a] group-hover:underline">
                       <Icon className="size-5 shrink-0" aria-hidden="true" />
                       {label}
                       <ArrowUpRight className="ml-auto size-4 shrink-0" aria-hidden="true" />
