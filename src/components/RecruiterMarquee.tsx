@@ -25,9 +25,6 @@ export const RecruiterMarquee = () => {
     <div className="mt-8 border-t border-[#dce4dd] pt-6">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#c28422]">
-            Corporate Engagement &amp; Placement Drives
-          </span>
           <h3 id="recruiters-title" className="text-lg font-bold text-[#177249] sm:text-xl">
             Recruiting Partners &amp; Industry Associations
           </h3>

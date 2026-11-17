@@ -19,7 +19,7 @@ export const NaacHighlight = () => (
               <Sparkles size={12} className="text-[#dfa03e]" aria-hidden="true" />
               <span>Accreditation</span>
             </div>
-            <p className="home-display-title font-sans mt-4 text-7xl font-bold leading-none text-[#dfa03e] drop-shadow-sm sm:text-8xl">
+            <p className="home-display-title font-sans mt-4 text-7xl font-bold leading-none text-[#ff8c00] drop-shadow-sm sm:text-8xl">
               {naacGrade}
             </p>
             <p className="mt-2 text-sm font-bold tracking-wide text-white">NAAC Grade · Cycle 4</p>

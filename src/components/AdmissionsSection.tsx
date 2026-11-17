@@ -284,14 +284,6 @@ export const AdmissionsSection = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Link
-              to="/admissions"
-              className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[#c4dcce] bg-white px-3 py-1.5 text-xs font-bold text-[#177249] shadow-2xs transition-colors hover:border-[#177249] hover:bg-[#f4f7f4]"
-            >
-              <Scroll size={13} className="text-[#ff8c00]" />
-              <span>Guidelines</span>
-            </Link>
-
             <button
               type="button"
               onClick={() => setIsDialogOpen(true)}

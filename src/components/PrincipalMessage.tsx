@@ -36,11 +36,7 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
         {/* Header */}
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
-              <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSTITUTIONAL LEADERSHIP</span>
-            </div>
-            <h2 id="leadership-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+            <h2 id="leadership-title" className="home-section-title font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
               {fullMessage ? 'From the Principal’s Desk' : 'Principal’s Message'}
             </h2>
           </div>
@@ -103,18 +99,10 @@ export const PrincipalMessage = ({ fullMessage = false }: { fullMessage?: boolea
 
           {/* Reading Column */}
           <div className="p-7 sm:p-9 lg:p-11">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5ece6] pb-4">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#c28422]">
-                  Authentic Institutional Address
-                </span>
-                <h3 className="mt-0.5 font-sans text-2xl font-bold leading-tight text-[#177249]">
-                  {principalName}
-                </h3>
-              </div>
-              <span className="rounded-full border border-[#dcd6c5] bg-[#faf6ee] px-3 py-1 text-xs font-bold text-[#8b6528]">
-                {language === 'kn' ? 'ಮೂಲ ಸಂದೇಶ' : 'Official Translation'}
-              </span>
+            <div className="border-b border-[#e5ece6] pb-4">
+              <h3 className="font-sans text-2xl font-bold leading-tight text-[#177249]">
+                {principalName}
+              </h3>
             </div>
 
             {/* Inspiring Pull-Quote */}

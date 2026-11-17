@@ -11,11 +11,7 @@ export const BlessingsGuidance = () => (
       {/* Section Header */}
       <div className="mb-8 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
-            <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSPIRATIONAL LEADERSHIP</span>
-          </div>
-          <h2 id="blessings-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
+          <h2 id="blessings-title" className="home-section-title font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
             Blessings &amp; Guidance
           </h2>
           <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -47,12 +43,7 @@ export const BlessingsGuidance = () => (
 
         {/* Right Column: Benediction Address */}
         <div className="p-7 sm:p-9 lg:p-11">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-[#c28422]/40 bg-[#faf6ee] px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-[#8b6528]">
-            <Sparkles size={12} className="text-[#c28422]" aria-hidden="true" />
-            <span>Patron’s Benediction</span>
-          </div>
-
-          <h3 className="mt-3 font-sans text-2xl font-bold leading-tight text-[#177249] sm:text-3xl">
+          <h3 className="font-sans text-2xl font-bold leading-tight text-[#177249] sm:text-3xl">
             Poojya Sri Rambhapuri Jagadgurugalu
           </h3>
           <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#73634c]">
