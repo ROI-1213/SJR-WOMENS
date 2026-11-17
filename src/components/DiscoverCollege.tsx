@@ -81,7 +81,7 @@ export const DiscoverCollege = () => (
               />
             </div>
             <div className="mt-5">
-              <h3 className="text-lg font-bold text-[#177249] transition-colors group-hover:text-[#177249]">
+              <h3 className="text-lg font-bold text-black transition-colors">
                 {name}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#4b5563]">
