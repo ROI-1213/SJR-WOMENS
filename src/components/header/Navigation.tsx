@@ -144,8 +144,8 @@ export const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                     aria-expanded={item.dropdown ? open : undefined}
                     aria-controls={open && item.dropdown ? panelId : undefined}
                     className={cn(
-                      'flex min-h-[48px] w-full items-center justify-center gap-1.5 px-2 py-3 text-center whitespace-nowrap text-[13.5px] 2xl:text-[14.5px] font-bold tracking-[0.01em] text-white transition-colors duration-100 hover:bg-[#0e2b1e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white',
-                      current && 'bg-[#0e2b1e] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-[#ff8c00]'
+                      'relative flex min-h-[48px] w-full items-center justify-center gap-1.5 px-2 py-3 text-center whitespace-nowrap text-[13.5px] 2xl:text-[14.5px] font-bold tracking-[0.01em] text-white transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-[#ff8c00] after:transition-opacity after:duration-150',
+                      current || open ? 'after:opacity-100' : 'after:opacity-0 hover:after:opacity-100'
                     )}
                   >
                     <span>{item.label}</span>
