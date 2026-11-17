@@ -167,7 +167,7 @@ export const Banner = () => {
           {/* Left Column: Prestigious University Copy */}
           <div className="max-w-2xl">
             {/* Illuminated Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/50 bg-black/55 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff8c00] shadow-xl backdrop-blur-md sm:text-xs">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/50 bg-[#177249]/85 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff8c00] shadow-xl backdrop-blur-md sm:text-xs">
               <Sparkles size={14} className="text-[#ff8c00] animate-pulse" aria-hidden="true" />
               <span>Sri Jagadguru Renukacharya Education Society · Estd. 1945</span>
             </div>
@@ -250,7 +250,7 @@ export const Banner = () => {
                       className={`group relative overflow-hidden rounded-lg border-2 p-1 text-left transition-all ${
                         isSelected
                           ? 'border-[#dfa03e] bg-white/20 shadow-md ring-1 ring-[#dfa03e]'
-                          : 'border-white/20 bg-black/40 hover:border-white/50'
+                          : 'border-white/20 bg-[#125c3a]/70 hover:border-white/50'
                       }`}
                     >
                       <img
