@@ -166,44 +166,51 @@ export const Banner = () => {
           
           {/* Left Column: Prestigious University Copy */}
           <div className="max-w-2xl">
-            {/* Illuminated Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#ff8c00]/50 bg-black/55 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#ff8c00] shadow-xl backdrop-blur-md sm:text-xs">
-              <Sparkles size={14} className="text-[#ff8c00] animate-pulse" aria-hidden="true" />
-              <span>Sri Jagadguru Renukacharya Education Society · Estd. 1945</span>
+            {/* Degree Programmes Eyebrow with Orange Accent Line */}
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#ff8c00] drop-shadow-md">
+              <span className="h-[2.5px] w-8 bg-[#ff8c00] shrink-0" aria-hidden="true" />
+              <span className="text-[#ff8c00]">DEGREE PROGRAMMES</span>
+              <span className="hidden sm:inline text-white/40 font-normal">|</span>
+              <span className="hidden sm:inline text-white/80 font-semibold tracking-[0.14em]">ESTD. 1945</span>
             </div>
 
-            {/* Grand Headline */}
+            {/* Grand Headline in Serif Typography matching reference image */}
             <h1
               id="home-hero-title"
-              className="home-display-title mt-5 text-[clamp(2.45rem,4.9vw,4.6rem)] font-normal leading-[1.07] tracking-[-0.02em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)]"
+              className="home-display-title mt-4 text-[clamp(2.5rem,5.4vw,4.6rem)] font-bold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.7)]"
             >
-              Empowering Women Through{' '}
-              <span className="hero-gold-gradient block sm:inline">
-                Science, Arts &amp; Commerce
+              <span className="block font-sans text-[clamp(1.2rem,2.4vw,1.9rem)] font-semibold tracking-normal text-white/95 mb-2">
+                Empowering Women Through
+              </span>
+              <span className="block text-[#ff8c00]">
+                Science, Arts
+              </span>
+              <span className="block text-white">
+                &amp; Commerce
               </span>
             </h1>
 
             {/* Subtitle / Mission Statement */}
             <p className="mt-4 max-w-xl text-base font-medium leading-relaxed text-white/95 drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)] sm:text-lg sm:leading-relaxed">
-              Dedicated to value-based higher education, holistic personal development, and academic excellence at our prime Rajajinagar campus in Bengaluru.
+              Explore undergraduate and postgraduate study dedicated to academic excellence and women's empowerment at our prime Rajajinagar campus in Bengaluru.
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons matching reference image format */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/academics"
-                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-[#ff8c00] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-100 hover:bg-[#e67e00] hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#183c2b] shadow-md transition-all duration-100 hover:bg-neutral-100 hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                <span>Explore Degree Programmes</span>
-                <ArrowRight size={17} className="text-white transition-transform duration-100 group-hover:translate-x-1" aria-hidden="true" />
+                <span>Explore Programmes</span>
+                <ArrowRight size={17} className="text-[#183c2b] transition-transform duration-100 group-hover:translate-x-1" aria-hidden="true" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(true)}
-                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-white px-7 py-3.5 text-sm font-bold text-[#177249] shadow-md transition-all duration-100 hover:bg-neutral-100 hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="group inline-flex min-h-12 items-center gap-2.5 rounded-lg border border-transparent bg-[#ff8c00] px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-100 hover:bg-[#e67e00] hover:shadow-lg active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]"
               >
-                <GraduationCap size={18} className="text-[#177249]" aria-hidden="true" />
+                <GraduationCap size={18} className="text-white" aria-hidden="true" />
                 <span>Apply for Admission</span>
               </button>
             </div>
@@ -215,7 +222,7 @@ export const Banner = () => {
               
               {/* Header with Live Status Indicator */}
               <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#dfa03e]">
+                <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#ff8c00]">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
                   <span>Campus Showcase</span>
                 </span>
@@ -226,7 +233,7 @@ export const Banner = () => {
 
               {/* Active Slide Info */}
               <div className="mt-3.5">
-                <span className="rounded bg-[#c28422]/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#dfa03e]">
+                <span className="rounded bg-[#ff8c00]/20 border border-[#ff8c00]/30 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#ff8c00]">
                   {activeSlide.tag}
                 </span>
                 <h2 className="font-sans mt-2 text-xl font-bold leading-tight text-white">
@@ -249,7 +256,7 @@ export const Banner = () => {
                       onClick={() => void selectPhoto(index)}
                       className={`group relative overflow-hidden rounded-lg border-2 p-1 text-left transition-all ${
                         isSelected
-                          ? 'border-[#dfa03e] bg-white/20 shadow-md ring-1 ring-[#dfa03e]'
+                          ? 'border-[#ff8c00] bg-white/20 shadow-md ring-1 ring-[#ff8c00]'
                           : 'border-white/20 bg-black/40 hover:border-white/50'
                       }`}
                     >
