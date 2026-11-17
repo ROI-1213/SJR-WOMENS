@@ -5,7 +5,7 @@ import chiefPatron from '@/assets/homepage/chief-patron.webp';
 export const BlessingsGuidance = () => (
   <section
     aria-labelledby="blessings-title"
-    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#153c2a] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
+    className="border-b border-[#dde5de] bg-[#fbf9f4] px-5 py-12 text-[#177249] sm:px-8 sm:py-14 lg:px-12 lg:py-16"
   >
     <div className="mx-auto max-w-[1284px]">
       {/* Section Header */}
@@ -15,7 +15,7 @@ export const BlessingsGuidance = () => (
             <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
             <span className="home-section-eyebrow tracking-widest text-[#8b6528]">INSPIRATIONAL LEADERSHIP</span>
           </div>
-          <h2 id="blessings-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#153c2a] sm:text-4xl">
+          <h2 id="blessings-title" className="home-section-title mt-1.5 font-sans text-3xl font-bold tracking-tight text-[#177249] sm:text-4xl">
             Blessings &amp; Guidance
           </h2>
           <p className="mt-1 text-xs text-[#52645a] sm:text-sm">
@@ -52,7 +52,7 @@ export const BlessingsGuidance = () => (
             <span>Patron’s Benediction</span>
           </div>
 
-          <h3 className="mt-3 font-sans text-2xl font-bold leading-tight text-[#153c2a] sm:text-3xl">
+          <h3 className="mt-3 font-sans text-2xl font-bold leading-tight text-[#177249] sm:text-3xl">
             Poojya Sri Rambhapuri Jagadgurugalu
           </h3>
           <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#73634c]">

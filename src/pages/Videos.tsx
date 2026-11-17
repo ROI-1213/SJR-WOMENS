@@ -43,32 +43,32 @@ const ClipPlayer = ({ clip }: { clip: typeof clips.campus }) => (
 
 const Videos = () => (
   <MediaCenterLayout page="video" previewNote="These sample photo tours use campus photographs and contain no audio.">
-    <section aria-labelledby="campus-tour-video" className="grid overflow-hidden rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:items-center">
+    <section aria-labelledby="campus-tour-video" className="grid overflow-hidden rounded-2xl border border-[#177249]/15 bg-[#177249]/5 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:items-center">
       <div className="p-5 sm:p-8 lg:p-10">
-        <div className="mb-4 grid size-11 place-items-center rounded-lg bg-[#153c2a]/10 text-[#153c2a]">
+        <div className="mb-4 grid size-11 place-items-center rounded-lg bg-[#177249]/10 text-[#177249]">
           <Film className="size-5" aria-hidden="true" />
         </div>
-        <h2 id="campus-tour-video" className="text-2xl font-bold text-[#153c2a] sm:text-3xl">{clips.campus.title}</h2>
+        <h2 id="campus-tour-video" className="text-2xl font-bold text-[#177249] sm:text-3xl">{clips.campus.title}</h2>
         <p id={`${clips.campus.id}-description`} className="mt-3 leading-relaxed text-neutral-700">{clips.campus.description}</p>
       </div>
       <ClipPlayer clip={clips.campus} />
     </section>
 
     <section aria-labelledby="more-campus-videos">
-      <h2 id="more-campus-videos" className="mb-5 border-b border-[#153c2a]/20 pb-3 text-2xl font-bold text-[#153c2a] sm:text-3xl">More campus photo tours</h2>
+      <h2 id="more-campus-videos" className="mb-5 border-b border-[#177249]/20 pb-3 text-2xl font-bold text-[#177249] sm:text-3xl">More campus photo tours</h2>
       <div className="grid gap-5 sm:grid-cols-2">
         {[clips.learning, clips.activities].map(clip => (
-          <article key={clip.id} className="overflow-hidden rounded-xl border border-[#153c2a]/15 bg-white">
+          <article key={clip.id} className="overflow-hidden rounded-xl border border-[#177249]/15 bg-white">
             <ClipPlayer clip={clip} />
             <div className="p-5 sm:p-6">
-              <h3 className="text-lg font-bold text-[#153c2a]">{clip.title}</h3>
+              <h3 className="text-lg font-bold text-[#177249]">{clip.title}</h3>
               <p id={`${clip.id}-description`} className="mt-2 text-sm leading-relaxed text-neutral-700">{clip.description}</p>
             </div>
           </article>
         ))}
       </div>
     </section>
-    <section aria-labelledby="youtube-channel" className="mt-8 rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#153c2a] to-[#0e271c] p-6 text-white sm:p-8">
+    <section aria-labelledby="youtube-channel" className="mt-8 rounded-xl border border-[#c28422]/30 bg-gradient-to-br from-[#177249] to-[#0e271c] p-6 text-white sm:p-8">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <div className="flex items-center gap-2 text-[#dfa03e]">

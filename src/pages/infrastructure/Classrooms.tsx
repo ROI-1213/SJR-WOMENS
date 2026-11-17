@@ -23,7 +23,7 @@ const Classrooms = () => (
       <FacilitySection title="Classroom Features">
         <FacilityCards items={features} columns="sm:grid-cols-2 lg:grid-cols-4" />
       </FacilitySection>
-      <section className="grid gap-5 rounded-2xl bg-[#153c2a] p-6 text-white sm:grid-cols-[auto_1fr] sm:items-center sm:p-9">
+      <section className="grid gap-5 rounded-2xl bg-[#177249] p-6 text-white sm:grid-cols-[auto_1fr] sm:items-center sm:p-9">
         <div className="sm:border-r sm:border-white/25 sm:pr-8">
           <p className="text-4xl font-bold tabular-nums">21</p>
           <p className="mt-1 text-sm">Lecture rooms reported</p>

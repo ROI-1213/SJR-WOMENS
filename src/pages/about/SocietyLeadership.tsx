@@ -61,7 +61,7 @@ function PublishedMessage({ title, breadcrumb, profile, profileDetails, greeting
           <footer className="mt-6 border-t border-neutral-200 pt-4">
             <p className="mb-2 leading-relaxed text-neutral-700">{closing}</p>
             <h2 className="text-xl font-semibold leading-snug text-[color:var(--section-heading-color)]">{profile.name}</h2>
-            <p className="mt-1 text-sm font-semibold text-[#153c2a]">{profile.role}</p>
+            <p className="mt-1 text-sm font-semibold text-[#177249]">{profile.role}</p>
             {profileDetails?.map(detail => <p key={detail} className="mt-2 text-sm leading-relaxed text-neutral-700">{detail}</p>)}
             <p className="mt-2 text-sm leading-relaxed text-neutral-700">{society}</p>
           </footer>
@@ -127,7 +127,7 @@ export const OfficeBearers = () => (
   <AboutLayout pageTitle="Office Bearers" breadcrumbPath="Office Bearers">
     <section aria-labelledby="office-bearers-heading" className="mx-auto max-w-[83rem] px-4 py-10 sm:px-6 sm:py-16">
       <header className="mx-auto mb-8 max-w-3xl text-center sm:mb-12">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#153c2a]">Leadership</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#177249]">Leadership</p>
         <h2 id="office-bearers-heading" className="text-3xl font-bold text-logo-navy-dark md:text-4xl">Our Office Bearers</h2>
         <p className="mt-4 text-base leading-relaxed text-neutral-700 sm:text-lg">
           Our office bearers guide the institution with integrity and a commitment to academic success and continued growth.
@@ -139,7 +139,7 @@ export const OfficeBearers = () => (
             <img src={photo} alt="" width={302} height={377} loading="lazy" className="aspect-[3/4] h-auto w-full bg-neutral-100 object-cover" />
             <div className="px-3 py-4 text-center">
               <h3 className="text-sm font-bold text-logo-navy-dark xl:text-[15px]">{name}</h3>
-              <p className="mt-1 text-xs font-semibold text-[#153c2a]">{role}</p>
+              <p className="mt-1 text-xs font-semibold text-[#177249]">{role}</p>
             </div>
           </li>
         ))}
@@ -162,13 +162,13 @@ export const ExecutiveCommittee = () => (
         <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-neutral-700">
           Srimad Rambhapuri Veerasimhasanaadeeshwara Sri Sri Sri 1008 Jagadguru Prasanna Renuka Dr. Veera Someshwara Rajadeshikendra Shivacharya Mahaswamigalu, Rambhapuri Peeta, Balehonnuru, Chikkamagaluru District – 577112
         </p>
-        <p className="mt-5 inline-block rounded-full bg-[#153c2a]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#153c2a]">{patron.role}</p>
+        <p className="mt-5 inline-block rounded-full bg-[#177249]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#177249]">{patron.role}</p>
       </div>
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {[...officeBearers, ...committeeMembers.map(name => ({ name, role: 'Executive Committee Member' }))].map(({ name, role }) => (
           <li key={name} className="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md">
             <h3 className="text-lg font-bold leading-tight text-logo-navy-dark">{name}</h3>
-            <p className="mt-2 text-sm font-semibold text-[#153c2a]">{role}, SJRES</p>
+            <p className="mt-2 text-sm font-semibold text-[#177249]">{role}, SJRES</p>
             <p className="mt-2 text-xs text-neutral-600">Anand Rao Circle, Bengaluru</p>
           </li>
         ))}

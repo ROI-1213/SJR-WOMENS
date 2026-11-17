@@ -29,7 +29,7 @@ export const Header = ({ contactPhone }: { contactPhone?: string }) => {
   }, []);
 
   return (
-    <header className="bg-[#c0c8b2] text-white shadow-sm"> {/* redeploy trigger */ }
+    <header className="bg-white shadow-sm">
       <TopBar contactPhone={contactPhone} />
       <LogoSection />
       <div ref={navSlot} className="h-[49px] xl:h-[53px]">

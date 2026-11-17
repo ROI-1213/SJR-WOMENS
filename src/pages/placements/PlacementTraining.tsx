@@ -17,7 +17,7 @@ const PlacementTraining = () => (
       <p className="mb-5 mt-2 max-w-3xl leading-relaxed text-neutral-700">Placement training builds the skills students use before and during recruitment, from writing a résumé to discussing coursework and projects with an interviewer.</p>
       <PlacementCards items={topics} />
     </section>
-    <section aria-labelledby="training-records" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#153c2a]/5 p-5 sm:p-7">
+    <section aria-labelledby="training-records" className="rounded-xl border-l-4 border-[#ff8c00] bg-[#177249]/5 p-5 sm:p-7">
       <h2 id="training-records" className={`${placementHeading} mb-5`}>Training reports</h2>
       <PlacementReportLinks reports={[
         { label: 'Aptitude preparation workshop', href: `${placementSources.reports}#page=18`, description: 'The Placement Cell report describes preparation for campus selection and competitive examinations.' },

@@ -18,8 +18,8 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             type="button"
             aria-label={`Preview ${photo.title}`}
             onClick={() => onImageClick(index)}
-            className={`group relative flex h-full w-full overflow-hidden rounded-xl border border-[#d8e5dc] text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a] ${
-              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#183c2b] lg:aspect-auto' : 'items-center gap-4 bg-white p-2.5 hover:border-[#153c2a]'
+            className={`group relative flex h-full w-full overflow-hidden rounded-xl border border-[#d8e5dc] text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249] ${
+              isGrid ? 'aspect-[4/3] flex-col justify-end bg-[#183c2b] lg:aspect-auto' : 'items-center gap-4 bg-white p-2.5 hover:border-[#177249]'
             }`}
           >
             <img
@@ -34,7 +34,7 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
             
             {/* Overlay Caption */}
             <span className={isGrid ? 'relative block w-full bg-gradient-to-t from-black/90 to-transparent px-2.5 pb-2.5 pt-7 text-white sm:px-4 sm:pb-3 sm:pt-10' : 'min-w-0 flex-1 text-[#182d23]'}>
-              <span className={`block text-xs font-medium capitalize ${isGrid ? 'text-white/90' : 'text-[#153c2a]'}`}>
+              <span className={`block text-xs font-medium capitalize ${isGrid ? 'text-white/90' : 'text-[#177249]'}`}>
                 {photo.category}
               </span>
               <span className="mt-1 block text-sm font-semibold sm:text-base leading-snug">
@@ -48,7 +48,7 @@ export const PhotoGrid = ({ photos, viewMode, onImageClick }: PhotoGridProps) =>
               className={
                 isGrid
                   ? 'absolute right-3 top-3 box-content rounded-md bg-[#183c2b] p-1.5 text-white transition-transform group-hover:scale-110'
-                  : 'mr-2 shrink-0 text-[#153c2a]'
+                  : 'mr-2 shrink-0 text-[#177249]'
               }
             >
               <Maximize2 size={16} />

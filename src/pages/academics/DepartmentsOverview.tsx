@@ -12,12 +12,12 @@ export default function DepartmentsOverview() {
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {departmentsDropdownData.map(({ slug, label, href }) => (
             <li key={slug}>
-              <Link to={href} className="flex h-full items-start gap-3 rounded-xl border border-neutral-200 border-l-4 border-l-[#ff8c00] p-4 transition-colors hover:border-[#153c2a]">
+              <Link to={href} className="flex h-full items-start gap-3 rounded-xl border border-neutral-200 border-l-4 border-l-[#ff8c00] p-4 transition-colors hover:border-[#177249]">
                 <div className="min-w-0 flex-1">
                   <h3 className="font-bold text-[color:var(--section-heading-color)]">{label}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-neutral-700">{departmentDetails[slug].intro}</p>
                 </div>
-                <ArrowRight size={17} className="shrink-0 text-[#153c2a]" aria-hidden="true" />
+                <ArrowRight size={17} className="shrink-0 text-[#177249]" aria-hidden="true" />
               </Link>
             </li>
           ))}

@@ -33,7 +33,7 @@ export const JoinCommunity = () => (
 
           <Link
             to="/contact"
-            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-transparent bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#153c2a] shadow-sm transition-all hover:bg-neutral-100"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-transparent bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#177249] shadow-sm transition-all hover:bg-neutral-100"
           >
             <span>Contact College Office</span>
           </Link>

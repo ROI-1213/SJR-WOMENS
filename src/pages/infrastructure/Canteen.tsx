@@ -24,7 +24,7 @@ const Canteen = () => (
     <div className="mx-auto max-w-6xl space-y-12 px-4 py-10 sm:space-y-16 sm:py-14">
       <FacilityIntro title="Campus Dining" photo={canteen} alt="Service counter and tables pictured on the SJR PU College cafeteria page">
         <p>The canteen gives students and staff a place to eat between classes. SJR PU College describes a ventilated dining space with separate seating areas and a menu of meals, snacks, and refreshments.</p>
-        <a href={cafeteriaSource} className="inline-flex items-center gap-1 font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]">
+        <a href={cafeteriaSource} className="inline-flex items-center gap-1 font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]">
           SJR PU College cafeteria details <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
         </a>
       </FacilityIntro>
@@ -40,17 +40,17 @@ const Canteen = () => (
       <FacilitySection title="Menu Highlights">
         <div className="grid gap-5 lg:grid-cols-2">
           <FacilityCards items={menu} columns="grid-cols-1" />
-          <figure className="overflow-hidden rounded-xl border border-[#153c2a]/15">
+          <figure className="overflow-hidden rounded-xl border border-[#177249]/15">
             <img src={meal} alt="Thali meal pictured on the SJR PU College cafeteria page" loading="lazy" className="h-full min-h-48 w-full object-cover" />
           </figure>
         </div>
       </FacilitySection>
 
-      <section className="grid gap-6 rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-8 md:grid-cols-2">
+      <section className="grid gap-6 rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-8 md:grid-cols-2">
         <div>
-          <h2 className="text-2xl font-bold text-[#153c2a]">Published Service Hours</h2>
+          <h2 className="text-2xl font-bold text-[#177249]">Published Service Hours</h2>
           <p className="mt-2 text-sm text-neutral-700">Schedule listed by SJR PU College.</p>
-          <dl className="mt-4 divide-y divide-[#153c2a]/15">
+          <dl className="mt-4 divide-y divide-[#177249]/15">
             {hours.map(({ label, time }) => (
               <div key={label} className="flex flex-wrap justify-between gap-x-4 gap-y-1 py-2.5 text-sm">
                 <dt className="font-semibold text-neutral-800">{label}</dt>
@@ -61,10 +61,10 @@ const Canteen = () => (
           <p className="mt-3 text-sm text-neutral-700">Closed on Sundays, public holidays, and the second Saturday of each month.</p>
         </div>
         <div className="rounded-xl bg-white p-5 sm:p-6">
-          <MapPin className="mb-3 size-6 text-[#153c2a]" aria-hidden="true" />
-          <h2 className="text-xl font-bold text-[#153c2a]">Location & Feedback</h2>
+          <MapPin className="mb-3 size-6 text-[#177249]" aria-hidden="true" />
+          <h2 className="text-xl font-bold text-[#177249]">Location & Feedback</h2>
           <p className="mt-2 leading-relaxed text-neutral-700">The cafeteria page lists the ground floor of the main building and a suggestion box near the entrance.</p>
-          <a href={cafeteriaSource} className="mt-4 inline-block text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]">View cafeteria contact details</a>
+          <a href={cafeteriaSource} className="mt-4 inline-block text-sm font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]">View cafeteria contact details</a>
         </div>
       </section>
     </div>

@@ -33,11 +33,11 @@ const SportsFacilities = () => (
         <FacilitySection title="Indoor Facilities"><FacilityCards items={indoorFacilities} columns="sm:grid-cols-2" /></FacilitySection>
         <FacilitySection title="Outdoor Facilities"><FacilityCards items={outdoorFacilities} columns="sm:grid-cols-2" /></FacilitySection>
       </div>
-      <section className="rounded-2xl bg-[#153c2a]/5 p-5 sm:p-8">
+      <section className="rounded-2xl bg-[#177249]/5 p-5 sm:p-8">
         <FacilitySection title="Sports Achievements at a Glance">
           <p className="mb-4 text-neutral-700">Selected results from the 2022–23 college annual report.</p>
           <FacilityCards items={achievements} />
-          <a className="mt-5 inline-block text-sm font-semibold text-[#153c2a] underline underline-offset-4 hover:decoration-[#ff8c00]" href="https://sjrc.edu.in/wp-content/uploads/2024/02/SJRC-Annual-Report-2022-23.pdf" target="_blank" rel="noopener noreferrer">College Annual Report (PDF)</a>
+          <a className="mt-5 inline-block text-sm font-semibold text-[#177249] underline underline-offset-4 hover:decoration-[#ff8c00]" href="https://sjrc.edu.in/wp-content/uploads/2024/02/SJRC-Annual-Report-2022-23.pdf" target="_blank" rel="noopener noreferrer">College Annual Report (PDF)</a>
         </FacilitySection>
       </section>
     </div>

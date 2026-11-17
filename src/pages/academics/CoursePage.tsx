@@ -17,17 +17,17 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:space-y-10 sm:px-6 sm:py-12">
         <div className="grid gap-4 md:grid-cols-2">
           <section aria-labelledby="course-intro" className="rounded-xl border border-neutral-200 border-l-4 border-l-[#ff8c00] p-5 sm:p-7">
-            <ProgrammeIcon size={26} className="mb-3 text-[#153c2a]" aria-hidden="true" />
+            <ProgrammeIcon size={26} className="mb-3 text-[#177249]" aria-hidden="true" />
             <h2 id="course-intro" className={heading}>About {programme.name}</h2>
             <p className="mt-3 leading-relaxed text-neutral-700">{course.introduction}</p>
           </section>
-          <section aria-labelledby="course-overview" className="rounded-xl border border-neutral-200 bg-[#153c2a]/5 p-5 sm:p-7">
+          <section aria-labelledby="course-overview" className="rounded-xl border border-neutral-200 bg-[#177249]/5 p-5 sm:p-7">
             <h2 id="course-overview" className={heading}>Programme Overview</h2>
             <p className="mt-3 leading-relaxed text-neutral-700">{course.overview}</p>
             <dl className="mt-4 space-y-2 border-t border-neutral-200 pt-4 text-sm text-neutral-700">
-              <div><dt className="inline font-semibold text-[#153c2a]">Affiliation: </dt><dd className="inline">{course.affiliation}</dd></div>
-              <div><dt className="inline font-semibold text-[#153c2a]">Eligibility: </dt><dd className="inline">{course.eligibility}</dd></div>
-              <div><dt className="inline font-semibold text-[#153c2a]">Duration / Scheme: </dt><dd className="inline">{course.durationNote}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Affiliation: </dt><dd className="inline">{course.affiliation}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Eligibility: </dt><dd className="inline">{course.eligibility}</dd></div>
+              <div><dt className="inline font-semibold text-[#177249]">Duration / Scheme: </dt><dd className="inline">{course.durationNote}</dd></div>
             </dl>
           </section>
         </div>
@@ -37,12 +37,12 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
             <h2 id="course-combinations" className={heading}>Official Subject Combinations</h2>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {course.combinations.map(combo => (
-                <li key={combo.code} className="rounded-xl border border-neutral-200 border-l-4 border-l-[#153c2a] bg-white p-5">
-                  <span className="inline-block rounded bg-[#eef4ef] px-2.5 py-0.5 text-xs font-bold text-[#153c2a]">{combo.code}</span>
+                <li key={combo.code} className="rounded-xl border border-neutral-200 border-l-4 border-l-[#177249] bg-white p-5">
+                  <span className="inline-block rounded bg-[#eef4ef] px-2.5 py-0.5 text-xs font-bold text-[#177249]">{combo.code}</span>
                   <h3 className="mt-2 text-lg font-bold text-[color:var(--section-heading-color)]">{combo.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-neutral-700">{combo.description}</p>
                   {combo.labs && (
-                    <p className="mt-3 text-xs font-medium text-[#153c2a]">
+                    <p className="mt-3 text-xs font-medium text-[#177249]">
                       Laboratories: {combo.labs.join(' · ')}
                     </p>
                   )}
@@ -65,14 +65,14 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
             <span className="inline-flex items-center gap-2 font-semibold text-neutral-700"><FileText size={16} aria-hidden="true" /> University syllabus</span>
             {course.syllabi.map(({ label, href }) => (
-              <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-semibold text-[#153c2a] underline underline-offset-4">
+              <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-semibold text-[#177249] underline underline-offset-4">
                 {label}<ArrowUpRight size={14} className="shrink-0" aria-hidden="true" />
               </a>
             ))}
           </div>
         </section>
 
-        <section aria-labelledby="course-careers" className="rounded-xl bg-[#153c2a]/5 p-5 sm:p-7">
+        <section aria-labelledby="course-careers" className="rounded-xl bg-[#177249]/5 p-5 sm:p-7">
           <h2 id="course-careers" className={heading}>Skills &amp; Career Opportunities</h2>
           <div className="mt-4 grid gap-5 md:grid-cols-2 md:gap-8">
             <div>
@@ -80,7 +80,7 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
               <ul className="mt-2 space-y-2 text-sm text-neutral-700">
                 {course.skills.map(skill => (
                   <li key={skill} className="flex items-start gap-2">
-                    <Check size={16} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />{skill}
+                    <Check size={16} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />{skill}
                   </li>
                 ))}
               </ul>
@@ -104,12 +104,12 @@ export default function CoursePage({ programme }: { programme: AvailableProgramm
           </ul>
         </section>
 
-        <section aria-labelledby="course-admission" className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-[#153c2a] p-5 text-white sm:p-7">
+        <section aria-labelledby="course-admission" className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-[#177249] p-5 text-white sm:p-7">
           <div>
             <h2 id="course-admission" className="text-2xl font-bold">Admission Enquiry</h2>
             <p className="mt-1">Start your application for {programme.name}.</p>
           </div>
-          <Link to="/admissions/online-application" className="inline-flex min-h-11 items-center gap-2 rounded-md bg-white px-4 py-2 font-semibold text-[#153c2a] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8c00]">
+          <Link to="/admissions/online-application" className="inline-flex min-h-11 items-center gap-2 rounded-md bg-white px-4 py-2 font-semibold text-[#177249] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8c00]">
             Apply Now <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </section>

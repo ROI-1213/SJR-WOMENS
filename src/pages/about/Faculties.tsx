@@ -48,8 +48,8 @@ export default function Faculties() {
                 onClick={() => setSelectedDepartment(dept)}
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors sm:text-sm ${
                   active
-                    ? 'bg-[#153c2a] text-white shadow-sm'
-                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#153c2a] hover:border-[#153c2a]'
+                    ? 'bg-[#177249] text-white shadow-sm'
+                    : 'border border-neutral-200 bg-[#f8fbf8] text-[#177249] hover:border-[#177249]'
                 }`}
               >
                 {dept}
@@ -72,22 +72,22 @@ export default function Faculties() {
                     width={72}
                     height={72}
                     loading="lazy"
-                    className="h-16 w-16 shrink-0 rounded-full border-2 border-[#153c2a] object-cover"
+                    className="h-16 w-16 shrink-0 rounded-full border-2 border-[#177249] object-cover"
                   />
                 ) : (
                   <div
                     aria-hidden="true"
-                    className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-[#153c2a]/30 bg-[#e6f0e9] text-lg font-bold text-[#153c2a]"
+                    className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-[#177249]/30 bg-[#e6f0e9] text-lg font-bold text-[#177249]"
                   >
                     {initialsOf(member.name)}
                   </div>
                 )}
                 <div className="min-w-0">
-                  <span className="inline-block rounded bg-[#eef4ef] px-2 py-0.5 text-xs font-semibold text-[#153c2a]">
+                  <span className="inline-block rounded bg-[#eef4ef] px-2 py-0.5 text-xs font-semibold text-[#177249]">
                     {member.field}
                   </span>
                   <h3 className="mt-1 text-base font-bold text-[color:var(--section-heading-color)]">{member.name}</h3>
-                  <p className="text-xs font-semibold text-[#153c2a]">{member.designation}</p>
+                  <p className="text-xs font-semibold text-[#177249]">{member.designation}</p>
                 </div>
               </div>
 
@@ -95,12 +95,12 @@ export default function Faculties() {
                 <p className="leading-relaxed">{member.detail}</p>
                 <dl className="mt-4 space-y-1.5 border-t border-neutral-100 pt-3 text-xs">
                   <div className="flex items-center gap-2">
-                    <dt className="shrink-0 text-[#153c2a]"><BookOpen size={14} aria-hidden="true" /></dt>
+                    <dt className="shrink-0 text-[#177249]"><BookOpen size={14} aria-hidden="true" /></dt>
                     <dd>{member.programme}</dd>
                   </div>
                   {member.qualification && (
                     <div className="flex items-center gap-2">
-                      <dt className="shrink-0 text-[#153c2a]"><GraduationCap size={14} aria-hidden="true" /></dt>
+                      <dt className="shrink-0 text-[#177249]"><GraduationCap size={14} aria-hidden="true" /></dt>
                       <dd>{member.qualification}</dd>
                     </div>
                   )}
@@ -109,7 +109,7 @@ export default function Faculties() {
                   href={member.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-[#153c2a] underline underline-offset-4 hover:text-[#153c2a]"
+                  className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-semibold text-[#177249] underline underline-offset-4 hover:text-[#177249]"
                 >
                   Official source <ArrowUpRight size={13} aria-hidden="true" />
                 </a>

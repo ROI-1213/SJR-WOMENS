@@ -52,11 +52,11 @@ const BScProgram = () => {
                       <Icon size={28} className="text-white" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wide text-[#153c2a]">{spec.code}</span>
+                      <span className="text-xs font-bold uppercase tracking-wide text-[#177249]">{spec.code}</span>
                       <h3 className="text-lg font-bold text-logo-navy">{spec.title}</h3>
                       <p className="text-gray-600 mt-1 text-sm">{spec.description}</p>
                       {spec.labs && (
-                        <p className="mt-2 text-xs font-medium text-[#153c2a]">Labs: {spec.labs.join(' · ')}</p>
+                        <p className="mt-2 text-xs font-medium text-[#177249]">Labs: {spec.labs.join(' · ')}</p>
                       )}
                     </div>
                   </div>

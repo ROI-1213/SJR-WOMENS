@@ -91,23 +91,23 @@ const News = () => (
         const date = dateFormat.format(new Date(story.date));
 
         return (
-          <article key={story.title} className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#153c2a]/15 bg-white shadow-sm transition-shadow hover:shadow-md">
+          <article key={story.title} className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#177249]/15 bg-white shadow-sm transition-shadow hover:shadow-md">
             <img src={story.image} alt={story.alt} loading="lazy" decoding="async" className="aspect-[16/10] w-full shrink-0 object-cover" />
             <div className="flex flex-1 flex-col items-start p-5">
-              <time dateTime={story.date} className="text-sm font-semibold text-[#153c2a]">{date}</time>
-              <h2 className="mt-2 min-h-12 text-lg font-bold leading-6 text-[#153c2a]">{story.title}</h2>
+              <time dateTime={story.date} className="text-sm font-semibold text-[#177249]">{date}</time>
+              <h2 className="mt-2 min-h-12 text-lg font-bold leading-6 text-[#177249]">{story.title}</h2>
               <p className="mt-2 line-clamp-2 h-10 text-sm leading-5 text-neutral-700">{story.summary}</p>
               <div className="mt-auto pt-4">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <button type="button" aria-label={`Read more about ${story.title}`} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#153c2a] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#0f3222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]">
+                    <button type="button" aria-label={`Read more about ${story.title}`} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#177249] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#0f3222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8c00]">
                       Read More <ArrowUpRight className="size-4" aria-hidden="true" />
                     </button>
                   </DialogTrigger>
                   <DialogContent className="max-h-[90dvh] w-[92vw] max-w-2xl gap-0 overflow-y-auto rounded-xl bg-white p-5 pt-12 sm:p-7 sm:pt-12">
                     <img src={story.image} alt={story.alt} className="max-h-56 w-full rounded-lg object-cover" />
-                    <time dateTime={story.date} className="mt-4 text-sm font-semibold text-[#153c2a]">{date}</time>
-                    <DialogTitle className="mt-2 text-2xl font-bold leading-tight text-[#153c2a]">{story.title}</DialogTitle>
+                    <time dateTime={story.date} className="mt-4 text-sm font-semibold text-[#177249]">{date}</time>
+                    <DialogTitle className="mt-2 text-2xl font-bold leading-tight text-[#177249]">{story.title}</DialogTitle>
                     <DialogDescription className="mt-3 text-sm leading-relaxed text-neutral-700">{story.summary}</DialogDescription>
                     <div className="mt-4 space-y-3 text-sm leading-relaxed text-neutral-800 sm:text-base">
                       {story.details.map(paragraph => <p key={paragraph}>{paragraph}</p>)}

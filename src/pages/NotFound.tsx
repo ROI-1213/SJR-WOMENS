@@ -7,7 +7,7 @@ const NotFound = () => (
       <h1 className="font-bold">Page not found</h1>
     </section>
     <div className="px-4 py-12 text-center">
-      <Link to="/" className="font-semibold text-[#153c2a] underline underline-offset-4">
+      <Link to="/" className="font-semibold text-[#177249] underline underline-offset-4">
         Return to the homepage
       </Link>
     </div>

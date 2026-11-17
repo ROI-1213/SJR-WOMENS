@@ -35,7 +35,7 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="campus-gallery" aria-labelledby="campus-gallery-title" className="bg-[#fbfaf6] px-5 home-section text-[#153c2a] sm:px-8 lg:px-12 border-b border-[#dde5de]">
+    <section id="campus-gallery" aria-labelledby="campus-gallery-title" className="bg-[#fbfaf6] px-5 home-section text-[#177249] sm:px-8 lg:px-12 border-b border-[#dde5de]">
       <div className="mx-auto max-w-[1284px]">
         <GalleryHeader viewMode={viewMode} setViewMode={setViewMode} />
         
@@ -59,7 +59,7 @@ export const Gallery = () => {
                 setShowAll(false);
                 document.getElementById('campus-gallery')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 rounded-xl border border-[#c4dcce] bg-white px-6 py-2.5 text-xs font-bold text-[#153c2a] shadow-2xs transition-all hover:border-[#153c2a] hover:bg-[#f4f7f4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#153c2a]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#c4dcce] bg-white px-6 py-2.5 text-xs font-bold text-[#177249] shadow-2xs transition-all hover:border-[#177249] hover:bg-[#f4f7f4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#177249]"
             >
               <span>Show Less</span>
               <ChevronUp size={15} className="text-[#c28422]" aria-hidden="true" />

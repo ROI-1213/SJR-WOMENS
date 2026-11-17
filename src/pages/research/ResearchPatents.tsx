@@ -27,7 +27,7 @@ const patentStages = [
 
 const ResearchPatents = () => (
   <ResearchLayout page="patents" related={['activities', 'publications', 'guides']}>
-    <section aria-labelledby="patent-search" className="grid items-start gap-4 rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-5 sm:p-8">
+    <section aria-labelledby="patent-search" className="grid items-start gap-4 rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-5 sm:p-8">
       <ResearchIcon icon={FileSearch} />
       <div>
         <h2 id="patent-search" className={researchHeading}>Find and verify a patent record</h2>

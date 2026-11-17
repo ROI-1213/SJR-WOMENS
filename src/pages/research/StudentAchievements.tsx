@@ -29,14 +29,14 @@ const StudentAchievements = () => (
       </div>
     </section>
 
-    <section aria-labelledby="student-prizes" className="grid gap-5 rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-8 md:grid-cols-[0.85fr_1.15fr] md:gap-8">
+    <section aria-labelledby="student-prizes" className="grid gap-5 rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-8 md:grid-cols-[0.85fr_1.15fr] md:gap-8">
       <div className="self-center">
         <ResearchIcon icon={Medal} />
         <h2 id="student-prizes" className={`mt-4 ${researchHeading}`}>Academic prizes</h2>
         <p className="mt-3 leading-relaxed">Selected Commerce honours from the college’s 2021–22 endowment prize and scholarship record.</p>
         <div className="mt-4"><ResearchSource href={researchSources.studentPrizes}>Endowment prizes and scholarships 2021–22 (PDF)</ResearchSource></div>
       </div>
-      <dl className="divide-y divide-[#153c2a]/15 rounded-xl border border-[#153c2a]/15 bg-white">
+      <dl className="divide-y divide-[#177249]/15 rounded-xl border border-[#177249]/15 bg-white">
         <div className="p-4 sm:p-5">
           <dt className="font-bold text-[#153b2a]">Sanjay Aradhya</dt>
           <dd className="mt-1 text-sm leading-relaxed">Recognised as the top-performing Commerce student in the endowment prize record.</dd>

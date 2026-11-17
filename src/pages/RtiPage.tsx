@@ -11,7 +11,7 @@ const RtiPage = () => (
   >
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6 sm:py-14">
       <section aria-labelledby="rti-overview-heading" className="rounded-xl border border-neutral-200 border-l-4 border-l-[#ff8c00] bg-white p-6 sm:p-8">
-        <div className="flex items-center gap-2 text-[#153c2a]">
+        <div className="flex items-center gap-2 text-[#177249]">
           <ShieldCheck size={20} aria-hidden="true" />
           <span className="text-xs font-bold uppercase tracking-wider">Section 4(1)(b) Declaration</span>
         </div>
@@ -31,37 +31,37 @@ const RtiPage = () => (
           <h2 id="rti-officer-heading" className="text-xl font-bold text-[#153b2a]">Head of Institution (RTI Contact)</h2>
           <dl className="mt-4 space-y-3 text-sm text-neutral-700">
             <div>
-              <dt className="font-semibold text-[#153c2a]">Head of Institution</dt>
+              <dt className="font-semibold text-[#177249]">Head of Institution</dt>
               <dd>Dr. Prema, Principal, {instituteName}</dd>
             </div>
             <div className="flex items-start gap-2">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />
+              <MapPin size={16} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
               <div>
                 <dt className="sr-only">Address</dt>
                 <dd>{instituteContact.address}</dd>
               </div>
             </div>
             <div className="flex items-start gap-2">
-              <Mail size={16} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />
+              <Mail size={16} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
               <div>
                 <dt className="sr-only">Email</dt>
                 <dd>
-                  <a href={`mailto:${instituteContact.email}`} className="font-medium text-[#153c2a] underline underline-offset-4">
+                  <a href={`mailto:${instituteContact.email}`} className="font-medium text-[#177249] underline underline-offset-4">
                     {instituteContact.email}
                   </a>
                 </dd>
               </div>
             </div>
             <div className="flex items-start gap-2">
-              <Clock size={16} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />
+              <Clock size={16} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
               <div>
-                <dt className="font-semibold text-[#153c2a]">College Timings</dt>
+                <dt className="font-semibold text-[#177249]">College Timings</dt>
                 <dd>{instituteContact.timings} (Closed on Sundays and declared public holidays)</dd>
               </div>
             </div>
           </dl>
           <p className="mt-4 flex items-start gap-2 rounded-lg border border-[#e0ddce] bg-[#faf7ef] p-3 text-xs leading-relaxed text-neutral-700">
-            <Info size={15} className="mt-0.5 shrink-0 text-[#153c2a]" aria-hidden="true" />
+            <Info size={15} className="mt-0.5 shrink-0 text-[#177249]" aria-hidden="true" />
             <span>
               Note: Separate Public Information Officer (PIO) and First Appellate Authority names beyond the Head of Institution are not separately listed in the published RTI declaration PDF.
             </span>
@@ -76,13 +76,13 @@ const RtiPage = () => (
             </p>
           </div>
           <div className="mt-6 space-y-3 border-t border-neutral-200 pt-5">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#153c2a]">Official RTI Declaration PDF</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#177249]">Official RTI Declaration PDF</p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="/documents/RTI-SJRCW.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-10 items-center gap-2 rounded-md bg-[#153c2a] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f3222]"
+                className="inline-flex min-h-10 items-center gap-2 rounded-md bg-[#177249] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f3222]"
               >
                 <FileText size={16} aria-hidden="true" />
                 Open RTI-SJRCW.pdf
@@ -91,7 +91,7 @@ const RtiPage = () => (
               <a
                 href="/documents/RTI-SJRCW.pdf"
                 download
-                className="inline-flex min-h-10 items-center gap-2 rounded-md border border-[#153c2a]/30 px-4 py-2 text-sm font-semibold text-[#153c2a] hover:bg-[#eef4ef]"
+                className="inline-flex min-h-10 items-center gap-2 rounded-md border border-[#177249]/30 px-4 py-2 text-sm font-semibold text-[#177249] hover:bg-[#eef4ef]"
               >
                 <Download size={16} aria-hidden="true" />
                 Download PDF

@@ -18,7 +18,7 @@ export default function VisionMission() {
   return (
     <AboutLayout pageTitle="Vision & Mission" breadcrumbPath="Vision & Mission">
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:space-y-10 sm:px-6 sm:py-12">
-        <section aria-labelledby="vision-heading" className="grid overflow-hidden rounded-2xl bg-[#153c2a] text-white md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+        <section aria-labelledby="vision-heading" className="grid overflow-hidden rounded-2xl bg-[#177249] text-white md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
           <div className="self-center p-6 sm:p-9">
             <div className="mb-4 h-0.5 w-10 bg-[#ff8c00]" aria-hidden="true" />
             <h2 id="vision-heading" className="text-2xl font-semibold sm:text-3xl">Our Vision</h2>
@@ -44,8 +44,8 @@ export default function VisionMission() {
           <h2 id="objectives-heading" className={heading}>Mission Objectives</h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {objectives.map(({ icon: Icon, title, description }) => (
-              <li key={title} className="flex items-start gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-[#153c2a] sm:p-5">
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-[#ff8c00]/15 text-[#153c2a]">
+              <li key={title} className="flex items-start gap-3 rounded-xl border border-neutral-200 p-4 transition-colors hover:border-[#177249] sm:p-5">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-[#ff8c00]/15 text-[#177249]">
                   <Icon size={19} aria-hidden="true" />
                 </span>
                 <div>

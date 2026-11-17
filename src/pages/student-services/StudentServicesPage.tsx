@@ -29,13 +29,13 @@ export const StudentServicesPage = ({ pageKey }: { pageKey: StudentServicesPageK
       showFloatingApply={false}
     >
       <article className="mx-auto max-w-6xl space-y-10 px-4 py-8 text-neutral-800 sm:space-y-14 sm:px-6 sm:py-12">
-        <section aria-labelledby="student-introduction" className="grid overflow-hidden rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)]">
+        <section aria-labelledby="student-introduction" className="grid overflow-hidden rounded-2xl border border-[#177249]/15 bg-[#177249]/5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)]">
           <div className="flex flex-col items-start justify-center p-5 sm:p-8 lg:p-11">
-            <h2 id="student-introduction" className="border-l-4 border-[#ff8c00] pl-4 text-2xl font-bold leading-tight text-[#153c2a] sm:text-3xl lg:text-4xl">
+            <h2 id="student-introduction" className="border-l-4 border-[#ff8c00] pl-4 text-2xl font-bold leading-tight text-[#177249] sm:text-3xl lg:text-4xl">
               {content.heading}
             </h2>
             <p className="mt-4 max-w-xl leading-relaxed text-neutral-700 sm:mt-5">{content.introduction}</p>
-            <a href="#student-guide" className={`${actionClass} mt-5 bg-[#153c2a] text-white hover:bg-[#0f3222]`}>
+            <a href="#student-guide" className={`${actionClass} mt-5 bg-[#177249] text-white hover:bg-[#0f3222]`}>
               {pageKey === 'antiRagging' ? 'How to report' : 'Read the guide'} <ArrowDown className="size-4 shrink-0" aria-hidden="true" />
             </a>
           </div>
@@ -50,14 +50,14 @@ export const StudentServicesPage = ({ pageKey }: { pageKey: StudentServicesPageK
         </section>
 
         <section aria-labelledby="student-highlights">
-          <h2 id="student-highlights" className="mb-5 border-b border-[#153c2a]/20 pb-3 text-2xl font-bold text-[#153c2a] sm:text-3xl">{content.highlightsHeading}</h2>
+          <h2 id="student-highlights" className="mb-5 border-b border-[#177249]/20 pb-3 text-2xl font-bold text-[#177249] sm:text-3xl">{content.highlightsHeading}</h2>
           <ul className="grid gap-4 md:grid-cols-3">
             {content.highlights.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="rounded-xl border border-[#153c2a]/15 bg-white p-5 sm:p-6">
-                <span className="mb-4 grid size-11 place-items-center rounded-lg bg-[#153c2a]/10 text-[#153c2a]">
+              <li key={title} className="rounded-xl border border-[#177249]/15 bg-white p-5 sm:p-6">
+                <span className="mb-4 grid size-11 place-items-center rounded-lg bg-[#177249]/10 text-[#177249]">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
-                <h3 className="font-semibold leading-snug text-[#153c2a] sm:text-lg">{title}</h3>
+                <h3 className="font-semibold leading-snug text-[#177249] sm:text-lg">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-700">{text}</p>
               </li>
             ))}
@@ -69,7 +69,7 @@ export const StudentServicesPage = ({ pageKey }: { pageKey: StudentServicesPageK
             <h2 id="student-guide-heading" className="border-l-4 border-[#ff8c00] pl-4 text-2xl font-bold sm:text-3xl">{content.guideHeading}</h2>
             <p className="mt-4 max-w-lg leading-relaxed text-white/90">{content.guide}</p>
             {content.resource && (
-              <a href={content.resource.href} className={`${actionClass} mt-5 bg-white text-[#153c2a] hover:bg-[#ff8c00] hover:text-neutral-950`}>
+              <a href={content.resource.href} className={`${actionClass} mt-5 bg-white text-[#177249] hover:bg-[#ff8c00] hover:text-neutral-950`}>
                 {content.resource.label} <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
               </a>
             )}
@@ -88,24 +88,24 @@ export const StudentServicesPage = ({ pageKey }: { pageKey: StudentServicesPageK
         </section>
 
         <div className="grid gap-5 md:grid-cols-2">
-          <section aria-labelledby="student-enquiries" className="rounded-xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-7">
-            <h2 id="student-enquiries" className="text-2xl font-bold text-[#153c2a]">Enquiries</h2>
+          <section aria-labelledby="student-enquiries" className="rounded-xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-7">
+            <h2 id="student-enquiries" className="text-2xl font-bold text-[#177249]">Enquiries</h2>
             <p className="mt-2 leading-relaxed text-neutral-700">{content.enquiry}</p>
             <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-700">
-              <Phone className="size-4 text-[#153c2a]" aria-hidden="true" />
-              <span className="font-semibold tabular-nums text-[#153c2a]">{demoPhone}</span>
+              <Phone className="size-4 text-[#177249]" aria-hidden="true" />
+              <span className="font-semibold tabular-nums text-[#177249]">{demoPhone}</span>
               <span>(demo number)</span>
             </p>
-            <Link to="/contact" className={`${actionClass} mt-5 bg-[#153c2a] text-white hover:bg-[#0f3222]`}>
+            <Link to="/contact" className={`${actionClass} mt-5 bg-[#177249] text-white hover:bg-[#0f3222]`}>
               College contact page <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
             </Link>
           </section>
-          <section aria-labelledby="related-student-services" className="rounded-xl border border-[#153c2a]/15 p-5 sm:p-7">
-            <h2 id="related-student-services" className="text-2xl font-bold text-[#153c2a]">Related student services</h2>
-            <ul className="mt-3 divide-y divide-[#153c2a]/15">
+          <section aria-labelledby="related-student-services" className="rounded-xl border border-[#177249]/15 p-5 sm:p-7">
+            <h2 id="related-student-services" className="text-2xl font-bold text-[#177249]">Related student services</h2>
+            <ul className="mt-3 divide-y divide-[#177249]/15">
               {content.related.map(key => (
                 <li key={key}>
-                  <Link to={studentServicesPages[key].href} className="group flex items-center justify-between gap-3 py-2.5 text-sm font-semibold text-[#153c2a] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#ff8c00]">
+                  <Link to={studentServicesPages[key].href} className="group flex items-center justify-between gap-3 py-2.5 text-sm font-semibold text-[#177249] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#ff8c00]">
                     {studentServicesPages[key].label}
                     <ArrowRight className="size-4 shrink-0 transition-transform motion-safe:group-hover:translate-x-1" aria-hidden="true" />
                   </Link>

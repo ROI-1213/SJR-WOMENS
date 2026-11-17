@@ -25,7 +25,7 @@ const departmentIcons = {
 const section = { label: 'Departments', href: '/departments' };
 const heading = 'text-2xl font-bold leading-tight text-[color:var(--section-heading-color)]';
 const body = 'leading-relaxed text-neutral-700';
-const sourceLink = 'inline-flex items-center gap-1 text-sm font-semibold text-[#153c2a] underline underline-offset-4';
+const sourceLink = 'inline-flex items-center gap-1 text-sm font-semibold text-[#177249] underline underline-offset-4';
 
 const subjectPhotos: Partial<Record<DepartmentSlug, { src: string; title: string; credit: string; source: string; license: string; licenseUrl: string }>> = {
   physics: {
@@ -132,7 +132,7 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
       <div className="mx-auto max-w-6xl space-y-9 px-4 py-8 sm:space-y-12 sm:px-6 sm:py-12">
         <section aria-labelledby="department-about" className="grid items-stretch gap-4 md:grid-cols-2">
           <div className={`flex flex-col justify-center rounded-2xl border border-neutral-200 border-l-4 border-l-[#ff8c00] p-5 sm:p-8 ${humanities ? 'md:order-2' : ''}`}>
-            <Icon size={26} className="mb-3 text-[#153c2a]" aria-hidden="true" />
+            <Icon size={26} className="mb-3 text-[#177249]" aria-hidden="true" />
             <p className="mb-5 text-lg font-semibold leading-snug text-[color:var(--section-heading-color)] sm:text-xl">{department.intro}</p>
             <h2 id="department-about" className={heading}>About the Department</h2>
             <p className={`mt-2 ${body}`}>{department.about}</p>
@@ -160,7 +160,7 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
           <div>
             <ul className={`grid gap-3 sm:grid-cols-2 ${science ? '' : 'mt-4'}`}>
               {department.topics.map(topic => (
-                <li key={topic} className={`flex items-start gap-3 px-4 py-3 font-semibold text-[color:var(--section-heading-color)] ${humanities ? 'border-b border-neutral-200' : 'rounded-lg border border-neutral-200 bg-[#153c2a]/5'}`}>
+                <li key={topic} className={`flex items-start gap-3 px-4 py-3 font-semibold text-[color:var(--section-heading-color)] ${humanities ? 'border-b border-neutral-200' : 'rounded-lg border border-neutral-200 bg-[#177249]/5'}`}>
                   <span className="mt-2 size-2 shrink-0 rounded-full bg-[#ff8c00]" aria-hidden="true" />{topic}
                 </li>
               ))}
@@ -173,7 +173,7 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
           </div>
         </section>
 
-        <section aria-labelledby="department-purpose" className="rounded-2xl bg-[#153c2a] p-5 text-white sm:p-7">
+        <section aria-labelledby="department-purpose" className="rounded-2xl bg-[#177249] p-5 text-white sm:p-7">
           <h2 id="department-purpose" className="text-2xl font-bold">Vision &amp; Mission</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="border-l-2 border-[#ff8c00] pl-4">
@@ -189,11 +189,11 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-8">
           <section aria-labelledby="department-learning">
-            <BookOpen size={23} className="mb-2 text-[#153c2a]" aria-hidden="true" />
+            <BookOpen size={23} className="mb-2 text-[#177249]" aria-hidden="true" />
             <h2 id="department-learning" className={heading}>Teaching &amp; Learning</h2>
             <p className={`mt-3 ${body}`}>{department.learning}</p>
           </section>
-          <section aria-labelledby="department-activities" className="rounded-xl border border-neutral-200 bg-[#153c2a]/5 p-5">
+          <section aria-labelledby="department-activities" className="rounded-xl border border-neutral-200 bg-[#177249]/5 p-5">
             <h2 id="department-activities" className={heading}>Department Activities</h2>
             <p className={`mt-3 ${body}`}>{department.activity.text}</p>
             <a href={departmentReports[department.activity.report]} target="_blank" rel="noopener noreferrer" className={`mt-3 ${sourceLink}`}>
@@ -211,7 +211,7 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
                   {member.image && <img src={member.image} alt="" loading="lazy" className="size-20 shrink-0 rounded-lg object-cover object-top" />}
                   <div className="min-w-0 flex-1">
                     <h3 className="font-bold text-[color:var(--section-heading-color)]">{member.name}</h3>
-                    <p className="mt-1 text-sm font-semibold text-[#153c2a]">{member.designation}</p>
+                    <p className="mt-1 text-sm font-semibold text-[#177249]">{member.designation}</p>
                     <p className="mt-1 text-sm leading-relaxed text-neutral-700">{member.detail}</p>
                     <a href={member.source} target="_blank" rel="noopener noreferrer" className={`mt-2 ${sourceLink}`}>Faculty record (PDF) <ArrowUpRight size={14} aria-hidden="true" /></a>
                   </div>
@@ -236,11 +236,11 @@ export default function DepartmentPage({ slug }: { slug: DepartmentSlug }) {
         )}
 
         <section aria-labelledby="department-pathways" className="rounded-xl border border-neutral-200 border-l-4 border-l-[#ff8c00] p-5 sm:p-7">
-          <Target size={24} className="mb-2 text-[#153c2a]" aria-hidden="true" />
+          <Target size={24} className="mb-2 text-[#177249]" aria-hidden="true" />
           <h2 id="department-pathways" className={heading}>Skills &amp; Future Opportunities</h2>
           <p className={`mt-3 max-w-3xl ${body}`}>{department.pathways}</p>
           {programme && (
-            <Link to={programme.href} className="mt-4 inline-flex items-center gap-2 font-semibold text-[#153c2a] underline underline-offset-4">
+            <Link to={programme.href} className="mt-4 inline-flex items-center gap-2 font-semibold text-[#177249] underline underline-offset-4">
               {programmeTitle(programme)} <ArrowRight size={17} className="shrink-0" aria-hidden="true" />
             </Link>
           )}

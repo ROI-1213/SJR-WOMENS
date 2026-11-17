@@ -51,7 +51,7 @@ const ResearchActivities = () => (
       </div>
     </section>
 
-    <section aria-labelledby="research-activity-history" className="grid gap-6 rounded-2xl bg-[#153c2a]/5 p-5 sm:p-8 md:grid-cols-[0.85fr_1.15fr] md:gap-10">
+    <section aria-labelledby="research-activity-history" className="grid gap-6 rounded-2xl bg-[#177249]/5 p-5 sm:p-8 md:grid-cols-[0.85fr_1.15fr] md:gap-10">
       <div>
         <ResearchIcon icon={BookOpenCheck} />
         <h2 id="research-activity-history" className={`mt-4 ${researchHeading}`}>Research activity in the college record</h2>
@@ -65,10 +65,10 @@ const ResearchActivities = () => (
         {activityCounts.map(({ year, count }) => (
           <li key={year} className="grid grid-cols-[4.5rem_1fr_1.5rem] items-center gap-2 text-sm tabular-nums sm:gap-3">
             <span className="font-medium">{year}</span>
-            <span aria-hidden="true" className="h-2.5 overflow-hidden rounded-full bg-[#153c2a]/15">
-              <span className="block h-full rounded-full bg-[#153c2a]" style={{ width: `${count / largestCount * 100}%` }} />
+            <span aria-hidden="true" className="h-2.5 overflow-hidden rounded-full bg-[#177249]/15">
+              <span className="block h-full rounded-full bg-[#177249]" style={{ width: `${count / largestCount * 100}%` }} />
             </span>
-            <span className="text-right font-semibold text-[#153c2a]">{count}</span>
+            <span className="text-right font-semibold text-[#177249]">{count}</span>
           </li>
         ))}
       </ul>

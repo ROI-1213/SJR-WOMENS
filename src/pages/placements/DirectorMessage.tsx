@@ -17,16 +17,16 @@ const DirectorMessage = () => (
     </p>
 
     <section aria-labelledby="placement-director-message" className="grid items-start gap-5 md:grid-cols-[minmax(0,0.85fr)_minmax(0,2fr)]">
-      <div className="rounded-xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-6">
-        <div className="mb-4 grid aspect-[4/3] max-h-56 place-items-center rounded-lg bg-[#153c2a]/10 text-[#153c2a]" role="img" aria-label="Placeholder profile image">
+      <div className="rounded-xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-6">
+        <div className="mb-4 grid aspect-[4/3] max-h-56 place-items-center rounded-lg bg-[#177249]/10 text-[#177249]" role="img" aria-label="Placeholder profile image">
           <UserRound className="size-20" strokeWidth={1.25} aria-hidden="true" />
         </div>
-        <p className="text-xs font-semibold text-[#153c2a]">Sample profile</p>
-        <h2 className="mt-1 text-xl font-bold text-[#153c2a]">Ananya Rao</h2>
+        <p className="text-xs font-semibold text-[#177249]">Sample profile</p>
+        <h2 className="mt-1 text-xl font-bold text-[#177249]">Ananya Rao</h2>
         <p className="mt-1 text-sm text-neutral-700">Placement Director</p>
       </div>
 
-      <article className="rounded-xl border border-[#153c2a]/15 p-5 sm:p-8">
+      <article className="rounded-xl border border-[#177249]/15 p-5 sm:p-8">
         <h2 id="placement-director-message" className={`border-l-4 border-[#ff8c00] pl-4 ${placementHeading}`}>Draft message to students</h2>
         <div className="mt-5 space-y-4 leading-relaxed text-neutral-700">
           <p>A good career decision starts with understanding what you enjoy doing, what you already do well, and where you still need practice. Use assignments, projects, and internships to build examples that show how you approach a problem and work with other people.</p>
@@ -38,7 +38,7 @@ const DirectorMessage = () => (
     </section>
 
     <section aria-labelledby="director-preparation">
-      <h2 id="director-preparation" className={`${placementHeading} mb-5 border-b border-[#153c2a]/20 pb-3`}>Before a recruitment drive</h2>
+      <h2 id="director-preparation" className={`${placementHeading} mb-5 border-b border-[#177249]/20 pb-3`}>Before a recruitment drive</h2>
       <PlacementCards items={preparation} />
     </section>
 
@@ -46,12 +46,12 @@ const DirectorMessage = () => (
       <h2 id="placement-team" className={`${placementHeading} mb-5`}>Placement Team</h2>
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {team.map(name => (
-          <li key={name} className="rounded-xl border border-[#153c2a]/15 p-4">
-            <div className="mb-3 grid size-14 place-items-center rounded-full bg-[#153c2a]/10 text-[#153c2a]" role="img" aria-label="Placeholder profile image">
+          <li key={name} className="rounded-xl border border-[#177249]/15 p-4">
+            <div className="mb-3 grid size-14 place-items-center rounded-full bg-[#177249]/10 text-[#177249]" role="img" aria-label="Placeholder profile image">
               <UserRound className="size-7" aria-hidden="true" />
             </div>
-            <p className="text-xs font-semibold text-[#153c2a]">Sample profile</p>
-            <h3 className="mt-1 font-semibold text-[#153c2a]">{name}</h3>
+            <p className="text-xs font-semibold text-[#177249]">Sample profile</p>
+            <h3 className="mt-1 font-semibold text-[#177249]">{name}</h3>
             <p className="mt-1 text-sm text-neutral-700">Co-coordinator</p>
           </li>
         ))}

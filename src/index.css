@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --section-heading-color: #153c2a;
+    --section-heading-color: #177249;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -106,7 +106,7 @@
 }
 
 .admissions-theme {
-  --primary: 150 48% 16%; /* #153c2a */
+  --primary: 153 66% 27%; /* #177249 */
   --primary-foreground: 0 0% 100%;
   --accent: var(--primary);
   --accent-foreground: var(--primary-foreground);
@@ -276,7 +276,7 @@
   box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
 }
 .internal-page-hero {
-  background: #153c2a;
+  background: #177249;
   color: #fff;
   padding-block: clamp(1.5rem, 3.5vw, 2.75rem);
 }

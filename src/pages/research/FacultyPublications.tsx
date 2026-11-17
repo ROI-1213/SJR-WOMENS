@@ -41,16 +41,16 @@ const FacultyPublications = () => (
         <p className="mt-3 max-w-2xl leading-relaxed">The college documents faculty contributions in journals, books and conference proceedings. The selection below highlights work from the Department of Chemistry, with DOI links to the original papers and their full citations.</p>
         <div className="mt-4"><ResearchSource href={researchSources.chemistry}>Department of Chemistry publication record (PDF)</ResearchSource></div>
       </div>
-      <div className="rounded-2xl border border-[#153c2a]/15 bg-[#153c2a]/5 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[#177249]/15 bg-[#177249]/5 p-5 sm:p-6">
         <h3 className="text-base font-bold text-[#153b2a]">Reported output, 2017–18 to 2021–22</h3>
-        <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-[#153c2a]/20 pt-4">
+        <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-[#177249]/20 pt-4">
           <div>
             <dt className="text-sm leading-snug">Journal papers on the then UGC CARE list</dt>
-            <dd className="mt-1 text-3xl font-bold tabular-nums text-[#153c2a]">48</dd>
+            <dd className="mt-1 text-3xl font-bold tabular-nums text-[#177249]">48</dd>
           </div>
           <div>
             <dt className="text-sm leading-snug">Books, chapters and proceedings papers</dt>
-            <dd className="mt-1 text-3xl font-bold tabular-nums text-[#153c2a]">23</dd>
+            <dd className="mt-1 text-3xl font-bold tabular-nums text-[#177249]">23</dd>
           </div>
         </dl>
         <div className="mt-4"><ResearchSource href={researchSources.selfStudy}>Self-Study Report, metrics 3.3.1–3.3.2 (PDF)</ResearchSource></div>
@@ -59,9 +59,9 @@ const FacultyPublications = () => (
 
     <section aria-labelledby="selected-papers">
       <h2 id="selected-papers" className={researchHeading}>Selected journal papers</h2>
-      <ul className="mt-5 overflow-hidden rounded-2xl border border-[#153c2a]/15">
+      <ul className="mt-5 overflow-hidden rounded-2xl border border-[#177249]/15">
         {selectedPapers.map(({ topic, faculty, journal, year, doi }) => (
-          <li key={doi} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 border-b border-[#153c2a]/15 p-4 last:border-b-0 sm:gap-4 sm:p-5 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-center">
+          <li key={doi} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3 border-b border-[#177249]/15 p-4 last:border-b-0 sm:gap-4 sm:p-5 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-center">
             <ResearchIcon icon={FileText} />
             <div>
               <h3 className="font-bold text-[#153b2a] sm:text-lg">{topic}</h3>
