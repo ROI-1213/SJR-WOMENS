@@ -25,7 +25,7 @@ export const MarqueeStrip = () => {
   return (
     <aside
       aria-label="Important Announcements"
-      className="relative w-full overflow-hidden border-y border-[#ff8c00]/40 bg-gradient-to-r from-[#0a2316] via-[#103422] to-[#0a2316] shadow-md"
+      className="relative w-full overflow-hidden border-y border-[#125c3a] bg-[#177249] shadow-md"
     >
       <div className="flex items-center">
         {/* Heraldic Announcement Pill on Left */}
