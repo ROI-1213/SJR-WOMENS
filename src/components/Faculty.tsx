@@ -116,10 +116,7 @@ export const FacultySection = () => {
                           {/* Content Box with layout styling */}
                           <div className="flex w-full flex-1 flex-col justify-between border-t-2 border-[#177249] p-3.5 sm:p-4">
                             <div>
-                              <span className="block text-[10px] font-bold uppercase tracking-wider text-[#ea580c]">
-                                {profile.field}
-                              </span>
-                              <h3 className="mt-1 text-sm font-bold leading-tight text-[#177249] transition-colors group-hover:text-[#0f3222] sm:text-base">
+                              <h3 className="text-sm font-bold leading-tight text-[#177249] transition-colors group-hover:text-[#0f3222] sm:text-base">
                                 {profile.name}
                               </h3>
                               <p className="mt-1 text-xs leading-snug text-[#52645a]">
