@@ -198,7 +198,7 @@ export const EnrichmentCourses = () => {
                     {/* Content */}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1.5">
-                        <span className="truncate text-[13px] font-bold text-[#177249] transition-colors group-hover:text-[#0f3222] sm:text-sm">
+                        <span className="truncate text-[14px] font-bold text-[#177249] transition-colors group-hover:text-[#0f3222] sm:text-[15px]">
                           {course.displayTitle || course.officialTitle}
                         </span>
                         <span className="rounded bg-[#f0f4f0] px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-[#486353] shrink-0 border border-[#c4dcce]/50">
@@ -206,14 +206,14 @@ export const EnrichmentCourses = () => {
                         </span>
                       </div>
                       
-                      <p className="mt-1 line-clamp-1 text-xs leading-relaxed text-[#4b6053]">
+                      <p className="mt-1 line-clamp-1 text-[13px] sm:text-sm leading-relaxed text-[#3c5044]">
                         {course.shortDescription}
                       </p>
 
-                      <div className="mt-2 flex items-center justify-between text-[11px] font-semibold text-[#8b6528]">
-                        <span className="font-medium text-[#52645a]">Skill Certification</span>
+                      <div className="mt-2 flex items-center justify-between text-xs font-semibold text-[#8b6528]">
+                        <span className="font-medium text-[#4b6053]">Skill Certification</span>
                         <span className="inline-flex items-center gap-0.5 font-bold text-[#ff8c00] group-hover:translate-x-0.5 transition-transform">
-                          Syllabus <ArrowRight size={12} aria-hidden="true" />
+                          Syllabus <ArrowRight size={13} aria-hidden="true" />
                         </span>
                       </div>
                     </div>

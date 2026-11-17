@@ -241,14 +241,14 @@ export const AdmissionsSection = () => {
                         <span className="text-lg font-bold leading-tight text-[#177249] transition-colors group-hover:text-[#185e3c]">
                           {prog.name}
                         </span>
-                        <span className="text-xs font-semibold text-[#566c5f]">
+                        <span className="text-[13px] font-semibold text-[#486052]">
                           {prog.fullName}
                         </span>
                       </div>
                     </div>
 
                     {/* Disciplines & Curriculum Preview */}
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#687e72]">
+                    <p className="mt-1.5 text-[13px] sm:text-sm font-medium leading-relaxed text-[#45584d]">
                       {prog.summary}
                     </p>
                   </div>
