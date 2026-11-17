@@ -39,11 +39,6 @@ export const NaacHighlight = () => (
 
         {/* Right Details */}
         <div className="p-7 sm:p-9 lg:px-11 lg:py-10">
-          <div className="mb-2 flex items-center gap-2">
-            <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true"></span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#8b6528]">Institutional Quality &amp; Assurance</span>
-          </div>
-
           <h2 id="home-naac-title" className="home-section-title font-sans text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
             NAAC Accreditation &amp; Quality Metrics
           </h2>

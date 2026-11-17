@@ -73,11 +73,7 @@ export const EnrichmentCourses = () => {
         {/* Section Header */}
         <div className="mb-6 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="h-0.5 w-6 bg-[#c28422]" aria-hidden="true" />
-              <span className="home-section-eyebrow text-xs font-bold tracking-widest text-[#8b6528]">BEYOND THE CLASSROOM</span>
-            </div>
-            <h2 id="enrichment-courses-title" className="home-section-title mt-1 font-sans text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
+            <h2 id="enrichment-courses-title" className="home-section-title font-sans text-2xl font-bold tracking-tight text-[#177249] sm:text-3xl">
               Enrichment Courses
             </h2>
             <p className="mt-0.5 text-xs text-[#52645a] sm:text-sm">
